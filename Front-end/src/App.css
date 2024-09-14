@@ -1,0 +1,19 @@
+.pane-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  background-color: hsl(0, 0%, 66%);
+  padding: 1px;
+  height: 100vh
+}
+
+.pane-item {
+  background-color: #dddddd;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 15px;
+}
+
+.sGraph {
+  text-align: center;
+}
+
