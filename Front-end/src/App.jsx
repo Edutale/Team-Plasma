@@ -1,7 +1,6 @@
 /*--- App.jsx ---*/ 
 
-import ReactDOM from "react-dom/client"
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import {Routes, Route } from "react-router-dom"
 
 import skillGraph from './assets/skillGraph.png'
 import avatar from './assets/avatar.gif'
@@ -48,11 +47,11 @@ export default function App() {
         <Navigation />
         <div>
           <Routes>
-            <Route path="/" element={<Main />} />
-            <Route path="/check-in" element={<CheckIn />} />
-            <Route path="/inventory" element={<Inventory />} />
-            <Route path="/skill-tree" element={<SkillTree />} />
-            <Route path="/settings" element={<Settings />} />
+            <Route path="/" className="disabled-link" element={<Main />} />
+            <Route path="/check-in" className="disabled-link" element={<CheckIn />} />
+            <Route path="/inventory" className="disabled-link" element={<Inventory />} />
+            <Route path="/skill-tree" className="disabled-link" element={<SkillTree />} />
+            <Route path="/settings" className="disabled-link" element={<Settings />} />
           </Routes>
         </div>
       </div>
