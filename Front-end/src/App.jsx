@@ -1,30 +1,35 @@
+/*--- App.jsx ---*/ 
+
 import skillGraph from './assets/skillGraph.png'
 import avatar from './assets/avatar.gif'
 import qIcon from './assets/cpp.png'
+import OQIcon from './assets/html_icon.png'
 import './App.css'
 
 const USER = {
   name: 'akuri',
-  avatar: {avatar}, /* request('./assets/avatar.gif') no work???? */
+  avatar: {avatar}, /* require('./assets/avatar.gif') no work???? */
   level: 0.3,
-  quests: [
-    {qName: 'HTML 1', 
-      img: {qIcon}, 
-      exp: 20, 
-      desc: 'A course to learn fundamentals of HTML...',
-      tags: 'lol'}, /* same issue as ↑ */
-    {qName: 'HTML 2', 
-      img: {qIcon}, 
-      exp: 30, 
-      desc: 'A course to learn blah blah blah...',
-      tags: 'lol'},
-    {qName: 'HTML 3', 
-      img: {qIcon}, 
-      exp: 40, 
-      desc: 'A course to learn blah blah blah...',
-      tags: 'lol'}
-  ]
+  quests: ['HTML 1','HTML 2','HTML 3']
 }
+
+const QUESTS = [
+  {qName: 'C++ 1', 
+    img: {qIcon}, 
+    exp: 20, 
+    desc: 'A course to learn fundamentals of C++...',
+    tags: ['Languages']}, /* same issue as ↑ */
+  {qName: 'C++ 2', 
+    img: {qIcon}, 
+    exp: 30, 
+    desc: 'A course to learn blah blah blah...',
+    tags: ['Languages', 'Object-Oriented Programming']},
+  {qName: 'C++ 3', 
+    img: {qIcon}, 
+    exp: 40, 
+    desc: 'A course to learn blah blah blah...',
+    tags: ['Languages', 'Object-Oriented Programming', 'Exception Handlling']}
+]
 
 export default function App() {
   return (
@@ -89,13 +94,16 @@ export default function App() {
         <h1> <u> Ongoing Quests </u></h1>
         <div className="oQuests-container">
           <div className="oQuest-item">
-                1
+          <p> {USER.quests[0]} </p>
+            <img className='oQImg' src={OQIcon} alt="Ongoing Quest" />    
           </div>
           <div className="oQuest-item">
-                2
+          <p> {USER.quests[1]} </p>
+            <img className='oQImg' src={OQIcon} alt="Ongoing Quest" />    
           </div>
           <div className="oQuest-item">
-                3
+            <p> {USER.quests[2]} </p>
+            <img className='oQImg' src={OQIcon} alt="Ongoing Quest" />      
           </div>
         </div>
       </div>
@@ -108,19 +116,57 @@ export default function App() {
         <h1><u> Quest Board </u></h1>
         <div className="qBoard-container">
           <div className="qBoard-item">
-            1
+            <img className='qImg' src={qIcon} alt="Quest" />
+          </div>
+          <div className="qBoard-item q-desc">
+            <h3>
+              <u> {QUESTS[0].qName} </u> &emsp; &emsp; &emsp; 
+              <span className="tag"> {QUESTS[0].tags[0]} </span>
+            </h3>
+            <p> {QUESTS[0].desc} </p>
           </div>
           <div className="qBoard-item">
-            2
+            <img className='qImg' src={qIcon} alt="Quest" />
+          </div>
+          <div className="qBoard-item q-desc">
+            <h3>
+              <u> {QUESTS[1].qName} </u> &emsp; &emsp; &emsp; 
+              <span className="tag"> {QUESTS[1].tags[0]}</span> 
+              <span className="tag"> {QUESTS[1].tags[1]} </span>
+            </h3>
+            <p> {QUESTS[1].desc} </p>
           </div>
           <div className="qBoard-item">
-            3
+            <img className='qImg' src={qIcon} alt="Quest" />
+          </div>
+          <div className="qBoard-item q-desc">
+            <h3>
+              <u> {QUESTS[2].qName} </u> &emsp; &emsp; &emsp; 
+              <span className="tag"> {QUESTS[2].tags[0]}</span> 
+              <span className="tag">{QUESTS[2].tags[1]}</span> 
+              <span className="tag">{QUESTS[2].tags[2]} </span>
+            </h3>
+            <p> {QUESTS[2].desc} </p>
           </div>
           <div className="qBoard-item">
-            4
+            <img className='qImg' src={qIcon} alt="Quest" />
+          </div>
+          <div className="qBoard-item q-desc">
+            <h3>
+              <u> {QUESTS[0].qName} </u> &emsp; &emsp; &emsp; 
+              <span className="tag"> {QUESTS[0].tags[0]} </span>
+            </h3>
+            <p> {QUESTS[0].desc} </p>
           </div>
           <div className="qBoard-item">
-            5
+            <img className='qImg' src={qIcon} alt="Quest" />
+          </div>
+          <div className="qBoard-item q-desc">
+            <h3>
+              <u> {QUESTS[0].qName} </u> &emsp; &emsp; &emsp; 
+              <span className="tag"> {QUESTS[0].tags[0]} </span>
+            </h3>
+            <p> {QUESTS[0].desc} </p>
           </div>
         </div>
       </div>
