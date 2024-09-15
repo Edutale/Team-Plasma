@@ -1,9 +1,16 @@
+/*--- ↓↓↓ ISSUES AND FUTURE WORK NOTES ↓↓↓ ---*/ 
+
+/* need to fix issue where objects in containers change size relative
+ * to container size/ window size. Setting width to {window.innerWidth/8}
+ * fixes this issue but this method requires to refresh the page after 
+ * resizing...? Could resort to this if cant find more dynamic solution, 
+ * but for now im going to stop banging my head against this wall lol.*/ 
+
 .pane-container {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 50% 50%;
   background-color: hsl(0, 0%, 66%);
   padding: 1px;
-  height: 100vh
 }
 
 .pane-item {
@@ -13,7 +20,62 @@
   border-radius: 15px;
 }
 
+.pane-2-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding: 1px;
+}
+
+.pane-2-item {
+  padding: 20px;
+  margin: 10px;
+  border-radius: 15px;
+}
+
+.oQuests-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding: 1px;
+}
+
+.oQuest-item {
+  padding: 20px;
+  margin: 2px;
+  border: 1px solid black;
+  border-radius: 15px;
+}
+
+.qBoard-container {
+  display: grid;
+  grid-template-columns: auto;
+  padding: 1px;
+}
+
+.qBoard-item {
+  padding: 20px;
+  margin: 2px;
+  border: 1px solid black;
+  border-radius: 15px;
+}
+
 .sGraph {
+  text-align: center;
+  object-fit: contain;
+}
+
+.userBar {
+  text-align: center;
+  object-fit: contain;
+}
+
+progress {
+  accent-color: rgb(173, 130, 255);
+}
+
+.oQuests {
   text-align: center;
 }
 
+.questBoard {
+  text-align: center;
+}
