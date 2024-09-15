@@ -1,15 +1,26 @@
+import { Link } from 'react-router-dom';
+import './Navigation.css'
+
 function Navigation() {
-    return (
-        <nav>
-            <ul>
-                <li> Main </li>
-                <li> Check-in </li>
-                <li> Inventory </li>
-                <li> Skill Tree </li>
-                <li> Settings </li>
-            </ul>
-        </nav>
-    )
+  return (
+      <ul>
+        <li>
+          <Link to="/"> Main </Link>
+        </li>
+        <li>
+          <Link to="/check-in"> Check-In </Link>
+        </li>
+        <li>
+          <Link to="/inventory"> Inventory </Link>
+        </li>
+        <li>
+          <Link to="/skill-tree"> Skill Tree </Link>
+        </li>
+        <li>
+          <Link to="/settings"> Settings </Link>
+        </li>
+      </ul>
+  )
 }
 
 export default Navigation

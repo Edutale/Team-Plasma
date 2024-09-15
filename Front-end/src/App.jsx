@@ -1,5 +1,8 @@
 /*--- App.jsx ---*/ 
 
+import ReactDOM from "react-dom/client"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+
 import skillGraph from './assets/skillGraph.png'
 import avatar from './assets/avatar.gif'
 import qIcon from './assets/cpp.png'
@@ -7,6 +10,11 @@ import OQIcon from './assets/html_icon.png'
 
 import './App.css'
 import Navigation from './Navigation/Navigation'
+import Main from "./Main/Main"
+import CheckIn from './CheckIn/CheckIn'
+import Inventory from "./Inventory/Inventory"
+import SkillTree from "./SkillTree/SkillTree"
+import Settings from "./Settings/Settings"
 
 const USER = {
   name: 'akuri',
@@ -38,6 +46,15 @@ export default function App() {
     <>
       <div className="navigation">
         <Navigation />
+        <div>
+          <Routes>
+            <Route path="/" element={<Main />} />
+            <Route path="/check-in" element={<CheckIn />} />
+            <Route path="/inventory" element={<Inventory />} />
+            <Route path="/skill-tree" element={<SkillTree />} />
+            <Route path="/settings" element={<Settings />} />
+          </Routes>
+        </div>
       </div>
       <div className="pane-container">
         <div className="pane-item">
