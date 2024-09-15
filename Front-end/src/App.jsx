@@ -4,7 +4,9 @@ import skillGraph from './assets/skillGraph.png'
 import avatar from './assets/avatar.gif'
 import qIcon from './assets/cpp.png'
 import OQIcon from './assets/html_icon.png'
+
 import './App.css'
+import Navigation from './Navigation/Navigation'
 
 const USER = {
   name: 'akuri',
@@ -34,6 +36,9 @@ const QUESTS = [
 export default function App() {
   return (
     <>
+      <div className="navigation">
+        <Navigation />
+      </div>
       <div className="pane-container">
         <div className="pane-item">
           <Day />
