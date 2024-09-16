@@ -3,24 +3,14 @@ import './Navigation.css'
 
 function Navigation() {
   return (
-      <ul>
-        <li>
-          <Link to="/"> Mainpage </Link>
-        </li>
-        <li>
-          <Link to="/check-in"> Check-In </Link>
-        </li>
-        <li>
-          <Link to="/inventory"> Inventory </Link>
-        </li>
-        <li>
-          <Link to="/skill-tree"> Skill Tree </Link>
-        </li>
-        <li>
-          <Link to="/settings"> Settings </Link>
-        </li>
-      </ul>
-  )
+    <div className="bookmarksBox">
+      <Link to="/"><button className='bookmark mainpageMark'> Mainpage </button></Link>
+      <Link to="/check-in"><button className='bookmark check-inMark'> Check-In </button></Link>
+      <Link to="/inventory"><button className='bookmark inventoryMark'> Inventory </button></Link>
+      <Link to="/skill-tree"><button className='bookmark skill-treeMark'> Skill Tree </button></Link>
+      <Link to="/settings"><button className='bookmark settingsMark'> Settings </button></Link>
+    </div>
+          )
 }
 
 export default Navigation

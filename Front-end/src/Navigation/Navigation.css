@@ -1,2 +1,67 @@
 /* ugly to show if css import worked */
 
+.bookmarksBox {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    object-fit: contain;
+    margin-left: 52%;
+    text-align: left;
+}
+
+.bookmark {
+    position: absolute;
+    margin: 1px;
+    top: 0px;
+    height: 80px;
+    width: 100px;
+    border: 0px;
+    color: white;
+    transition: 0.3s;
+    clip-path: polygon(50% 30%, 100% 0, 100% 100%, 0 100%, 0 0);
+}
+
+.bookmark:focus {
+    clip-path: polygon(50% 80%, 100% 50%, 100% 100%, 0 100%, 0 50%);
+    color: rgba(0, 0, 0, 0);
+}
+
+.mainpageMark {
+    background-color: rgb(65, 52, 182);
+}
+
+.mainpageMark:hover {
+    background-color: rgb(44, 35, 122); 
+}
+
+.check-inMark {
+    background-color: rgb(67, 153, 124);
+}
+
+.check-inMark:hover {
+    background-color: rgb(57, 128, 103); 
+}
+
+.inventoryMark {
+    background-color: rgb(224, 152, 42);
+}
+
+.inventoryMark:hover {
+    background-color: rgb(175, 118, 31); 
+}
+
+.skill-treeMark {
+    background-color: rgb(206, 69, 99);
+}
+
+.skill-treeMark:hover {
+    background-color: rgb(170, 59, 83); 
+}
+
+.settingsMark {
+    background-color: rgb(49, 204, 224);
+}
+
+.settingsMark:hover {
+    background-color: rgb(40, 165, 182); 
+}

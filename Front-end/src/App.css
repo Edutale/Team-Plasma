@@ -3,12 +3,14 @@
 .pane-container {
   display: grid;
   grid-template-columns: 50% 50%;
-  background-color: hsl(0, 0%, 66%);
+  background-color: #862525;
   padding: 1px;
+  margin-top: 70px;
+  border-radius: 10px;
 }
 
 .pane-item {
-  background-color: #dddddd;
+  background-color: #ecdec9;
   padding: 20px;
   margin: 10px;
   border-radius: 15px;
