@@ -5,7 +5,7 @@ function Navigation() {
   return (
       <ul>
         <li>
-          <Link to="/"> Main </Link>
+          <Link to="/"> Mainpage </Link>
         </li>
         <li>
           <Link to="/check-in"> Check-In </Link>
