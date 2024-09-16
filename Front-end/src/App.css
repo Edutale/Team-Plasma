@@ -91,3 +91,7 @@ progress {
   padding: 5px;
   margin: 2px;
 }
+
+.disabled-link {
+  pointer-events: none;
+}
