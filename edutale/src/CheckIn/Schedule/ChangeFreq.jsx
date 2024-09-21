@@ -38,7 +38,7 @@ function FreqModal({ children }) {
     // get DOM to inject contents into
     const modalRoot = document.getElementById('modal-root');
 
-    // create portal that renders the FreqModal
+    // create portal that renders the FreqModal into modal-root
     return ReactDOM.createPortal(
       <div className="freq-modal">
         {children}

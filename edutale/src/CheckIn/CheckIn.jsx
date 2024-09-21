@@ -10,8 +10,12 @@ export default function CheckIn() {
         <div className="pane-container">
         <div className="pane-item">
           <CalendarHolder/>
-          <Schedule />
-          <ChangeFreq />
+          
+          <h1 className="header"> <u> Schedule </u> </h1>
+          <div className="pane-2-container">
+            <Schedule />
+            <ChangeFreq />
+          </div>
         </div>
 
         <div className="pane-item">
