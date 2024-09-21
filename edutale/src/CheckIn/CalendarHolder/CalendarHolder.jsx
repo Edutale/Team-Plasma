@@ -1,14 +1,9 @@
 import Calendar from 'react-calendar'
 
-// imports default style, will want to replace with our own css
 import './CalendarHolder.css';
 
 export default function CalendarHolder() {
     return (
-        <Calendar />
+        <Calendar />    // the actual calendar made by react-calendar
     )
-}
-
-function tileDisabled() {
-    return true
 }
