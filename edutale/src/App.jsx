@@ -14,6 +14,7 @@ import Settings from "./Settings/Settings"
 export default function App() {
   return (
     <>
+      <div id="modal-root"></div>
       <div className="navigation">
         <Navigation />
         <div>

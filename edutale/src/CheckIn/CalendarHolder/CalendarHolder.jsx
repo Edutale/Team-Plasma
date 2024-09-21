@@ -5,9 +5,9 @@ import './CalendarHolder.css';
 
 export default function CalendarHolder() {
     return (
-        <div>
+        <>
             <h1 className="header"> <u> Statistics </u> </h1>
             <Calendar />
-        </div>
+        </>
     )
 }
