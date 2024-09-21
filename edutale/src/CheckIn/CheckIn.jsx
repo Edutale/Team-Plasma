@@ -1,16 +1,16 @@
+// Container for the Check-In tab.
+
+import './CheckIn.css'
+import CalendarHolder from "./CalendarHolder/CalendarHolder"
+
 export default function CheckIn() {
     return (
         <div className="pane-container">
         <div className="pane-item">
-          <div className="pane-2-container">
-            <div className="pane-2-item">
-              
-            </div>
-            <div className="pane-2-item">
-
-            </div>
-          </div>
+          <h1 className="header"> <u> Statistics </u> </h1>
+          <CalendarHolder />
         </div>
+
         <div className="pane-item">
           
         </div>
