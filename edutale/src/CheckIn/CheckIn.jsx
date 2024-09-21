@@ -4,6 +4,7 @@ import "./CheckIn.css"
 import CalendarHolder from "./CalendarHolder/CalendarHolder"
 import Schedule from "./Schedule/Schedule"
 import ChangeFreq from "./Schedule/ChangeFreq"
+import CheckInForm from "./CheckInForm/CheckInForm"
 
 export default function CheckIn() {
     return (
@@ -19,6 +20,8 @@ export default function CheckIn() {
         </div>
 
         <div className="pane-item">
+          <h1 className="header"> <u> Check-In </u> </h1>
+          <CheckInForm />
         </div>
       </div>
     )
