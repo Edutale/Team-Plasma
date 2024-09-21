@@ -5,6 +5,9 @@ import './CalendarHolder.css';
 
 export default function CalendarHolder() {
     return (
-        <Calendar />    // the actual calendar made by react-calendar
+        <div>
+            <h1 className="header"> <u> Statistics </u> </h1>
+            <Calendar />
+        </div>
     )
 }
