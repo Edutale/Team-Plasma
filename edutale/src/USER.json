@@ -3,5 +3,6 @@
   "avatar": "/assets/avatar.gif",
   "level": 0.3,
   "quests": ["HTML 1", "HTML 2", "HTML 3"],
-  "schedule": "Weekly"
+  "schedule": "Weekly",
+  "joinDate": "2024-09-20"
 }
