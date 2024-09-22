@@ -2,8 +2,9 @@
   "name": "akuri",
   "avatar": "/assets/avatar.gif",
   "level": 2,
-  "exp": 1000,
+  "exp": 750,
   "quests": ["HTML 1", "HTML 2", "HTML 3"],
   "schedule": "Weekly",
-  "joinDate": "2024-09-20"
+  "joinDate": "2024-09-20",
+  "checkedInDates": ["2024-08-09", "2024-08-11", "2024-09-01", "2024-09-02", "2024-09-10"]
 }

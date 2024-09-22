@@ -35,12 +35,12 @@ export default function CheckInForm() {
           {/* questName will be a dropdown at some point */}
           <fieldset>
             <fieldset>
-              <label for="questName"> Select a quest: </label>
+              <label htmlFor="questName"> Select a quest: </label>
               <input name="questName" type="text" value={item.questName} onChange={(event) => handleChange(event, ind)}/>
             </fieldset>
             
             <fieldset>
-              <label for="hours"> Hours spent on this quest: </label>
+              <label htmlFor="hours"> Hours spent on this quest: </label>
               <input name="hours" type="number" min="1" step="1" value={item.hours} onChange={(event) => handleChange(event, ind)}/>
             </fieldset>
             
