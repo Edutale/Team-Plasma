@@ -1,7 +1,8 @@
 {
   "name": "akuri",
   "avatar": "/assets/avatar.gif",
-  "level": 0.3,
+  "level": 2,
+  "exp": 1000,
   "quests": ["HTML 1", "HTML 2", "HTML 3"],
   "schedule": "Weekly",
   "joinDate": "2024-09-20"
