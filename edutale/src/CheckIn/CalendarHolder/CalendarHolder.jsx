@@ -17,7 +17,7 @@ export default function CalendarHolder() {
     return (
         <>
             <h1 className="header"> <u> Statistics </u> </h1>
-            <Calendar calendarType="gregory" tileClassName={checkedInDays} view="month" maxDetail="month"/>
+            <Calendar calendarType="gregory" tileClassName={checkedInDays} view="month" minDetail="month" maxDetail="month" prev2Label={null} next2Label={null}/>
         </>
     )
 }
