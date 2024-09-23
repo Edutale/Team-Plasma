@@ -1,4 +1,5 @@
-/* Modified from default react-calendar css file */
+/* Modified from default react-calendar css file 
+   A lot of this stuff can probably be deleted */
 
 .react-calendar {
     width: 350px;
@@ -57,9 +58,11 @@
     background: none;
   }
   
+  /*
   .react-calendar__navigation button:disabled {
     background-color: #f0f0f0;
   }
+    */
   
   .react-calendar__navigation button:enabled:hover,
   .react-calendar__navigation button:enabled:focus {
@@ -161,3 +164,6 @@
     background-color: #e6e6e6;
   }
   
+  .checked-in {
+    background-color: brown;
+  }
