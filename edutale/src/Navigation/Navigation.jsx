@@ -1,15 +1,16 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './Navigation.css'
 
 function Navigation() {
   return (
     <div className="bookmarksBox">
-      <Link to="/"><button className='bookmark mainpageMark'> Mainpage </button></Link>
-      <Link to="/check-in"><button className='bookmark check-inMark'> Check-In </button></Link>
-      <Link to="/inventory"><button className='bookmark inventoryMark'> Inventory </button></Link>
-      <Link to="/skill-tree"><button className='bookmark skill-treeMark'> Skill Tree </button></Link>
-      <Link to="/settings"><button className='bookmark settingsMark'> Settings </button></Link>
+      <NavLink to="/" className='bookmark mainMark'><p className='markIcon'> Mainpage </p></NavLink>
+      <NavLink to="/check-in" className='bookmark check-inMark'><p className='markIcon'> Check-In </p></NavLink>
+      <NavLink to="/inventory" className='bookmark inventoryMark'><p className='markIcon'> Inventory </p></NavLink>
+      <NavLink to="/skill-tree" className='bookmark storeMark'><p className='markIcon'> Skill Tree </p></NavLink>
+      <NavLink to="/settings" className='bookmark settingsMark'><p className='markIcon'> Settings </p></NavLink>
     </div>
+
           )
 }
 
