@@ -1,4 +1,4 @@
-export default function SkillTree() {
+export default function Store() {
     return (
         <div className="pane-container">
         <div className="pane-item">
