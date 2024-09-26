@@ -26,7 +26,7 @@ create table if not exists Skill(
 create table if not exists Student_Skill(
     student_id char(9),
     skill_id char(8),
-    Proficiency_Level int,
+    Proficiency_Level float,
     primary key (student_id, skill_id),
     foreign key (student_id) references Student(STUDENT_ID) on delete cascade,
     foreign key (skill_id) references Skill(SKILL_ID)
@@ -66,13 +66,13 @@ create table if not exists Student_Quest(
     student_id char(9),
     quest_id char(15),
     Cur_Status text,
-    primary key (student_id, quest_id)
+    primary key (student_id, quest_id),
     foreign key (student_id) references Student(STUDENT_ID) on delete cascade,
     foreign key (quest_id) references Quest(QUEST_ID) on delete cascade
 );
 
 create table if not exists Resources(
-    RESOURCE_ID char(20),
+    RESOURCE_ID char(20) primary key,
     Resource_Name text,
     Link text,
     Resource_Description text
@@ -84,4 +84,11 @@ create table if not exists Quest_Resources(
     primary key (quest_id, resource_id),
     foreign key (quest_id) references Quest(QUEST_ID) on delete cascade,
     foreign key (resource_id) references Resources(RESOURCE_ID) on delete cascade
+);
+
+create table if not exists Reminder_Frequency(
+    student_id char(9),
+    frequency varchar,
+    primary key (student_id),
+    foreign key (student_id) references Student(STUDENT_ID) on delete cascade
 );
