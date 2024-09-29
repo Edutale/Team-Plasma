@@ -7,7 +7,7 @@ export default function Settings() {
     return (
       <>
         <p> This is settings yay </p>
-        <button onClick={navigate("/")}> Back </button>
+        <button onClick={() => navigate("/")}> Back </button>
       </>
     )
 }
