@@ -9,6 +9,7 @@ import CheckIn from './CheckIn/CheckIn'
 import Inventory from "./Inventory/Inventory"
 import Store from "./Store/Store"
 import Settings from "./Settings/Settings"
+import SkillList from "./SkillList/SkillList"
 
 // Note: <Routes> element renders whatever element is contained in the selected Route.
 export default function App() {
@@ -22,8 +23,8 @@ export default function App() {
             <Route path="/" className="disabled-link" element={<Mainpage />} />
             <Route path="/check-in" className="disabled-link" element={<CheckIn />} />
             <Route path="/inventory" className="disabled-link" element={<Inventory />} />
+            <Route path="/skill-list" className="disabled-link" element={<SkillList />} />
             <Route path="/store" className="disabled-link" element={<Store />} />
-            <Route path="/settings" className="disabled-link" element={<Settings />} />
           </Routes>
         </div>
       </div>
