@@ -1,19 +1,10 @@
+import { Link } from "react-router-dom"
+
 export default function Settings() {
     return (
-        <div className="pane-container">
-        <div className="pane-item">
-          <div className="pane-2-container">
-            <div className="pane-2-item">
-              
-            </div>
-            <div className="pane-2-item">
-
-            </div>
-          </div>
-        </div>
-        <div className="pane-item">
-          
-        </div>
-      </div>
+      <>
+        <p> This is settings yay </p>
+        <button> <Link to="/" className=""><p> Back to Mainpage </p></Link> </button>
+      </>
     )
 }
