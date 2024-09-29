@@ -1,6 +1,9 @@
 {
   "name": "akuri",
   "avatar": "/assets/avatar.gif",
+  "armor": "/assets/armor.png",
+  "weapon": "/assets/weapon.png",
+  "familiar": "/assets/familiar.png",
   "level": 2,
   "exp": 750,
   "quests": ["HTML 1", "HTML 2", "HTML 3"],
