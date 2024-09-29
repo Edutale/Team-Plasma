@@ -1,4 +1,5 @@
 import Equipped from "./Equipped/Equipped"
+import InventoryList from "./InventoryList/InventoryList"
 import * as USER from "../USER.json"
 
 import "./Inventory.css"
@@ -21,7 +22,7 @@ export default function Inventory() {
         </div>
         <div className="pane-item">
           <h1 className="header"> <u> Inventory </u> </h1>
-          
+          <InventoryList />
         </div>
       </div>
     )
