@@ -5,7 +5,7 @@ export default function Navigation() {
 
   // any page inside of pageNoNav will not render the bookmarks
   const location = useLocation()
-  const pageNoNav = ["/settings"]
+  const pageNoNav = ["/settings", "/admin"]
 
   if (pageNoNav.includes(location.pathname)) {
     return null
