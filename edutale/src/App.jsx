@@ -16,9 +16,7 @@ export default function App() {
   return (
     <>
       <div id="modal-root"></div>
-      <button>
-        <Link to="/settings" className="settings"><p> Settings </p></Link>
-      </button>
+      <Link to="/settings" className="settings"><button> Settings </button></Link>
       
       <div className="navigation">
         <Navigation />

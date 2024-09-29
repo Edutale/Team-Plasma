@@ -1,10 +1,13 @@
-import { Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 export default function Settings() {
+    // to be able to navigate to the previous page
+    const navigate = useNavigate()
+
     return (
       <>
         <p> This is settings yay </p>
-        <button> <Link to="/" className=""><p> Back to Mainpage </p></Link> </button>
+        <button onClick={() => navigate(-1)}> Back </button>
       </>
     )
 }
