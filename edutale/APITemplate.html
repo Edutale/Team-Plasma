@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>API Template</title>
+        <style>
+            body{
+                font-family: Arial, sans-serif;
+                max-width: 600px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            h1{
+                color: #333;
+            }
+            select, button{
+                margin: 10px 0;
+                padding: 5px;
+                font-size: 16px;
+            }
+            #message{
+                margin-top: 20px;
+                padding: 10px;
+                border-radius: 5px;
+            }
+            .success{
+                background-color: #d4edda;
+                color: #155724
+            }
+            .error{
+                background-color: #f8d7da;
+                color: #721c24
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1> Delete Student Skill</h1>
+        <select id="skillSelect">
+            <option value="">Select a skill to delete</option>
+        </select>
+        <button onclick="deleteSkill()">Delete Skill</button>
+        <div id="message"></div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"></script>
+        <script>
+            // This should be dynamically set based on the logged-in user but yeah about that...
+            const studentId = '111111111';
+
+            // function to fetch student quests and populate the dropdown
+            async function fetchStudentQuests(){
+                try{
+                    const response = await axios.get(`http://localhost:3000/api/students/${studentId}/quests`);
+                    const quests = response.data;
+                    const select = document.getElementById('questSelect');
+                    quests.forEach(quest=>{
+                        const option = document.createElement('option');
+                        option.value = quest.quest_id;
+                        option.textContent = quest.quest_name;
+                        select.appendChild(option);
+                    });
+                } catch(error){
+                    console.error('Error fetching quests: ', error);
+                    showMessage('Errir fetching quests. Please try again.', false);
+                }
+            }
+
+            // function to delete the selected quest
+            async function deleteQuest(){
+                const questId = document.getElementById('questSelect').value;
+                if(!questId){
+                    showMessage('Please select a quest to delete.', false);
+                    return;
+                }
+                try{
+                    await axios.delete(`http://localhost:3000/api/students/${studentId}/quests/${questId}`);
+                    showMessage('Quest successfully deleted!', true);
+                    // Remove the deleted quest from the dropdown
+                    document.querySelector(`option[value="${questId}"]`).remove();
+                } catch(error){
+                    console.error('Error deleting quest: ', error);
+                    showMessage('Error deleting quest. Please try again.', false);
+                }
+            }
+
+            // function to show messages to the user
+            function showMessage(message, isSuccess){
+                const messageElement = document.getElementById('message');
+                messageElement.textContent = message;
+                messageElement.className = isSuccess ? 'success' : 'error';
+            }
+
+            // fetch quests when the page loads
+            fetchStudentQuests();
+        </script>
+    </body>
+</html>
