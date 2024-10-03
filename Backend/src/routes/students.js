@@ -10,7 +10,7 @@ const{
     deleteStudentQuest,
 } = require('../javascript/students/deleteOperations');
 const{
-    addNewStudent, addStudentQuest,
+    addNewStudent, addStudentQuest, addNewStudentSkill,
 } = require('../javascript/students/postOperations');
 
 // Get student skills
@@ -37,7 +37,7 @@ router.get('/:id/quests', async(req, res)=>{
 router.put('/:id/skills/:skillId', async(req, res)=>{
     try{
         await updateSkillProficiency(req.params.id, req.params.skillId, req.body.proficiency);
-        res.json({message: 'Skill proficiency updated successfully'});
+        res.status(200).json({message: 'Skill proficiency updated successfully'});
     } catch(err){
         res.status(500).json({error: err.message});
     }
@@ -47,7 +47,7 @@ router.put('/:id/skills/:skillId', async(req, res)=>{
 router.delete('/:id/quests/:questId', async(req, res)=>{
     try{
         await deleteStudentQuest(req.params.id, req.params.questId);
-        res.json({message: 'Student Quest removed successfully'});
+        res.status(204).json({message: 'Student Quest removed successfully'});
     } catch(err){
         res.status(500).json({error: err.message});
     }
@@ -70,6 +70,16 @@ router.post('/:id/quests', async(req, res)=>{
         const {questId, currStatus} = req.body;
         await addStudentQuest(req.params.id, questId, currStatus);
         res.status(201).json({message: 'Quest added successfully for student'});
+    } catch(err){
+        res.status(500).json({message: err.message});
+    }
+});
+
+router.post('/:id/skills', async(req, res)=>{
+    try{
+        const {skillId, proficiencyLevel} = req.body;
+        await addNewStudentSkill(req.params.id, skillId, proficiencyLevel);
+        res.status(201).json({message: 'New skill added to student skillset successfully'});
     } catch(err){
         res.status(500).json({message: err.message});
     }

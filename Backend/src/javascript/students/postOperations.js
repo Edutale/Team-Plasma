@@ -17,6 +17,11 @@ async function addStudentQuest(studentId, questId, currStatus){
     await db.query(sql, [studentId, questId, currStatus]);
 };
 
+async function addNewStudentSkill(studentId, skillId, proficiencyLevel = null){
+    const sql = await loadSqlFile('add_new_student_skill.sql')
+    await db.query(sql, [studentId, skillId, proficiencyLevel]);
+};
+
 module.exports = {
-    addNewStudent, addStudentQuest,
+    addNewStudent, addStudentQuest, addNewStudentSkill,
 };
