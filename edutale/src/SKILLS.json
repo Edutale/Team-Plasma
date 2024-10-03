@@ -1,0 +1,15 @@
+{
+    "labels": ["Front End", "Back End", "CSS", "JavaScript", "Algorithms"],
+    "datasets": [
+        {
+            "label": "Progress",
+            "data": [200, 300, 100, 150, 175],
+            "fill": true
+        },
+        {
+            "label": "Progress",
+            "data": [250, 300, 125, 150, 175],
+            "fill": true
+        }
+    ]
+}

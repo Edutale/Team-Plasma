@@ -62,22 +62,22 @@
 }
 /* --------------- */
 
-/* Store Bookmark CSS */
-.storeMark {
+/* Skill List Bookmark CSS */
+.skill-listMark {
     background-color: rgb(206, 69, 99);
 }
 
-.storeMark:hover {
+.skill-listMark:hover {
     background-color: rgb(170, 59, 83); 
 }
 /* --------------- */
 
-/* Settings Bookmark CSS */
-.settingsMark {
+/* Store Bookmark CSS */
+.storeMark {
     background-color: rgb(49, 204, 224);
 }
 
-.settingsMark:hover {
+.storeMark:hover {
     background-color: rgb(40, 165, 182); 
 }
 /* --------------- */

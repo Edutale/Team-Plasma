@@ -1,0 +1,50 @@
+.equip-grid {
+    display: grid;
+    margin-top: 2em;
+    grid-template-columns: 1fr 1fr 1fr;
+    box-sizing: border-box;
+    justify-content: space-evenly;
+    justify-items: center;
+}
+
+.avatar {
+    display: block;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.grid-item {
+    object-fit: contain;
+    text-align: center;
+}
+
+.equip-img {
+    display: block;
+    border: 0.5em solid #862525;
+    background-color: #f3f3f3;
+}
+
+.grid-img {
+    display: block;
+    border: 0.5em solid #862525;
+    background-color: #f3f3f3;
+}
+
+.grid-img:hover {
+    display: block;
+}
+
+.header {
+    text-align: center;
+}
+
+.storage-div {
+    display: grid;
+    margin-top: 2em;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 1em;
+    box-sizing: border-box;
+    justify-content: space-evenly;
+    justify-items: center;
+}
