@@ -1,5 +1,3 @@
-/* ugly to show if css import worked */
-
 .bookmarksBox {
     position: relative;
     display: grid;
@@ -73,11 +71,11 @@
 /* --------------- */
 
 /* Store Bookmark CSS */
-.storeMark {
+.resumeMark {
     background-color: rgb(49, 204, 224);
 }
 
-.storeMark:hover {
+.resumeMark:hover {
     background-color: rgb(40, 165, 182); 
 }
 /* --------------- */

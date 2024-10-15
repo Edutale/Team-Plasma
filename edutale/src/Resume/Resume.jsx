@@ -1,4 +1,4 @@
-export default function Store() {
+export default function Resume() {
     return (
         <div className="pane-container">
         <div className="pane-item">
