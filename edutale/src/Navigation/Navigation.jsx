@@ -12,12 +12,12 @@ export default function Navigation() {
   }
 
   return (
-    <div className="bookmarksBox">
-      <NavLink to="/" className="bookmark mainMark"><p className="markIcon"> Mainpage </p></NavLink>
-      <NavLink to="/check-in" className="bookmark check-inMark"><p className="markIcon"> Check-In </p></NavLink>
-      <NavLink to="/inventory" className="bookmark inventoryMark"><p className="markIcon"> Inventory </p></NavLink>
-      <NavLink to="/skill-list" className="bookmark skill-listMark"><p className="markIcon"> Skill List </p></NavLink>
-      <NavLink to="/resume" className="bookmark resumeMark"><p className="markIcon"> Resume </p></NavLink>
+    <div className="bookmarks-box">
+      <NavLink to="/" className="bookmark main-mark"><p className="mark-icon"> Mainpage </p></NavLink>
+      <NavLink to="/check-in" className="bookmark check-in-mark"><p className="mark-icon"> Check-In </p></NavLink>
+      <NavLink to="/inventory" className="bookmark inventory-mark"><p className="mark-icon"> Inventory </p></NavLink>
+      <NavLink to="/skill-list" className="bookmark skill-list-mark"><p className="mark-icon"> Skill List </p></NavLink>
+      <NavLink to="/resume" className="bookmark resume-mark"><p className="mark-icon"> Resume </p></NavLink>
     </div>
 
   )

@@ -1,4 +1,4 @@
-.bookmarksBox {
+.bookmarks-box {
     position: relative;
     display: grid;
     grid-template-columns: auto auto auto auto auto;
@@ -21,7 +21,7 @@
     clip-path: polygon(50% 30%, 100% 0, 100% 100%, 0 100%, 0 0);
 }
 
-.markIcon {
+.mark-icon {
     padding-top: 20px;
 }
 
@@ -31,51 +31,51 @@
 }
 
 /* Mainpage Bookmark CSS */
-.mainMark {
+.main-mark {
     background-color: rgb(65, 52, 182);
 }
 
-.mainMark:hover {
+.main-mark:hover {
     background-color: rgb(44, 35, 122); 
 }
 /* --------------- */
 
 /* Check-In Bookmark CSS */
-.check-inMark {
+.check-in-mark {
     background-color: rgb(67, 153, 124);
 }
 
-.check-inMark:hover {
+.check-in-mark:hover {
     background-color: rgb(57, 128, 103); 
 }
 /* --------------- */
 
 /* Inventory Bookmark CSS */
-.inventoryMark {
+.inventory-mark {
     background-color: rgb(224, 152, 42);
 }
 
-.inventoryMark:hover {
+.inventory-mark:hover {
     background-color: rgb(175, 118, 31); 
 }
 /* --------------- */
 
 /* Skill List Bookmark CSS */
-.skill-listMark {
+.skill-list-mark {
     background-color: rgb(206, 69, 99);
 }
 
-.skill-listMark:hover {
+.skill-list-mark:hover {
     background-color: rgb(170, 59, 83); 
 }
 /* --------------- */
 
 /* Store Bookmark CSS */
-.resumeMark {
+.resume-mark {
     background-color: rgb(49, 204, 224);
 }
 
-.resumeMark:hover {
+.resume-mark:hover {
     background-color: rgb(40, 165, 182); 
 }
 /* --------------- */
