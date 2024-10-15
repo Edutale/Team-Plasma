@@ -10,7 +10,7 @@
 
 .pane-item {
   background-color: #ecdec9;
-  padding: 20px;
+  padding: 1px;
   margin: 10px;
   border-radius: 15px;
 }
@@ -25,6 +25,8 @@
   padding: 20px;
   margin: 10px;
   border-radius: 15px;
+  display: flex;
+  justify-content: center;
 }
 
 .oQuests-container {
@@ -54,11 +56,6 @@
   text-align: left;
 }
 
-.sGraph {
-  text-align: center;
-  object-fit: contain;
-}
-
 .userBar {
   text-align: center;
   object-fit: contain;
@@ -70,10 +67,12 @@ progress {
 
 .oQuests {
   text-align: center;
+  width: 100%
+  height: 50%;
 }
 
 .oQImg {
-  max-width: 70px;
+  max-width: 80%;
   max-height: auto;
 }
 
@@ -86,6 +85,10 @@ progress {
   max-height: auto;
 }
 
+.aImg {
+  width: 130%;
+}
+
 .tag {
   background-color: #bbcff5;
   border-radius: 15px;
@@ -95,4 +98,14 @@ progress {
 
 .disabled-link {
   pointer-events: none;
+}
+
+.chartContainer { 
+  height: 380px;
+  display: flex;
+  justify-content: center;
+}
+
+.day {
+  margin-left: 20px;
 }
