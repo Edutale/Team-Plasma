@@ -15,7 +15,7 @@ export default function Inventory() {
 
           <div className="pane-2-container">
             <div className="pane-2-item">
-              <UserBar />
+              <UserBar className={"user-bar"}/>
             </div>
             <div className="pane-2-item">
               <Money />
