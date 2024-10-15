@@ -44,6 +44,7 @@ export default function CheckInForm() {
               <input name="hours" type="number" min="1" step="1" value={item.hours} onChange={(event) => handleChange(event, ind)}/>
             </fieldset>
             
+            {/* there needs to be a way to make "false" default and also style buttons to show clicked status */}
             <fieldset>
               <legend> Quest Complete? </legend>
               <button name="completed" value={"true"} onClick={(event) => handleChange(event, ind)}> Yes </button>

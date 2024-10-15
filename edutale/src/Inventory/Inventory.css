@@ -42,9 +42,28 @@
 .storage-div {
     display: grid;
     margin-top: 2em;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-auto-flow: column;
     gap: 1em;
     box-sizing: border-box;
     justify-content: space-evenly;
     justify-items: center;
+    overflow-x: auto;
+}
+
+.money-token {
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+
+    height: auto;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+    background-color: #e9be25;
+    border: 1em solid #997910;
+}
+
+.money-num {
+    text-align: center;
 }
