@@ -65,13 +65,15 @@ router.post('/', async(req, res)=>{
 });
 
 // add new quest for student
-router.post('/:id/quests', async(req, res)=>{
+router.get('/:id/quests', async(req, res)=>{
+    console.log('Received request for student quests. Student ID:', req.params.id);
     try{
-        const {questId, currStatus} = req.body;
-        await addStudentQuest(req.params.id, questId, currStatus);
-        res.status(201).json({message: 'Quest added successfully for student'});
+        const studentQuests = await getStudentQuests(req.params.id);    
+        console.log('Student quests retrieved successfully:', studentQuests);
+        res.json(studentQuests);
     } catch(err){
-        res.status(500).json({message: err.message});
+        console.error('Error retrieving student quests:', err);
+        res.status(500).json({error: err.message});
     }
 });
 
