@@ -1,18 +1,15 @@
+import ResTemplates from "./ResTemplates/ResTemplates"
+import SkillsProjects from "./SkillsProjects/SkillsProjects"
+import "./Resume.css"
+
 export default function Resume() {
     return (
         <div className="pane-container">
         <div className="pane-item">
-          <div className="pane-2-container">
-            <div className="pane-2-item">
-              
-            </div>
-            <div className="pane-2-item">
-
-            </div>
-          </div>
+          <SkillsProjects />
         </div>
         <div className="pane-item">
-          
+          <ResTemplates />
         </div>
       </div>
     )
