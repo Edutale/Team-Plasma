@@ -20,6 +20,6 @@ export default function Navigation() {
       <NavLink to="/resume" className="bookmark resumeMark"><p className="markIcon"> Resume </p></NavLink>
     </div>
 
-          )
+  )
 }
 
