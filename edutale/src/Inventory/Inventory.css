@@ -50,3 +50,20 @@
     justify-items: center;
     overflow-x: auto;
 }
+
+.money-token {
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+
+    height: auto;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+    background-color: #e9be25;
+    border: 1em solid #997910;
+}
+
+.money-num {
+    text-align: center;
+}

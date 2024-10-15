@@ -6,6 +6,7 @@
   "familiar": "/assets/familiar.png",
   "level": 2,
   "exp": 750,
+  "money": 2,
   "quests": ["HTML 1", "HTML 2", "HTML 3"],
   "schedule": "Weekly",
   "joinDate": "2024-09-20",

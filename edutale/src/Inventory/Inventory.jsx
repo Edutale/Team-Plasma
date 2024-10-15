@@ -1,5 +1,7 @@
 import Equipped from "./Equipped/Equipped"
 import InventoryList from "./InventoryList/InventoryList"
+import UserBar from "../Mainpage/UserBar/UserBar"
+import Money from "./Money/Money"
 import * as USER from "../USER.json"
 
 import "./Inventory.css"
@@ -13,10 +15,10 @@ export default function Inventory() {
 
           <div className="pane-2-container">
             <div className="pane-2-item">
-              
+              <UserBar />
             </div>
             <div className="pane-2-item">
-
+              <Money />
             </div>
           </div>
         </div>
