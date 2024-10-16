@@ -1,24 +1,99 @@
-import * as SKILLS from "../../SKILLS.json"
+import React, { useState, useEffect } from "react"
+import { Chart as ChartJS, RadialLinearScale, PointElement, LineElement, Tooltip, Legend, Filler} from "chart.js"
+import { Bubble, Chart, Radar } from "react-chartjs-2"
 import Axios from "axios"
-import { Chart as ChartJS, RadialLinearScale, PointElement, LineElement } from "chart.js"
-import { Radar } from "react-chartjs-2"
 
-ChartJS.register(RadialLinearScale, PointElement, LineElement)
+ChartJS.register(RadialLinearScale, PointElement, LineElement, Tooltip, Legend, Filler)
 
-export default function SkillGraph() {
-    console.log(fetchStudentSkills())
-    return (
-      <Radar data={SKILLS} />
-    )
-}
-const studentId = '111111111';
+let radarData = {
+  labels: ["Front End", "Back End", "CSS", "JavaScript", "Algorithms"],
+  datasets: [
+      {
+          label: "All-Time",
+          data: [200, 300, 100, 150, 175],
+          fill: true,
+          backgroundColor: "rgba(186, 186, 186, 0.8)",
+          borderColor: "rgb(150, 150, 150)",
+          pointBorderColor: "rgb(210, 210, 210)",
+          pointBackgroundColor: "rgb(150, 150, 150)",
+      },
+      {
+          label: "Today",
+          data: [250, 300, 125, 150, 175],
+          fill: true,
+          backgroundColor: "rgba(111, 106, 252, 0.5)",
+          borderColor: "rgb(173, 130, 255)",
+          pointBorderColor: "rgb(210, 210, 210)",
+          pointBackgroundColor: "rgb(173, 130, 255)",
+      },
+  ],
+};
 
-async function fetchStudentSkills(){
-  try{
-    const response = await Axios.get(`http://localhost:3000/api/students/${studentId}/skills`);
-    const skills = response.data;
-    return skills;
-  } catch(err){
-    console.error('Error fetching skills: ', err);
+const OPTIONS = {
+  scales: {
+    r: {
+      grid: {
+        lineWidth: 2,
+        color: "rgb(160, 160, 160)"
+      },
+      ticks: {display: false},
+      pointLabels: {font: {size:14}}
+    }
   }
 }
+
+export default function SkillGraph() {
+    // [var, setter]
+    // setter is a function that is used to update the value of var
+    const [skills, setSkills] = useState()
+    const [profs, setProfs] = useState()
+
+    // useState() and useEffect() allows for React to use await calls
+    // (which is fetchStudentSkills) inside of a component
+    useEffect(() => {
+      fetchStudentSkills();
+    }, []);
+
+    // the actual call that pulls the student's data from the backend
+    async function fetchStudentSkills() {
+      try {
+        await Axios.get(`http://localhost:3000/api/students/${studentId}/skills`)
+            .then((response) => {
+              // this anon function tells js what it should do with the response
+              let skillNames = []
+              let proficiencies = []
+
+              for (const {skill_name, proficiency_level} of response.data) {
+                skillNames.push(skill_name)
+                proficiencies.push(proficiency_level)
+              }
+
+              // use the setters to update the values of skills and profs
+              setSkills(skillNames)
+              setProfs(proficiencies)
+            })
+      }
+      catch(err) {
+        console.error('Error fetching skills: ', err);
+      }
+    }
+
+    // update radarData; hard-coded and buggy for now, so we should probably
+    // create a function that creates the radarData "template" and use skills
+    // and profs as params
+    radarData.labels = skills
+    radarData.datasets[0].data = profs
+    radarData.datasets[1].data = profs
+
+    return (
+      <div className="chartContainer">
+        <Radar className="radar" data={radarData} options={OPTIONS}/>
+
+        {/* sanity checkers, can delete following two */}
+        {skills}
+        {profs}
+      </div>
+    )
+}
+
+const studentId = '111111111';
