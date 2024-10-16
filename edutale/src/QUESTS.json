@@ -9,10 +9,10 @@
       "img": "/assets/cpp.png", 
       "exp": 30, 
       "desc": "A course to learn blah blah blah...",
-      "tags": ["Languages", "Object-Oriented Programming"]},
+      "tags": ["Languages", "OOP"]},
     {"qName": "C++ 3", 
       "img": "/assets/cpp.png", 
       "exp": 40, 
       "desc": "A course to learn blah blah blah...",
-      "tags": ["Languages", "Object-Oriented Programming", "Exception Handlling"]}
+      "tags": ["Languages", "OOP", "Exception Handlling"]}
 ]}

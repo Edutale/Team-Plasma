@@ -1,11 +1,23 @@
 /*--- App.css ---*/ 
 
+.top {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  min-width: 1180px;
+  height: 75px;
+}
+
+.topPane {
+  margin: 5px;
+}
+
 .pane-container {
   display: grid;
   grid-template-columns: 50% 50%;
   background-color: #862525;
   padding: 1px;
   border-radius: 10px;
+  min-width: 1180px;
 }
 
 .pane-item {
@@ -13,6 +25,7 @@
   padding: 1px;
   margin: 10px;
   border-radius: 15px;
+  min-width: 550px;
 }
 
 .pane-2-container {
@@ -54,6 +67,11 @@
   margin: 2px;
   border-radius: 15px;
   text-align: left;
+  white-space: pre;
+}
+
+.q-desc {
+  margin: 10px;
 }
 
 .userBar {
@@ -94,6 +112,7 @@ progress {
   border-radius: 15px;
   padding: 5px;
   margin: 2px;
+  white-space: nowrap;
 }
 
 .disabled-link {

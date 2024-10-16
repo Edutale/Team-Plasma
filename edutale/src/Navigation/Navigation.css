@@ -5,10 +5,9 @@
     display: grid;
     grid-template-columns: auto auto auto auto auto;
     object-fit: contain;
-    margin-left: 52%;
     text-align: left;
     height: 80px;
-    top: 10px;
+    left: 20px;
     width: 510px;
 }
 
