@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const{
-    getStudentSkills, getStudentQuests
+    getStudentSkills, getStudentQuests, getStudentJoinDate
 } = require('../javascript/students/getOperations');
 const{
     updateSkillProficiency,
@@ -28,6 +28,16 @@ router.get('/:id/quests', async(req, res)=>{
     try{
         const studentQuests = await getStudentQuests(req.params.id);    
         res.json(studentQuests);
+    } catch(err){
+        res.status(500).json({error: err.message});
+    }
+});
+
+// Get student join date
+router.get('/:id', async(req, res)=>{
+    try{
+        const joindate = await getStudentJoinDate(req.params.id);
+        res.json(joindate);
     } catch(err){
         res.status(500).json({error: err.message});
     }
