@@ -5,7 +5,8 @@ import Axios from "axios"
 
 ChartJS.register(RadialLinearScale, PointElement, LineElement, Tooltip, Legend, Filler)
 
-let radarData = {
+// for reference, do not use directly
+let radarData_1 = {
   labels: ["Front End", "Back End", "CSS", "JavaScript", "Algorithms"],
   datasets: [
       {
@@ -77,13 +78,21 @@ export default function SkillGraph() {
         console.error('Error fetching skills: ', err);
       }
     }
-
-    // update radarData; hard-coded and buggy for now, so we should probably
-    // create a function that creates the radarData "template" and use skills
-    // and profs as params
-    radarData.labels = skills
-    radarData.datasets[0].data = profs
-    radarData.datasets[1].data = profs
+    
+    let radarData = {
+      labels: skills,
+      datasets: [
+          {
+              label: "All-Time",
+              data: profs,
+              fill: true,
+              backgroundColor: "rgba(186, 186, 186, 0.8)",
+              borderColor: "rgb(150, 150, 150)",
+              pointBorderColor: "rgb(210, 210, 210)",
+              pointBackgroundColor: "rgb(150, 150, 150)",
+          },
+      ],
+    };
 
     return (
       <div className="chartContainer">
