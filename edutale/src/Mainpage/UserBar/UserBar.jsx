@@ -1,6 +1,6 @@
 import * as USER from "../../USER.json"
 
-export default function Userbar() {
+export default function UserBar() {
     return (
       <div className="userBar">
         <h2> {USER.name} <progress className="lBar" value={barVal(USER.exp)} /> </h2>

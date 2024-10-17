@@ -1,10 +1,12 @@
-import * as SKILLS from "../../SKILLS.json"
+import React, { useState, useEffect } from "react"
 import { Chart as ChartJS, RadialLinearScale, PointElement, LineElement, Tooltip, Legend, Filler} from "chart.js"
 import { Bubble, Chart, Radar } from "react-chartjs-2"
+import Axios from "axios"
 
 ChartJS.register(RadialLinearScale, PointElement, LineElement, Tooltip, Legend, Filler)
 
-const radarData = {
+// for reference, do not use directly
+let radarData_1 = {
   labels: ["Front End", "Back End", "CSS", "JavaScript", "Algorithms"],
   datasets: [
       {
@@ -42,9 +44,65 @@ const OPTIONS = {
 }
 
 export default function SkillGraph() {
+    // [var, setter]
+    // setter is a function that is used to update the value of var
+    const [skills, setSkills] = useState()
+    const [profs, setProfs] = useState()
+
+    // useState() and useEffect() allows for React to use await calls
+    // (which is fetchStudentSkills) inside of a component
+    useEffect(() => {
+      fetchStudentSkills();
+    }, []);
+
+    // the actual call that pulls the student's data from the backend
+    async function fetchStudentSkills() {
+      try {
+        await Axios.get(`http://localhost:3000/api/students/${studentId}/skills`)
+            .then((response) => {
+              // this anon function tells js what it should do with the response
+              let skillNames = []
+              let proficiencies = []
+
+              for (const {skill_name, proficiency_level} of response.data) {
+                skillNames.push(skill_name)
+                proficiencies.push(proficiency_level)
+              }
+
+              // use the setters to update the values of skills and profs
+              setSkills(skillNames)
+              setProfs(proficiencies)
+            })
+      }
+      catch(err) {
+        console.error('Error fetching skills: ', err);
+      }
+    }
+    
+    let radarData = {
+      labels: skills,
+      datasets: [
+          {
+              label: "All-Time",
+              data: profs,
+              fill: true,
+              backgroundColor: "rgba(186, 186, 186, 0.8)",
+              borderColor: "rgb(150, 150, 150)",
+              pointBorderColor: "rgb(210, 210, 210)",
+              pointBackgroundColor: "rgb(150, 150, 150)",
+          },
+      ],
+    };
+
     return (
       <div className="chartContainer">
         <Radar className="radar" data={radarData} options={OPTIONS}/>
+
+        {/* sanity checkers, can delete following two */}
+        {skills}
+        {profs}
       </div>
     )
 }
+
+const studentId = '111111111';

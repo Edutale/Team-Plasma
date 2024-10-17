@@ -7,7 +7,7 @@ import Navigation from "./Navigation/Navigation"
 import Mainpage from "./Mainpage/Mainpage"
 import CheckIn from "./CheckIn/CheckIn"
 import Inventory from "./Inventory/Inventory"
-import Store from "./Store/Store"
+import Resume from "./Resume/Resume"
 import Settings from "./Settings/Settings"
 import SkillList from "./SkillList/SkillList"
 import Admin from "./Admin/Admin"
@@ -17,6 +17,7 @@ export default function App() {
   return (
     <>
       <div id="modal-root"></div>
+
       <div className="top">
         <div className="topPane">
           <Link to="/settings" className="settings"><button> Settings </button></Link>

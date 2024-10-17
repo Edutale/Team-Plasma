@@ -14,9 +14,17 @@ async function getStudentSkills(studentId){
 };
 
 async function getStudentQuests(studentId){
+    console.log('getStudentQuests called with studentId:', studentId);
     const sql = await loadSqlFile('get_student_quests.sql');
-    const result = await db.query(sql, [studentId]);
-    return result.rows;
+    console.log('SQL query:', sql);
+    try {
+        const result = await db.query(sql, [studentId]);
+        console.log('Query result:', result.rows);
+        return result.rows;
+    } catch (error) {
+        console.error('Error executing query:', error);
+        throw error;
+    }
 };
 
 module.exports = {

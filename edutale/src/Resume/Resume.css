@@ -1,0 +1,16 @@
+.header-centered {
+    text-align: center;
+}
+
+.template-1 {
+    border: .3em solid black;
+    background-color: #f3f3f3;
+    border-radius: 15px;
+}
+
+.template-2 {
+    margin-top: 1em;
+    border: .3em solid black;
+    background-color: #f3f3f3;
+    border-radius: 15px;
+}
