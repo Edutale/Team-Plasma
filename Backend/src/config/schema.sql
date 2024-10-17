@@ -1,7 +1,8 @@
 create table if not exists Student(
     STUDENT_ID char(9) primary key,
     Student_Name varchar(100) not null,
-    Student_Email varchar
+    Student_Email varchar,
+    Student_Join_Date date
 );
 
 create table if not exists Major(
