@@ -33,7 +33,7 @@ export default function App() {
           <Route path="/check-in" className="disabled-link" element={<CheckIn />} />
           <Route path="/inventory" className="disabled-link" element={<Inventory />} />
           <Route path="/skill-list" className="disabled-link" element={<SkillList />} />
-          <Route path="/store" className="disabled-link" element={<Store />} />
+          <Route path="/resume" className="disabled-link" element={<Resume />} />
           <Route path="/settings" className="disabled-link" element={<Settings />} />
           <Route path="/admin" className="disabled-link" element={<Admin />} />
         </Routes>
