@@ -60,18 +60,18 @@ export default function SkillGraph() {
       try {
         await Axios.get(`http://localhost:3000/api/students/${studentId}/skills`)
             .then((response) => {
-              // this anon function tells js what it should do with the response
-              let skillNames = []
-              let proficiencies = []
+                // this anon function tells js what it should do with the response
+                let skillNames = []
+                let proficiencies = []
 
-              for (const {skill_name, proficiency_level} of response.data) {
-                skillNames.push(skill_name)
-                proficiencies.push(proficiency_level)
-              }
+                for (const {skill_name, proficiency_level} of response.data) {
+                    skillNames.push(skill_name)
+                    proficiencies.push(proficiency_level)
+                }
 
-              // use the setters to update the values of skills and profs
-              setSkills(skillNames)
-              setProfs(proficiencies)
+                // use the setters to update the values of skills and profs
+                setSkills(skillNames)
+                setProfs(proficiencies)
             })
       }
       catch(err) {
@@ -97,10 +97,6 @@ export default function SkillGraph() {
     return (
       <div className="chartContainer">
         <Radar className="radar" data={radarData} options={OPTIONS}/>
-
-        {/* sanity checkers, can delete following two */}
-        {skills}
-        {profs}
       </div>
     )
 }

@@ -1,4 +1,3 @@
-import * as USER from "../../USER.json"
 import { useState, useEffect } from "react"
 import Axios from "axios"
 
@@ -12,22 +11,22 @@ export default function Day() {
     }, [])
 
     function dayNum(jd) {
-      let now = Date.now()
-      console.log(jd[0])
-      let joinDateParsed = Date.parse(jd)
-      return Math.round((now - joinDateParsed) / 86400000)
+        let now = Date.now()
+        console.log(jd[0])
+        let joinDateParsed = Date.parse(jd)
+        return Math.round((now - joinDateParsed) / 86400000)
     }
 
     async function fetchStudentJoinDate() {
-      try {
-        await Axios.get(`http://localhost:3000/api/students/${studentId}`)
-            .then((response) => {
-              setJoinDate(dayNum(response.data[0].student_join_date))
-            })
+        try {
+            await Axios.get(`http://localhost:3000/api/students/${studentId}`)
+                .then((response) => {
+                    setJoinDate(dayNum(response.data[0].student_join_date))
+                })
       }
-      catch(err) {
-        console.error('Error fetching skills: ', err);
-      }
+        catch(err) {
+            console.error('Error fetching skills: ', err);
+        }
     }
 
     return (
