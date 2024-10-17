@@ -86,10 +86,10 @@ export default function SkillGraph() {
               label: "All-Time",
               data: profs,
               fill: true,
-              backgroundColor: "rgba(186, 186, 186, 0.8)",
-              borderColor: "rgb(150, 150, 150)",
+              backgroundColor: "rgba(111, 106, 252, 0.5)",
+              borderColor: "rgb(173, 130, 255)",
               pointBorderColor: "rgb(210, 210, 210)",
-              pointBackgroundColor: "rgb(150, 150, 150)",
+              pointBackgroundColor: "rgb(173, 130, 255)",
           },
       ],
     };
@@ -101,4 +101,4 @@ export default function SkillGraph() {
     )
 }
 
-const studentId = '111111111';
+const studentId = '987654321';
