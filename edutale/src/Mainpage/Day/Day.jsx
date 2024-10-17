@@ -12,7 +12,6 @@ export default function Day() {
 
     function dayNum(jd) {
         let now = Date.now()
-        console.log(jd[0])
         let joinDateParsed = Date.parse(jd)
         return Math.round((now - joinDateParsed) / 86400000)
     }
