@@ -52,31 +52,31 @@ export default function SkillGraph() {
     // useState() and useEffect() allows for React to use await calls
     // (which is fetchStudentSkills) inside of a component
     useEffect(() => {
-      fetchStudentSkills();
-    }, []);
+        fetchStudentSkills()
+    }, [])
 
     // the actual call that pulls the student's data from the backend
     async function fetchStudentSkills() {
-      try {
-        await Axios.get(`http://localhost:3000/api/students/${studentId}/skills`)
-            .then((response) => {
-                // this anon function tells js what it should do with the response
-                let skillNames = []
-                let proficiencies = []
+        try {
+            await Axios.get(`http://localhost:3000/api/students/${studentId}/skills`)
+                .then((response) => {
+                    // this anon function tells js what it should do with the response
+                    let skillNames = []
+                    let proficiencies = []
 
-                for (const {skill_name, proficiency_level} of response.data) {
-                    skillNames.push(skill_name)
-                    proficiencies.push(proficiency_level)
-                }
+                    for (const {skill_name, proficiency_level} of response.data) {
+                        skillNames.push(skill_name)
+                        proficiencies.push(proficiency_level)
+                    }
 
-                // use the setters to update the values of skills and profs
-                setSkills(skillNames)
-                setProfs(proficiencies)
-            })
-      }
-      catch(err) {
-        console.error('Error fetching skills: ', err);
-      }
+                    // use the setters to update the values of skills and profs
+                    setSkills(skillNames)
+                    setProfs(proficiencies)
+                })
+        }
+        catch(err) {
+            console.error("Error fetching skills: ", err)
+        }
     }
     
     let radarData = {
@@ -101,4 +101,4 @@ export default function SkillGraph() {
     )
 }
 
-const studentId = '987654321';
+const studentId = "987654321"
