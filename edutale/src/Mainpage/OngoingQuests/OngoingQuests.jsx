@@ -1,4 +1,5 @@
 import * as USER from "../../USER.json"
+import OngoingQuestBlock from "./OngoingQuestBlock"
 import "./OngoingQuests.css"
 
 export default function OngoingQuests() {
@@ -6,18 +7,9 @@ export default function OngoingQuests() {
       <div className="oQuests">
         <h1> <u> Ongoing Quests </u></h1>
         <div className="oQuests-container">
-          <div className="oQuest-item">
-          <p> {USER.quests[0]} </p>
-            <img className='oQImg' src="/assets/html_icon.png" alt="Ongoing Quest" />    
-          </div>
-          <div className="oQuest-item">
-          <p> {USER.quests[1]} </p>
-            <img className='oQImg' src="/assets/html_icon.png" alt="Ongoing Quest" />    
-          </div>
-          <div className="oQuest-item">
-            <p> {USER.quests[2]} </p>
-            <img className='oQImg' src="/assets/html_icon.png" alt="Ongoing Quest" />      
-          </div>
+          <OngoingQuestBlock qName={USER.quests[0]} />
+          <OngoingQuestBlock qName={USER.quests[1]} />
+          <OngoingQuestBlock qName={USER.quests[2]} />
         </div>
       </div>
     )
