@@ -1,0 +1,37 @@
+
+.questBoard {
+    text-align: center;
+}
+
+.qBoard-container {
+    display: grid;
+    grid-template-columns: 15% 85%;
+    padding: 1px;
+}
+  
+.qBoard-item {
+    padding: 20px;
+    padding-left: 1px;
+    margin: 2px;
+    border-radius: 15px;
+    text-align: left;
+    white-space: pre;
+}
+  
+.q-desc {
+    margin: 10px;
+}
+
+.qImg {
+    max-width: 115px;
+    max-height: auto;
+}
+  
+.tag {
+    background-color: #bbcff5;
+    border-radius: 15px;
+    padding: 5px;
+    margin: 2px;
+    white-space: nowrap;
+}
+  

@@ -1,4 +1,5 @@
 import * as USER from "../../USER.json"
+import "./OngoingQuests.css"
 
 export default function OngoingQuests() {
     return (

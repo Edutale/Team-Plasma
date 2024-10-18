@@ -1,4 +1,5 @@
 import * as USER from "../../USER.json"
+import "./UserBar.css"
 
 export default function UserBar() {
     return (

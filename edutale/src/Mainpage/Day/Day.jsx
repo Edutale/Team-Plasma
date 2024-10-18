@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import Axios from "axios"
+import "./Day.css"
 
 const studentId = "111111111"
 

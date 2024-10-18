@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import { Chart as ChartJS, RadialLinearScale, PointElement, LineElement, Tooltip, Legend, Filler} from "chart.js"
 import { Bubble, Chart, Radar } from "react-chartjs-2"
 import Axios from "axios"
+import "./SkillGraph.css"
 
 ChartJS.register(RadialLinearScale, PointElement, LineElement, Tooltip, Legend, Filler)
 

@@ -1,4 +1,5 @@
 import * as myJson from "../../QUESTS.json"
+import "./QuestBoard.css"
 
 let QUESTS = myJson["quests"]
 
