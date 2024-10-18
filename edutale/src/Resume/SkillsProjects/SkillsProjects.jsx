@@ -35,7 +35,8 @@ export default function SkillsProjects () {
                         {fetchedSkills.map(item => (
                           <p key={item.key}> {item.name}: {item.level} XP </p>
                         ))}
-                      </>)
+                      </>
+                    )
                 })
         }
         catch(err) {
