@@ -13,12 +13,6 @@ async function getStudentSkills(studentId){
     return result.rows
 }
 
-async function getStudentSkillsOrdered(studentId){
-    const sql = await loadSqlFile('get_student_skills_ordered.sql')
-    const result = await db.query(sql, [studentId])
-    return result.rows
-}
-
 async function getStudentQuests(studentId){
     console.log('getStudentQuests called with studentId:', studentId)
     const sql = await loadSqlFile('get_student_quests.sql')
@@ -40,5 +34,5 @@ async function getStudentJoinDate(studentId){
 }
 
 module.exports = {
-    getStudentSkills, getStudentSkillsOrdered, getStudentQuests, getStudentJoinDate
+    getStudentSkills, getStudentQuests, getStudentJoinDate
 }
