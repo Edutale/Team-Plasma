@@ -6,21 +6,8 @@ create table if not exists Student(
     total_exp           int default 0,
     student_lvl         int default 1,
     student_money       int default 0,
+    reminder_freq       char(1) check(reminder_freq in ('D', 'W', 'M')),
     primary key         (STUDENT_ID)
-);
-
-create table if not exists Major(
-    MAJOR_ID        char(4),
-    major_name      varchar(100) not null,
-    primary key     (MAJOR_ID)
-);
-
-create table if not exists Student_Major(
-    student_id      char(9),
-    major_id        char(4),
-    primary key     (student_id, major_id),
-    foreign key     (student_id) references Student(STUDENT_ID) on delete cascade,
-    foreign key     (major_id) references Major(MAJOR_ID) on delete cascade
 );
 
 create table if not exists Skill(
@@ -44,15 +31,6 @@ create table if not exists Career(
     career_name         varchar(100),
     career_description  text,
     primary key         (CAREER_ID)
-);
-
-create table if not exists Major_Career(
-    major_id            char(4),
-    career_id           char(10),
-    relevance_score     float,
-    primary key         (major_id, career_id),
-    foreign key         (major_id) references Major(MAJOR_ID) on delete cascade,
-    foreign key         (career_id) references Career(CAREER_ID) on delete cascade
 );
 
 create table if not exists Career_Skill(
@@ -94,13 +72,6 @@ create table if not exists Quest_Resources(
     primary key     (quest_id, resource_id),
     foreign key     (quest_id) references Quest(QUEST_ID) on delete cascade,
     foreign key     (resource_id) references Resources(RESOURCE_ID) on delete cascade
-);
-
-create table if not exists Reminder_Frequency(
-    student_id      char(9),
-    frequency       varchar,
-    primary key     (student_id),
-    foreign key     (student_id) references Student(STUDENT_ID) on delete cascade
 );
 
 create table if not exists Inventory(

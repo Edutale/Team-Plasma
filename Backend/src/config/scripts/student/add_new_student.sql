@@ -1,3 +1,3 @@
 -- Adds a new student
-insert into Student(STUDENT_ID, Student_Name, Student_Email)
+insert into Student(student_id, student_name, student_email)
 values ($1, $2, $3);

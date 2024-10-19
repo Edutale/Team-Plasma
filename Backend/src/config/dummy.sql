@@ -8,19 +8,6 @@ insert into Student values
 ('123456789', 'Student', 'student@school.edu', '2024-09-01', 390, 4, 1),
 ('987654321', 'TeachersPet', 'teacherspet@school.edu', '2024-10-10', 570, 5, 2);
 
-insert into Major values
-('0000', 'Undecided'),
-('0001', 'Computer Science'),
-('0002', 'Computer Engineering');
-
-insert into Student_Major values
-('111111111', '0000'),
-('000000000', '0000'),
-('999999999', '0001'),
-('123456789', '0002'),
-('987654321', '0001'),
-('987654321', '0002');
-
 insert into Skill values
 ('00000001', 'CPP', 'CPP'),
 ('00000002', 'Java', 'Java'),
@@ -58,17 +45,6 @@ insert into Career values
 ('AAAAA11111', 'Software Engineering', 'You engineer software'),
 ('BA10E00025', 'Computer Security Systems', 'Peasant');
 
-insert into Major_Career values
-('0000', '0A0A0A0A0A', 10.0),
-('0000', 'AAAAA11111', 10.0),
-('0000', 'BA10E00025', 10.0),
-('0001', 'BA10E00025', 50.0),
-('0001', 'AAAAA11111', 50.0),
-('0001', '0A0A0A0A0A', 50.0),
-('0002', '0A0A0A0A0A', 25.7),
-('0002', 'AAAAA11111', 13.94),
-('0002', 'BA10E00025', 71.1);
-
 insert into Career_Skill values
 ('0A0A0A0A0A', '00000001', 15.4),
 ('0A0A0A0A0A', '00000002', 66.7),
@@ -98,12 +74,12 @@ insert into Student_Quest values
 ('123456789', 'QWERTY123456789', 'In Progress'),
 ('987654321', 'ASDFGH987654321', 'In Progress');
 
-INSERT INTO Resources VALUES
+insert into Resources value
 ('RES001', 'C++ Tutorial', 'https://www.cplusplus.com/doc/tutorial/', 'Comprehensive C++ programming tutorial'),
 ('RES002', 'Python Official Documentation', 'https://docs.python.org/3/', 'Official Python programming language documentation'),
 ('RES003', 'Introduction to Algorithms', 'https://mitpress.mit.edu/books/introduction-algorithms', 'Classic textbook on computer algorithms');
 
-INSERT INTO Quest_Resources VALUES
+insert into Quest_Resources values
 ('SWROKK2451WKF09', 'RES001'),
 ('21398SANWU83NNW', 'RES002'),
 ('74917hdasn219sW', 'RES003'),

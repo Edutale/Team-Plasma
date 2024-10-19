@@ -1,4 +1,4 @@
 -- get the join date of the student
-select Student_Join_Date
+select student_join_date
 from Student
 where student_id = $1;
