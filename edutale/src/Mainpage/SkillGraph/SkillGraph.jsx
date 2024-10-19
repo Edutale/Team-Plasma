@@ -48,7 +48,7 @@ export default function SkillGraph() {
     // [var, setter]
     // setter is a function that is used to update the value of var
     const [skills, setSkills] = useState()
-    const [profs, setXP] = useState()
+    const [skillXP, setXP] = useState()
 
     // useState() and useEffect() allows for React to use await calls
     // (which is fetchStudentSkills) inside of a component
