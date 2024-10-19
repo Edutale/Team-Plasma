@@ -74,7 +74,7 @@ insert into Student_Quest values
 ('123456789', 'QWERTY123456789', 'In Progress'),
 ('987654321', 'ASDFGH987654321', 'In Progress');
 
-insert into Resources value
+insert into Resources values
 ('RES001', 'C++ Tutorial', 'https://www.cplusplus.com/doc/tutorial/', 'Comprehensive C++ programming tutorial'),
 ('RES002', 'Python Official Documentation', 'https://docs.python.org/3/', 'Official Python programming language documentation'),
 ('RES003', 'Introduction to Algorithms', 'https://mitpress.mit.edu/books/introduction-algorithms', 'Classic textbook on computer algorithms');
