@@ -7,6 +7,7 @@ import OngoingQuests from "./OngoingQuests/OngoingQuests"
 import QuestBoard from "./QuestBoard/QuestBoard"
 import SkillGraph from "./SkillGraph/SkillGraph"
 import Userbar from "./UserBar/UserBar"
+import "./Mainpage.css"
 
 export default function Mainpage() {
     return (
