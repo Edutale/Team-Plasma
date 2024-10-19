@@ -2,26 +2,35 @@ import * as USER from "../../USER.json"
 import "./UserBar.css"
 
 export default function UserBar() {
+    const userWork = workVal(USER.level)
+    const userTop = topVal(USER.exp, userWork)
+    const userBot = botVal(USER.level)
+    const barProg = userTop / userBot
+
     return (
       <div className="userBar">
-        <h2> {USER.name} <progress className="lBar" value={barVal(USER.exp)} /> </h2>
-        <p> Level {USER.level} - {USER.exp} / {lvlCap(USER.level)} </p>
+        <h2> {USER.name} <progress className="lBar" value={barProg} /> </h2>
+        <p className="bar-text"> Level {USER.level} - {userTop} / {userBot}</p>
       </div>
     )
 }
 
+// calculates work
+function workVal(currLvl) {
+  if (currLvl <= 1) {
+    return 0
+  }
+  else {
+    return (10 * (currLvl - 2)) + 100 + workVal(currLvl - 1)
+  }
+}
+
+// calculates top
+function topVal(tot, work) {
+  return tot - work
+}
+
 // this formula can change later on
-function lvlCap(currLvl) {
-    return (1000 + 10*currLvl)
+function botVal(currLvl) {
+  return (10 * (currLvl - 1) + 100)
 }
-
-// calculates the percentage the user is towards leveling up
-function barVal(currExp) {
-    return (currExp / lvlCap(USER.level))
-}
-
-/* NOTE: When we implement the leveling system, there needs to
-   be a function that modulos the user's exp whenever they
-   reach the amount of exp to level up (and then level them
-   up, duh). This isn't implemented here yet, but the displays
-   for exp and levels is. */

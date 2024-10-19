@@ -1,19 +1,41 @@
 
 .questBoard {
     text-align: center;
+    height: 97%;
 }
 
 .qBoard-container {
     display: grid;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+    margin: 5px;
+    height: 83%;
+    gap: 23px;
+}
+
+.row-button {
+    border: solid black;
+    border-radius: 30px;
+    background-color: #f3f3f3;
+}
+
+.row-button:hover {
+    border-radius: 30px;
+    background-color: #d4d4d4;
+    cursor: pointer;
+}
+
+.row-button:active {
+    border-radius: 30px;
+    background-color: #f3f3f3;
+}
+
+.q-board-row {
+    display: grid;
     grid-template-columns: 15% 85%;
-    padding: 1px;
 }
   
 .qBoard-item {
-    padding: 20px;
     padding-left: 1px;
-    margin: 2px;
-    border-radius: 15px;
     text-align: left;
     white-space: pre;
 }

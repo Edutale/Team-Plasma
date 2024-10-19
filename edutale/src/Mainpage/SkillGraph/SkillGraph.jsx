@@ -32,6 +32,7 @@ let radarData_1 = {
 };
 
 const OPTIONS = {
+  responsive: true,
   scales: {
     r: {
       grid: {

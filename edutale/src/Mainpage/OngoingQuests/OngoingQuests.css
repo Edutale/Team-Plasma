@@ -3,22 +3,37 @@
     display: grid;
     grid-template-columns: 50% 50%;
     padding: 1px;
+    gap: 5px;
 }
   
 .oQuest-item {
-padding: 20px;
-margin: 2px;
-border: solid black;
-border-radius: 15px;
+    margin: 2px;
 }
 
 .oQuests {
-  text-align: center;
-  width: 100%
-  height: 50%;
+    text-align: center;
+    width: 100%
+    height: 50%;
 }
 
 .oQImg {
-  max-width: 80%;
-  max-height: auto;
+    max-width: 55%;
+    max-height: auto;
+}
+
+.block-button {
+  border: solid black;
+  border-radius: 30px;
+  background-color: #f3f3f3;
+}
+
+.block-button:hover {
+  border-radius: 30px;
+  background-color: #d4d4d4;
+  cursor: pointer;
+}
+
+.block-button:active {
+  border-radius: 30px;
+  background-color: #f3f3f3;
 }
