@@ -1,32 +1,19 @@
 import React, { useState, useEffect } from "react"
 import Axios from "axios"
+import "./SkillTiles.css"
 
-const studentId = "111111111"
-
-export default function SkillTiles() {
-    const [career, setCareer] = useState()
+export default function SkillTiles({career}) {
     const [skills, setSkills] = useState()
 
-    // effect for pulling student career
+    // need career as a dependency in order to ensure
+    // fetchCareerSkills happens after obtaining career val
     useEffect(() => {
         fetchCareerSkills()
-    }, [career])
+    },[career])
 
-    async function fetchCurrCareer() {
-        try {
-            await Axios.get(`http://localhost:3000/api/students/${studentId}/career`)
-                .then((response) => {
-                    setCareer(response.data[0].career_id)
-                })
-        }
-        catch(err) {
-            console.error("Error fetching career: ", err)
-        }
-    }
-
+    // get the skills associated with the fetched career
     async function fetchCareerSkills() {
         try {
-            await fetchCurrCareer()
             await Axios.get(`http://localhost:3000/api/careers/${career}/skills`)
                 .then((response) => {
                     let fetchedSkills = []
