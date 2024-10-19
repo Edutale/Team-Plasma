@@ -23,7 +23,7 @@ create table if not exists Student_Skill(
     skill_xp            int,
     primary key         (student_id, skill_id),
     foreign key         (student_id) references Student(STUDENT_ID) on delete cascade,
-    foreign key         (skill_id) references Skill(SKILL_ID)
+    foreign key         (skill_id) references Skill(SKILL_ID) on delete cascade
 );
 
 create table if not exists Career(
@@ -39,7 +39,7 @@ create table if not exists Career_Skill(
     importance_level        float,
     primary key             (career_id, skill_id),
     foreign key             (career_id) references Career(CAREER_ID) on delete cascade,
-    foreign key             (skill_id) references Skill(SKILL_ID)
+    foreign key             (skill_id) references Skill(SKILL_ID) on delete cascade
 );
 
 create table if not exists Quest(
@@ -47,6 +47,14 @@ create table if not exists Quest(
     quest_name          varchar(255),
     quest_description   text,
     primary key         (QUEST_ID)
+);
+
+create table if not exists Skill_Quest(
+    skill_id        char(8),
+    quest_id        char(15),
+    primary key     (skill_id, quest_id),
+    foreign key     (skill_id) references Skill(SKILL_ID) on delete cascade,
+    foreign key     (quest_id) references Quest(QUEST_ID) on delete cascade
 );
 
 create table if not exists Student_Quest(
