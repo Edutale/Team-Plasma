@@ -26,7 +26,7 @@ create table if not exists Student_Major(
 create table if not exists Skill(
     SKILL_ID            char(8),
     skill_name          varchar(100) not null,
-    skill_description   text not null
+    skill_description   text not null,
     primary key         (SKILL_ID)
 );
 
@@ -85,7 +85,7 @@ create table if not exists Resources(
     resource_name           text,
     resource_link           text,
     resource_description    text,
-    primary key             RESOURCE_ID
+    primary key             (RESOURCE_ID)
 );
 
 create table if not exists Quest_Resources(

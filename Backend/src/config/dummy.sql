@@ -1,7 +1,10 @@
 insert into Student values
 ('111111111', 'Human', 'some@email.com', '2024-10-16'),
 ('000000000', 'Person', 'not@an.email', '2024-09-30'),
-('999999999', 'Name', 'user@domain.com', '2024-09-07'),
+('999999999', 'Name', 'user@domain.com', '2024-09-07');
+
+-- with "correct" global XP, skill XP, and level
+insert into Student values
 ('123456789', 'Student', 'student@school.edu', '2024-09-01', 390, 4, 1),
 ('987654321', 'TeachersPet', 'teacherspet@school.edu', '2024-10-10', 570, 5, 2);
 
