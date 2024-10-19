@@ -18,13 +18,13 @@ export default function SkillsProjects () {
                 .then((response) => {
                     let fetchedSkills = []
 
-                    for (const {skill_id, skill_name, proficiency_level} of response.data) {
+                    for (const {skill_id, skill_name, skill_xp} of response.data) {
                         fetchedSkills.push({
-                            key: skill_id, name: skill_name, level: proficiency_level
+                            key: skill_id, name: skill_name, level: skill_xp
                         })
                     }
 
-                    // sort by proficiency, descending
+                    // sort by skill xp, descending
                     fetchedSkills.sort(function(a,b) {
                         return a.level - b.level
                     }).reverse()

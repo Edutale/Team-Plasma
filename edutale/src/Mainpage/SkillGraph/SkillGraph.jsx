@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { Chart as ChartJS, RadialLinearScale, PointElement, LineElement, Tooltip, Legend, Filler} from "chart.js"
-import { Bubble, Chart, Radar } from "react-chartjs-2"
+import { Radar } from "react-chartjs-2"
 import Axios from "axios"
 import "./SkillGraph.css"
 
@@ -48,7 +48,7 @@ export default function SkillGraph() {
     // [var, setter]
     // setter is a function that is used to update the value of var
     const [skills, setSkills] = useState()
-    const [profs, setProfs] = useState()
+    const [profs, setXP] = useState()
 
     // useState() and useEffect() allows for React to use await calls
     // (which is fetchStudentSkills) inside of a component
@@ -63,16 +63,16 @@ export default function SkillGraph() {
                 .then((response) => {
                     // this anon function tells js what it should do with the response
                     let skillNames = []
-                    let proficiencies = []
+                    let skillXP = []
 
-                    for (const {skill_name, proficiency_level} of response.data) {
+                    for (const {skill_name, skill_xp} of response.data) {
                         skillNames.push(skill_name)
-                        proficiencies.push(proficiency_level)
+                        skillXP.push(skill_xp)
                     }
 
                     // use the setters to update the values of skills and profs
                     setSkills(skillNames)
-                    setProfs(proficiencies)
+                    setXP(skillXP)
                 })
         }
         catch(err) {
@@ -85,7 +85,7 @@ export default function SkillGraph() {
       datasets: [
           {
               label: "All-Time",
-              data: profs,
+              data: skillXP,
               fill: true,
               backgroundColor: "rgba(111, 106, 252, 0.5)",
               borderColor: "rgb(173, 130, 255)",
