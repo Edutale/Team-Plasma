@@ -3,6 +3,9 @@ create table if not exists Student(
     student_name        varchar(100) not null,
     student_email       varchar,
     student_join_date   date,
+    total_exp           int default 0,
+    student_lvl         int default 1,
+    student_money       int default 0,
     primary key         (STUDENT_ID)
 );
 
@@ -30,7 +33,6 @@ create table if not exists Skill(
 create table if not exists Student_Skill(
     student_id          char(9),
     skill_id            char(8),
-    proficiency_level   float,
     primary key         (student_id, skill_id),
     foreign key         (student_id) references Student(STUDENT_ID) on delete cascade,
     foreign key         (skill_id) references Skill(SKILL_ID)
