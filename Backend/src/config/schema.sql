@@ -42,6 +42,17 @@ create table if not exists Career_Skill(
     foreign key             (skill_id) references Skill(SKILL_ID) on delete cascade
 );
 
+-- for now, students can only have one career because we haven't thought of
+-- bookshelf implementation. However, making this table now may help with
+-- scaling later.
+create table if not exists Student_Career(
+    student_id          char(9),
+    career_id           char(10),
+    primary key         (student_id, career_id),
+    foreign key         (career_id) references Career(CAREER_ID) on delete cascade,
+    foreign key         (student_id) references Student(STUDENT_ID) on delete cascade
+);
+
 create table if not exists Quest(
     QUEST_ID            char(15),
     quest_name          varchar(255),

@@ -13,6 +13,13 @@ async function getCareerQuestList(careerId) {
     return result.rows
 }
 
+
+async function getCareerSkills(careerId) {
+    const sql = await loadSqlFile('get_career_skills.sql')
+    const result = await db.query(sql, [careerId])
+    return result.rows
+}
+
 module.exports = {
-    getCareerQuestList
+    getCareerQuestList, getCareerSkills
 }

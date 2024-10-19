@@ -33,6 +33,12 @@ async function getStudentJoinDate(studentId){
     return result.rows
 }
 
+async function getStudentCareer(studentId){
+    const sql = await loadSqlFile('get_student_career.sql')
+    const result = await db.query(sql, [studentId])
+    return result.rows
+}
+
 module.exports = {
-    getStudentSkills, getStudentQuests, getStudentJoinDate
+    getStudentSkills, getStudentQuests, getStudentJoinDate, getStudentCareer
 }
