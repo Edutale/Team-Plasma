@@ -11,3 +11,5 @@ drop table Student_Quest;
 drop table Resources;
 drop table Reminder_Frequency;
 drop table Quest_Resources;
+drop table Student_Inventory;
+drop table Inventory;

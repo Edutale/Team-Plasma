@@ -33,6 +33,7 @@ create table if not exists Skill(
 create table if not exists Student_Skill(
     student_id          char(9),
     skill_id            char(8),
+    skill_xp            int,
     primary key         (student_id, skill_id),
     foreign key         (student_id) references Student(STUDENT_ID) on delete cascade,
     foreign key         (skill_id) references Skill(SKILL_ID)
