@@ -13,6 +13,24 @@ async function getQuestResources(questId) {
     return result.rows
 }
 
+async function getAllQuests(){
+    const sql = await loadSqlFile('get_all_quests.sql')
+    const result = await db.query(sql)
+    return result.rows
+}
+
+async function getQuestSkills(questId){
+    const sql = await loadSqlFile('get_quest_skill.sql')
+    const result = await db.query(sql, [questId])
+    return result.rows
+}
+
+async function getQuestDetails(questId){
+    const sql = await loadSqlFile('get_quest_details.sql')
+    const result = await db.query(sql, [questId])
+    return result.rows[0]
+}
+
 module.exports = {
-    getQuestResources
+    getQuestResources, getAllQuests, getQuestSkills, getQuestDetails
 }
