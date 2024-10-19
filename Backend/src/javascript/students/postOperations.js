@@ -17,9 +17,9 @@ async function addStudentQuest(studentId, questId, currStatus){
     await db.query(sql, [studentId, questId, currStatus])
 }
 
-async function addNewStudentSkill(studentId, skillId, proficiencyLevel = null){
+async function addNewStudentSkill(studentId, skillId, skillXP = null){
     const sql = await loadSqlFile('add_new_student_skill.sql')
-    await db.query(sql, [studentId, skillId, proficiencyLevel])
+    await db.query(sql, [studentId, skillId, skillXP])
 }
 
 module.exports = {

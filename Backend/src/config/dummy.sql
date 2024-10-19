@@ -1,22 +1,12 @@
 insert into Student values
 ('111111111', 'Human', 'some@email.com', '2024-10-16'),
 ('000000000', 'Person', 'not@an.email', '2024-09-30'),
-('999999999', 'Name', 'user@domain.com', '2024-09-07'),
-('123456789', 'Student', 'student@school.edu', '2024-09-01'),
-('987654321', 'TeachersPet', 'teacherspet@school.edu', '2024-10-10');
+('999999999', 'Name', 'user@domain.com', '2024-09-07');
 
-insert into Major values
-('0000', 'Undecided'),
-('0001', 'Computer Science'),
-('0002', 'Computer Engineering');
-
-insert into Student_Major values
-('111111111', '0000'),
-('000000000', '0000'),
-('999999999', '0001'),
-('123456789', '0002'),
-('987654321', '0001'),
-('987654321', '0002');
+-- with "correct" global XP, skill XP, and level
+insert into Student values
+('123456789', 'Student', 'student@school.edu', '2024-09-01', 390, 4, 1),
+('987654321', 'TeachersPet', 'teacherspet@school.edu', '2024-10-10', 570, 5, 2);
 
 insert into Skill values
 ('00000001', 'CPP', 'CPP'),
@@ -31,40 +21,29 @@ insert into Skill values
 ('00000010', 'SDL Library', 'Libbing');
 
 insert into Student_Skill values
-('111111111', '00000001', 17.2),
-('111111111', '00000010', 9.9),
-('111111111', '00000006', 11.23),
-('111111111', '00000007', 4.5),
-('000000000', '00000003', 2.1),
-('000000000', '00000008', 2.9),
-('999999999', '00000009', 99.9),
-('999999999', '00000008', 41.5),
-('999999999', '00000007', 13.9),
-('999999999', '00000004', 16.8),
-('123456789', '00000002', 20.2),
-('123456789', '00000005', 10.1),
-('123456789', '00000007', 15.15),
-('987654321', '00000001', 50.0),
-('987654321', '00000007', 50.0),
-('987654321', '00000006', 50.0),
-('987654321', '00000005', 50.0),
-('987654321', '00000010', 50.0);
+('111111111', '00000001', 120),
+('111111111', '00000010', 100),
+('111111111', '00000006', 150),
+('111111111', '00000007', 400),
+('000000000', '00000003', 300),
+('000000000', '00000008', 200),
+('999999999', '00000009', 900),
+('999999999', '00000008', 460),
+('999999999', '00000007', 400),
+('999999999', '00000004', 1200),
+('123456789', '00000002', 100),
+('123456789', '00000005', 100),
+('123456789', '00000007', 100),
+('987654321', '00000001', 100),
+('987654321', '00000007', 100),
+('987654321', '00000006', 100),
+('987654321', '00000005', 100),
+('987654321', '00000010', 100);
 
 insert into Career values
 ('0A0A0A0A0A', 'DevOps', 'Some description'),
 ('AAAAA11111', 'Software Engineering', 'You engineer software'),
 ('BA10E00025', 'Computer Security Systems', 'Peasant');
-
-insert into Major_Career values
-('0000', '0A0A0A0A0A', 10.0),
-('0000', 'AAAAA11111', 10.0),
-('0000', 'BA10E00025', 10.0),
-('0001', 'BA10E00025', 50.0),
-('0001', 'AAAAA11111', 50.0),
-('0001', '0A0A0A0A0A', 50.0),
-('0002', '0A0A0A0A0A', 25.7),
-('0002', 'AAAAA11111', 13.94),
-('0002', 'BA10E00025', 71.1);
 
 insert into Career_Skill values
 ('0A0A0A0A0A', '00000001', 15.4),
@@ -95,12 +74,12 @@ insert into Student_Quest values
 ('123456789', 'QWERTY123456789', 'In Progress'),
 ('987654321', 'ASDFGH987654321', 'In Progress');
 
-INSERT INTO Resources VALUES
+insert into Resources values
 ('RES001', 'C++ Tutorial', 'https://www.cplusplus.com/doc/tutorial/', 'Comprehensive C++ programming tutorial'),
 ('RES002', 'Python Official Documentation', 'https://docs.python.org/3/', 'Official Python programming language documentation'),
 ('RES003', 'Introduction to Algorithms', 'https://mitpress.mit.edu/books/introduction-algorithms', 'Classic textbook on computer algorithms');
 
-INSERT INTO Quest_Resources VALUES
+insert into Quest_Resources values
 ('SWROKK2451WKF09', 'RES001'),
 ('21398SANWU83NNW', 'RES002'),
 ('74917hdasn219sW', 'RES003'),
