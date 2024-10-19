@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const {
     getQuestResources
-} = require("../javascript/quests/getOperations")
+} = require("../javascript/quests/questsGet")
 
 // get all resources corresponding to a quest.
 router.get("/:id/resources", async(req, res) => {

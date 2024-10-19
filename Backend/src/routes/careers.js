@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const {
     getCareerQuestList
-} = require("../javascript/careers/getOperations")
+} = require("../javascript/careers/careersGet")
 
 // get all skills and corresponding quests given a career
 router.get("/:id/quests", async(req, res) => {
