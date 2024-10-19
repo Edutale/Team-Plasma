@@ -13,7 +13,7 @@ export default function CheckIn() {
           <CalendarHolder/>
           
           <h1 className="header"> <u> Schedule </u> </h1>
-          <div className="pane-2-container">
+          <div className="schedule-container">
             <Schedule />
             <ChangeFreq />
           </div>

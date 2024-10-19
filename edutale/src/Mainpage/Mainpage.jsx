@@ -14,10 +14,12 @@ export default function Mainpage() {
         <div className="pane-item">
           <Day />
           <SkillGraph />
-          <Userbar />
           <div className="pane-2-container">
             <div className="pane-2-item">
-              <Avatar />
+              <div className="user-container">
+                <Avatar />
+                <Userbar />
+              </div>
             </div>
             <div className="pane-2-item">
               <OngoingQuests />

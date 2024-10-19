@@ -13,11 +13,11 @@ export default function Inventory() {
           <h1 className="header"> <u> {USER.name} </u> </h1>
           <Equipped />
 
-          <div className="pane-2-container">
-            <div className="pane-2-item">
+          <div className="lower-inv-container">
+            <div className="lower-inv-item">
               <UserBar className={"user-bar"}/>
             </div>
-            <div className="pane-2-item">
+            <div className="lower-inv-item">
               <Money />
             </div>
           </div>

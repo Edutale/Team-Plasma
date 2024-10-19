@@ -3,7 +3,7 @@ import * as USER from "../../USER.json"
 export default function Equipped() {
     return (
         <>
-          <img className="avatar" src={USER.avatar} alt="avatar" />
+          <img className="inv-avatar" src={USER.avatar} alt="avatar" />
           <div className="equip-grid">
             <div className="grid-item">
               <img className="grid-img" src={USER.armor} alt="armor" />

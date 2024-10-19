@@ -7,9 +7,9 @@ export default function OngoingQuests() {
       <div className="oQuests">
         <h1> <u> Ongoing Quests </u></h1>
         <div className="oQuests-container">
-          <OngoingQuestBlock qName={USER.quests[0]} />
-          <OngoingQuestBlock qName={USER.quests[1]} />
-          <OngoingQuestBlock qName={USER.quests[2]} />
+          <button className="block-button"><OngoingQuestBlock qName={USER.quests[0]} /></button>
+          <button className="block-button"><OngoingQuestBlock qName={USER.quests[1]} /></button>
+          <button className="block-button"><OngoingQuestBlock qName={USER.quests[2]} /></button>
         </div>
       </div>
     )
