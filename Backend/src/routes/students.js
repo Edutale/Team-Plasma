@@ -1,17 +1,17 @@
 const express = require('express')
 const router = express.Router()
 const{
-    getStudentSkills, getStudentQuests, getStudentJoinDate
-} = require('../javascript/students/getOperations')
+    getStudentSkills, getStudentQuests, getStudentJoinDate, getStudentCareer
+} = require('../javascript/students/studentsGet')
 const{
     updateSkillXP,
-} = require('../javascript/students/putOperations')
+} = require('../javascript/students/studentsPut')
 const{
     deleteStudentQuest,
-} = require('../javascript/students/deleteOperations')
+} = require('../javascript/students/studentsDelete')
 const{
     addNewStudent, addStudentQuest, addNewStudentSkill,
-} = require('../javascript/students/postOperations')
+} = require('../javascript/students/studentsPost')
 
 // Get student skills
 router.get('/:id/skills', async(req, res)=>{
@@ -37,6 +37,16 @@ router.get('/:id/quests', async(req, res)=>{
 router.get('/:id', async(req, res)=>{
     try{
         const joindate = await getStudentJoinDate(req.params.id)
+        res.json(joindate)
+    } catch(err){
+        res.status(500).json({error: err.message})
+    }
+})
+
+// Get student career
+router.get('/:id/career', async(req, res)=>{
+    try{
+        const joindate = await getStudentCareer(req.params.id)
         res.json(joindate)
     } catch(err){
         res.status(500).json({error: err.message})
