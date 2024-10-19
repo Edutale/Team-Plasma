@@ -28,8 +28,6 @@
   border-radius: 15px;
   min-width: 550px;
   min-height: 550px;
-  display: grid;
-  grid-template-rows: auto 1fr;
 }
 
 .disabled-link {

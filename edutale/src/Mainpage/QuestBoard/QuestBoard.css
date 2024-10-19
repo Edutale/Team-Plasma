@@ -10,6 +10,8 @@
     margin: 5px;
     height: 83%;
     gap: 23px;
+    display: grid;
+    grid-template-rows: auto 1fr;
 }
 
 .row-button {
