@@ -37,3 +37,33 @@
   border-radius: 30px;
   background-color: #f3f3f3;
 }
+
+.o-quest-footer {
+  text-align: right;
+}
+
+.modal-footer-button {
+  margin: 2px;
+  margin-top: 10px;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 3px;
+  color: black;
+  background: #f3f3f3;
+  font-weight: 600;
+  line-height: 28px;
+  transition-duration: .15s;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+}
+
+.close:hover{
+  background: rgb(253, 124, 124);
+}
+
+.save:hover{
+  background: rgb(124, 253, 152);
+}
+
+
+

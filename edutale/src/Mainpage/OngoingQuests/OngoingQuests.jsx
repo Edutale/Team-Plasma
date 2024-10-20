@@ -1,6 +1,8 @@
 import * as USER from "../../USER.json"
 import OngoingQuestBlock from "./OngoingQuestBlock"
+import OngoingQuestModal from "./OngoingQuestModal"
 import React, { useState, useEffect } from "react"
+import Popup from 'reactjs-popup'
 import Axios from "axios"
 
 import "./OngoingQuests.css"
@@ -9,7 +11,6 @@ const studentId = "111111111"
 
 export default function OngoingQuests() {
     const [quests, setQuests] = useState()
-
     useEffect(() => {
         fetchStudentQuests()
     }, [])
@@ -29,7 +30,26 @@ export default function OngoingQuests() {
                     setQuests(
                       <>
                         {questNames.map(item => (
-                          <button className="block-button"><OngoingQuestBlock qName={item.name} /></button>
+                          <Popup trigger= {
+                            <button className="block-button">
+                              <OngoingQuestBlock qName={item.name} />
+                            </button>}
+                            modal nested>{
+                              close => (
+                                <div className="o-quest-modal">
+                                  <OngoingQuestModal qName={item.name} />
+                                  <div className="o-quest-footer">
+                                    <button className="modal-footer-button close" onClick={() => close()}>
+                                      Close
+                                    </button>
+                                    <button className="modal-footer-button save" onClick={() => close()}>
+                                      Save
+                                    </button>
+                                  </div>
+                                </div>
+                              )
+                            }                           
+                          </Popup>
                         ))}
                       </>
                     )
