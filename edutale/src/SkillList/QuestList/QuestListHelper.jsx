@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react"
 export default function QuestListHelper({quests, currSkill}) {
     return (
         <>
+        {/* ensures below code will run only when quests and currSkill are defined */}
         {quests && currSkill && (
             <>
               {quests.map(item => (
