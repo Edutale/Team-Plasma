@@ -34,6 +34,9 @@ export default function SkillList() {
         <SkillTiles career={career} onSetSkill={setCurrSkill}/>
       </div>
       <div className="pane-item">
+        {currSkill === "" && 
+            <p> Click a skill on the left to see available quests! </p>
+        }
         <QuestList career={career} currSkill={currSkill}/>
       </div>
     </div>
