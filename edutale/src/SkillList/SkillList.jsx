@@ -11,11 +11,11 @@ export default function SkillList() {
     const [currSkill, setCurrSkill] = useState("")
     
     useEffect(() => {
-        fetchCurrCareer(setCareer)
+        fetchCurrCareer()
     }, [])
 
     // get the career of the student, will pass this to child components
-    async function fetchCurrCareer(setCareer) {
+    async function fetchCurrCareer() {
         try {
             await Axios.get(`http://localhost:3000/api/students/${studentId}/career`)
                 .then((response) => {
