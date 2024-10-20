@@ -16,18 +16,12 @@ export default function SkillTiles({career, onSetSkill}) {
         try {
             await Axios.get(`http://localhost:3000/api/careers/${career}/skills`)
                 .then((response) => {
-                    let fetchedSkills = []
-
-                    for (const {skill_id, skill_name} of response.data) {
-                        fetchedSkills.push({
-                            key: skill_id, name: skill_name
-                        })
-                    }
-
                     setSkills(
                         <>
-                          {fetchedSkills.map(item => (
-                            <button key={item.key} onClick={changeSkill} value={item.name}> {item.name} </button>
+                          {response.data.map(item => (
+                            <button key={item.skill_id} onClick={changeSkill} value={item.skill_name}>
+                              {item.skill_name}
+                            </button>
                           ))}
                         </>
                     )  
