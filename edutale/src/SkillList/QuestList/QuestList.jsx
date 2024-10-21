@@ -8,7 +8,6 @@ export default function QuestList({career, currSkill}) {
     // useState here is false in order to prevent the helper component
     // from rendering before quests has been obtained
     const [quests, setQuests] = useState(false)
-    const [resources, setResources] = useState()
 
     useEffect(() => {
         fetchQuests()
