@@ -7,6 +7,8 @@
     width: 100%;
     height: 53%;
     justify-content: flex-end;
+    display: grid;
+    grid-template-rows: auto 1fr;
 }
   
 .pane-2-item {
