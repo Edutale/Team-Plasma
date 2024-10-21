@@ -23,9 +23,9 @@ export default function Day() {
                 .then((response) => {
                     setJoinDate(dayNum(response.data[0].student_join_date))
                 })
-      }
+        }
         catch(err) {
-            console.error('Error fetching skills: ', err);
+            console.error("Error fetching skills: ", err)
         }
     }
 

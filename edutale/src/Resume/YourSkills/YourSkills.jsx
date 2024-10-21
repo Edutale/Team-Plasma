@@ -3,7 +3,7 @@ import Axios from "axios"
 
 const studentId = "111111111"
 
-export default function SkillsProjects () {
+export default function YourSkills () {
     const [skills, setSkills] = useState()
     const [projects, setProjects] = useState()
     
@@ -50,20 +50,6 @@ export default function SkillsProjects () {
           <h1 className="header-centered"> <u> Your Skills </u> </h1>
           {skills}
         </div>
-
-        <div>
-          <h1 className="header-centered"> <u> Your Projects </u> </h1>
-          {listProjects()}
-
-        </div>
       </>
     )
-}
-
-function listProjects() {
-    // same as listSkills, but with projects. Should have the
-    // project name be a header or p, then use ul elements to
-    // list out every related skill for that project.
-
-    return "listProjects placeholder"
 }
