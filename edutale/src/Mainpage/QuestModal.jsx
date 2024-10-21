@@ -1,8 +1,8 @@
 export default function QuestModal(props) {
     return (
         <div className="quest-content">
-            {props.qName} stuff
+            <h3> {props.qName} stuff </h3>
+            <p> {props.qDesc} </p>
         </div>
-
     )
 }

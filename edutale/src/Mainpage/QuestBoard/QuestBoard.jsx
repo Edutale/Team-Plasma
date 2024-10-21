@@ -44,7 +44,7 @@ export default function QuestBoard() {
                                 ⨯
                                 </button>
                               </div>
-                              <QuestModal qName={item.name} />
+                              <QuestModal qName={item.name} qDesc={item.desc} />
                               <div className="quest-footer">
                                 <button className="modal-footer-button accept" onClick={() => close()}>
                                   Accept Quest
