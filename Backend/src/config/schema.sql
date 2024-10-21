@@ -53,6 +53,13 @@ create table if not exists Student_Career(
     foreign key         (student_id) references Student(STUDENT_ID) on delete cascade
 );
 
+create table if not exists Student_Checkin (
+    student_id          char(9),
+    checkin_date        date,
+    primary key         (student_id, checkin_date),
+    foreign key         (student_id) references Student(STUDENT_ID) on delete cascade
+);
+
 create table if not exists Quest(
     QUEST_ID            char(15),
     quest_name          varchar(255),

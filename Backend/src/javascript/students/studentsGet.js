@@ -39,6 +39,12 @@ async function getStudentCareer(studentId){
     return result.rows
 }
 
+async function getStudentCheckedDays(studentId){
+    const sql = await loadSqlFile('get_student_checked_days.sql')
+    const result = await db.query(sql, [studentId])
+    return result.rows
+}
+
 module.exports = {
-    getStudentSkills, getStudentQuests, getStudentJoinDate, getStudentCareer
+    getStudentSkills, getStudentQuests, getStudentJoinDate, getStudentCareer, getStudentCheckedDays
 }

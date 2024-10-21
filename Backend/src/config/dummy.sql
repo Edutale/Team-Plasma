@@ -1,5 +1,5 @@
 insert into Student values
-('111111111', 'Human', 'some@email.com', '2024-10-16'),
+('111111111', 'Human', 'some@email.com', '2024-10-01'),
 ('000000000', 'Person', 'not@an.email', '2024-09-30'),
 ('999999999', 'Name', 'user@domain.com', '2024-09-07');
 
@@ -64,6 +64,12 @@ insert into Student_Career values
 ('111111111', '0A0A0A0A0A'),
 ('000000000', 'AAAAA11111'),
 ('999999999', 'BA10E00025');
+
+insert into Student_Checkin values
+('111111111', '2024-10-20'),
+('111111111', '2024-10-15'),
+('111111111', '2024-10-14'),
+('111111111', '2024-10-12');
 
 insert into Quest values
 ('SWROKK2451WKF09', 'C++ 1', 'To learn the basic syntax of C++'),
