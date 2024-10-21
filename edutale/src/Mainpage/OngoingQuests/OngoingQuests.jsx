@@ -37,13 +37,18 @@ export default function OngoingQuests() {
                             modal nested>{
                               close => (
                                 <div className="o-quest-modal">
+                                  <div className="quest-header">
+                                    <button className="modal-header-button close" onClick={() => close()}>
+                                      ⨯
+                                    </button>
+                                  </div>
                                   <QuestModal qName={item.name} />
                                   <div className="o-quest-footer">
-                                    <button className="modal-footer-button close" onClick={() => close()}>
-                                      Close
+                                    <button className="modal-footer-button quit" onClick={() => close()}>
+                                      Quit Quest
                                     </button>
-                                    <button className="modal-footer-button save" onClick={() => close()}>
-                                      Save
+                                    <button className="modal-footer-button complete" onClick={() => close()}>
+                                      Complete Quest
                                     </button>
                                   </div>
                                 </div>

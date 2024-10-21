@@ -78,10 +78,6 @@
     transition-timing-function: cubic-bezier(.4,0,.2,1);
 }
   
-.close:hover{
-    background: rgb(253, 124, 124);
-}
-  
-.save:hover{
+.accept:hover{
     background: rgb(124, 253, 152);
 }

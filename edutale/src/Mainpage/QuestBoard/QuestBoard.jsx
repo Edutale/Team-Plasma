@@ -39,13 +39,15 @@ export default function QuestBoard() {
                         modal nested>{
                           close => (
                             <div className="quest-modal">
+                              <div className="quest-header">
+                                <button className="modal-header-button close" onClick={() => close()}>
+                                ⨯
+                                </button>
+                              </div>
                               <QuestModal qName={item.name} />
                               <div className="quest-footer">
-                                <button className="modal-footer-button close" onClick={() => close()}>
-                                  Close
-                                </button>
-                                <button className="modal-footer-button save" onClick={() => close()}>
-                                  Save
+                                <button className="modal-footer-button accept" onClick={() => close()}>
+                                  Accept Quest
                                 </button>
                               </div>
                             </div>

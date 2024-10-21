@@ -59,3 +59,30 @@
 [data-popup='tooltip'].popup-overlay {
   background: transparent;
 }
+
+.quest-header {
+  text-align: left;
+}
+
+.modal-header-button {
+  margin: 2px;
+  margin-top: 1px;
+  padding: 0px;
+  padding-left: 6px;
+  padding-right: 6px;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 3px;
+  color: black;
+  background: #f3f3f3;
+  font-weight: 300;
+  font-size: larger;
+  line-height: 28px;
+  transition-duration: .15s;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+}
+
+.close:hover{
+  background: #d4d4d4;
+}
