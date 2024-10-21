@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const{
-    getStudentSkills, getStudentQuests, getStudentJoinDate, getStudentCareer
+    getStudentSkills, getStudentQuests, getStudentJoinDate, getStudentCareer, getStudentCheckedDays
 } = require('../javascript/students/studentsGet')
 const{
     updateSkillXP,
@@ -53,6 +53,16 @@ router.get('/:id/career', async(req, res)=>{
     }
 })
 
+//get student checked in days
+router.get('/:id/checkin', async(req, res)=>{
+    try{
+        const joindate = await getStudentCheckedDays(req.params.id)
+        res.json(joindate)
+    } catch(err){
+        res.status(500).json({error: err.message})
+    }
+})
+
 // update skill XP
 router.put('/:id/skills/:skillId', async(req, res)=>{
     try{
@@ -98,6 +108,7 @@ router.post('/:id/quests', async(req, res)=>{
     }
 })
 
+// add new student skill
 router.post('/:id/skills', async(req, res)=>{
     try{
         const {skillId, skillXP} = req.body
