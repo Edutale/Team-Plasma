@@ -111,6 +111,8 @@ insert into Resources values
 
 insert into Quest_Resources values
 ('SWROKK2451WKF09', 'RES101'),
+('SWROKK2451WKF09', 'RES102'),
+('SWROKK2451WKF09', 'RES103'),
 ('21398SANWU83NNW', 'RES002'),
 ('74917hdasn219sW', 'RES003'),
 ('QWERTY123456789', 'RES003'),

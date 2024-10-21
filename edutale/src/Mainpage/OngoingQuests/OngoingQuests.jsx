@@ -18,18 +18,12 @@ export default function OngoingQuests() {
         try {
             await Axios.get(`http://localhost:3000/api/students/${studentId}/quests`)
                 .then((response) => {
-                    let questNames = []
-
-                    for (const {quest_name} of response.data) {
-                        questNames.push({
-                          name: quest_name
-                        })
-                    }
-
                     setQuests(
                       <>
-                        {questNames.map(item => (
-                          <button className="block-button"><OngoingQuestBlock qName={item.name} /></button>
+                        {response.data.map(item => (
+                          <button className="block-button">
+                            <OngoingQuestBlock qName={item.quest_name} />
+                          </button>
                         ))}
                       </>
                     )
