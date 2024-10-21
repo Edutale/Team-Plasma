@@ -41,7 +41,7 @@ export default function QuestBoard() {
                             <div className="quest-modal">
                               <div className="quest-header">
                                 <button className="modal-header-button close" onClick={() => close()}>
-                                ⨯
+                                  ⨯
                                 </button>
                               </div>
                               <QuestModal qName={item.name} qDesc={item.desc} />
