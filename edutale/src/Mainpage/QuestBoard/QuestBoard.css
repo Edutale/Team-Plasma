@@ -15,13 +15,13 @@
 }
 
 .row-button {
-    border: solid black;
-    border-radius: 30px;
+    border: 2px solid black;
+    border-radius: 25px;
     background-color: #f3f3f3;
 }
 
 .row-button:hover {
-    border-radius: 30px;
+    border-radius: 25px;
     background-color: #d4d4d4;
     cursor: pointer;
 }

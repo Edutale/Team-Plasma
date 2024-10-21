@@ -22,13 +22,13 @@
 }
 
 .block-button {
-  border: solid black;
-  border-radius: 30px;
+  border: 2px solid black;
+  border-radius: 25px;
   background-color: #f3f3f3;
 }
 
 .block-button:hover {
-  border-radius: 30px;
+  border-radius: 25px;
   background-color: #d4d4d4;
   cursor: pointer;
 }
@@ -36,33 +36,6 @@
 .block-button:active {
   border-radius: 30px;
   background-color: #f3f3f3;
-}
-
-.quest-header {
-  text-align: left;
-}
-
-.modal-header-button {
-  margin: 2px;
-  margin-top: 1px;
-  padding: 0px;
-  padding-left: 6px;
-  padding-right: 6px;
-  cursor: pointer;
-  border: 1px solid black;
-  border-radius: 3px;
-  color: black;
-  background: #f3f3f3;
-  font-weight: 300;
-  font-size: larger;
-  line-height: 28px;
-  transition-duration: .15s;
-  transition-property: all;
-  transition-timing-function: cubic-bezier(.4,0,.2,1);
-}
-
-.close-o:hover{
-  background: #d4d4d4;
 }
 
 .o-quest-footer {

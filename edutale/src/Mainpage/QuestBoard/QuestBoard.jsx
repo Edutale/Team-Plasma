@@ -39,7 +39,7 @@ export default function QuestBoard() {
                         modal nested>{
                           close => (
                             <div className="quest-modal">
-                              <div className="quest-header">
+                              <div className="modal-header">
                                 <button className="modal-header-button close" onClick={() => close()}>
                                   ⨯
                                 </button>

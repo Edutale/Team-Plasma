@@ -38,7 +38,7 @@ export default function OngoingQuests() {
                             modal nested>{
                               close => (
                                 <div className="o-quest-modal">
-                                  <div className="quest-header">
+                                  <div className="modal-header">
                                     <button className="modal-header-button close" onClick={() => close()}>
                                       ⨯
                                     </button>
