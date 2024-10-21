@@ -2,7 +2,7 @@ import * as USER from "../../USER.json"
 import OngoingQuestBlock from "./OngoingQuestBlock"
 import QuestModal from "../QuestModal"
 import React, { useState, useEffect } from "react"
-import Popup from 'reactjs-popup'
+import Popup from "reactjs-popup"
 import Axios from "axios"
 
 import "./OngoingQuests.css"

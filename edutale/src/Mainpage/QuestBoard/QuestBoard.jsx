@@ -2,7 +2,7 @@ import * as myJson from "../../QUESTS.json"
 import QuestRow from './QuestRow'
 import QuestModal from "../QuestModal"
 import React, { useState, useEffect } from "react"
-import Popup from 'reactjs-popup'
+import Popup from "reactjs-popup"
 import Axios from "axios"
 
 import "./QuestBoard.css"
