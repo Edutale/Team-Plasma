@@ -1,6 +1,6 @@
 import * as USER from "../../USER.json"
 import OngoingQuestBlock from "./OngoingQuestBlock"
-import OngoingQuestModal from "./OngoingQuestModal"
+import QuestModal from "../QuestModal"
 import React, { useState, useEffect } from "react"
 import Popup from 'reactjs-popup'
 import Axios from "axios"
@@ -37,7 +37,7 @@ export default function OngoingQuests() {
                             modal nested>{
                               close => (
                                 <div className="o-quest-modal">
-                                  <OngoingQuestModal qName={item.name} />
+                                  <QuestModal qName={item.name} />
                                   <div className="o-quest-footer">
                                     <button className="modal-footer-button close" onClick={() => close()}>
                                       Close

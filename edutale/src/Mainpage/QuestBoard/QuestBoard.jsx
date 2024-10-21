@@ -1,22 +1,72 @@
 import * as myJson from "../../QUESTS.json"
 import QuestRow from './QuestRow'
+import QuestModal from "../QuestModal"
 import React, { useState, useEffect } from "react"
+import Popup from 'reactjs-popup'
 import Axios from "axios"
+
 import "./QuestBoard.css"
 
 let QUESTS = myJson["quests"]
 /* Left the first quest row using data variables and the rest with strings 
  * to reflect both functionalities.  Changing to pull from database in future.*/
 export default function QuestBoard() {
+    const [quests, setQuests] = useState()
+    useEffect(() => {
+        fetchQuests()
+    }, [])
+
+    async function fetchQuests() {
+        try {
+          await Axios.get(`http://localhost:3000/api/quests`)
+            .then((response) => {
+                let questData = []
+
+                for (const {quest_name, quest_description} of response.data.slice(0, 5)) {
+                    questData.push({
+                        name: quest_name,
+                        desc: quest_description
+                    })
+                }
+
+                setQuests(
+                  <>
+                    {questData.map(item => (
+                      <Popup trigger= {
+                        <button className="row-button">
+                          <QuestRow img={QUESTS[0].img} qName={item.name} desc={item.desc} />
+                        </button>}
+                        modal nested>{
+                          close => (
+                            <div className="quest-modal">
+                              <QuestModal qName={item.name} />
+                              <div className="quest-footer">
+                                <button className="modal-footer-button close" onClick={() => close()}>
+                                  Close
+                                </button>
+                                <button className="modal-footer-button save" onClick={() => close()}>
+                                  Save
+                                </button>
+                              </div>
+                            </div>
+                          )
+                        }                           
+                      </Popup>
+                    ))}
+                  </>
+                )  
+            })
+        }
+        catch(err) {
+            console.error("Error fetching quests: ", err)
+        }  
+    }
+
     return (
       <div className="questBoard">
         <h1><u> Quest Board </u></h1>
         <div className="qBoard-container">
-          <button className="row-button"><QuestRow img={QUESTS[0].img} qName={QUESTS[0].qName} desc={QUESTS[0].desc} /></button>
-          <button className="row-button"><QuestRow img="../../assets/cpp.png" qName="C++2" desc="A course to learn more fundamentals of C++..." /></button>
-          <button className="row-button"><QuestRow img="../../assets/cpp.png" qName="C++3" desc="A course to master C++..." /></button>
-          <button className="row-button"><QuestRow img="../../assets/cpp.png" qName="C++1" desc="A course to learn LOL fundamentals of C++..." /></button>
-          <button className="row-button"><QuestRow img="../../assets/cpp.png" qName="C++1" desc="A course to learn LOL fundamentals of C++..." /></button>
+          {quests}
         </div>
       </div>
     )
