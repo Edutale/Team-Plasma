@@ -2,47 +2,38 @@
 
 import ReactDOM from "react-dom"
 import { useState } from "react"
+import Popup from 'reactjs-popup'
 
 export default function ChangeFreq() {
-    const [isModalOpen, setIsModalOpen] = useState(false);
-
-    const openModal = () => {
-        setIsModalOpen(true);
-    };
-
-    const closeModal = () => {
-        setIsModalOpen(false);
-    };
-
-    const saveFrequency = () => {
-        // code that sends new frequency setting to DB
-        
-        setIsModalOpen(false);
-    };
-
     return (
         <>
-          <button onClick={openModal}> Change Frequency </button>
-          {isModalOpen && (
-            <FreqModal>
-                <p> Testing </p>
-                <button onClick={saveFrequency}> Save </button>
-                <button onClick={closeModal}> Close </button>
-            </FreqModal>
-          )}
-        </>
+          <Popup trigger= {<button> Change Frequency </button>}
+          modal nested>{
+            close => (
+              <div className="freq-modal">
+                <div className="modal-header">
+                  <button className="modal-header-button close" onClick={() => close()}>
+                    ⨯
+                  </button>
+                </div>
+                <FreqModal />
+                <div className="freq-footer">
+                  <button className="modal-footer-button save" onClick={() => close()}>
+                    Save Changes
+                  </button>
+                </div>
+              </div>
+            )
+          }                           
+        </Popup>
+      </>
     )
 }
 
-function FreqModal({ children }) {
-    // get DOM to inject contents into
-    const modalRoot = document.getElementById('modal-root');
-
-    // create portal that renders the FreqModal into modal-root
-    return ReactDOM.createPortal(
+function FreqModal() {
+    return (
       <div className="freq-modal">
-        {children}
-      </div>,
-      modalRoot
-    );
+        Put change frequency stuff here :D
+      </div>
+    )
   }

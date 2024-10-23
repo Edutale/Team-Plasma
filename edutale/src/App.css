@@ -34,3 +34,55 @@
   pointer-events: none;
 }
 
+.popup-content {
+  margin: auto;
+  background: rgb(255, 255, 255);
+  border: 1px solid black;
+  width: 50%;
+  padding: 5px;
+  text-align: center;
+}
+
+.popup-arrow {
+  color: rgb(255, 255, 255);
+}
+
+[role='tooltip'].popup-content {
+  width: 200px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 3px;
+}
+
+.popup-overlay {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+[data-popup='tooltip'].popup-overlay {
+  background: transparent;
+}
+
+.modal-header {
+  text-align: left;
+}
+
+.modal-header-button {
+  margin: 2px;
+  margin-top: 1px;
+  padding: 0px;
+  padding-left: 6px;
+  padding-right: 6px;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 3px;
+  color: black;
+  background: #f3f3f3;
+  font-weight: 300;
+  font-size: larger;
+  line-height: 28px;
+  transition-duration: .15s;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+}
+
+.close:hover{
+  background: #d4d4d4;
+}
