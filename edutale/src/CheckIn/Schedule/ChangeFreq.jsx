@@ -2,7 +2,7 @@
 
 import ReactDOM from "react-dom"
 import { useState } from "react"
-import Popup from 'reactjs-popup'
+import Popup from "reactjs-popup"
 
 export default function ChangeFreq() {
     return (
