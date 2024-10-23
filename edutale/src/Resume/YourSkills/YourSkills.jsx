@@ -5,7 +5,6 @@ const studentId = "TESTSTU01"
 
 export default function YourSkills () {
     const [skills, setSkills] = useState()
-    const [projects, setProjects] = useState()
     
     // effect for pulling student skills
     useEffect(() => {

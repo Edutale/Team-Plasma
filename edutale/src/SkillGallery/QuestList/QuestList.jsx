@@ -17,8 +17,6 @@ export default function QuestList({career, currSkill}) {
         try {
             await Axios.get(`http://localhost:3000/api/careers/${career}/quests`)
                 .then((response) => {
-                    const skills = [...new Set(response.data.map(item => item.skill_name))]
-
                     setQuests(response.data)
                 })
         }
