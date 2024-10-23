@@ -72,18 +72,18 @@ insert into Student_Checkin values
 ('111111111', '2024-10-12');
 
 insert into Quest values
-('SWROKK2451WKF09', 'C++ 1', 'To learn the basic syntax of C++'),
-('SWROKK2451WKF10', 'C++ 2', 'To learn the basic syntax of C++'),
-('SWROKK2451WKF11', 'C++ 3', 'To learn the basic syntax of C++'),
-('SWROKK2451WKF12', 'C++ 4', 'To learn the basic syntax of C++'),
-('SWROKK2451WKF13', 'C++ 5', 'To learn the basic syntax of C++'),
-('SWROKK2451WKF14', 'C++ 6', 'To learn the basic syntax of C++'),
-('SWROKK2451WKF15', 'C++ 7', 'To learn the basic syntax of C++'),
-('SWROKK2451WKF16', 'C++ 8', 'To learn the basic syntax of C++'),
-('21398SANWU83NNW', 'Learning Python Basic Syntax', 'To learn the basic syntax of Python'),
-('74917hdasn219sW', 'Basic Algorithms', 'To learn at least 3 basic algorithms, insert later idk'),
-('QWERTY123456789', 'Advanced Data Structures', 'Learn and implement advanced data structures'),
-('ASDFGH987654321', 'Web Development Basics', 'Create a simple website using HTML, CSS, and JavaScript');
+('SWROKK2451WKF09', 'C++ 1', 'To learn the basic syntax of C++', 1),
+('SWROKK2451WKF10', 'C++ 2', 'To learn the basic syntax of C++', 1),
+('SWROKK2451WKF11', 'C++ 3', 'To learn the basic syntax of C++', 1),
+('SWROKK2451WKF12', 'C++ 4', 'To learn the basic syntax of C++', 2),
+('SWROKK2451WKF13', 'C++ 5', 'To learn the basic syntax of C++', 2),
+('SWROKK2451WKF14', 'C++ 6', 'To learn the basic syntax of C++', 2),
+('SWROKK2451WKF15', 'C++ 7', 'To learn the basic syntax of C++', 3),
+('SWROKK2451WKF16', 'C++ 8', 'To learn the basic syntax of C++', 3),
+('21398SANWU83NNW', 'Learning Python Basic Syntax', 'To learn the basic syntax of Python', 1),
+('74917hdasn219sW', 'Basic Algorithms', 'To learn at least 3 basic algorithms, insert later idk', 1),
+('QWERTY123456789', 'Advanced Data Structures', 'Learn and implement advanced data structures', 1),
+('ASDFGH987654321', 'Web Development Basics', 'Create a simple website using HTML, CSS, and JavaScript', 1);
 
 insert into Skill_Quest values
 ('00000001', 'SWROKK2451WKF09'),

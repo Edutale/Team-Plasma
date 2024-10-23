@@ -64,6 +64,7 @@ create table if not exists Quest(
     QUEST_ID            char(15),
     quest_name          varchar(255),
     quest_description   text,
+    quest_difficulty    int check(quest_difficulty in (1, 2, 3)),
     primary key         (QUEST_ID)
 );
 
