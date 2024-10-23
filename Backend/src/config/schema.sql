@@ -6,7 +6,7 @@ create table if not exists Student(
     total_exp           int default 0,
     student_lvl         int default 1,
     student_money       int default 0,
-    reminder_freq       char(1) check(reminder_freq in ('D', 'W', 'M')),
+    reminder_freq       char(1) check(reminder_freq in ('D', 'W', 'M', 'N')),
     primary key         (STUDENT_ID)
 );
 

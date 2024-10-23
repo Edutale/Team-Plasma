@@ -1,12 +1,13 @@
 -- Tester 1 has "real" usage data
 insert into Student values
-('TESTSTU01', 'Tester 1', 'fake-email@email.com', '2024-09-01', 700, 6, 1000);
+('TESTSTU01', 'Tester 1', 'fake-email@email.com', '2024-09-01', 700, 6, 1000, 'D');
 
 -- Tester 2 is a brand new account that can be used to both test cases
 -- where there's no data, and to test stuff on a new account if needed.
 insert into Student values
 ('TESTSTU02', 'Tester 2', 'faux-email@email.com', '2024-09-01');
 
+-- Front-End, Back-End, and JavaScript are left as empty skills on purpose
 insert into Skill values
 ('TESTSKL1', 'C++', 'One of the most famous programming languages, made as an extension of C.'),
 ('TESTSKL2', 'Java', 'An object-oriented language used in many embedded systems.'),
