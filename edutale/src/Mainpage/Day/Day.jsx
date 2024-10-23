@@ -19,7 +19,7 @@ export default function Day() {
 
     async function fetchStudentJoinDate() {
         try {
-            await Axios.get(`http://localhost:3000/api/students/${studentId}`)
+            await Axios.get(`http://localhost:3000/api/students/${studentId}/joindate`)
                 .then((response) => {
                     setJoinDate(dayNum(response.data[0].student_join_date))
                 })
