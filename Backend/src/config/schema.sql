@@ -1,18 +1,18 @@
 create table if not exists Student(
     STUDENT_ID          char(9),
     student_name        varchar(100) not null,
-    student_email       varchar,
-    student_join_date   date,
+    student_email       varchar not null,
+    student_join_date   date not null,
     total_exp           int default 0,
     student_lvl         int default 1,
     student_money       int default 0,
-    reminder_freq       char(1) check(reminder_freq in ('D', 'W', 'M')),
+    reminder_freq       char(1) check(reminder_freq in ('D', 'W', 'M', 'N')),
     primary key         (STUDENT_ID)
 );
 
 create table if not exists Skill(
     SKILL_ID            char(8),
-    skill_name          varchar(100) not null,
+    skill_name          varchar(32) not null,
     skill_description   text not null,
     primary key         (SKILL_ID)
 );
@@ -20,7 +20,7 @@ create table if not exists Skill(
 create table if not exists Student_Skill(
     student_id          char(9),
     skill_id            char(8),
-    skill_xp            int,
+    skill_xp            int default 0,
     primary key         (student_id, skill_id),
     foreign key         (student_id) references Student(STUDENT_ID) on delete cascade,
     foreign key         (skill_id) references Skill(SKILL_ID) on delete cascade
@@ -28,7 +28,7 @@ create table if not exists Student_Skill(
 
 create table if not exists Career(
     CAREER_ID           char(10),
-    career_name         varchar(100),
+    career_name         varchar(32),
     career_description  text,
     primary key         (CAREER_ID)
 );
@@ -64,6 +64,8 @@ create table if not exists Quest(
     QUEST_ID            char(15),
     quest_name          varchar(255),
     quest_description   text,
+    quest_difficulty    int check(quest_difficulty in (1, 2, 3)),
+    is_project          boolean default false,
     primary key         (QUEST_ID)
 );
 
@@ -78,7 +80,7 @@ create table if not exists Skill_Quest(
 create table if not exists Student_Quest(
     student_id      char(9),
     quest_id        char(15),
-    cur_status      text,
+    completed       boolean default false,
     primary key     (student_id, quest_id),
     foreign key     (student_id) references Student(STUDENT_ID) on delete cascade,
     foreign key     (quest_id) references Quest(QUEST_ID) on delete cascade

@@ -49,9 +49,9 @@ export default function QuestListHelper({quests, currSkill}) {
             <>
               {listQuestsAndResources(quests, currSkill).map(item => (
                   <>
-                    <p key={item.quest_id}> {item.quest_name} </p>
+                    <p key={item.quest_id}> {item.quest_name}: {item.quest_description} </p>
                     {item.resources.map(rsc =>
-                        <p> <a href={rsc.link}> {rsc.name} </a> - {rsc.desc}. </p>
+                        <p> <a href={rsc.link}> {rsc.name} </a> - {rsc.desc} </p>
                     )}
                   </>
               ))}

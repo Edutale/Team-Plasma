@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import Axios from "axios"
 import QuestListHelper from "./QuestListHelper"
 
-const studentId = "111111111"
+const studentId = "TESTSTU01"
 
 export default function QuestList({career, currSkill}) {
     // useState here is false in order to prevent the helper component
@@ -17,8 +17,6 @@ export default function QuestList({career, currSkill}) {
         try {
             await Axios.get(`http://localhost:3000/api/careers/${career}/quests`)
                 .then((response) => {
-                    const skills = [...new Set(response.data.map(item => item.skill_name))]
-
                     setQuests(response.data)
                 })
         }
