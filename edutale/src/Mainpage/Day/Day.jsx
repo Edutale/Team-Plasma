@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import Axios from "axios"
 import "./Day.css"
 
-const studentId = "111111111"
+const studentId = "TESTSTU01"
 
 export default function Day() {
     const [joinDate, setJoinDate] = useState()

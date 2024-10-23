@@ -1,11 +1,10 @@
-import * as USER from "../../USER.json"
 import OngoingQuestBlock from "./OngoingQuestBlock"
 import React, { useState, useEffect } from "react"
 import Axios from "axios"
 
 import "./OngoingQuests.css"
 
-const studentId = "111111111"
+const studentId = "TESTSTU01"
 
 export default function OngoingQuests() {
     const [quests, setQuests] = useState()
@@ -20,7 +19,7 @@ export default function OngoingQuests() {
                 .then((response) => {
                     setQuests(
                       <>
-                        {response.data.map(item => (
+                        {response.data.map(item => !item.completed && (
                           <button className="block-button">
                             <OngoingQuestBlock qName={item.quest_name} />
                           </button>
