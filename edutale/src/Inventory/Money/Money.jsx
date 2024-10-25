@@ -1,9 +1,7 @@
-import * as USER from "../../USER.json"
-
-export default function Money() {
-    return (
+export default function Money({moneyAmt}) {
+    return moneyAmt && (
       <div className="money-token">
-        <p className="money-num"> Points: {USER.money} </p>
+        <p className="money-num"> Money: {moneyAmt} </p>
       </div>
     )
 }
