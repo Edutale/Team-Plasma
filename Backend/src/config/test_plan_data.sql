@@ -122,3 +122,33 @@ insert into Quest_Resources values
 ('TESTQUEST000012', 'RES120'),
 ('TESTQUEST000013', 'RES121'),
 ('TESTQUEST000014', 'RES122');
+
+insert into Inventory values
+('TESTITM01', 'A', 'Leather Armor', 'leather_armor.png', 100),
+('TESTITM02', 'A', 'Iron Armor', 'iron_armor.png', 200),
+('TESTITM03', 'A', 'Gold Armor', 'gold_armor.png', 300),
+('TESTITM04', 'A', 'Diamond Armor', 'diamond_armor.png', 400),
+('TESTITM05', 'A', 'Netherite Armor', 'netherite_armor.png', 500),
+('TESTITM06', 'W', 'Wooden Sword', 'wooden_sword.png', 100),
+('TESTITM07', 'W', 'Iron Sword', 'iron_sword.png', 200),
+('TESTITM08', 'W', 'Gold Sword', 'gold_sword.png', 300),
+('TESTITM09', 'W', 'Diamond Sword', 'diamond_sword.png', 400),
+('TESTITM10', 'W', 'Netherite Sword', 'netherite_sword.png', 400),
+('TESTITM11', 'F', 'Tabby Cat', 'tabby_cat.png', 300),
+('TESTITM12', 'F', 'Tuxedo Cat', 'tabby_cat.png', 300),
+('TESTITM13', 'F', 'Retriever', 'retriever.png', 300),
+('TESTITM14', 'F', 'Basset Hound', 'basset_hound.png', 300),
+('TESTITM15', 'F', 'Rabbit', 'rabbit.png', 500),
+('TESTITM16', 'F', 'Duck', 'Duck.png', 500),
+('TESTITM17', 'F', 'Turtle', 'turtle.png', 500),
+('TESTITM18', 'F', 'Purple Turtle', 'purple_turtle.png', 800),
+('TESTITM19', 'F', 'Dinosaur', 'dinosaur.png', 1000),
+('TESTITM20', 'F', 'Horse', 'horse.png', 500);
+
+insert into Student_Inventory values
+('TESTSTU01', 'TESTITM01'),
+('TESTSTU01', 'TESTITM04'),
+('TESTSTU01', 'TESTITM07'),
+('TESTSTU01', 'TESTITM11'),
+('TESTSTU01', 'TESTITM16'),
+('TESTSTU01', 'TESTITM20');
