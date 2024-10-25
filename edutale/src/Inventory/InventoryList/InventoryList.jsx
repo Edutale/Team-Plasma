@@ -40,7 +40,6 @@ export default function InventoryList({catalog, ownedItems}) {
             </button>
           ))}
         </div>
-        {console.log(catalog)}
       </>
     )
 }

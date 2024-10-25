@@ -3,6 +3,7 @@ import * as USER from "../../USER.json"
 export default function Equipped() {
     return (
         <>
+          <h1 className="header"> <u> placeholder fix later </u> </h1>
           <img className="inv-avatar" src={USER.avatar} alt="avatar" />
           <div className="equip-grid">
             <div className="grid-item">

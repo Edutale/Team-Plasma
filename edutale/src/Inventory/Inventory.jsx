@@ -2,7 +2,6 @@ import Equipped from "./Equipped/Equipped"
 import InventoryList from "./InventoryList/InventoryList"
 import UserBar from "../Mainpage/UserBar/UserBar"
 import Money from "./Money/Money"
-import * as USER from "../USER.json"
 
 import "./Inventory.css"
 
@@ -14,6 +13,7 @@ const studentId = "TESTSTU01"
 export default function Inventory() {
     const [catalog, setCatalog] = useState()
     const [ownedItems, setOwnedItems] = useState()
+    const [moneyAmt, setMoneyAmt] = useState()
 
     // effect for catalog
     useEffect(() => {
@@ -23,6 +23,11 @@ export default function Inventory() {
     // effect for pulling student-owned items
     useEffect(() => {
         fetchStudentItems()
+    }, [])
+
+    // effect for pulling student money amount
+    useEffect(() => {
+        fetchStudentMoney()
     }, [])
 
     async function fetchCatalog() {
@@ -49,10 +54,21 @@ export default function Inventory() {
         }
     }
 
+    async function fetchStudentMoney() {
+        try {
+            await Axios.get(`http://localhost:3000/api/students/${studentId}/money`)
+                .then((response) => {
+                    setMoneyAmt(response.data[0].student_money)
+                })
+        }
+        catch(err) {
+            console.error("Error fetching catalog: ", err)
+        }
+    }
+
     return (
         <div className="pane-container">
         <div className="pane-item">
-          <h1 className="header"> <u> {USER.name} </u> </h1>
           <Equipped />
 
           <div className="lower-inv-container">
@@ -60,7 +76,7 @@ export default function Inventory() {
               <UserBar className={"user-bar"}/>
             </div>
             <div className="lower-inv-item">
-              <Money />
+              <Money moneyAmt={moneyAmt}/>
             </div>
           </div>
         </div>
