@@ -1,7 +1,9 @@
 const express = require('express')
 const router = express.Router()
 const{
-    getStudentSkills, getStudentQuests, getStudentJoinDate, getStudentCareer, getStudentCheckedDays, getStudentLevelAndEXP
+    getStudentSkills, getStudentQuests, getStudentJoinDate,
+    getStudentCareer, getStudentCheckedDays, getStudentLevelAndEXP,
+    getStudentInventory
 } = require('../javascript/students/studentsGet')
 const{
     updateSkillXP,
@@ -68,6 +70,16 @@ router.get('/:id/progress', async(req, res)=>{
     try{
         const progress = await getStudentLevelAndEXP(req.params.id)
         res.json(progress)
+    } catch(err){
+        res.status(500).json({error: err.message})
+    }
+})
+
+//get student' owned inventory items
+router.get('/:id/inventory', async(req, res)=>{
+    try{
+        const inventory = await getStudentInventory(req.params.id)
+        res.json(inventory)
     } catch(err){
         res.status(500).json({error: err.message})
     }

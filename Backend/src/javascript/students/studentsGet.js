@@ -51,6 +51,13 @@ async function getStudentLevelAndEXP(studentId){
     return result.rows
 }
 
+async function getStudentInventory(studentId){
+    const sql = await loadSqlFile('get_student_inventory.sql')
+    const result = await db.query(sql, [studentId])
+    return result.rows
+}
+
 module.exports = {
-    getStudentSkills, getStudentQuests, getStudentJoinDate, getStudentCareer, getStudentCheckedDays, getStudentLevelAndEXP
+    getStudentSkills, getStudentQuests, getStudentJoinDate, getStudentCareer,
+    getStudentCheckedDays, getStudentLevelAndEXP, getStudentInventory
 }
