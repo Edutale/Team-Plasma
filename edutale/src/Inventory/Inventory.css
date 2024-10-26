@@ -15,25 +15,37 @@
     margin-right: auto;
 }
 
+.equip-img {
+    object-fit: contain;
+    text-align: center;
+}
+
 .grid-item {
     object-fit: contain;
     text-align: center;
+}
+
+.unowned {
+    display: block;
+    border: 0.5em solid #862525;
+    background-color: #f3f3f3;
+    filter: grayscale(100%);
+}
+
+.owned {
+    display: block;
+    border: 0.5em solid #862525;
+    background-color: #f3f3f3;
+}
+
+.unowned:hover, .owned:hover {
+    cursor: pointer;
 }
 
 .equip-img {
     display: block;
     border: 0.5em solid #862525;
     background-color: #f3f3f3;
-}
-
-.grid-img {
-    display: block;
-    border: 0.5em solid #862525;
-    background-color: #f3f3f3;
-}
-
-.grid-img:hover {
-    display: block;
 }
 
 .header {

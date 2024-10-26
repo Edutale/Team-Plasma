@@ -3,6 +3,7 @@
 import {Routes, Route, Link } from "react-router-dom"
 
 import "./App.css"
+import Welcome from "./Welcome"
 import Navigation from "./Navigation/Navigation"
 import Mainpage from "./Mainpage/Mainpage"
 import CheckIn from "./CheckIn/CheckIn"
@@ -11,24 +12,16 @@ import Resume from "./Resume/Resume"
 import Settings from "./Settings/Settings"
 import SkillList from "./SkillList/SkillList"
 import Admin from "./Admin/Admin"
+import LogoutButton from "./LogoutButton"
+import Profile from "./Profile"
 
 // Note: <Routes> element renders whatever element is contained in the selected Route.
 export default function App() {
   return (
     <>
-      <div id="modal-root"></div>
-
-      <div className="top">
-        <div className="topPane">
-          <Link to="/settings" className="settings"><button> Settings </button></Link>
-          <Link to="/admin" className="admin"><button> Admin </button></Link>
-        </div>
-        <div className="topPane">
-          <Navigation />
-        </div>
-      </div>
       <div>
         <Routes>
+          <Route path="/welcome" className="disabled-link" element={<Welcome />} />
           <Route path="/" className="disabled-link" element={<Mainpage />} />
           <Route path="/check-in" className="disabled-link" element={<CheckIn />} />
           <Route path="/inventory" className="disabled-link" element={<Inventory />} />

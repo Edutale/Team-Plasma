@@ -1,0 +1,15 @@
+.connect-button {
+    background: #fff;
+    color: black;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.connect-button:hover {
+    background: transparent;
+    color: white;
+    outline: 1px solid #fff;
+}

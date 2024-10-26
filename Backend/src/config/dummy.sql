@@ -97,11 +97,11 @@ insert into Skill_Quest values
 ('00000001', 'SWROKK2451WKF16');
 
 insert into Student_Quest values
-('111111111', 'SWROKK2451WKF09', 'In Progress'),
-('000000000', '21398SANWU83NNW', 'Completed'),
-('999999999', '74917hdasn219sW', 'Not Started'),
-('123456789', 'QWERTY123456789', 'In Progress'),
-('987654321', 'ASDFGH987654321', 'In Progress');
+('111111111', 'SWROKK2451WKF09', true),
+('000000000', '21398SANWU83NNW', false),
+('999999999', '74917hdasn219sW', false),
+('123456789', 'QWERTY123456789', true),
+('987654321', 'ASDFGH987654321', true);
 
 insert into Resources values
 ('RES101', 'C++ Tutorial 1', 'https://www.cplusplus.com/doc/tutorial/', 'Comprehensive C++ programming tutorial'),

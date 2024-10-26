@@ -1,7 +1,13 @@
 const express = require('express')
 const router = express.Router()
 const{
+<<<<<<< Updated upstream
     getStudentSkills, getStudentQuests, getStudentJoinDate, getStudentCareer, getStudentCheckedDays
+=======
+    getStudentSkills, getStudentQuests, getStudentJoinDate,
+    getStudentCareer, getStudentCheckedDays, getStudentLevelAndEXP,
+    getStudentInventory, getStudentMoney
+>>>>>>> Stashed changes
 } = require('../javascript/students/studentsGet')
 const{
     updateSkillXP,
@@ -63,7 +69,42 @@ router.get('/:id/checkin', async(req, res)=>{
     }
 })
 
+<<<<<<< Updated upstream
 // update skill XP
+=======
+//get student level and EXP
+router.get('/:id/progress', async(req, res)=>{
+    try{
+        const progress = await getStudentLevelAndEXP(req.params.id)
+        res.json(progress)
+    } catch(err){
+        res.status(500).json({error: err.message})
+    }
+})
+
+//get student's owned inventory items
+router.get('/:id/inventory', async(req, res)=>{
+    try{
+        const inventory = await getStudentInventory(req.params.id)
+        res.json(inventory)
+    } catch(err){
+        res.status(500).json({error: err.message})
+    }
+})
+
+//get student's money
+router.get('/:id/money', async(req, res)=>{
+    try{
+        const inventory = await getStudentMoney(req.params.id)
+        res.json(inventory)
+    } catch(err){
+        res.status(500).json({error: err.message})
+    }
+})
+
+
+// update skill EXP
+>>>>>>> Stashed changes
 router.put('/:id/skills/:skillId', async(req, res)=>{
     try{
         await updateSkillXP(req.params.id, req.params.skillId, req.body.xp)

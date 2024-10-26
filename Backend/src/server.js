@@ -5,6 +5,7 @@ const testRoutes = require('./routes/test') // remove later
 const studentRoutes = require('./routes/students')
 const questRoutes = require('./routes/quests')
 const careerRoutes = require('./routes/careers')
+const inventoryRoutes = require('./routes/inventory')
 //const skillRoutes = require('./routes/skills')
 
 const app = express()
@@ -16,6 +17,7 @@ app.use('/api', testRoutes) // remove later
 app.use('/api/students', studentRoutes)
 app.use('/api/quests', questRoutes)
 app.use('/api/careers', careerRoutes)
+app.use('/api/inventory', inventoryRoutes)
 //app.use('/api/skills', skillRoutes)
 
 app.get('/', (req, res)=>{
