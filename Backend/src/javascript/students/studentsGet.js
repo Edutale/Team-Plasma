@@ -81,7 +81,6 @@ async function getStudentMoney(studentId){
     return result.rows
 }
 
-<<<<<<< Updated upstream
 module.exports = {
     getStudentSkills, getStudentQuests, getStudentJoinDate, getStudentCareer,
     getStudentCheckedDays, getStudentLevelAndEXP, getStudentInventory, getStudentMoney
