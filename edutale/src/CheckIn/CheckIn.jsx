@@ -5,7 +5,7 @@ import "./CheckIn.css"
 import CalendarHolder from "./CalendarHolder/CalendarHolder"
 import Schedule from "./Schedule/Schedule"
 import ChangeFreq from "./Schedule/ChangeFreq"
-import CheckInForm from "./CheckInForm/CheckInForm"
+import CheckInFormHolder from "./CheckInForm/CheckInFormHolder"
 import Top from "../Top"
 
 export default function CheckIn() {
