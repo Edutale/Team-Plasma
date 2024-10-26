@@ -16,11 +16,14 @@ export default function CheckInFormHolder() {
             await Axios.get(`http://localhost:3000/api/students/${studentId}/quests`)
                 .then((response) => {
                     let namesAndIds = []
-                    response.data.map((item) => {
-                        namesAndIds.push({
-                            quest_name: item.quest_name,
-                            quest_id: item.quest_id
-                        })
+                    response.data.map(item => {
+                        // only want ongoing quests
+                        if (!item.completed) {
+                            namesAndIds.push({
+                                quest_name: item.quest_name,
+                                quest_id: item.quest_id
+                            })
+                        }
                     })
 
                     setQuests(namesAndIds)
