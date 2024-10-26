@@ -1,13 +1,9 @@
 const express = require('express')
 const router = express.Router()
 const{
-<<<<<<< Updated upstream
-    getStudentSkills, getStudentQuests, getStudentJoinDate, getStudentCareer, getStudentCheckedDays
-=======
     getStudentSkills, getStudentQuests, getStudentJoinDate,
     getStudentCareer, getStudentCheckedDays, getStudentLevelAndEXP,
     getStudentInventory, getStudentMoney
->>>>>>> Stashed changes
 } = require('../javascript/students/studentsGet')
 const{
     updateSkillXP,
@@ -40,7 +36,7 @@ router.get('/:id/quests', async(req, res)=>{
 })
 
 // Get student join date
-router.get('/:id', async(req, res)=>{
+router.get('/:id/joindate', async(req, res)=>{
     try{
         const joindate = await getStudentJoinDate(req.params.id)
         res.json(joindate)
@@ -52,8 +48,8 @@ router.get('/:id', async(req, res)=>{
 // Get student career
 router.get('/:id/career', async(req, res)=>{
     try{
-        const joindate = await getStudentCareer(req.params.id)
-        res.json(joindate)
+        const stuCareer = await getStudentCareer(req.params.id)
+        res.json(stuCareer)
     } catch(err){
         res.status(500).json({error: err.message})
     }
@@ -62,16 +58,13 @@ router.get('/:id/career', async(req, res)=>{
 //get student checked in days
 router.get('/:id/checkin', async(req, res)=>{
     try{
-        const joindate = await getStudentCheckedDays(req.params.id)
-        res.json(joindate)
+        const checkInDays = await getStudentCheckedDays(req.params.id)
+        res.json(checkInDays)
     } catch(err){
         res.status(500).json({error: err.message})
     }
 })
 
-<<<<<<< Updated upstream
-// update skill XP
-=======
 //get student level and EXP
 router.get('/:id/progress', async(req, res)=>{
     try{
@@ -104,7 +97,6 @@ router.get('/:id/money', async(req, res)=>{
 
 
 // update skill EXP
->>>>>>> Stashed changes
 router.put('/:id/skills/:skillId', async(req, res)=>{
     try{
         await updateSkillXP(req.params.id, req.params.skillId, req.body.xp)

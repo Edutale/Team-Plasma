@@ -6,9 +6,9 @@ import SkillTiles from "./SkillTiles/SkillTiles"
 import QuestList from "./QuestList/QuestList"
 import Top from "../Top"
 
-const studentId = "111111111"
+const studentId = "TESTSTU01"
 
-export default function SkillList() {
+export default function SkillGallery() {
     const [career, setCareer] = useState()
     const [currSkill, setCurrSkill] = useState("")
     const {isAuthenticated} = useAuth0()

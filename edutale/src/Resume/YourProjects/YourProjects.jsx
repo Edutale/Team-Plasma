@@ -1,14 +1,19 @@
-import React, { useState, useEffect } from "react"
-import Axios from "axios"
+export default function YourProjects({projects}) {
+    function sortProjects(projects) {
+        return (
+            projects.sort(function(a,b) {
+                return a.quest_difficulty - b.quest_difficulty
+            }).reverse()
+        )
+    }
 
-const studentId = "111111111"
-
-export default function YourProjects() {
-    return (
+    return projects && (
       <>
         <div>
-          <h1 className="header-centered"> <u> Your Skills </u> </h1>
-          <p> this is a placeholder </p>
+          <h1 className="header-centered"> <u> Your Projects </u> </h1>
+          {sortProjects(projects).map(item => item.is_project && (
+            <p key={item.quest_id}> {item.quest_name}: {item.quest_description} </p>
+          ))}
         </div>
       </>
     )

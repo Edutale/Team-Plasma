@@ -28,7 +28,7 @@ export default function CheckIn() {
 
         <div className="pane-item">
           <h1 className="header"> <u> Check-In </u> </h1>
-          <CheckInForm />
+          <CheckInFormHolder />
         </div>
       </div>
     </>

@@ -6,6 +6,11 @@ import YourProjects from "./YourProjects/YourProjects"
 import Top from "../Top"
 import "./Resume.css"
 
+import React, { useState, useEffect } from "react"
+import Axios from "axios"
+
+const studentId = "TESTSTU01"
+
 export default function Resume() {
     const [projects, setProjects] = useState()
     const [skills, setSkills] = useState()
@@ -51,8 +56,8 @@ export default function Resume() {
         <Top />
         <div className="pane-container">
         <div className="pane-item">
-          <YourSkills />
-          <YourProjects />
+          <YourSkills skills={skills} />
+          <YourProjects projects={projects} />
         </div>
         <div className="pane-item">
           <ResTemplates />
