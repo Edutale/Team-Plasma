@@ -1,0 +1,17 @@
+/*--- ConnectButton.css ---*/ 
+
+.connect-button {
+    background: #fff;
+    color: black;
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.connect-button:hover {
+    background: transparent;
+    color: white;
+    outline: 1px solid #fff;
+}

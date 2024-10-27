@@ -1,3 +1,5 @@
+/*--- QuestRow.jsx ---*/ 
+
 import * as myJson from "../../QUESTS.json"
 import "./QuestBoard.css"
 

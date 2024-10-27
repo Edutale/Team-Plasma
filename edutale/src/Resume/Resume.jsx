@@ -1,6 +1,9 @@
+
+import { useAuth0 } from "@auth0/auth0-react"
 import ResTemplates from "./ResTemplates/ResTemplates"
 import YourSkills from "./YourSkills/YourSkills"
 import YourProjects from "./YourProjects/YourProjects"
+import Header from "../Header/Header"
 import "./Resume.css"
 
 import React, { useState, useEffect } from "react"
@@ -11,6 +14,7 @@ const studentId = "TESTSTU01"
 export default function Resume() {
     const [projects, setProjects] = useState()
     const [skills, setSkills] = useState()
+    const {isAuthenticated} = useAuth0()
 
     // effect for projects
     useEffect(() => {
@@ -47,6 +51,9 @@ export default function Resume() {
     }
 
     return (
+        isAuthenticated && (
+        <>
+        <Header />
         <div className="pane-container">
         <div className="pane-item">
           <YourSkills skills={skills} />
@@ -56,5 +63,7 @@ export default function Resume() {
           <ResTemplates />
         </div>
       </div>
+      </>
+        )
     )
 }
