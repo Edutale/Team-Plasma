@@ -1,5 +1,8 @@
+/*--- Day.jsx ---*/ 
+
 import { useState, useEffect } from "react"
 import Axios from "axios"
+
 import "./Day.css"
 
 const studentId = "TESTSTU01"
