@@ -1,10 +1,9 @@
 /*--- App.jsx ---*/ 
 
-import {Routes, Route, Link } from "react-router-dom"
+import {Routes, Route} from "react-router-dom"
 
 import "./App.css"
-import Welcome from "./Welcome"
-import Navigation from "./Navigation/Navigation"
+import Welcome from "./Welcome/Welcome"
 import Mainpage from "./Mainpage/Mainpage"
 import CheckIn from "./CheckIn/CheckIn"
 import Inventory from "./Inventory/Inventory"
@@ -12,8 +11,6 @@ import Resume from "./Resume/Resume"
 import Settings from "./Settings/Settings"
 import SkillGallery from "./SkillGallery/SkillGallery"
 import Admin from "./Admin/Admin"
-import LogoutButton from "./LogoutButton"
-import Profile from "./Profile"
 
 // Note: <Routes> element renders whatever element is contained in the selected Route.
 export default function App() {

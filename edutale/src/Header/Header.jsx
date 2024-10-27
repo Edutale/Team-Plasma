@@ -1,8 +1,8 @@
 
 
 import { Link } from "react-router-dom"
-import Navigation from "../Navigation/Navigation"
-import Profile from "../Profile"
+import Navigation from "./Navigation/Navigation"
+import Profile from "./Profile/Profile"
 
 import "./Header.css"
 
