@@ -4,7 +4,7 @@ import Equipped from "./Equipped/Equipped"
 import InventoryList from "./InventoryList/InventoryList"
 import UserBar from "../Mainpage/UserBar/UserBar"
 import Money from "./Money/Money"
-import Top from "../Top"
+import Header from "../Header/Header"
 
 import "./Inventory.css"
 
@@ -73,7 +73,7 @@ export default function Inventory() {
     return (
         isAuthenticated && (
         <>
-        <Top />
+        <Header />
         <div className="pane-container">
         <div className="pane-item">
           <Equipped />
@@ -88,7 +88,7 @@ export default function Inventory() {
           </div>
         </div>
         <div className="pane-item">
-          <h1 className="header"> <u> Inventory </u> </h1>
+          <h1 className="header2"> <u> Inventory </u> </h1>
           <InventoryList catalog={catalog} ownedItems={ownedItems}/>
         </div>
         </div>

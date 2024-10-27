@@ -4,7 +4,7 @@ import Axios from "axios"
 import { useAuth0 } from "@auth0/auth0-react"
 import SkillTiles from "./SkillTiles/SkillTiles"
 import QuestList from "./QuestList/QuestList"
-import Top from "../Top"
+import Header from "../Header/Header"
 
 const studentId = "TESTSTU01"
 
@@ -33,7 +33,7 @@ export default function SkillGallery() {
     return (
         isAuthenticated && (
         <>
-        <Top />
+        <Header />
         <div className="pane-container">
         <div className="pane-item">
             <h1> Your Skills </h1>

@@ -6,7 +6,7 @@ import CalendarHolder from "./CalendarHolder/CalendarHolder"
 import Schedule from "./Schedule/Schedule"
 import ChangeFreq from "./Schedule/ChangeFreq"
 import CheckInFormHolder from "./CheckInForm/CheckInFormHolder"
-import Top from "../Top"
+import Header from "../Header/Header"
 
 export default function CheckIn() {
     const {isAuthenticated} = useAuth0()
@@ -14,7 +14,7 @@ export default function CheckIn() {
     return (
       isAuthenticated && (
       <>
-        <Top />
+        <Header />
         <div className="pane-container">
         <div className="pane-item">
           <CalendarHolder/>

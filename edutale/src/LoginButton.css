@@ -1,11 +1,11 @@
 .connect-button {
     background: #fff;
     color: black;
+    margin-top: 10px;
     padding: 10px;
     border: none;
-    border-radius: 10px;
+    border-radius: 8px;
     cursor: pointer;
-    margin-top: 10px;
 }
 
 .connect-button:hover {

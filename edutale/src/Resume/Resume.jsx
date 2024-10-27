@@ -3,7 +3,7 @@ import { useAuth0 } from "@auth0/auth0-react"
 import ResTemplates from "./ResTemplates/ResTemplates"
 import YourSkills from "./YourSkills/YourSkills"
 import YourProjects from "./YourProjects/YourProjects"
-import Top from "../Top"
+import Header from "../Header/Header"
 import "./Resume.css"
 
 import React, { useState, useEffect } from "react"
@@ -53,7 +53,7 @@ export default function Resume() {
     return (
         isAuthenticated && (
         <>
-        <Top />
+        <Header />
         <div className="pane-container">
         <div className="pane-item">
           <YourSkills skills={skills} />

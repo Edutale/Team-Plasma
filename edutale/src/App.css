@@ -1,16 +1,5 @@
 /*--- App.css ---*/ 
 
-.top {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  min-width: 1180px;
-  height: 75px;
-}
-
-.topPane {
-  margin: 5px;
-}
-
 .pane-container {
   display: grid;
   grid-template-columns: 50% 50%;
@@ -19,6 +8,7 @@
   border-radius: 10px;
   min-width: 1180px;
   height: 848px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .pane-item {
@@ -65,6 +55,7 @@
 }
 
 .modal-header-button {
+  height: 30px;
   margin: 2px;
   margin-top: 1px;
   padding: 0px;
@@ -79,8 +70,20 @@
   font-size: larger;
   line-height: 28px;
   transition-duration: .15s;
-  transition-property: all;
-  transition-timing-function: cubic-bezier(.4,0,.2,1);
+}
+
+.modal-footer-button {
+  background: #f3f3f3;
+  color: black;
+  margin: 2px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  outline: 1px solid #000000;
+  font-weight: 600;
+  line-height: 28px;
+  cursor: pointer;
+  transition-duration: .15s;
 }
 
 .close:hover{

@@ -8,7 +8,7 @@ import OngoingQuests from "./OngoingQuests/OngoingQuests"
 import QuestBoard from "./QuestBoard/QuestBoard"
 import SkillGraph from "./SkillGraph/SkillGraph"
 import Userbar from "./UserBar/UserBar"
-import Top from "../Top"
+import Header from "../Header/Header"
 import "./Mainpage.css"
 
 export default function Mainpage() {
@@ -17,7 +17,7 @@ export default function Mainpage() {
     return (
       isAuthenticated && (
       <>
-      <Top />
+      <Header />
       <div className="pane-container">
       <div className="pane-item">
         <Day />
