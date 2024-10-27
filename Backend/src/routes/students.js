@@ -1,7 +1,9 @@
 const express = require('express')
 const router = express.Router()
 const{
-    getStudentSkills, getStudentQuests, getStudentJoinDate, getStudentCareer, getStudentCheckedDays
+    getStudentSkills, getStudentQuests, getStudentJoinDate,
+    getStudentCareer, getStudentCheckedDays, getStudentLevelAndEXP,
+    getStudentInventory, getStudentMoney
 } = require('../javascript/students/studentsGet')
 const{
     updateSkillXP,
@@ -34,7 +36,7 @@ router.get('/:id/quests', async(req, res)=>{
 })
 
 // Get student join date
-router.get('/:id', async(req, res)=>{
+router.get('/:id/joindate', async(req, res)=>{
     try{
         const joindate = await getStudentJoinDate(req.params.id)
         res.json(joindate)
@@ -46,8 +48,8 @@ router.get('/:id', async(req, res)=>{
 // Get student career
 router.get('/:id/career', async(req, res)=>{
     try{
-        const joindate = await getStudentCareer(req.params.id)
-        res.json(joindate)
+        const stuCareer = await getStudentCareer(req.params.id)
+        res.json(stuCareer)
     } catch(err){
         res.status(500).json({error: err.message})
     }
@@ -56,14 +58,45 @@ router.get('/:id/career', async(req, res)=>{
 //get student checked in days
 router.get('/:id/checkin', async(req, res)=>{
     try{
-        const joindate = await getStudentCheckedDays(req.params.id)
-        res.json(joindate)
+        const checkInDays = await getStudentCheckedDays(req.params.id)
+        res.json(checkInDays)
     } catch(err){
         res.status(500).json({error: err.message})
     }
 })
 
-// update skill XP
+//get student level and EXP
+router.get('/:id/progress', async(req, res)=>{
+    try{
+        const progress = await getStudentLevelAndEXP(req.params.id)
+        res.json(progress)
+    } catch(err){
+        res.status(500).json({error: err.message})
+    }
+})
+
+//get student's owned inventory items
+router.get('/:id/inventory', async(req, res)=>{
+    try{
+        const inventory = await getStudentInventory(req.params.id)
+        res.json(inventory)
+    } catch(err){
+        res.status(500).json({error: err.message})
+    }
+})
+
+//get student's money
+router.get('/:id/money', async(req, res)=>{
+    try{
+        const inventory = await getStudentMoney(req.params.id)
+        res.json(inventory)
+    } catch(err){
+        res.status(500).json({error: err.message})
+    }
+})
+
+
+// update skill EXP
 router.put('/:id/skills/:skillId', async(req, res)=>{
     try{
         await updateSkillXP(req.params.id, req.params.skillId, req.body.xp)

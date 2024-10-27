@@ -5,7 +5,7 @@ import Axios from "axios"
 import Calendar from "react-calendar"
 import "./CalendarHolder.css"
 
-const studentId = "111111111"
+const studentId = "TESTSTU01"
 
 export default function CalendarHolder() {
     const [checkedDays, setCheckedDays] = useState()

@@ -4,9 +4,9 @@ import Axios from "axios"
 import SkillTiles from "./SkillTiles/SkillTiles"
 import QuestList from "./QuestList/QuestList"
 
-const studentId = "111111111"
+const studentId = "TESTSTU01"
 
-export default function SkillList() {
+export default function SkillGallery() {
     const [career, setCareer] = useState()
     const [currSkill, setCurrSkill] = useState("")
     

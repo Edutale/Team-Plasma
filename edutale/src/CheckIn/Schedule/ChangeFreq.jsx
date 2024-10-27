@@ -1,8 +1,5 @@
 // creates modal for the "change frequency" button.
-
-import ReactDOM from "react-dom"
-import { useState } from "react"
-import Popup from 'reactjs-popup'
+import Popup from "reactjs-popup"
 
 export default function ChangeFreq() {
     return (
@@ -18,6 +15,7 @@ export default function ChangeFreq() {
                 </div>
                 <FreqModal />
                 <div className="freq-footer">
+                  {/* implement saving to database for this button in the future */}
                   <button className="modal-footer-button save" onClick={() => close()}>
                     Save Changes
                   </button>
@@ -33,7 +31,9 @@ export default function ChangeFreq() {
 function FreqModal() {
     return (
       <div className="freq-modal">
-        Put change frequency stuff here :D
+        <button> Daily </button>
+        <button> Weekly </button>
+        <button> Monthly </button>
       </div>
     )
   }
