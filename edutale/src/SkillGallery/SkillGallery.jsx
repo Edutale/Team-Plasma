@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from "react"
 import Axios from "axios"
 
+import { useAuth0 } from "@auth0/auth0-react"
 import SkillTiles from "./SkillTiles/SkillTiles"
 import QuestList from "./QuestList/QuestList"
+import Header from "../Header/Header"
 
 const studentId = "TESTSTU01"
 
 export default function SkillGallery() {
     const [career, setCareer] = useState()
     const [currSkill, setCurrSkill] = useState("")
+    const {isAuthenticated} = useAuth0()
     
     useEffect(() => {
         fetchCurrCareer()
@@ -28,18 +31,23 @@ export default function SkillGallery() {
     }
 
     return (
-      <div className="pane-container">
-      <div className="pane-item">
-        <h1> Your Skills </h1>
-        <SkillTiles career={career} onSetSkill={setCurrSkill}/>
-      </div>
-      <div className="pane-item">
-        {currSkill === "" && 
-            <p> Click a skill on the left to see available quests! </p>
-        }
-        <QuestList career={career} currSkill={currSkill}/>
-      </div>
-    </div>
+        isAuthenticated && (
+        <>
+        <Header />
+        <div className="pane-container">
+        <div className="pane-item">
+            <h1> Your Skills </h1>
+            <SkillTiles career={career} onSetSkill={setCurrSkill}/>
+        </div>
+        <div className="pane-item">
+            {currSkill === "" && 
+                <p> Click a skill on the left to see available quests! </p>
+            }
+            <QuestList career={career} currSkill={currSkill}/>
+        </div>
+        </div>
+        </>
+        )
     )
 }
 

@@ -1,7 +1,10 @@
+
+import { useAuth0 } from "@auth0/auth0-react"
 import Equipped from "./Equipped/Equipped"
 import InventoryList from "./InventoryList/InventoryList"
 import UserBar from "../Mainpage/UserBar/UserBar"
 import Money from "./Money/Money"
+import Header from "../Header/Header"
 
 import "./Inventory.css"
 
@@ -14,6 +17,7 @@ export default function Inventory() {
     const [catalog, setCatalog] = useState()
     const [ownedItems, setOwnedItems] = useState()
     const [moneyAmt, setMoneyAmt] = useState()
+    const {isAuthenticated} = useAuth0()
 
     // effect for catalog
     useEffect(() => {
@@ -67,6 +71,9 @@ export default function Inventory() {
     }
 
     return (
+        isAuthenticated && (
+        <>
+        <Header />
         <div className="pane-container">
         <div className="pane-item">
           <Equipped />
@@ -81,9 +88,11 @@ export default function Inventory() {
           </div>
         </div>
         <div className="pane-item">
-          <h1 className="header"> <u> Inventory </u> </h1>
+          <h1 className="header2"> <u> Inventory </u> </h1>
           <InventoryList catalog={catalog} ownedItems={ownedItems}/>
         </div>
-      </div>
+        </div>
+        </>
     )
+)
 }

@@ -1,88 +1,91 @@
 /*--- App.css ---*/ 
 
-.top {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  min-width: 1180px;
-  height: 75px;
-}
-
-.topPane {
-  margin: 5px;
-}
-
 .pane-container {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  background-color: #862525;
-  padding: 1px;
-  border-radius: 10px;
-  min-width: 1180px;
-  height: 848px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    background-color: #862525;
+    padding: 1px;
+    border-radius: 10px;
+    min-width: 1180px;
+    height: 848px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .pane-item {
-  background-color: #ecdec9;
-  padding: 1px;
-  margin: 10px;
-  border-radius: 15px;
-  min-width: 550px;
-  min-height: 550px;
+    background-color: #ecdec9;
+    padding: 1px;
+    margin: 10px;
+    border-radius: 15px;
+    min-width: 550px;
+    min-height: 550px;
 }
 
 .disabled-link {
-  pointer-events: none;
+    pointer-events: none;
 }
 
 .popup-content {
-  margin: auto;
-  background: rgb(255, 255, 255);
-  border: 1px solid black;
-  width: 50%;
-  padding: 5px;
-  text-align: center;
+    margin: auto;
+    background: rgb(255, 255, 255);
+    border: 1px solid black;
+    width: 50%;
+    padding: 5px;
+    text-align: center;
 }
 
 .popup-arrow {
-  color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
 }
 
 [role='tooltip'].popup-content {
-  width: 200px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 3px;
+    width: 200px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 3px;
 }
 
 .popup-overlay {
-  background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.5);
 }
 
 [data-popup='tooltip'].popup-overlay {
-  background: transparent;
+    background: transparent;
 }
 
 .modal-header {
-  text-align: left;
+    text-align: left;
 }
 
 .modal-header-button {
-  margin: 2px;
-  margin-top: 1px;
-  padding: 0px;
-  padding-left: 6px;
-  padding-right: 6px;
-  cursor: pointer;
-  border: 1px solid black;
-  border-radius: 3px;
-  color: black;
-  background: #f3f3f3;
-  font-weight: 300;
-  font-size: larger;
-  line-height: 28px;
-  transition-duration: .15s;
-  transition-property: all;
-  transition-timing-function: cubic-bezier(.4,0,.2,1);
+    height: 30px;
+    margin: 2px;
+    margin-top: 1px;
+    padding: 0px;
+    padding-left: 6px;
+    padding-right: 6px;
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: black;
+    background: #f3f3f3;
+    font-weight: 300;
+    font-size: larger;
+    line-height: 28px;
+    transition-duration: .15s;
+}
+
+.modal-footer-button {
+    background: #f3f3f3;
+    color: black;
+    margin: 2px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    outline: 1px solid #000000;
+    font-weight: 600;
+    line-height: 28px;
+    cursor: pointer;
+    transition-duration: .15s;
 }
 
 .close:hover{
-  background: #d4d4d4;
+    background: #d4d4d4;
 }

@@ -1,3 +1,5 @@
+/*--- Navigation.css ---*/ 
+
 .bookmarks-box {
     position: relative;
     display: grid;
@@ -37,7 +39,6 @@
 .main-mark:hover {
     background-color: rgb(44, 35, 122); 
 }
-/* --------------- */
 
 /* Check-In Bookmark CSS */
 .check-in-mark {
@@ -47,7 +48,6 @@
 .check-in-mark:hover {
     background-color: rgb(57, 128, 103); 
 }
-/* --------------- */
 
 /* Inventory Bookmark CSS */
 .inventory-mark {
@@ -57,7 +57,6 @@
 .inventory-mark:hover {
     background-color: rgb(175, 118, 31); 
 }
-/* --------------- */
 
 /* Skill List Bookmark CSS */
 .skill-list-mark {
@@ -67,7 +66,6 @@
 .skill-list-mark:hover {
     background-color: rgb(170, 59, 83); 
 }
-/* --------------- */
 
 /* Store Bookmark CSS */
 .resume-mark {
@@ -77,4 +75,3 @@
 .resume-mark:hover {
     background-color: rgb(40, 165, 182); 
 }
-/* --------------- */
