@@ -152,3 +152,34 @@ insert into Student_Inventory values
 ('TESTSTU01', 'TESTITM11'),
 ('TESTSTU01', 'TESTITM16'),
 ('TESTSTU01', 'TESTITM20');
+
+insert into Achievement values
+('TESTACHY001', 'Quest Beginner', 'Complete your first quest', 100, 50, 'Quest', 1),
+('TESTACHY002', 'Quest Enthusiast', 'Complete 5 quests', 500, 100, 'Quest', 5),
+('TESTACHY003', 'Quest Master', 'Complete 10 quests', 1000, 200, 'Quest', 10),
+('TESTACHY004', 'Skill Novice', 'Reach 100 XP in any skill', 200, 50, 'Skill', 100),
+('TESTACHY005', 'Skill Expert', 'Reach 500 XP in any skill', 500, 100, 'Skill', 500),
+('TESTACHY006', 'Daily Learner', 'Study for 2 hours in one day', 200, 50, 'Study', 120),
+('TESTACHY007', 'Study Champion', 'Study for a total of 10 hours', 1000, 200, 'Study', 600),
+('TESTACHY008', 'Pet Friend', 'Get your first pet', 100, 50, 'Collection', 1),
+('TESTACHY009', 'Pet Collector', 'Collect 5 different pets', 500, 100, 'Collection', 5),
+('TESTACHY010', 'Early Bird', 'Check in 5 days in a row', 300, 75, 'Misc', 5);
+
+insert into Student_Achievement values
+('TESTSTU01', 'TESTACHY001', 1, true, '2024-09-15 14:30:00'),
+('TESTSTU01', 'TESTACHY002', 5, true, '2024-09-20 16:45:00'),
+('TESTSTU01', 'TESTACHY003', 8, false, null),
+('TESTSTU01', 'TESTACHY004', 100, true, '2024-09-18 11:20:00'),
+('TESTSTU01', 'TESTACHY005', 500, true, '2024-10-01 09:15:00'),
+('TESTSTU01', 'TESTACHY006', 120, true, '2024-09-25 17:00:00'),
+('TESTSTU01', 'TESTACHY007', 450, false, null),
+('TESTSTU01', 'TESTACHY008', 1, true, '2024-09-10 13:25:00'),
+('TESTSTU01', 'TESTACHY009', 3, false, null),
+('TESTSTU01', 'TESTACHY010', 3, false, null);
+
+insert into Student_Progress values
+('TESTSTU01', '2024-09-10', 200, 2, 180),
+('TESTSTU01', '2024-09-15', 150, 1, 120),
+('TESTSTU01', '2024-09-22', 300, 3, 240),
+('TESTSTU01', '2024-10-02', 100, 1, 90),
+('TESTSTU01', '2024-10-04', 250, 2, 150);

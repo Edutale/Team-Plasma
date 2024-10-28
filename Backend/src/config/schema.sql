@@ -66,6 +66,8 @@ create table if not exists Quest(
     quest_description   text,
     quest_difficulty    int check(quest_difficulty in (1, 2, 3)),
     is_project          boolean default false,
+    exp_reward          int default 100,
+    money_reward        int default 50,
     primary key         (QUEST_ID)
 );
 
@@ -81,9 +83,22 @@ create table if not exists Student_Quest(
     student_id      char(9),
     quest_id        char(15),
     completed       boolean default false,
+    status          varchar(20) check(status in ('Not Started', 'In Progress', 'Stuck', 'Completed')) default 'Not Started',
+    start_date      timestamp default current_timestamp,
+    completion_date timestamp,
     primary key     (student_id, quest_id),
     foreign key     (student_id) references Student(STUDENT_ID) on delete cascade,
     foreign key     (quest_id) references Quest(QUEST_ID) on delete cascade
+);
+
+create table if not exists Student_Progress(
+    student_id          char(9),
+    progress_date       date,
+    daily_exp_gained    int default 0,
+    quests_completed    int default 0,
+    study_time          int default 0,
+    primary key         (student_id, progress_date),
+    foreign key         (student_id) references Student(STUDENT_ID) on delete cascade
 );
 
 create table if not exists Resources(
@@ -91,6 +106,7 @@ create table if not exists Resources(
     resource_name           text,
     resource_link           text,
     resource_description    text,
+    resource_type           varchar(20) check(resource_type in ('Video', 'Article', 'Tutorial', 'Exercise', 'Documentation')),
     primary key             (RESOURCE_ID)
 );
 
@@ -117,4 +133,26 @@ create table if not exists Student_Inventory(
     primary key     (student_id, item_id),
     foreign key     (student_id) references Student(STUDENT_ID) on delete cascade,
     foreign key     (item_id) references Inventory(ITEM_ID) on delete cascade
+);
+
+create table if not exists Achievement(
+    ACHIEVEMENT_ID      char(12),
+    achievement_name    varchar(100),
+    achievement_desc     text,
+    exp_reward          int,
+    money_reward        int,
+    achievement_type    varchar(20) check(achievement_type in ('Quest', 'Skill', 'Study', 'Collection', 'Misc')),
+    requirement_count   int,
+    primary key         (ACHIEVEMENT_ID)
+);
+
+create table if not exists Student_Achievement(
+    student_id          char(9),
+    achievement_id      char(12),
+    progress_count      int default 0,
+    completed           boolean default false,
+    completion_date     timestamp,
+    primary key         (student_id, achievement_id)
+    foreign key         (student_id) references Student(STUDENT_ID) on delete cascade,
+    foreign key         (achievement_id) references Achievement(ACHIEVEMENT_ID) on delete cascade
 );

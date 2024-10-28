@@ -8,6 +8,7 @@ const careerRoutes = require('./routes/careers')
 const inventoryRoutes = require('./routes/inventory')
 const skillRoutes = require('./routes/skills')
 const resourceRoutes = require('./routes/resources')
+const achievementRoutes = require('./routes/achievements')
 
 const app = express()
 const port = process.env.PORT || 3000
@@ -21,6 +22,7 @@ app.use('/api/careers', careerRoutes)
 app.use('/api/inventory', inventoryRoutes)
 app.use('/api/skills', skillRoutes)
 app.use('/api/resources', resourceRoutes)
+app.use('/api/achievements', achievementRoutes)
 
 app.get('/', (req, res)=>{
     res.send('Edutale Backend is running')
