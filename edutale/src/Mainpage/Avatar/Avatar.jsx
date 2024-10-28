@@ -1,3 +1,5 @@
+/*--- Avatar.jsx ---*/ 
+
 import * as USER from "../../USER.json"
 import "./Avatar.css"
 

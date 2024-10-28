@@ -1,9 +1,12 @@
-import * as myJson from "../../QUESTS.json"
-import QuestRow from './QuestRow'
-import QuestModal from "../QuestModal"
+/*--- QuestBoard.jsx ---*/ 
+
 import React, { useState, useEffect } from "react"
 import Popup from "reactjs-popup"
 import Axios from "axios"
+
+import * as myJson from "../../QUESTS.json"
+import QuestRow from './QuestRow'
+import QuestModal from "../QuestModal"
 
 import "./QuestBoard.css"
 
@@ -31,30 +34,30 @@ export default function QuestBoard() {
 
                 setQuests(
                   <>
-                    {questData.map(item => (
-                      <Popup trigger= {
-                        <button className="row-button">
-                          <QuestRow img={QUESTS[0].img} qName={item.name} desc={item.desc} />
-                        </button>}
-                        modal nested>{
-                          close => (
-                            <div className="quest-modal">
-                              <div className="modal-header">
-                                <button className="modal-header-button close" onClick={() => close()}>
-                                  ⨯
-                                </button>
-                              </div>
-                              <QuestModal qName={item.name} qDesc={item.desc} />
-                              <div className="quest-footer">
-                                <button className="modal-footer-button accept" onClick={() => close()}>
-                                  Accept Quest
-                                </button>
-                              </div>
+                  {questData.map(item => (
+                    <Popup trigger= {
+                      <button className="row-button">
+                        <QuestRow img={QUESTS[0].img} qName={item.name} desc={item.desc} />
+                      </button>}
+                      modal nested>{
+                        close => (
+                          <div className="quest-modal">
+                            <div className="modal-header">
+                              <button className="modal-header-button close" onClick={() => close()}>
+                                ⨯
+                              </button>
                             </div>
-                          )
-                        }                           
-                      </Popup>
-                    ))}
+                            <QuestModal qName={item.name} qDesc={item.desc} />
+                            <div className="quest-footer">
+                              <button className="modal-footer-button accept" onClick={() => close()}>
+                                Accept Quest
+                              </button>
+                            </div>
+                          </div>
+                        )
+                      }                           
+                    </Popup>
+                  ))}
                   </>
                 )  
             })

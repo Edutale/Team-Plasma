@@ -1,5 +1,8 @@
+/*--- UserBar.jsx ---*/ 
+
 import React, { useState, useEffect } from "react"
 import Axios from "axios"
+
 import "./UserBar.css"
 
 const studentId = "TESTSTU01"
