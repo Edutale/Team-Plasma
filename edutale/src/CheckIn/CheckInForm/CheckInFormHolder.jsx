@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react"
 import Axios from "axios"
 import CheckInFormContent from "./CheckInFormContent"
 
+import "./CheckInForm.css"
+
 const studentId = "TESTSTU01"
 
 export default function CheckInFormHolder() {
@@ -35,6 +37,8 @@ export default function CheckInFormHolder() {
     }
 
     return (
-        <CheckInFormContent quests={quests} />
+        <div className="check-form-holder">
+          <CheckInFormContent quests={quests} />
+        </div>
     )
 }

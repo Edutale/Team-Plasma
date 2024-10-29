@@ -11,6 +11,9 @@ const studentId = "TESTSTU01"
 export default function SkillGallery() {
     const [career, setCareer] = useState()
     const [currSkill, setCurrSkill] = useState("")
+
+    // used to check if the user is authenticated (logged in) again as a failsafe
+    // if the ProtectedRoute logic fails.
     const {isAuthenticated} = useAuth0()
     
     useEffect(() => {
@@ -31,20 +34,21 @@ export default function SkillGallery() {
     }
 
     return (
+        // the page will only render if the user is logged in
         isAuthenticated && (
         <>
         <Header />
         <div className="pane-container">
-        <div className="pane-item">
+          <div className="pane-item">
             <h1> Your Skills </h1>
             <SkillTiles career={career} onSetSkill={setCurrSkill}/>
-        </div>
-        <div className="pane-item">
+          </div>
+          <div className="pane-item">
             {currSkill === "" && 
                 <p> Click a skill on the left to see available quests! </p>
             }
             <QuestList career={career} currSkill={currSkill}/>
-        </div>
+          </div>
         </div>
         </>
         )

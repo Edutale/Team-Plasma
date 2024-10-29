@@ -17,6 +17,9 @@ export default function Inventory() {
     const [catalog, setCatalog] = useState()
     const [ownedItems, setOwnedItems] = useState()
     const [moneyAmt, setMoneyAmt] = useState()
+
+    // used to check if the user is authenticated (logged in) again as a failsafe
+    // if the ProtectedRoute logic fails.
     const {isAuthenticated} = useAuth0()
 
     // effect for catalog
@@ -71,28 +74,28 @@ export default function Inventory() {
     }
 
     return (
+        // the page will only render if the user is logged in
         isAuthenticated && (
         <>
         <Header />
         <div className="pane-container">
-        <div className="pane-item">
-          <Equipped />
-
-          <div className="lower-inv-container">
-            <div className="lower-inv-item">
-              <UserBar className={"user-bar"}/>
+          <div className="pane-item">
+            <Equipped />
+              <div className="lower-inv-container">
+                <div className="lower-inv-item">
+                  <UserBar className={"user-bar"}/>
+                </div>
+                <div className="lower-inv-item">
+                  <Money moneyAmt={moneyAmt}/>
+                </div>
+              </div>
             </div>
-            <div className="lower-inv-item">
-              <Money moneyAmt={moneyAmt}/>
-            </div>
+          <div className="pane-item">
+            <h1 className="header2"> <u> Inventory </u> </h1>
+            <InventoryList catalog={catalog} ownedItems={ownedItems}/>
           </div>
         </div>
-        <div className="pane-item">
-          <h1 className="header2"> <u> Inventory </u> </h1>
-          <InventoryList catalog={catalog} ownedItems={ownedItems}/>
-        </div>
-        </div>
         </>
-    )
+        )
 )
 }
