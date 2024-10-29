@@ -39,7 +39,7 @@ export default function App() {
           <Route path="/" className="disabled-link" element={<Mainpage />} />
           <Route path="/check-in" className="disabled-link" element={<CheckIn />} />
           <Route path="/inventory" className="disabled-link" element={<Inventory />} />
-          <Route path="/skill-list" className="disabled-link" element={<SkillGallery />} />
+          <Route path="/skill-gallery" className="disabled-link" element={<SkillGallery />} />
           <Route path="/resume" className="disabled-link" element={<Resume />} />
           <Route path="/settings" className="disabled-link" element={<Settings />} />
           <Route path="/admin" className="disabled-link" element={<Admin />} />
