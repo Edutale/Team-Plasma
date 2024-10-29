@@ -16,13 +16,17 @@ import "./App.css"
 
 // Note: <Routes> element renders whatever element is contained in the selected Route.
 
+// A ProtectedRoute is a path that the user must be logged in to access.
 const ProtectedRoute = ({ redirectTo }) => {
-  const { isAuthenticated, isLoading  } = useAuth0()
+  // used to check if the user is authenticated (logged in) and if the page is still loading.
+  const { isAuthenticated, isLoading  } = useAuth0() 
 
   if (isLoading) {
     return <div>Loading...</div>
   }
 
+  // if the user is logged in, the route will proceed correctly,
+  // if not, the user is redirected to the welcome page.
   return isAuthenticated ? <Outlet /> : <Navigate to={redirectTo} />
 }
 
