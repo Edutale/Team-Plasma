@@ -18,7 +18,7 @@ export default function Navigation() {
         <NavLink to="/" className="bookmark main-mark"><p className="mark-icon"> Mainpage </p></NavLink>
         <NavLink to="/check-in" className="bookmark check-in-mark"><p className="mark-icon"> Check-In </p></NavLink>
         <NavLink to="/inventory" className="bookmark inventory-mark"><p className="mark-icon"> Inventory </p></NavLink>
-        <NavLink to="/skill-list" className="bookmark skill-list-mark"><p className="mark-icon"> Skill Gallery </p></NavLink>
+        <NavLink to="/skill-gallery" className="bookmark skill-list-mark"><p className="mark-icon"> Skill Gallery </p></NavLink>
         <NavLink to="/resume" className="bookmark resume-mark"><p className="mark-icon"> Resume </p></NavLink>
       </div>
 

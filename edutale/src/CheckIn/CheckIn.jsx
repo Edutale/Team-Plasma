@@ -22,7 +22,7 @@ export default function CheckIn() {
         <div className="pane-item">
           <CalendarHolder/>
           
-          <h1 className="header"> <u> Schedule </u> </h1>
+          <h1 className="page-header"> <u> Schedule </u> </h1>
           <div className="schedule-container">
             <Schedule />
             <ChangeFreq />
@@ -30,7 +30,7 @@ export default function CheckIn() {
         </div>
 
         <div className="pane-item">
-          <h1 className="header"> <u> Check-In </u> </h1>
+          <h1 className="page-header"> <u> Check-In </u> </h1>
           <CheckInFormHolder />
         </div>
       </div>

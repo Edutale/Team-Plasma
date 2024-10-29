@@ -3,6 +3,8 @@
 
 import { useState } from "react"
 
+import "./CheckInForm.css"
+
 export default function CheckInFormContent({quests}) {
     // used to generate a unique ID on this page for each check in entry. This allows for the
     // deletion of entries to work properly.
@@ -41,11 +43,20 @@ export default function CheckInFormContent({quests}) {
       <div className="check-in-form">
         {entries.map((item, ind) => (
           <div className="entry" key={item.id}>
-            <fieldset>
+            
+            {/* Shows the delete button if there is at least one entry */}
+            {entries.length > 1 && (
+                <button className="delete-button close" onClick={deleteEntry(item.id)}> ⨯ </button>
+            )}
+            
+            {/* Adds space when no delete button is there */}
+            {entries.length == 1 && (
+                <p></p>
+            )}
               
-              <fieldset>
-                <label htmlFor="questName"> Select a quest: </label>
-                <select defaultValue="" name="quest_id" onChange={(event) => handleChange(event, ind)}>
+              <div className="input-box">
+                <label className="input-label" htmlFor="questName"> Quest Name </label>
+                <select className="quest-select" defaultValue="" name="quest_id" onChange={(event) => handleChange(event, ind)}>
                   <option value="" disabled> Choose a Quest </option>
                     {quests.map(item =>
                       <option value={item.quest_id} disabled={entries.some(entry => entry.quest_id == item.quest_id)}>
@@ -53,34 +64,37 @@ export default function CheckInFormContent({quests}) {
                       </option>
                     )}
                 </select>
-              </fieldset>
+              </div>
             
-              <fieldset>
-                <label htmlFor="hours"> Hours spent on this quest: </label>
-                <input name="hours" type="number" min="1" step="1" value={item.hours} onChange={(event) => handleChange(event, ind)}/>
-              </fieldset>
+              <div className="input-box">
+                <label className="input-label" htmlFor="hours"> Hours spent on quest </label>
+                <input className="quest-select" placeholder="Number of Hours" name="hours" type="number" min="1" step="1" value={item.hours} onChange={(event) => handleChange(event, ind)}/>
+              </div>
             
               {/* there needs to be a way to make "false" default and also style buttons to show clicked status */}
-              <fieldset>
-                <legend> Quest Complete? </legend>
-                <button name="completed" value={"true"} onClick={(event) => handleChange(event, ind)}> Yes </button>
-                <button name="completed" value={"false"} onClick={(event) => handleChange(event, ind)}> No </button>
-              </fieldset>
+              <div className="input-box">
+                <legend className="input-label"> Quest Complete? </legend>
+                <form>
+                <input className="quest-complete-button yes" type="radio" is="T" name="completed" value={"true"} onClick={(event) => handleChange(event, ind)} /> 
+                <label for="T"> True </label>
+                <br />
+                <input className="quest-complete-button no" type="radio" is="F" name="completed" value={"false"} onClick={(event) => handleChange(event, ind)} />
+                <label for="F"> False </label>
+                </form>
+              </div>
             
-                {/* Shows the delete button if there is at least one entry */}
-                {entries.length > 1 && (
-                  <button onClick={deleteEntry(item.id)}>Delete</button>
-                )}
-            </fieldset>
+                
+            
           </div>
         ))}
+        <div className="form-footer">
+          {entries.length < quests.length && (
+              <button className="form-footer-button close" onClick={() => addEntry()}>Add another quest</button>
+          )}
 
-        {entries.length < quests.length && (
-            <button onClick={() => addEntry()}>Add another quest</button>
-        )}
-
-        {/* Add submit functionality in the future */}
-        <button> Submit </button>
+          {/* Add submit functionality in the future */}
+          <button className="form-footer-button submit"> Submit </button>
+        </div>
 
         {/* Here just to show how the JS works */}
         <div> {JSON.stringify(entries)} </div>
