@@ -22,7 +22,7 @@ const ProtectedRoute = ({ redirectTo }) => {
   const { isAuthenticated, isLoading  } = useAuth0() 
 
   if (isLoading) {
-    return <div>Loading...</div>
+    return <div className="loading-screen"> Loading... </div>
   }
 
   // if the user is logged in, the route will proceed correctly,
