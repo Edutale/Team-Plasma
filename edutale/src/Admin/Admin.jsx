@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from "react-router-dom"
 import { useQuests } from './hooks/useQuests'
 import { useSkills } from './hooks/useSkills'
 import { useResources } from './hooks/useResources'
@@ -18,6 +19,8 @@ export default function Admin(){
   } = useQuests()
   const { skills } = useSkills()
   const { resources } = useResources()
+
+  const navigate = useNavigate()
 
   const handleQuestChange = (e, formType)=>{
     const questId = e.target.value
@@ -61,6 +64,7 @@ export default function Admin(){
         <AddQuestResourceForm quests={quests} allResources={resources} onQuestChange={handleQuestChange} onSubmit={(e)=>handleSubmit(e, (data)=>questService.addResource(data.questId, data.resourceId), 'Resource added to Quest Successfully')}/>
         <DeleteQuestResourceForm quests={quests} questResources={questResources} onQuestChange={handleQuestChange} onSubmit={(e)=>handleSubmit(e, (data)=>questService.deleteResource(data.questId, data.resourceId), 'Resource removed from Quest Successfully')}/>
       </div>
+      <button onClick={() => navigate("/")}> Back </button>
     </div>
   )
 }
