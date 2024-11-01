@@ -14,6 +14,9 @@ const studentId = "TESTSTU01"
 export default function Resume() {
     const [projects, setProjects] = useState()
     const [skills, setSkills] = useState()
+
+    // used to check if the user is authenticated (logged in) again as a failsafe
+    // if the ProtectedRoute logic fails.
     const {isAuthenticated} = useAuth0()
 
     // effect for projects
@@ -51,19 +54,20 @@ export default function Resume() {
     }
 
     return (
+        // the page will only render if the user is logged in
         isAuthenticated && (
         <>
         <Header />
         <div className="pane-container">
-        <div className="pane-item">
-          <YourSkills skills={skills} />
-          <YourProjects projects={projects} />
+          <div className="pane-item">
+            <YourSkills skills={skills} />
+            <YourProjects projects={projects} />
+          </div>
+          <div className="pane-item">
+            <ResTemplates />
+          </div>
         </div>
-        <div className="pane-item">
-          <ResTemplates />
-        </div>
-      </div>
-      </>
+        </>
         )
     )
 }

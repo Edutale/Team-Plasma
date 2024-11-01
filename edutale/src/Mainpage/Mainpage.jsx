@@ -16,33 +16,36 @@ import Header from "../Header/Header"
 import "./Mainpage.css"
 
 export default function Mainpage() {
+    // used to check if the user is authenticated (logged in) again as a failsafe
+    // if the ProtectedRoute logic fails.
     const {isAuthenticated} = useAuth0()
 
     return (
-    isAuthenticated && (
-      <>
-      <Header />
-      <div className="pane-container">
-      <div className="pane-item">
-        <Day />
-        <SkillGraph />
-        <div className="pane-2-container">
-          <div className="pane-2-item">
-            <div className="user-container">
-              <Avatar />
-              <Userbar />
+        // the page will only render if the user is logged in
+        isAuthenticated && (
+        <>
+        <Header />
+        <div className="pane-container">
+          <div className="pane-item">
+            <Day />
+            <SkillGraph />
+            <div className="pane-2-container">
+              <div className="pane-2-item">
+                <div className="user-container">
+                  <Avatar />
+                  <Userbar />
+                </div>
+              </div>
+              <div className="pane-2-item">
+                <OngoingQuests />
+              </div>
             </div>
           </div>
-          <div className="pane-2-item">
-            <OngoingQuests />
+          <div className="pane-item">
+            <QuestBoard />
           </div>
         </div>
-      </div>
-      <div className="pane-item">
-        <QuestBoard />
-      </div>
-      </div>
-      </>
-    )
+        </>
+        )
     )
 }
