@@ -1,3 +1,4 @@
+// Forms for quest operations, we create all our forms for quests here to be used in the main Admin.jsx
 import React from 'react'
 
 export const QuestForm = ({ type, onSubmit, quests = [], onQuestChange = ()=>{} })=>{
