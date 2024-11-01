@@ -134,25 +134,3 @@ create table if not exists Student_Inventory(
     foreign key     (student_id) references Student(STUDENT_ID) on delete cascade,
     foreign key     (item_id) references Inventory(ITEM_ID) on delete cascade
 );
-
-create table if not exists Achievement(
-    ACHIEVEMENT_ID      char(12),
-    achievement_name    varchar(100),
-    achievement_desc     text,
-    exp_reward          int,
-    money_reward        int,
-    achievement_type    varchar(20) check(achievement_type in ('Quest', 'Skill', 'Study', 'Collection', 'Misc')),
-    requirement_count   int,
-    primary key         (ACHIEVEMENT_ID)
-);
-
-create table if not exists Student_Achievement(
-    student_id          char(9),
-    achievement_id      char(12),
-    progress_count      int default 0,
-    completed           boolean default false,
-    completion_date     timestamp,
-    primary key         (student_id, achievement_id)
-    foreign key         (student_id) references Student(STUDENT_ID) on delete cascade,
-    foreign key         (achievement_id) references Achievement(ACHIEVEMENT_ID) on delete cascade
-);
