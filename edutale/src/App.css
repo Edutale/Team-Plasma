@@ -89,3 +89,10 @@
 .close:hover{
     background: #d4d4d4;
 }
+
+.loading-screen {
+    height: 100vh;
+    line-height: 100vh;
+    text-align: center;
+    font-size: larger;
+}

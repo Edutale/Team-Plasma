@@ -15,6 +15,7 @@
     "axios": "^1.7.7",
     "chart.js": "^4.4.4",
     "http-server": "^14.1.1",
+    "ldrs": "^1.0.2",
     "react": "^18.3.1",
     "react-calendar": "^5.0.0",
     "react-chartjs-2": "^5.2.0",
