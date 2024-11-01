@@ -39,7 +39,7 @@ export const QuestForm = ({ type, onSubmit, quests = [], onQuestChange = ()=>{} 
                             ))}
                         </select>
                         <input name="questName" placeholder="New Quest Name" required maxLength={255}/>
-                        <textarea name="questDescription" placeholder="New Quest Description" required maxLength={1000}/>
+                        <textarea name="questDescription" placeholder="New Quest Description" maxLength={1000}/>
                         <button type="submit">Update Quest</button>
                     </>
                 )
