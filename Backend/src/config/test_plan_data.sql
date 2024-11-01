@@ -48,17 +48,17 @@ insert into Student_Checkin values
 
 insert into Quest values
 ('TESTQUEST000001', 'C++ 1', 'Learn the basic syntax of C++', 1, false),
-('TESTQUEST000002', 'C++ 2', 'Make a simple GCD program in C++', 1, true),
+('TESTQUEST000002', 'C++ GCD Algorithm', 'Made a simple GCD program in C++', 1, true),
 ('TESTQUEST000003', 'C++ 3', 'Learn about File I/O', 1, false),
-('TESTQUEST000004', 'C++ 4', 'Make a simple transcriber', 2, true),
+('TESTQUEST000004', 'C++ Input Transcriber', 'Made a simple transcriber in C++', 2, true),
 ('TESTQUEST000005', 'C++ 5', 'Learn about C++ pointers', 2, false),
 ('TESTQUEST000006', 'C++ 6', 'Learn about C++ classes', 3, false),
-('TESTQUEST000007', 'C++ 7', 'Create a class of playing cards', 3, true),
+('TESTQUEST000007', 'Playing Card Project', 'Created a class of playing cards in C++', 3, true),
 ('TESTQUEST000008', 'Java 1', 'Learn the basic syntax of Java', 1, false),
-('TESTQUEST000009', 'Java 2', 'Make a simple GCD program in Java', 1, true),
+('TESTQUEST000009', 'Java GCD Algorithm', 'Made a simple GCD program in Java', 1, true),
 ('TESTQUEST000010', 'Java 3', 'Learn about Java classes', 2, false),
 ('TESTQUEST000011', 'Python 1', 'Learn the basic syntax of Python', 1, false),
-('TESTQUEST000012', 'Python 2', 'Make a simple GCD program in Python', 1, true),
+('TESTQUEST000012', 'Python GCD Algorithm', 'Made a simple GCD program in Python', 1, true),
 ('TESTQUEST000013', 'Python 3', 'Learn about classes in Python', 2, false),
 ('TESTQUEST000014', 'Python 4', 'Learn about importing and installing Python packages', 1, false);
 
