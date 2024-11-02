@@ -1,3 +1,7 @@
+// Admin.jsx
+/*
+  Main admin dashboard component where all the forms and stuff are used
+*/
 import React, { useState } from 'react'
 import { useNavigate } from "react-router-dom"
 import { useQuests } from './hooks/useQuests'
@@ -11,7 +15,9 @@ import { questService } from './services/questServices'
 const URL = 'http://localhost:3000/api'
 
 export default function Admin(){
-  const[message, setMessage] = useState(null)
+  const[message, setMessage] = useState(null) // state for displaying success/error messages to user
+
+  // Custom hooks for managing quests, skills, and resources
   const{
     quests, questSkills, questResources,
     fetchQuests, fetchQuestSkills, fetchQuestResources,
@@ -22,6 +28,10 @@ export default function Admin(){
 
   const navigate = useNavigate()
 
+  // Handles changes in quest selection dropdowns
+  // Updates the skills/resources lists based on the selected quest
+  // @param {Event} e - Change event
+  // @param {string} formType - Type of form ('skill', 'resource', or 'both') will add more types of forms in future into different pages of admin in future
   const handleQuestChange = (e, formType)=>{
     const questId = e.target.value
     if(questId){
@@ -37,6 +47,11 @@ export default function Admin(){
     }
   }
 
+
+  // Generic submit handler for all forms
+  // @param {Event} e - Submit event
+  // @param {Function} apiFunction - API Function to call
+  // @param {string} successMessage - Message to display on success
   const handleSubmit = async(e, apiFunction, successMessage)=>{
     e.preventDefault()
     const formData = Object.fromEntries(new FormData(e.target))
