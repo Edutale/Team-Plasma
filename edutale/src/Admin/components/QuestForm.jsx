@@ -1,3 +1,4 @@
+// Forms for quest operations, we create all our forms for quests here to be used in the main Admin.jsx
 import React from 'react'
 
 export const QuestForm = ({ type, onSubmit, quests = [], onQuestChange = ()=>{} })=>{
@@ -6,10 +7,45 @@ export const QuestForm = ({ type, onSubmit, quests = [], onQuestChange = ()=>{} 
             case 'add':
                 return(
                     <>
-                        <h2>Add New Quest</h2>
-                        <input name="questId" placeholder="Quest ID" required maxLength={15}/>
-                        <input name="questName" placeholder="Quest Name" required maxLength={255}/>
-                        <textarea name="questDescription" placeholder="Quest Description" required maxLength={1000}/>
+                        <div className="form-group">
+                            <label htmlFor="questName">Quest Name:</label>
+                            <input id="questName" name="questName" placeholder="Quest Name" required maxLength={255}/>
+                        </div>
+
+                        <div className="form-group">
+                            <label htmlFor="questDescription">Description:</label>
+                            <textarea id="questDescription" name="questDescription" placeholder="Quest Description" required maxLength={1000}/>
+                        </div>
+
+                        <div className="form-group">
+                            <label htmlFor="questDifficulty">Difficulty Level:</label>
+                            <select id="questDifficulty" name="questDifficulty" required>
+                                <option value="">Select Difficulty</option>
+                                <option value="1">Easy (1)</option>
+                                <option value="2">Medium (2)</option>
+                                <option value="3">Hard (3)</option>
+                            </select>
+                        </div>
+
+                        <div className="form-group">
+                            <label htmlFor="isProject">Project Quest?</label>
+                            <select id="isProject" name="isProject" required>
+                                <option value="">Select Type</option>
+                                <option value="true">Yes</option>
+                                <option value="false">No</option>
+                            </select>
+                        </div>
+
+                        <div className="form-group">
+                            <label htmlFor="expReward">Experience Reward (optional):</label>
+                            <input id="expReward" name="expReward" type="number" placeholder="Default: 100" min="0"/>
+                        </div>
+
+                        <div className="form-group">
+                            <label htmlFor="moneyReward">Money Reward (optional):</label>
+                            <input id="moneyReward" name="moneyReward" type="number" placeholder="Default: 50" min="0"/>
+                        </div>
+
                         <button type="submit">Add Quest</button>
                     </>
                 )
@@ -39,7 +75,7 @@ export const QuestForm = ({ type, onSubmit, quests = [], onQuestChange = ()=>{} 
                             ))}
                         </select>
                         <input name="questName" placeholder="New Quest Name" required maxLength={255}/>
-                        <textarea name="questDescription" placeholder="New Quest Description" required maxLength={1000}/>
+                        <textarea name="questDescription" placeholder="New Quest Description" maxLength={1000}/>
                         <button type="submit">Update Quest</button>
                     </>
                 )
@@ -55,3 +91,5 @@ export const QuestForm = ({ type, onSubmit, quests = [], onQuestChange = ()=>{} 
         </form>
     )
 }
+
+// I'll add css one day ong frfr

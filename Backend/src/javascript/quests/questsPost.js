@@ -7,9 +7,30 @@ async function loadSqlFile(fileName) {
     return fs.readFile(filePath, 'utf8')
 }
 
-async function addNewQuest(questId, questName, questDescription){
+// Generate unique quest ID in format 'Q' + 8 digits
+// eg: Q00000001, Q00000002, etc
+async function generateQuestId(){
+    try{
+        const sql = await loadSqlFile('grab_questId.sql')
+        const result = await db.query(sql)
+        let nextNum = 1
+        if(result.rows.length > 0){
+            const lastId = result.rows[0].quest_id
+            const lastNum = parseInt(lastId.substring(1))
+            nextNum = lastNum + 1
+        }
+        const paddedNum = nextNum.toString().padStart(8, '0')
+        return `Q${paddedNum}`
+    } catch(err){
+        console.error('Error generating quest ID: ', err)
+    }
+}
+
+async function addNewQuest(questName, questDescription, isProject, questDifficulty, expReward = null, moneyReward = null){
+    const questId = await generateQuestId()
     const sql = await loadSqlFile('add_new_quest.sql')
-    await db.query(sql, [questId, questName, questDescription])
+    await db.query(sql, [questId, questName, questDescription, isProject, questDifficulty, expReward, moneyReward])
+    return questId
 }
 
 async function addQuestResource(questId, resourceId){

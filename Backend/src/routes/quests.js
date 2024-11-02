@@ -56,9 +56,20 @@ router.get("/:id", async(req, res)=>{
 // Adds/creates a new quest
 router.post("/", async(req, res)=>{
     try{
-        const {questId, questName, questDescription} = req.body
-        await addNewQuest(questId, questName, questDescription)
-        res.status(201).json({message: 'Quest added successfully'})
+        const {questName, questDescription, isProject, questDifficulty, expReward, moneyReward} = req.body
+        // validate required fields
+        if(!questName || !questDescription || questDifficulty === undefined || isProject === undefined){
+            return res.status(400).json({error: 'Missing required fields'})
+        }
+        // validate if difficulty is 1, 2, or 3
+        if(![1, 2, 3].includes(Number(questDifficulty))){
+            return res.status(400).json({error: 'Quest difficulty must be 1, 2, or 3'})
+        }
+        const questId = await addNewQuest(questName, questDescription, isProject, questDifficulty, expReward, moneyReward)
+        res.status(201).json({
+            message: 'Quest added successfully',
+            questId: questId
+        })
     } catch(err){
         res.status(500).json({error: err.message})
     }
