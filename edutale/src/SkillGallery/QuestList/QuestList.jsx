@@ -7,11 +7,11 @@ const studentId = "TESTSTU01"
 export default function QuestList({career, currSkill}) {
     // useState here is false in order to prevent the helper component
     // from rendering before quests has been obtained
-    const [quests, setQuests] = useState(false)
+    const [quests, setQuests] = useState()
 
     useEffect(() => {
         fetchQuests()
-    }, [career])
+    }, [career, currSkill])
 
     async function fetchQuests() {
         try {
@@ -25,7 +25,7 @@ export default function QuestList({career, currSkill}) {
         }
     }
 
-    return (
+    return career && (
         <>
           <h2> {currSkill} </h2>
           <QuestListHelper quests={quests} currSkill={currSkill}/>

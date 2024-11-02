@@ -1,31 +1,8 @@
 // Sole purpose of CalendarHolder is to hold the Calendar from react-calendar
-import { useState, useEffect } from "react"
-import Axios from "axios"
-
 import Calendar from "react-calendar"
 import "./CalendarHolder.css"
 
-const studentId = "TESTSTU01"
-
-export default function CalendarHolder() {
-    const [checkedDays, setCheckedDays] = useState()
-
-    useEffect(() => {
-        fetchStudentCheckedDays()
-    }, [])
-
-    async function fetchStudentCheckedDays() {
-        try {
-            await Axios.get(`http://localhost:3000/api/students/${studentId}/checkin`)
-                .then((response) => {
-                    setCheckedDays(response.data.map(item => item.checkin_date))
-                })
-        }
-        catch(err) {
-            console.error("Error fetching checked in days: ", err)
-        }
-    }
-
+export default function CalendarHolder({checkedDays}) {
     // function that iterates through the react-calendar's days,
     // comparing each day to the stored checked-in days for the
     // user. Will apply the "checked-in" class to dates that

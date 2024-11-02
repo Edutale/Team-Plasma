@@ -7,11 +7,16 @@ async function loadSqlFile(fileName) {
     return fs.readFile(filePath, 'utf8')
 }
 
-async function updateSkillXP(studentId, skillId, skillXP){
-    const sql = await loadSqlFile('update_skill_xp.sql')
-    await db.query(sql, [studentId, skillId, skillXP])
+async function updateSkillEXP(studentId, skillId, skillEXP){
+    const sql = await loadSqlFile('update_skill_exp.sql')
+    await db.query(sql, [studentId, skillId, skillEXP])
+}
+
+async function updateGlobalEXP(studentId, totalEXP, stuLvl, completedQuests){
+    await db.query(`call checkin_submit($1, $2, $3, string_to_array($4, ','))`,
+        [studentId, totalEXP, stuLvl, completedQuests])
 }
 
 module.exports = {
-    updateSkillXP,
+    updateSkillEXP, updateGlobalEXP
 }

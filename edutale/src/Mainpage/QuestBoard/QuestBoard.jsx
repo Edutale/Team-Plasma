@@ -24,7 +24,6 @@ export default function QuestBoard() {
           await Axios.get(`http://localhost:3000/api/quests`)
             .then((response) => {
                 let questData = []
-
                 for (const {quest_name, quest_description} of response.data.slice(0, 5)) {
                     questData.push({
                         name: quest_name,

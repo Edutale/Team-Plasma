@@ -26,6 +26,10 @@ app.get('/', (req, res)=>{
     res.send('Edutale Backend is running')
 })
 
+app.put('/', (req, res)=>{
+    res.send('Edutale Backend is running')
+})
+
 app.listen(port, ()=>{
     console.log(`Server is running on port ${port}`)
 })

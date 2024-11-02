@@ -69,9 +69,9 @@ export default function SkillGraph() {
                     let skillNames = []
                     let skillXP = []
 
-                    for (const {skill_name, skill_xp} of response.data) {
+                    for (const {skill_name, skill_exp} of response.data) {
                         skillNames.push(skill_name)
-                        skillXP.push(skill_xp)
+                        skillXP.push(skill_exp)
                     }
 
                     // use the setters to update the values of skills and profs
