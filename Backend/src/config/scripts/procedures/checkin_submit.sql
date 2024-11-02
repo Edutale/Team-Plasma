@@ -2,7 +2,7 @@ create or replace procedure checkin_submit(stu_id char, exp int, lvl int, comple
 as
 $$
 declare
-    q_id char(15);
+    q_id char(9);
 begin
     -- sets completed skills to completed in the db
     foreach q_id in array completed_quest_id loop
