@@ -34,7 +34,7 @@ export default function OngoingQuests() {
                     setQuests(
                       <>
                       {questNames.map(item => !item.completed && (
-                        <Popup trigger= {
+                        <Popup key={item.name} trigger= {
                           <button className="block-button">
                             <OngoingQuestBlock qName={item.name} />
                           </button>}
