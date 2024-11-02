@@ -11,7 +11,7 @@ create table if not exists Student(
 );
 
 create table if not exists Skill(
-    SKILL_ID            char(8),
+    SKILL_ID            char(9),
     skill_name          varchar(32) not null,
     skill_description   text not null,
     primary key         (SKILL_ID)
@@ -19,7 +19,7 @@ create table if not exists Skill(
 
 create table if not exists Student_Skill(
     student_id          char(9),
-    skill_id            char(8),
+    skill_id            char(9),
     skill_xp            int default 0,
     primary key         (student_id, skill_id),
     foreign key         (student_id) references Student(STUDENT_ID) on delete cascade,
@@ -27,15 +27,15 @@ create table if not exists Student_Skill(
 );
 
 create table if not exists Career(
-    CAREER_ID           char(10),
+    CAREER_ID           char(9),
     career_name         varchar(32),
     career_description  text,
     primary key         (CAREER_ID)
 );
 
 create table if not exists Career_Skill(
-    career_id               char(10),
-    skill_id                char(8),
+    career_id               char(9),
+    skill_id                char(9),
     importance_level        float,
     primary key             (career_id, skill_id),
     foreign key             (career_id) references Career(CAREER_ID) on delete cascade,
@@ -47,7 +47,7 @@ create table if not exists Career_Skill(
 -- scaling later.
 create table if not exists Student_Career(
     student_id          char(9),
-    career_id           char(10),
+    career_id           char(9),
     primary key         (student_id, career_id),
     foreign key         (career_id) references Career(CAREER_ID) on delete cascade,
     foreign key         (student_id) references Student(STUDENT_ID) on delete cascade
@@ -61,7 +61,7 @@ create table if not exists Student_Checkin (
 );
 
 create table if not exists Quest(
-    QUEST_ID            char(15),
+    QUEST_ID            char(9),
     quest_name          varchar(255),
     quest_description   text,
     quest_difficulty    int check(quest_difficulty in (1, 2, 3)),
@@ -72,8 +72,8 @@ create table if not exists Quest(
 );
 
 create table if not exists Skill_Quest(
-    skill_id        char(8),
-    quest_id        char(15),
+    skill_id        char(9),
+    quest_id        char(9),
     primary key     (skill_id, quest_id),
     foreign key     (skill_id) references Skill(SKILL_ID) on delete cascade,
     foreign key     (quest_id) references Quest(QUEST_ID) on delete cascade
@@ -81,7 +81,7 @@ create table if not exists Skill_Quest(
 
 create table if not exists Student_Quest(
     student_id      char(9),
-    quest_id        char(15),
+    quest_id        char(9),
     completed       boolean default false,
     status          varchar(20) check(status in ('Not Started', 'In Progress', 'Stuck', 'Completed')) default 'Not Started',
     start_date      timestamp default current_timestamp,
@@ -102,7 +102,7 @@ create table if not exists Student_Progress(
 );
 
 create table if not exists Resources(
-    RESOURCE_ID             char(20),
+    RESOURCE_ID             char(9),
     resource_name           text,
     resource_link           text,
     resource_description    text,
@@ -111,8 +111,8 @@ create table if not exists Resources(
 );
 
 create table if not exists Quest_Resources(
-    quest_id        char(15),
-    resource_id     char(20),
+    quest_id        char(9),
+    resource_id     char(9),
     primary key     (quest_id, resource_id),
     foreign key     (quest_id) references Quest(QUEST_ID) on delete cascade,
     foreign key     (resource_id) references Resources(RESOURCE_ID) on delete cascade
