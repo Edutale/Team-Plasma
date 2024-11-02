@@ -6,7 +6,7 @@ const{
     getStudentInventory, getStudentMoney
 } = require('../javascript/students/studentsGet')
 const{
-    updateSkillXP, updateGlobalEXP
+    updateSkillEXP, updateGlobalEXP
 } = require('../javascript/students/studentsPut')
 const{
     deleteStudentQuest,
@@ -99,8 +99,8 @@ router.get('/:id/money', async(req, res)=>{
 // update skill EXP
 router.put('/:id/skills/:skillId', async(req, res)=>{
     try{
-        await updateSkillXP(req.params.id, req.params.skillId, req.body.xp)
-        res.status(200).json({message: 'Skill XP updated successfully'})
+        await updateSkillEXP(req.params.id, req.params.skillId, req.body.exp)
+        res.status(200).json({message: 'Skill EXP updated successfully'})
     } catch(err){
         res.status(500).json({error: err.message})
     }
@@ -154,8 +154,8 @@ router.post('/:id/quests', async(req, res)=>{
 // add new student skill
 router.post('/:id/skills', async(req, res)=>{
     try{
-        const {skillId, skillXP} = req.body
-        await addNewStudentSkill(req.params.id, skillId, skillXP)
+        const {skillId, skillEXP} = req.body
+        await addNewStudentSkill(req.params.id, skillId, skillEXP)
         res.status(201).json({message: 'New skill added to student skillset successfully'})
     } catch(err){
         res.status(500).json({message: err.message})

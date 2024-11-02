@@ -55,7 +55,7 @@ export default function Resume() {
                     function sortSkills(skills) {
                         return (
                             skills.sort(function(a,b) {
-                                return a.skill_xp - b.skill_xp
+                                return a.skill_exp - b.skill_exp
                             }).reverse()
                         )
                     }

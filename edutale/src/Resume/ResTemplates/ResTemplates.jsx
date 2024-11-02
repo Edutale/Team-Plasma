@@ -33,13 +33,13 @@ function tempOneSkills(stuSkills) {
         // arbitrary values for the cut-offs of beginner, intermediate, and expert. They're low numbers in
         // order for easier testing. Deployment should make sure these numbers are larger (multiply by 100?)
 
-        if (stuSkills[i].skill_xp >= 400) {
+        if (stuSkills[i].skill_exp >= 400) {
             retStr += (retStr ? ", " + stuSkills[i].skill_name + " (Expert)" : stuSkills[i].skill_name + " (Expert)")
         }
-        else if (stuSkills[i].skill_xp >= 200) {
+        else if (stuSkills[i].skill_exp >= 200) {
             retStr += (retStr ? ", " + stuSkills[i].skill_name + " (Intermediate)" : stuSkills[i].skill_name + " (Intermediate)")
         }
-        else if (stuSkills[i].skill_xp > 0) {
+        else if (stuSkills[i].skill_exp > 0) {
             retStr += (retStr ? ", " + stuSkills[i].skill_name + " (Beginner)" : stuSkills[i].skill_name + " (Beginner)")
         }
         // else, don't add the skill at all
@@ -64,13 +64,13 @@ function tempTwoSkills(stuSkills) {
     for (let i=0; i < stuSkills.length; i++) {
         // ensure cutoff values here are identical to values for tempOneSkills()
 
-        if (stuSkills[i].skill_xp >= 400) {
+        if (stuSkills[i].skill_exp >= 400) {
             retStr += (retStr ? ", " + stuSkills[i].skill_name : stuSkills[i].skill_name)
         }
-        else if (stuSkills[i].skill_xp >= 200) {
+        else if (stuSkills[i].skill_exp >= 200) {
             retStr += (retStr ? ", " + stuSkills[i].skill_name : stuSkills[i].skill_name)
         }
-        else if (stuSkills[i].skill_xp > 0) {
+        else if (stuSkills[i].skill_exp > 0) {
             retStr += (retStr ? ", " + stuSkills[i].skill_name : stuSkills[i].skill_name)
         }
         // else, don't add the skill at all

@@ -7,9 +7,9 @@ async function loadSqlFile(fileName) {
     return fs.readFile(filePath, 'utf8')
 }
 
-async function updateSkillXP(studentId, skillId, skillXP){
-    const sql = await loadSqlFile('update_skill_xp.sql')
-    await db.query(sql, [studentId, skillId, skillXP])
+async function updateSkillEXP(studentId, skillId, skillEXP){
+    const sql = await loadSqlFile('update_skill_exp.sql')
+    await db.query(sql, [studentId, skillId, skillEXP])
 }
 
 async function updateGlobalEXP(studentId, totalEXP, stuLvl, completedQuests){
@@ -18,5 +18,5 @@ async function updateGlobalEXP(studentId, totalEXP, stuLvl, completedQuests){
 }
 
 module.exports = {
-    updateSkillXP, updateGlobalEXP
+    updateSkillEXP, updateGlobalEXP
 }
