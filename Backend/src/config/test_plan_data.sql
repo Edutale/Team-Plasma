@@ -39,13 +39,6 @@ insert into Student_Career values
 ('TESTSTU01', 'TESTCAR01'),
 ('TESTSTU02', 'TESTCAR01');
 
-insert into Student_Checkin values
-('TESTSTU01', '2024-09-10'),
-('TESTSTU01', '2024-09-15'),
-('TESTSTU01', '2024-09-22'),
-('TESTSTU01', '2024-10-02'),
-('TESTSTU01', '2024-10-04');
-
 insert into Quest values
 ('TESTQUE01', 'C++ 1', 'Learn the basic syntax of C++', 1, false),
 ('TESTQUE02', 'C++ 2', 'Make a simple GCD program in C++', 1, true),
@@ -79,11 +72,11 @@ insert into Skill_Quest values
 ('TESTSKL03', 'TESTQUE14');
 
 insert into Student_Quest values
-('TESTSTU01', 'TESTQUE01', true),
-('TESTSTU01', 'TESTQUE02', true),
-('TESTSTU01', 'TESTQUE03', true),
-('TESTSTU01', 'TESTQUE04', true),
-('TESTSTU01', 'TESTQUE08', true),
+('TESTSTU01', 'TESTQUE01', true),   -- beginner
+('TESTSTU01', 'TESTQUE02', true),   -- beginner
+('TESTSTU01', 'TESTQUE03', true),   -- beginner
+('TESTSTU01', 'TESTQUE04', true),   -- intermediate
+('TESTSTU01', 'TESTQUE08', true),   -- beginner
 ('TESTSTU01', 'TESTQUE09', false),
 ('TESTSTU01', 'TESTQUE10', false),
 ('TESTSTU01', 'TESTQUE11', false),
@@ -154,8 +147,8 @@ insert into Student_Inventory values
 ('TESTSTU01', 'TESTITM20');
 
 insert into Student_Progress values
-('TESTSTU01', '2024-09-10', 200, 2, 180),
-('TESTSTU01', '2024-09-15', 150, 1, 120),
-('TESTSTU01', '2024-09-22', 300, 3, 240),
-('TESTSTU01', '2024-10-02', 100, 1, 90),
-('TESTSTU01', '2024-10-04', 250, 2, 150);
+('TESTSTU01', '2024-09-10', 20,  0, 60),
+('TESTSTU01', '2024-09-15', 120, 1, 120),
+('TESTSTU01', '2024-09-22', 220, 2, 240),
+('TESTSTU01', '2024-10-02', 220, 1, 90),
+('TESTSTU01', '2024-10-04', 120, 1, 150);
