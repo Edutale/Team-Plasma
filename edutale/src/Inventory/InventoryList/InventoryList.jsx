@@ -1,6 +1,7 @@
 import Popup from "reactjs-popup"
+import BuyHandler from "./BuyHandler"
 
-export default function InventoryList({catalog, ownedItems}) {
+export default function InventoryList({catalog, ownedItems, studentId, moneyAmt}) {
     const armorPath = "../../../assets/armor/"
     const weaponPath = "../../../assets/weapon/"
     const familiarPath = "../../../assets/familiar/"
@@ -13,7 +14,7 @@ export default function InventoryList({catalog, ownedItems}) {
         })
     }
 
-    return catalog && ownedItems && (
+    return catalog && ownedItems && studentId && moneyAmt && (
       <>
         {setOwned(catalog, ownedItems)}
         <h2> Armor </h2>
@@ -40,17 +41,19 @@ export default function InventoryList({catalog, ownedItems}) {
                             Cancel
                           </button>
                           <button className="modal-footer-button complete" onClick={() => close()}>
-                            Purchase Item
+                            Equip Item
                           </button>
                         </div>
                       </>) : (
                         <>
                           <BuyItemText name={item.item_name} price={item.item_price}/>
                           <div className="freq-footer">
-                            <button className="modal-footer-button close" onClick={() => close()}>
+                            <button className="modal-footer-button close"
+                              onClick={() => close()}>
                               Cancel
                             </button>
-                            <button className="modal-footer-button complete" onClick={() => close()}>
+                            <button className="modal-footer-button complete"
+                              onClick={() => BuyHandler(studentId, item.item_id, item.item_price, moneyAmt)}>
                               Purchase Item
                             </button>
                           </div>
@@ -85,7 +88,7 @@ export default function InventoryList({catalog, ownedItems}) {
                             Cancel
                           </button>
                           <button className="modal-footer-button complete" onClick={() => close()}>
-                            Purchase Item
+                            Equip Item
                           </button>
                         </div>
                       </>) : (
@@ -130,7 +133,7 @@ export default function InventoryList({catalog, ownedItems}) {
                             Cancel
                           </button>
                           <button className="modal-footer-button complete" onClick={() => close()}>
-                            Purchase Item
+                            Equip Item
                           </button>
                         </div>
                       </>) : (
