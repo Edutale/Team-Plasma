@@ -18,13 +18,13 @@ export default function CheckInFormContent({quests, progress}) {
     }
     
     // the first increment() call will set idIncrement to 0, so start at -1
-    const [entries, setEntries] = useState([{id: -1, quest_id_diff: "", hours: "", completed: "false"}])
+    const [entries, setEntries] = useState([{id: -1, quest_id_diff: "", mins: "", completed: "false"}])
 
     // updates entries list to include a new object with empty data
     const addEntry = () => {
         increment()
-        setEntries([...entries, {id: idIncrement, quest_id_diff: "", hours: "", completed: "false"}])
-    };
+        setEntries([...entries, {id: idIncrement, quest_id_diff: "", mins: "", completed: "false"}])
+    }
 
     // handles and updates a change in the values within the form
     const handleChange = (event, ind) => {
@@ -32,14 +32,14 @@ export default function CheckInFormContent({quests, progress}) {
         let onChangeValue = [...entries]
         onChangeValue[ind][name] = value
         setEntries(onChangeValue)
-    };
+    }
 
     // updates entries list by deleting the selected entry by its id. Since we increment
     // the id value, we ensure every entry is unique (which allows for the select box to
     // keep its value).
     const deleteEntry = id => () => {
         setEntries(entries => entries.filter((item) => item.id !== id))
-    };
+    }
 
     return quests && progress && (
       <div className="check-in-form">
@@ -70,9 +70,9 @@ export default function CheckInFormContent({quests, progress}) {
               </div>
             
               <div className="input-box">
-                <label className="input-label" htmlFor="hours"> Hours spent on quest </label>
-                <input className="quest-select" placeholder="Number of Hours" name="hours" type="number"
-                       min="1" step="1" value={item.hours} onChange={(event) => handleChange(event, ind)}/>
+                <label className="input-label" htmlFor="mins"> Minutes spent on quest </label>
+                <input className="quest-select" placeholder="Number of minutes" name="mins" type="text"
+                       min="1" step="1" value={item.mins} onChange={(event) => handleChange(event, ind)}/>
               </div>
             
               <div className="input-box">

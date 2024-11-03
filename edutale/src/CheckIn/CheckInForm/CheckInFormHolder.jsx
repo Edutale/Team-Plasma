@@ -32,8 +32,6 @@ export default function CheckInFormHolder() {
         }
     }
 
-
-
     async function fetchStudentQuests() {
         try {
             await Axios.get(`http://localhost:3000/api/students/${studentId}/quests`)
