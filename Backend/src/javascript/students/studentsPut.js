@@ -17,6 +17,11 @@ async function checkInSubmit(studentId, totalEXP, netEXP, stuLvl, completedQuest
         [studentId, totalEXP, netEXP, stuLvl, completedQuests, numCompleted, mins, netMoney])
 }
 
+async function buyItem(studentId, itemId, itemPrice, moneyAmt) {
+    await db.query(`call buy_item($1, $2, $3, $4)`,
+        [studentId, itemId, itemPrice, moneyAmt])
+}
+
 module.exports = {
-    updateSkillEXP, checkInSubmit
+    updateSkillEXP, checkInSubmit, buyItem
 }

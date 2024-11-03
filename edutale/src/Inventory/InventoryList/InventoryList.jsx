@@ -14,7 +14,7 @@ export default function InventoryList({catalog, ownedItems, studentId, moneyAmt}
         })
     }
 
-    return catalog && ownedItems && studentId && moneyAmt && (
+    return catalog && ownedItems && studentId && toString(moneyAmt) && (
       <>
         {setOwned(catalog, ownedItems)}
         <h2> Armor </h2>
