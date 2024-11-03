@@ -1,6 +1,6 @@
 create or replace procedure checkin_submit(
     stu_id char, tot_exp int, net_exp int, stu_lvl int, completed_quest_ids char[],
-    num_completed int, mins int)
+    num_completed int, mins int, net_money int)
 as
 $$
 declare
@@ -31,7 +31,8 @@ begin
 
     -- updates the student's global EXP and level
     update Student
-    set total_exp = tot_exp, student_lvl = stu_lvl
+    set total_exp = tot_exp, student_lvl = stu_lvl,
+        student_money = student_money + net_money
     where student_id = stu_id;
 
     -- inserts row into Student_Progress to record today's check in

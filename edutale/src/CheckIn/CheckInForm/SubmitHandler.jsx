@@ -32,7 +32,8 @@ export default async function SubmitHandler(entries, progress) {
             stuLvl: newLvl,
             completedQuests: completedQuestsFormatter(completedQuests),
             numCompleted: completedQuests.length,
-            mins: totalMins
+            mins: totalMins,
+            netMoney: calcMoney(parseInt(progress.student_lvl, 10), newLvl)
         },
         null
     ).then((response) => console.log(response.data))
@@ -64,4 +65,10 @@ function calculateLvl(exp) {
 // formatting array of quests so that PGSQL knows it's an array
 function completedQuestsFormatter(completedQuests) {
     return "".concat(completedQuests.map(item => item + ","))
+}
+
+// calculates the correct amount of money to give to the student if
+// they levelled up. Will be 100 money per level for now.
+function calcMoney(oldLvl, newLvl) {
+    return (newLvl - oldLvl) * 100
 }

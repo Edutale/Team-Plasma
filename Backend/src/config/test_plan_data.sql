@@ -1,6 +1,6 @@
 -- Tester 1 has "real" usage data
 insert into Student values
-('TESTSTU01', 'Tester 1', 'fake-email@email.com', '2024-09-01', 700, 6, 1000, 'D');
+('TESTSTU01', 'Tester 1', 'fake-email@email.com', '2024-09-01', 700, 6, 600, 'D');
 
 -- Tester 2 is a brand new account that can be used to both test cases
 -- where there's no data, and to test stuff on a new account if needed.
@@ -139,11 +139,8 @@ insert into Inventory values
 ('TESTITM20', 'F', 'Horse', 'horse.png', 500);
 
 insert into Student_Inventory values
-('TESTSTU01', 'TESTITM01'),
-('TESTSTU01', 'TESTITM04'),
-('TESTSTU01', 'TESTITM07'),
-('TESTSTU01', 'TESTITM11'),
-('TESTSTU01', 'TESTITM16'),
+('TESTSTU01', 'TESTITM02'),
+('TESTSTU01', 'TESTITM06'),
 ('TESTSTU01', 'TESTITM20');
 
 insert into Student_Progress values
