@@ -6,7 +6,7 @@ const{
     getStudentInventory, getStudentMoney
 } = require('../javascript/students/studentsGet')
 const{
-    updateSkillEXP, checkInSubmit
+    updateSkillEXP, checkInSubmit, buyItem
 } = require('../javascript/students/studentsPut')
 const{
     deleteStudentQuest,
@@ -106,12 +106,22 @@ router.put('/:id/skills/:skillId', async(req, res)=>{
     }
 })
 
-// update global EXP
+// submitting a check in form
 router.put('/:id/check-in-complete', async(req, res)=>{
     try{
         await checkInSubmit(req.params.id, req.body.totalExp, req.body.netExp, req.body.stuLvl,
             req.body.completedQuests, req.body.numCompleted, req.body.mins, req.body.netMoney)
         res.status(200).json({message: 'Check-in successfully recorded'})
+    } catch(err){
+        res.status(500).json({error: err.message})
+    }
+})
+
+// updating student money and student inventory after purchasing item
+router.put('/:id/buy-item', async(req, res)=>{
+    try{
+        await buyItem(req.body.studentId, req.body.itemId, req.body.itemPrice, req.body.moneyAmt)
+        res.status(200).json({message: 'Item purchased successfully'})
     } catch(err){
         res.status(500).json({error: err.message})
     }
