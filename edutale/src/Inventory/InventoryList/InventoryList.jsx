@@ -1,3 +1,5 @@
+import Popup from "reactjs-popup"
+
 export default function InventoryList({catalog, ownedItems}) {
     const armorPath = "../../../assets/armor/"
     const weaponPath = "../../../assets/weapon/"
@@ -17,29 +19,156 @@ export default function InventoryList({catalog, ownedItems}) {
         <h2> Armor </h2>
         <div className="storage-div">
           {catalog.map(item => (item.item_type == "A") && (
-            <button key={item.item_id} className={item.owned ? "unowned" : "owned"}>
-              <img src={armorPath + item.item_png_name} title={item.item_name} alt={item.item_name}/>
-            </button>
+            <Popup key={item.item_name + "modal"} trigger= {
+              <button className={item.owned ? "owned" : "unowned"}>
+                <img src={armorPath + item.item_png_name} title={item.item_name} alt={item.item_name}/>
+              </button>}
+              modal nested>{
+                close => (
+                  <div className="item-modal">
+                    <div className="modal-header">
+                      <button className="modal-header-button close" onClick={() => close()}>
+                        ⨯
+                      </button>
+                    </div>
+                    {/* put in either the equip item text or the buy item text depending on whether item is owned */}
+                    {item.owned ? (
+                      <>
+                        <EquipItemText name={item.item_name}/>
+                        <div className="freq-footer">
+                          <button className="modal-footer-button close" onClick={() => {console.log('test'); close()}}>
+                            Cancel
+                          </button>
+                          <button className="modal-footer-button complete" onClick={() => close()}>
+                            Purchase Item
+                          </button>
+                        </div>
+                      </>) : (
+                        <>
+                          <BuyItemText name={item.item_name} price={item.item_price}/>
+                          <div className="freq-footer">
+                            <button className="modal-footer-button close" onClick={() => close()}>
+                              Cancel
+                            </button>
+                            <button className="modal-footer-button complete" onClick={() => close()}>
+                              Purchase Item
+                            </button>
+                          </div>
+                        </>)}
+                  </div>
+                )
+              }
+            </Popup>
           ))}
         </div>
-        
+
         <h2> Weapons </h2>
         <div className="storage-div">
           {catalog.map(item => (item.item_type == "W") && (
-            <button key={item.item_id} className={item.owned ? "unowned" : "owned"}>
-              <img src={weaponPath + item.item_png_name} title={item.item_name} alt={item.item_name}/>
-            </button>
+            <Popup key={item.item_name + "modal"} trigger= {
+              <button className={item.owned ? "owned" : "unowned"}>
+                <img src={weaponPath + item.item_png_name} title={item.item_name} alt={item.item_name}/>
+              </button>}
+              modal nested>{
+                close => (
+                  <div className="item-modal">
+                    <div className="modal-header">
+                      <button className="modal-header-button close" onClick={() => close()}>
+                        ⨯
+                      </button>
+                    </div>
+                    {item.owned ? (
+                      <>
+                        <EquipItemText name={item.item_name}/>
+                        <div className="freq-footer">
+                          <button className="modal-footer-button close" onClick={() => close()}>
+                            Cancel
+                          </button>
+                          <button className="modal-footer-button complete" onClick={() => close()}>
+                            Purchase Item
+                          </button>
+                        </div>
+                      </>) : (
+                        <>
+                          <BuyItemText name={item.item_name} price={item.item_price}/>
+                          <div className="freq-footer">
+                            <button className="modal-footer-button close" onClick={() => close()}>
+                              Cancel
+                            </button>
+                            <button className="modal-footer-button complete" onClick={() => close()}>
+                              Purchase Item
+                            </button>
+                          </div>
+                        </>)}
+                  </div>
+                )
+              }
+            </Popup>
           ))}
         </div>
 
         <h2> Familiars </h2>
         <div className="storage-div">
           {catalog.map(item => (item.item_type == "F") && (
-            <button key={item.item_id} className={item.owned ? "unowned" : "owned"}>
-              <img src={familiarPath + item.item_png_name} title={item.item_name} alt={item.item_name}/>
-            </button>
+            <Popup key={item.item_name + "modal"} trigger= {
+              <button className={item.owned ? "owned" : "unowned"}>
+                <img src={familiarPath + item.item_png_name} title={item.item_name} alt={item.item_name}/>
+              </button>}
+              modal nested>{
+                close => (
+                  <div className="item-modal">
+                    <div className="modal-header">
+                      <button className="modal-header-button close" onClick={() => close()}>
+                        ⨯
+                      </button>
+                    </div>
+                    {item.owned ? (
+                      <>
+                        <EquipItemText name={item.item_name}/>
+                        <div className="freq-footer">
+                          <button className="modal-footer-button close" onClick={() => close()}>
+                            Cancel
+                          </button>
+                          <button className="modal-footer-button complete" onClick={() => close()}>
+                            Purchase Item
+                          </button>
+                        </div>
+                      </>) : (
+                        <>
+                          <BuyItemText name={item.item_name} price={item.item_price}/>
+                          <div className="freq-footer">
+                            <button className="modal-footer-button close" onClick={() => close()}>
+                              Cancel
+                            </button>
+                            <button className="modal-footer-button complete" onClick={() => close()}>
+                              Purchase Item
+                            </button>
+                          </div>
+                        </>)}
+                  </div>
+                )
+              }
+            </Popup>
           ))}
         </div>
       </>
+    )
+}
+
+function BuyItemText({name, price}) {
+    return (
+      <div className="item-modal">
+        <p> <u> {name} </u> </p>
+        <p> This item costs {price}. Do you want to purchase this item? </p>
+      </div>
+    )
+}
+
+function EquipItemText({name}) {
+    return (
+      <div className="item-modal">
+        <p> <u> {name} </u> </p>
+        <p> You own this item. Do you want to equip {name}? </p>
+      </div>
     )
 }
