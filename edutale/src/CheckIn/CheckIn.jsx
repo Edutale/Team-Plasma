@@ -27,7 +27,7 @@ export default function CheckIn() {
         try {
             await Axios.get(`http://localhost:3000/api/students/${studentId}/checkin`)
                 .then((response) => {
-                    setCheckedDays(response.data.map(item => item.checkin_date))
+                    setCheckedDays(response.data.map(item => item.progress_date))
                 })
         }
         catch(err) {

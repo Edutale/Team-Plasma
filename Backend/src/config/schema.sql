@@ -20,7 +20,7 @@ create table if not exists Skill(
 create table if not exists Student_Skill(
     student_id          char(9),
     skill_id            char(9),
-    skill_xp            int default 0,
+    skill_exp            int default 0,
     primary key         (student_id, skill_id),
     foreign key         (student_id) references Student(STUDENT_ID) on delete cascade,
     foreign key         (skill_id) references Skill(SKILL_ID) on delete cascade
@@ -50,13 +50,6 @@ create table if not exists Student_Career(
     career_id           char(9),
     primary key         (student_id, career_id),
     foreign key         (career_id) references Career(CAREER_ID) on delete cascade,
-    foreign key         (student_id) references Student(STUDENT_ID) on delete cascade
-);
-
-create table if not exists Student_Checkin (
-    student_id          char(9),
-    checkin_date        date,
-    primary key         (student_id, checkin_date),
     foreign key         (student_id) references Student(STUDENT_ID) on delete cascade
 );
 
@@ -91,10 +84,11 @@ create table if not exists Student_Quest(
     foreign key     (quest_id) references Quest(QUEST_ID) on delete cascade
 );
 
+-- study_time is measured in minutes
 create table if not exists Student_Progress(
     student_id          char(9),
     progress_date       date,
-    daily_exp_gained    int default 0,
+    gained_exp          int default 0,
     quests_completed    int default 0,
     study_time          int default 0,
     primary key         (student_id, progress_date),

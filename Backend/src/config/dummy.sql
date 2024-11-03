@@ -65,12 +65,6 @@ insert into Student_Career values
 ('000000000', 'AAAAA11111'),
 ('999999999', 'BA10E00025');
 
-insert into Student_Checkin values
-('111111111', '2024-10-20'),
-('111111111', '2024-10-15'),
-('111111111', '2024-10-14'),
-('111111111', '2024-10-12');
-
 insert into Quest values
 ('SWROKK2451WKF09', 'C++ 1', 'To learn the basic syntax of C++', 1, false),
 ('SWROKK2451WKF10', 'C++ 2', 'To learn the basic syntax of C++', 1, false),

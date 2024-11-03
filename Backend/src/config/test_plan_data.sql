@@ -1,6 +1,6 @@
 -- Tester 1 has "real" usage data
 insert into Student values
-('TESTSTU01', 'Tester 1', 'fake-email@email.com', '2024-09-01', 700, 6, 1000, 'D');
+('TESTSTU01', 'Tester 1', 'fake-email@email.com', '2024-09-01', 700, 6, 600, 'D');
 
 -- Tester 2 is a brand new account that can be used to both test cases
 -- where there's no data, and to test stuff on a new account if needed.
@@ -39,28 +39,21 @@ insert into Student_Career values
 ('TESTSTU01', 'TESTCAR01'),
 ('TESTSTU02', 'TESTCAR01');
 
-insert into Student_Checkin values
-('TESTSTU01', '2024-09-10'),
-('TESTSTU01', '2024-09-15'),
-('TESTSTU01', '2024-09-22'),
-('TESTSTU01', '2024-10-02'),
-('TESTSTU01', '2024-10-04');
-
 insert into Quest values
 ('TESTQUE01', 'C++ 1', 'Learn the basic syntax of C++', 1, false),
-('TESTQUE02', 'C++ 2', 'Make a simple GCD program in C++', 1, true),
-('TESTQUE03', 'C++ 3', 'Learn about File I/O', 1, false),
-('TESTQUE04', 'C++ 4', 'Make a simple transcriber', 2, true),
-('TESTQUE05', 'C++ 5', 'Learn about C++ pointers', 2, false),
-('TESTQUE06', 'C++ 6', 'Learn about C++ classes', 3, false),
-('TESTQUE07', 'C++ 7', 'Create a class of playing cards', 3, true),
+('TESTQUE02', 'C++ GCD Algorithm', 'Made a simple GCD program in C++', 1, true),
+('TESTQUE03', 'C++ 2', 'Learn about File I/O', 1, false),
+('TESTQUE04', 'C++ Input Transcriber', 'Made a simple transcriber in C++', 2, true),
+('TESTQUE05', 'C++ 3', 'Learn about C++ pointers', 2, false),
+('TESTQUE06', 'C++ 4', 'Learn about C++ classes', 3, false),
+('TESTQUE07', 'Playing Card Project', 'Created a class of playing cards in C++', 3, true),
 ('TESTQUE08', 'Java 1', 'Learn the basic syntax of Java', 1, false),
-('TESTQUE09', 'Java 2', 'Make a simple GCD program in Java', 1, true),
-('TESTQUE10', 'Java 3', 'Learn about Java classes', 2, false),
+('TESTQUE09', 'Java GCD Algorithm', 'Made a simple GCD program in Java', 1, true),
+('TESTQUE10', 'Java 2', 'Learn about Java classes', 2, false),
 ('TESTQUE11', 'Python 1', 'Learn the basic syntax of Python', 1, false),
-('TESTQUE12', 'Python 2', 'Make a simple GCD program in Python', 1, true),
-('TESTQUE13', 'Python 3', 'Learn about classes in Python', 2, false),
-('TESTQUE14', 'Python 4', 'Learn about importing and installing Python packages', 1, false);
+('TESTQUE12', 'Python GCD Algorithm', 'Made a simple GCD program in Python', 1, true),
+('TESTQUE13', 'Python 2', 'Learn about classes in Python', 2, false),
+('TESTQUE14', 'Python 3', 'Learn about importing and installing Python packages', 1, false);
 
 insert into Skill_Quest values
 ('TESTSKL01', 'TESTQUE01'),
@@ -79,11 +72,11 @@ insert into Skill_Quest values
 ('TESTSKL03', 'TESTQUE14');
 
 insert into Student_Quest values
-('TESTSTU01', 'TESTQUE01', true),
-('TESTSTU01', 'TESTQUE02', true),
-('TESTSTU01', 'TESTQUE03', true),
-('TESTSTU01', 'TESTQUE04', true),
-('TESTSTU01', 'TESTQUE08', true),
+('TESTSTU01', 'TESTQUE01', true),   -- beginner
+('TESTSTU01', 'TESTQUE02', true),   -- beginner
+('TESTSTU01', 'TESTQUE03', true),   -- beginner
+('TESTSTU01', 'TESTQUE04', true),   -- intermediate
+('TESTSTU01', 'TESTQUE08', true),   -- beginner
 ('TESTSTU01', 'TESTQUE09', false),
 ('TESTSTU01', 'TESTQUE10', false),
 ('TESTSTU01', 'TESTQUE11', false),
@@ -146,16 +139,13 @@ insert into Inventory values
 ('TESTITM20', 'F', 'Horse', 'horse.png', 500);
 
 insert into Student_Inventory values
-('TESTSTU01', 'TESTITM01'),
-('TESTSTU01', 'TESTITM04'),
-('TESTSTU01', 'TESTITM07'),
-('TESTSTU01', 'TESTITM11'),
-('TESTSTU01', 'TESTITM16'),
+('TESTSTU01', 'TESTITM02'),
+('TESTSTU01', 'TESTITM06'),
 ('TESTSTU01', 'TESTITM20');
 
 insert into Student_Progress values
-('TESTSTU01', '2024-09-10', 200, 2, 180),
-('TESTSTU01', '2024-09-15', 150, 1, 120),
-('TESTSTU01', '2024-09-22', 300, 3, 240),
-('TESTSTU01', '2024-10-02', 100, 1, 90),
-('TESTSTU01', '2024-10-04', 250, 2, 150);
+('TESTSTU01', '2024-09-10', 20,  0, 60),
+('TESTSTU01', '2024-09-15', 120, 1, 120),
+('TESTSTU01', '2024-09-22', 220, 2, 240),
+('TESTSTU01', '2024-10-02', 220, 1, 90),
+('TESTSTU01', '2024-10-04', 120, 1, 150);

@@ -34,7 +34,7 @@ export default function QuestBoard() {
                 setQuests(
                   <>
                   {questData.map(item => (
-                    <Popup trigger= {
+                    <Popup key={item.name} trigger= {
                       <button className="row-button">
                         <QuestRow img={QUESTS[0].img} qName={item.name} desc={item.desc} />
                       </button>}

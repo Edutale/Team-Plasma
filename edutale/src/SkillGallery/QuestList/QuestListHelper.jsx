@@ -1,3 +1,5 @@
+import { Fragment } from "react"
+
 export default function QuestListHelper({quests, currSkill}) {
 
     function listQuestsAndResources(quests, currSkill) {
@@ -48,12 +50,12 @@ export default function QuestListHelper({quests, currSkill}) {
         {quests && currSkill && (
             <>
               {listQuestsAndResources(quests, currSkill).map(item => (
-                  <>
-                    <p key={item.quest_id}> {item.quest_name}: {item.quest_description} </p>
+                  <Fragment key={item.quest_id + currSkill}>
+                    <p> {item.quest_name}: {item.quest_description} </p>
                     {item.resources.map(rsc =>
-                        <p> <a href={rsc.link}> {rsc.name} </a> - {rsc.desc} </p>
+                        <p key={currSkill + rsc.name}> <a href={rsc.link}> {rsc.name} </a> - {rsc.desc} </p>
                     )}
-                  </>
+                  </Fragment>
               ))}
             </>
         )}

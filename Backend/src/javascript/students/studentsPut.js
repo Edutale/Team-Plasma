@@ -12,11 +12,11 @@ async function updateSkillEXP(studentId, skillId, skillEXP){
     await db.query(sql, [studentId, skillId, skillEXP])
 }
 
-async function updateGlobalEXP(studentId, totalEXP, stuLvl, completedQuests){
-    await db.query(`call checkin_submit($1, $2, $3, string_to_array($4, ','))`,
-        [studentId, totalEXP, stuLvl, completedQuests])
+async function checkInSubmit(studentId, totalEXP, netEXP, stuLvl, completedQuests, numCompleted, mins, netMoney){
+    await db.query(`call checkin_submit($1, $2, $3, $4, string_to_array($5, ','), $6, $7, $8)`,
+        [studentId, totalEXP, netEXP, stuLvl, completedQuests, numCompleted, mins, netMoney])
 }
 
 module.exports = {
-    updateSkillEXP, updateGlobalEXP
+    updateSkillEXP, checkInSubmit
 }
