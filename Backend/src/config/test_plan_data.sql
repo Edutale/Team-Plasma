@@ -41,19 +41,19 @@ insert into Student_Career values
 
 insert into Quest values
 ('TESTQUE01', 'C++ 1', 'Learn the basic syntax of C++', 1, false),
-('TESTQUE02', 'C++ 2', 'Make a simple GCD program in C++', 1, true),
-('TESTQUE03', 'C++ 3', 'Learn about File I/O', 1, false),
-('TESTQUE04', 'C++ 4', 'Make a simple transcriber', 2, true),
-('TESTQUE05', 'C++ 5', 'Learn about C++ pointers', 2, false),
-('TESTQUE06', 'C++ 6', 'Learn about C++ classes', 3, false),
-('TESTQUE07', 'C++ 7', 'Create a class of playing cards', 3, true),
+('TESTQUE02', 'C++ GCD Algorithm', 'Made a simple GCD program in C++', 1, true),
+('TESTQUE03', 'C++ 2', 'Learn about File I/O', 1, false),
+('TESTQUE04', 'C++ Input Transcriber', 'Made a simple transcriber in C++', 2, true),
+('TESTQUE05', 'C++ 3', 'Learn about C++ pointers', 2, false),
+('TESTQUE06', 'C++ 4', 'Learn about C++ classes', 3, false),
+('TESTQUE07', 'Playing Card Project', 'Created a class of playing cards in C++', 3, true),
 ('TESTQUE08', 'Java 1', 'Learn the basic syntax of Java', 1, false),
-('TESTQUE09', 'Java 2', 'Make a simple GCD program in Java', 1, true),
-('TESTQUE10', 'Java 3', 'Learn about Java classes', 2, false),
+('TESTQUE09', 'Java GCD Algorithm', 'Made a simple GCD program in Java', 1, true),
+('TESTQUE10', 'Java 2', 'Learn about Java classes', 2, false),
 ('TESTQUE11', 'Python 1', 'Learn the basic syntax of Python', 1, false),
-('TESTQUE12', 'Python 2', 'Make a simple GCD program in Python', 1, true),
-('TESTQUE13', 'Python 3', 'Learn about classes in Python', 2, false),
-('TESTQUE14', 'Python 4', 'Learn about importing and installing Python packages', 1, false);
+('TESTQUE12', 'Python GCD Algorithm', 'Made a simple GCD program in Python', 1, true),
+('TESTQUE13', 'Python 2', 'Learn about classes in Python', 2, false),
+('TESTQUE14', 'Python 3', 'Learn about importing and installing Python packages', 1, false);
 
 insert into Skill_Quest values
 ('TESTSKL01', 'TESTQUE01'),
