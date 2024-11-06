@@ -80,7 +80,8 @@ export default function Inventory() {
         <Header />
         <div className="pane-container">
           <div className="pane-item">
-            <Equipped />
+            <div className="user-pane">
+              <Equipped />
               <div className="lower-inv-container">
                 <div className="lower-inv-item">
                   <UserBar className={"user-bar"}/>
@@ -90,9 +91,12 @@ export default function Inventory() {
                 </div>
               </div>
             </div>
+          </div>
           <div className="pane-item">
             <h1 className="header2"> <u> Inventory </u> </h1>
-            <InventoryList catalog={catalog} ownedItems={ownedItems} studentId={studentId} moneyAmt={moneyAmt}/>
+            <div className="inv-container">
+              <InventoryList catalog={catalog} ownedItems={ownedItems} studentId={studentId} moneyAmt={moneyAmt}/>
+            </div>
           </div>
         </div>
         </>

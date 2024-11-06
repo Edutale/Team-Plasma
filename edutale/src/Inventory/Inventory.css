@@ -52,19 +52,6 @@
     text-align: center;
 }
 
-.storage-div {
-    display: grid;
-    margin-top: 2em;
-    grid-template-rows: 1fr 1fr;
-    grid-auto-flow: column;
-    gap: 1em;
-    box-sizing: border-box;
-    justify-content: space-evenly;
-    justify-items: center;
-    overflow-x: auto;
-    margin-top: -20px;
-}
-
 .money-token {
     display: flex;
     justify-items: center;
@@ -72,7 +59,7 @@
     align-items: center;
 
     min-width: 100px;
-    height: auto;
+    height: 70%;
     border-radius: 50%;
     aspect-ratio: 1 / 1;
     background-color: #e9be25;
@@ -84,16 +71,30 @@
 }
 
 .lower-inv-container {
+    height: 100%;
     display: grid;
     grid-template-columns: 50% 50%;
     padding: 1px;
-    margin-top: -20px;
 }
   
 .lower-inv-item {
-    padding: 20px;
-    margin: 10px;
     border-radius: 15px;
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+.inv-container {
+    height: 90%;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    padding: 2px;
+    margin: 2px;
+}
+
+.user-pane {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
 }
