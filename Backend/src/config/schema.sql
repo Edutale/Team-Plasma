@@ -1,3 +1,12 @@
+create table if not exists Inventory(
+    ITEM_ID         char(9),
+    item_type       char(1) check (item_type in ('A', 'W', 'F')) not null,
+    item_name       varchar(30) not null,
+    item_png_name   varchar(20) not null,
+    item_price      int not null,
+    primary key     (ITEM_ID)
+);
+
 create table if not exists Student(
     STUDENT_ID          char(9),
     student_name        varchar(100) not null,
@@ -7,7 +16,14 @@ create table if not exists Student(
     student_lvl         int default 1,
     student_money       int default 0,
     reminder_freq       char(1) check(reminder_freq in ('D', 'W', 'M', 'N')),
-    primary key         (STUDENT_ID)
+    equip_weapon        char(9) default null,
+    equip_armor         char(9) default null,
+    equip_familiar      char(9) default null,
+
+    primary key         (STUDENT_ID),
+    foreign key         (equip_weapon) references Inventory(ITEM_ID) on delete cascade,
+    foreign key         (equip_armor) references Inventory(ITEM_ID) on delete cascade,
+    foreign key         (equip_familiar) references Inventory(ITEM_ID) on delete cascade
 );
 
 create table if not exists Skill(
@@ -110,15 +126,6 @@ create table if not exists Quest_Resources(
     primary key     (quest_id, resource_id),
     foreign key     (quest_id) references Quest(QUEST_ID) on delete cascade,
     foreign key     (resource_id) references Resources(RESOURCE_ID) on delete cascade
-);
-
-create table if not exists Inventory(
-    ITEM_ID         char(9),
-    item_type       char(1) check (item_type in ('A', 'W', 'F')) not null,
-    item_name       varchar(30) not null,
-    item_png_name   varchar(20) not null,
-    item_price      int not null,
-    primary key     (ITEM_ID)
 );
 
 create table if not exists Student_Inventory(
