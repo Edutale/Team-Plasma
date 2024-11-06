@@ -1,9 +1,11 @@
 import * as USER from "../../USER.json"
+import { useAuth0 } from "@auth0/auth0-react"
 
 export default function Equipped() {
+    const { user } = useAuth0()
     return (
         <>
-          <h1 className="header1"> <u> placeholder fix later </u> </h1>
+          <h1 className="header1"> <u> {user.name} </u> </h1>
           <img className="inv-avatar" src={USER.avatar} alt="avatar" />
           <div className="equip-grid">
             <div className="grid-item">

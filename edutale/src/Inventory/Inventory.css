@@ -98,3 +98,7 @@
     display: grid;
     grid-template-rows: 1fr 1fr;
 }
+
+.header1 {
+    margin-left: 2px;
+}
