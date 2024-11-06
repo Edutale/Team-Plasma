@@ -17,6 +17,7 @@ export default function Inventory() {
     const [catalog, setCatalog] = useState()
     const [ownedItems, setOwnedItems] = useState()
     const [moneyAmt, setMoneyAmt] = useState()
+    const [equipItems, setEquipItems] = useState()
 
     // used to check if the user is authenticated (logged in) again as a failsafe
     // if the ProtectedRoute logic fails.
@@ -35,6 +36,11 @@ export default function Inventory() {
     // effect for pulling student money amount
     useEffect(() => {
         fetchStudentMoney()
+    }, [])
+
+    // effect for pulling student equipped items
+    useEffect(() => {
+        fetchStudentEquipped()
     }, [])
 
     async function fetchCatalog() {
@@ -73,6 +79,18 @@ export default function Inventory() {
         }
     }
 
+    async function fetchStudentEquipped() {
+        try {
+            await Axios.get(`http://localhost:3000/api/students/${studentId}/equips`)
+                .then((response) => {
+                    setEquipItems(response.data)
+                })
+        }
+        catch(err) {
+            console.error("Error fetching catalog: ", err)
+        }
+    }
+
     return (
         // the page will only render if the user is logged in
         isAuthenticated && (
@@ -80,7 +98,7 @@ export default function Inventory() {
         <Header />
         <div className="pane-container">
           <div className="pane-item">
-            <Equipped />
+            <Equipped catalog={catalog} equipItems={equipItems}/>
               <div className="lower-inv-container">
                 <div className="lower-inv-item">
                   <UserBar className={"user-bar"}/>

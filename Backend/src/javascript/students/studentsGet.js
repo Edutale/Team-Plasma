@@ -81,7 +81,15 @@ async function getStudentMoney(studentId){
     return result.rows
 }
 
+async function getStudentEquipped(studentId){
+    const sql = await loadSqlFile('get_student_equipped.sql')
+    const result = await db.query(sql, [studentId])
+    return result.rows
+}
+
+
 module.exports = {
     getStudentSkills, getStudentQuests, getStudentJoinDate, getStudentCareer,
-    getStudentCheckedDays, getStudentLevelAndEXP, getStudentInventory, getStudentMoney
+    getStudentCheckedDays, getStudentLevelAndEXP, getStudentInventory, getStudentMoney,
+    getStudentEquipped
 }
