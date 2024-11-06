@@ -6,7 +6,7 @@ const{
     getStudentInventory, getStudentMoney
 } = require('../javascript/students/studentsGet')
 const{
-    updateSkillEXP, checkInSubmit, buyItem
+    updateSkillEXP, checkInSubmit, buyItem, equipItem
 } = require('../javascript/students/studentsPut')
 const{
     deleteStudentQuest,
@@ -122,6 +122,16 @@ router.put('/:id/buy-item', async(req, res)=>{
     try{
         await buyItem(req.body.studentId, req.body.itemId, req.body.itemPrice, req.body.moneyAmt)
         res.status(200).json({message: 'Item purchased successfully'})
+    } catch(err){
+        res.status(500).json({error: err.message})
+    }
+})
+
+// updating a student's equipped item
+router.put('/:id/equip-item', async(req, res)=>{
+    try{
+        await equipItem(req.body.studentId, req.body.itemId)
+        res.status(200).json({message: 'Item equipped successfully'})
     } catch(err){
         res.status(500).json({error: err.message})
     }

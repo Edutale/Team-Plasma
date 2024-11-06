@@ -1,5 +1,6 @@
 import Popup from "reactjs-popup"
 import BuyHandler from "./BuyHandler"
+import EquipHandler from "./EquipHandler"
 
 export default function InventoryList({catalog, ownedItems, studentId, moneyAmt}) {
     const armorPath = "../../../assets/armor/"
@@ -37,10 +38,10 @@ export default function InventoryList({catalog, ownedItems, studentId, moneyAmt}
                       <>
                         <EquipItemText name={item.item_name}/>
                         <div className="freq-footer">
-                          <button className="modal-footer-button close" onClick={() => {console.log('test'); close()}}>
+                          <button className="modal-footer-button close" onClick={() => close()}>
                             Cancel
                           </button>
-                          <button className="modal-footer-button complete" onClick={() => close()}>
+                          <button className="modal-footer-button complete" onClick={() => EquipHandler(studentId, item.item_id)}>
                             Equip Item
                           </button>
                         </div>
@@ -54,7 +55,7 @@ export default function InventoryList({catalog, ownedItems, studentId, moneyAmt}
                             </button>
                             <button className="modal-footer-button complete"
                               onClick={() => BuyHandler(studentId, item.item_id, item.item_price, moneyAmt)}>
-                              Purchase Item
+                                Purchase Item
                             </button>
                           </div>
                         </>)}
@@ -87,7 +88,7 @@ export default function InventoryList({catalog, ownedItems, studentId, moneyAmt}
                           <button className="modal-footer-button close" onClick={() => close()}>
                             Cancel
                           </button>
-                          <button className="modal-footer-button complete" onClick={() => close()}>
+                          <button className="modal-footer-button complete" onClick={() => EquipHandler(studentId, item.item_id)}>
                             Equip Item
                           </button>
                         </div>
@@ -98,8 +99,9 @@ export default function InventoryList({catalog, ownedItems, studentId, moneyAmt}
                             <button className="modal-footer-button close" onClick={() => close()}>
                               Cancel
                             </button>
-                            <button className="modal-footer-button complete" onClick={() => close()}>
-                              Purchase Item
+                            <button className="modal-footer-button complete"
+                              onClick={() => BuyHandler(studentId, item.item_id, item.item_price, moneyAmt)}>
+                                Purchase Item
                             </button>
                           </div>
                         </>)}
@@ -132,7 +134,7 @@ export default function InventoryList({catalog, ownedItems, studentId, moneyAmt}
                           <button className="modal-footer-button close" onClick={() => close()}>
                             Cancel
                           </button>
-                          <button className="modal-footer-button complete" onClick={() => close()}>
+                          <button className="modal-footer-button complete" onClick={() => EquipHandler(studentId, item.item_id)}>
                             Equip Item
                           </button>
                         </div>
@@ -143,8 +145,9 @@ export default function InventoryList({catalog, ownedItems, studentId, moneyAmt}
                             <button className="modal-footer-button close" onClick={() => close()}>
                               Cancel
                             </button>
-                            <button className="modal-footer-button complete" onClick={() => close()}>
-                              Purchase Item
+                            <button className="modal-footer-button complete"
+                              onClick={() => BuyHandler(studentId, item.item_id, item.item_price, moneyAmt)}>
+                                Purchase Item
                             </button>
                           </div>
                         </>)}
