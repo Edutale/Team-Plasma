@@ -1,44 +1,71 @@
 // creates modal for the "change frequency" button.
 import Popup from "reactjs-popup"
+import "./Schedule.css"
+import ChangeHandler from "./ChangeFreqHandler"
 import { createEvent } from "ics"
 import { saveAs } from "file-saver"
+import { useState } from "react"
 
-export default function ChangeFreq() {
+export default function ChangeFreq({studentId}) {
+    const [freq, setFreq] = useState()
+    const [confirm, setConfirm] = useState(false)
+
     return (
-        <>
-          <Popup trigger= {<button> Change Frequency </button>}
+        <Popup trigger= {<button> Change Frequency </button>}
           modal nested>{
-            close => (
+            close => (!confirm ? (
+              // form to choose a new notification frequency
               <div className="freq-modal">
                 <div className="modal-header">
-                  <button className="modal-header-button close" onClick={() => close()}>
+                  <button className="modal-header-button close" onClick={close}>
                     ⨯
                   </button>
                 </div>
-                <FreqModal />
+    
+                <div className="freq-modal">
+                  <div className="freq-button">
+                    <label htmlFor="daily"> Daily </label>
+                    <input id="daily" type="radio" name="frequency" value="D" onChange={event => setFreq(event.target.value)}/>
+                  </div>
+    
+                  <div className="freq-button">
+                    <label htmlFor="weekly"> Weekly </label>
+                    <input id="weekly" type="radio" name="frequency" value="W" onChange={event => setFreq(event.target.value)}/>
+                  </div>
+    
+                  <div className="freq-button">
+                    <label htmlFor="monthly"> Monthly </label>
+                    <input id="monthly" type="radio" name="frequency" value="M" onChange={event => setFreq(event.target.value)}/>
+                  </div>
+                </div>
                 <div className="freq-footer">
-                  {/* implement saving to database for this button in the future */}
-                  <button className="modal-footer-button save" onClick={() => close()}>
+                  <button className="modal-footer-button save" onClick={() => ChangeHandler(studentId, freq, setConfirm)}>
                     Save Changes
                   </button>
                 </div>
               </div>
-            )
+            ) : (
+              // confirmation message of the new frequency and .ics download
+              <div className="freq-modal">
+                <div className="modal-header">
+                  <button className="modal-header-button close" onClick={() => {close(); setConfirm(false)}}>
+                    ⨯
+                  </button>
+                </div>
+                <div className="freq-modal">
+                  <p> This is the confirmation message! </p>
+                </div>
+                <div className="freq-footer">
+                  <button className="modal-footer-button close" onClick={() => {close(); setConfirm(false)}}>
+                    Close
+                  </button>
+                </div>
+              </div>
+            ))
           }                           
         </Popup>
-      </>
     )
 }
-
-function FreqModal() {
-    return (
-      <div className="freq-modal">
-        <button onClick={() => createCal("M")}> Daily </button>
-        <button> Weekly </button>
-        <button> Monthly </button>
-      </div>
-    )
-  }
 
 function createCal(frequency) {
     // today's date

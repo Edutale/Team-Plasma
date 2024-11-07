@@ -28,6 +28,11 @@ async function equipItem(studentId, itemId) {
     )
 }
 
+async function updateFreq(studentId, freq){
+    const sql = await loadSqlFile('update_frequency.sql')
+    await db.query(sql, [studentId, freq])
+}
+
 module.exports = {
-    updateSkillEXP, checkInSubmit, buyItem, equipItem
+    updateSkillEXP, checkInSubmit, buyItem, equipItem, updateFreq
 }

@@ -6,8 +6,6 @@ import { useState } from "react"
 import "./CheckInForm.css"
 import SubmitHandler from "./SubmitHandler"
 
-const studentId = "TESTSTU01"
-
 export default function CheckInFormContent({quests, progress}) {
     // used to generate a unique ID on this page for each check in entry. This allows for the
     // deletion of entries to work properly.

@@ -47,7 +47,7 @@ export default function CheckIn() {
           <h1 className="page-header"> <u> Schedule </u> </h1>
           <div className="schedule-container">
             <Schedule />
-            <ChangeFreq />
+            <ChangeFreq studentId={studentId}/>
           </div>
         </div>
 

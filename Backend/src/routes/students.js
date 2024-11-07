@@ -5,7 +5,7 @@ const{
     getStudentCareer, getStudentCheckedDays, getStudentLevelAndEXP, getInventoryPage
 } = require('../javascript/students/studentsGet')
 const{
-    updateSkillEXP, checkInSubmit, buyItem, equipItem
+    updateSkillEXP, checkInSubmit, buyItem, equipItem, updateFreq
 } = require('../javascript/students/studentsPut')
 const{
     deleteStudentQuest,
@@ -120,6 +120,16 @@ router.put('/:id/equip-item', async(req, res)=>{
     try{
         await equipItem(req.body.studentId, req.body.itemId)
         res.status(200).json({message: 'Item equipped successfully'})
+    } catch(err){
+        res.status(500).json({error: err.message})
+    }
+})
+
+// updating a student's frequency
+router.put('/:id/freq', async(req, res)=>{
+    try{
+        await updateFreq(req.body.studentId, req.body.freq)
+        res.status(200).json({message: 'Frequency changed successfully'})
     } catch(err){
         res.status(500).json({error: err.message})
     }
