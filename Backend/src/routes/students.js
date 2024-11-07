@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const{
-    getStudentSkills, getStudentQuests, getStudentJoinDate,
+    getStudentSkills, getStudentQuests, getMainpageStats,
     getStudentCareer, getStudentCheckedDays, getStudentLevelAndEXP, getInventoryPage
 } = require('../javascript/students/studentsGet')
 const{
@@ -29,16 +29,6 @@ router.get('/:id/quests', async(req, res)=>{
     try{
         const studentQuests = await getStudentQuests(req.params.id)    
         res.json(studentQuests)
-    } catch(err){
-        res.status(500).json({error: err.message})
-    }
-})
-
-// Get student join date
-router.get('/:id/joindate', async(req, res)=>{
-    try{
-        const joindate = await getStudentJoinDate(req.params.id)
-        res.json(joindate)
     } catch(err){
         res.status(500).json({error: err.message})
     }
@@ -79,6 +69,16 @@ router.get("/:id/inventory", async(req, res) => {
     try {
         const inventory = await getInventoryPage(req.params.id)
         res.json(inventory)
+    } catch(err) {
+        res.status(500).json({error: err.message})
+    }
+})
+
+// get all student stats needed for the Mainpage.
+router.get("/:id/mainpage", async(req, res) => {
+    try {
+        const mainStats = await getMainpageStats(req.params.id)
+        res.json(mainStats)
     } catch(err) {
         res.status(500).json({error: err.message})
     }
