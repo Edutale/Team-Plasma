@@ -6,12 +6,12 @@
 
 .oQuests-container {
     height: 140%;
+    min-height: 300px;
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 50% 50%;
     padding: 1px;
     gap: 5px;
-    
 }
   
 .oQuest-item {
