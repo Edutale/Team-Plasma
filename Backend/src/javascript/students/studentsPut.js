@@ -22,6 +22,12 @@ async function buyItem(studentId, itemId, itemPrice, moneyAmt) {
         [studentId, itemId, itemPrice, moneyAmt])
 }
 
+async function equipItem(studentId, itemId) {
+    await db.query(`call equip_item($1, $2)`,
+        [studentId, itemId]
+    )
+}
+
 module.exports = {
-    updateSkillEXP, checkInSubmit, buyItem
+    updateSkillEXP, checkInSubmit, buyItem, equipItem
 }

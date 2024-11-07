@@ -1,6 +1,16 @@
 import * as USER from "../../USER.json"
 
-export default function Equipped() {
+const armorPath = "../../../assets/armor/"
+const weaponPath = "../../../assets/weapon/"
+const familiarPath = "../../../assets/familiar/"
+
+export default function Equipped({catalog, equipItems}) {
+    equipItems && (console.log(equipItems))
+
+    // equipItems.foreach((item) => {
+    //     item["png"] = catalog.filter((catItem) => catItem.item_id == item)
+    // })
+
     return (
         <>
           <h1 className="header"> <u> placeholder fix later </u> </h1>
