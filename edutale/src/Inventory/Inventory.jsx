@@ -1,4 +1,3 @@
-
 import { useAuth0 } from "@auth0/auth0-react"
 import Equipped from "./Equipped/Equipped"
 import InventoryList from "./InventoryList/InventoryList"
@@ -18,15 +17,18 @@ export default function Inventory() {
     const [ownedItems, setOwnedItems] = useState()
     const [moneyAmt, setMoneyAmt] = useState()
     const [equipItems, setEquipItems] = useState()
+    const [progress, setProgress] = useState()
 
     // used to check if the user is authenticated (logged in) again as a failsafe
     // if the ProtectedRoute logic fails.
     const {isAuthenticated} = useAuth0()
 
+    // fetch user related Inventory data
     useEffect(() => {
         fetchInventoryPage()
     }, [])
 
+    // fetch entire Inventory catalog
     useEffect(() => {
         fetchCatalog()
     }, [])
@@ -45,6 +47,11 @@ export default function Inventory() {
                         familiar: response.data[0].equip_familiar
                     })
 
+                    setProgress({
+                        lvl: response.data[0].student_lvl,
+                        exp: response.data[0].total_exp,
+                        name: response.data[0].student_name
+                    })
 
                 })
         }
@@ -75,7 +82,7 @@ export default function Inventory() {
             <Equipped catalog={catalog} equipItems={equipItems}/>
               <div className="lower-inv-container">
                 <div className="lower-inv-item">
-                  <UserBar className={"user-bar"}/>
+                  <UserBar progress={progress} className={"user-bar"}/>
                 </div>
                 <div className="lower-inv-item">
                   <Money moneyAmt={moneyAmt}/>
