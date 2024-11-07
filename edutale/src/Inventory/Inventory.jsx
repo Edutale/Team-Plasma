@@ -73,8 +73,8 @@ export default function Inventory() {
     }
 
     return (
-        // the page will only render if the user is logged in
-        isAuthenticated && equipItems && catalog && toString(moneyAmt) && (
+      // the page will only render if the user is logged in
+      isAuthenticated && catalog && equipItems && (
         <>
         <Header />
         <div className="pane-container">
@@ -95,6 +95,6 @@ export default function Inventory() {
           </div>
         </div>
         </>
-        )
+      )
 )
 }
