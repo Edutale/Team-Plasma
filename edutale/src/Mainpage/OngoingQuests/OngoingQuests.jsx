@@ -6,6 +6,7 @@ import Axios from "axios"
 
 import OngoingQuestBlock from "./OngoingQuestBlock"
 import QuestModal from "../QuestModal"
+import CompleteHandler from "./CompleteHandler"
 
 import "./OngoingQuests.css"
 
@@ -23,8 +24,9 @@ export default function OngoingQuests() {
                 .then((response) => {
                     let questNames = []
 
-                    for (const {quest_name, quest_description, completed} of response.data) {
+                    for (const {quest_id, quest_name, quest_description, completed} of response.data) {
                         questNames.push({
+                          id: quest_id,
                           name: quest_name,
                           desc: quest_description,
                           completed: completed,
@@ -51,7 +53,7 @@ export default function OngoingQuests() {
                                   <button className="modal-footer-button quit" onClick={() => close()}>
                                     Quit Quest
                                   </button>
-                                  <button className="modal-footer-button complete" onClick={() => close()}>
+                                  <button className="modal-footer-button complete" onClick={() => CompleteHandler(studentId, item.id)}>
                                     Complete Quest
                                   </button>
                                 </div>
