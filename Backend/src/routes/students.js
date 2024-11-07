@@ -6,7 +6,7 @@ const{
     getStudentInventory, getStudentMoney
 } = require('../javascript/students/studentsGet')
 const{
-    updateSkillEXP, checkInSubmit, buyItem
+    updateSkillEXP, checkInSubmit, buyItem, completeQuest
 } = require('../javascript/students/studentsPut')
 const{
     deleteStudentQuest,
@@ -122,6 +122,16 @@ router.put('/:id/buy-item', async(req, res)=>{
     try{
         await buyItem(req.body.studentId, req.body.itemId, req.body.itemPrice, req.body.moneyAmt)
         res.status(200).json({message: 'Item purchased successfully'})
+    } catch(err){
+        res.status(500).json({error: err.message})
+    }
+})
+
+// updating student quests after completing a quest
+router.put('/:id/complete-quest', async(req, res) => {
+    try{
+        await completeQuest(req.body.studentId, req.body.questId)
+        res.status(200).json({message: 'Quest completed successfully'})
     } catch(err){
         res.status(500).json({error: err.message})
     }
