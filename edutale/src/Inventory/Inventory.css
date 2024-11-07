@@ -16,13 +16,15 @@
 }
 
 .equip-img {
-    object-fit: contain;
-    text-align: center;
+    object-fit: contain;    
 }
 
 .grid-item {
     object-fit: contain;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .unowned {

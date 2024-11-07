@@ -83,6 +83,7 @@ export default function Inventory() {
         try {
             await Axios.get(`http://localhost:3000/api/students/${studentId}/equips`)
                 .then((response) => {
+                    console.log(response)
                     setEquipItems(response.data)
                 })
         }
@@ -93,7 +94,7 @@ export default function Inventory() {
 
     return (
         // the page will only render if the user is logged in
-        isAuthenticated && (
+        isAuthenticated && equipItems && (
         <>
         <Header />
         <div className="pane-container">
