@@ -1,5 +1,5 @@
 export default function Money({moneyAmt}) {
-    return toString(moneyAmt) && (
+    return (
       <div className="money-token">
         <p className="money-num"> Money: {moneyAmt} </p>
       </div>
