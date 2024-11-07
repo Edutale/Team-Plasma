@@ -23,68 +23,41 @@ export default function Inventory() {
     // if the ProtectedRoute logic fails.
     const {isAuthenticated} = useAuth0()
 
-    // effect for catalog
+    useEffect(() => {
+        fetchInventoryPage()
+    }, [])
+
     useEffect(() => {
         fetchCatalog()
     }, [])
 
-    // effect for pulling student-owned items
-    useEffect(() => {
-        fetchStudentItems()
-    }, [])
+    async function fetchInventoryPage() {
+        try {
+            await Axios.get(`http://localhost:3000/api/students/${studentId}/inventory`)
+                .then((response) => {
+                    setOwnedItems(response.data.map((item) => item.item_id))
 
-    // effect for pulling student money amount
-    useEffect(() => {
-        fetchStudentMoney()
-    }, [])
+                    setMoneyAmt(response.data[0].student_money)
 
-    // effect for pulling student equipped items
-    useEffect(() => {
-        fetchStudentEquipped()
-    }, [])
+                    setEquipItems({
+                        armor: response.data[0].equip_armor,
+                        weapon: response.data[0].equip_weapon,
+                        familiar: response.data[0].equip_familiar
+                    })
+
+
+                })
+        }
+        catch(err) {
+            console.error("Error fetching Inventory page: ", err)
+        }
+    }
 
     async function fetchCatalog() {
         try {
             await Axios.get(`http://localhost:3000/api/inventory/inventory`)
                 .then((response) => {
                     setCatalog(response.data)
-                })
-        }
-        catch(err) {
-            console.error("Error fetching catalog: ", err)
-        }
-    }
-
-    async function fetchStudentItems() {
-        try {
-            await Axios.get(`http://localhost:3000/api/students/${studentId}/inventory`)
-                .then((response) => {
-                    setOwnedItems(response.data)
-                })
-        }
-        catch(err) {
-            console.error("Error fetching student inventory: ", err)
-        }
-    }
-
-    async function fetchStudentMoney() {
-        try {
-            await Axios.get(`http://localhost:3000/api/students/${studentId}/money`)
-                .then((response) => {
-                    setMoneyAmt(response.data[0].student_money)
-                })
-        }
-        catch(err) {
-            console.error("Error fetching catalog: ", err)
-        }
-    }
-
-    async function fetchStudentEquipped() {
-        try {
-            await Axios.get(`http://localhost:3000/api/students/${studentId}/equips`)
-                .then((response) => {
-                    console.log(response)
-                    setEquipItems(response.data)
                 })
         }
         catch(err) {

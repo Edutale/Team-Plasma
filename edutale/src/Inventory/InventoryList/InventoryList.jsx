@@ -8,10 +8,8 @@ export default function InventoryList({catalog, ownedItems, studentId, moneyAmt}
     const familiarPath = "../../../assets/familiar/"
 
     function setOwned(catalog, ownedItems) {
-        let studentOwned = ownedItems.map(item => item.item_id)
-
         catalog.forEach((item) => {
-            item["owned"] = studentOwned.includes(item.item_id)
+            item["owned"] = ownedItems.includes(item.item_id)
         })
     }
 

@@ -4,10 +4,11 @@ const armorPath = "../../../assets/armor/"
 const weaponPath = "../../../assets/weapon/"
 const familiarPath = "../../../assets/familiar/"
 
-export default function Equipped({equipItems}) {
-    let eqArmor = equipItems.find((item) => item.item_type == "A")
-    let eqWeapon = equipItems.find((item) => item.item_type == "W")
-    let eqFamiliar = equipItems.find((item) => item.item_type == "F")
+export default function Equipped({catalog, equipItems}) {
+    // find inventory row that has the same ID has the equipped item
+    let eqArmor = catalog.find(item => item.item_id == equipItems.armor)
+    let eqWeapon = catalog.find(item => item.item_id == equipItems.weapon)
+    let eqFamiliar = catalog.find(item => item.item_id == equipItems.familiar)
 
     return (
         <>
