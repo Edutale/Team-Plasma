@@ -1,4 +1,9 @@
 /*--- App.css ---*/ 
+@import url('https://fonts.googleapis.com/css2?family=Faculty+Glyphic&family=Modern+Antiqua&display=swap');
+
+* {
+    font-family: "Faculty Glyphic", serif;
+}
 
 .pane-container {
     display: grid;

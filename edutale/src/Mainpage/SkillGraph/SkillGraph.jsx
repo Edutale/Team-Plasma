@@ -42,6 +42,21 @@ const OPTIONS = {
       ticks: {display: false},
       pointLabels: {font: {size:14}}
     }
+  },
+  font: {
+    family: "'Faculty Glyphic', serif"
+  },
+  plugins: {
+    tooltip: {
+      titleFont: {
+        size: 16,
+        family: "'Faculty Glyphic', serif"
+      },
+      bodyFont: {
+        size: 12,
+        family: "'Faculty Glyphic', serif"
+      }
+    }
   }
 }
 
