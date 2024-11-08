@@ -21,4 +21,20 @@
     padding-top: 5px;
 }
   
-  
+.settings-button, .admin-button {
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: #f3f3f3;
+    text-decoration: none;
+    color: black;
+    padding: .2em;
+    font-size: 10pt;
+    text-align: center;
+    min-width: 4em;
+}
+
+.settings-button:hover, .settings-button:focus,
+.admin-button:hover, .admin-button:focus {
+    background-color: #d4d4d4;
+    cursor: pointer;
+}

@@ -27,12 +27,6 @@ async function getStudentQuests(studentId){
     }
 }
 
-async function getStudentJoinDate(studentId){
-    const sql = await loadSqlFile('get_student_join_date.sql')
-    const result = await db.query(sql, [studentId])
-    return result.rows
-}
-
 async function getStudentCareer(studentId){
     const sql = await loadSqlFile('get_student_career.sql')
     const result = await db.query(sql, [studentId])
@@ -57,31 +51,26 @@ async function getStudentInventory(studentId){
     return result.rows
 }
 
-async function getStudentMoney(studentId){
-    const sql = await loadSqlFile('get_student_money.sql')
-    const result = await db.query(sql, [studentId])
-    return result.rows
-}
-
 async function getStudentLevelAndEXP(studentId){
     const sql = await loadSqlFile('get_student_lvl_exp.sql')
     const result = await db.query(sql, [studentId])
     return result.rows
 }
 
-async function getStudentInventory(studentId){
-    const sql = await loadSqlFile('get_student_inventory.sql')
+async function getInventoryPage(studentId){
+    const sql = await loadSqlFile('get_inventory_page.sql')
     const result = await db.query(sql, [studentId])
     return result.rows
 }
 
-async function getStudentMoney(studentId){
-    const sql = await loadSqlFile('get_student_money.sql')
+async function getMainpageStats(studentId) {
+    const sql = await loadSqlFile("get_mainpage_stats.sql")
     const result = await db.query(sql, [studentId])
     return result.rows
 }
+
 
 module.exports = {
-    getStudentSkills, getStudentQuests, getStudentJoinDate, getStudentCareer,
-    getStudentCheckedDays, getStudentLevelAndEXP, getStudentInventory, getStudentMoney
+    getStudentSkills, getStudentQuests, getStudentCareer, getStudentCheckedDays,
+    getStudentLevelAndEXP, getStudentInventory, getInventoryPage, getMainpageStats
 }
