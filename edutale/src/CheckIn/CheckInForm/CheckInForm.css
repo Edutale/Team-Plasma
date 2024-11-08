@@ -61,11 +61,11 @@
   transition-duration: .15s;
 }
 
-.yes:hover{
+.yes:hover, .yes:focus {
   background: rgb(124, 253, 152)
 }
 
-.no:hover{
+.no:hover, .no:focus {
   background: rgb(253, 124, 124);
 }
 
@@ -108,6 +108,6 @@
   margin-right: 10px;
 }
 
-.submit:hover{
+.submit:hover, .submit:focus {
   background: rgb(124, 253, 152)
 }

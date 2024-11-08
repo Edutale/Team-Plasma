@@ -15,6 +15,6 @@
     transition-duration: .15s;
 }
 
-.logout-button:hover {
+.logout-button:hover, .logout-button:focus {
     background: rgb(253, 124, 124);
 }

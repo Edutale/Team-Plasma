@@ -91,7 +91,7 @@
     transition-duration: .15s;
 }
 
-.close:hover{
+.close:hover, .close:focus {
     background: #d4d4d4;
 }
 

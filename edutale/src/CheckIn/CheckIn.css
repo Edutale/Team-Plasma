@@ -12,6 +12,6 @@
     text-align: right;
 }
   
-.save:hover{
+.save:hover, .save:focus {
     background: rgb(124, 253, 152);
 }

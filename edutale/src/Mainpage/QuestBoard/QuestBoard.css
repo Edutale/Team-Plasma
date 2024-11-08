@@ -21,7 +21,7 @@
     background-color: #f3f3f3;
 }
 
-.row-button:hover {
+.row-button:hover, .row-button:focus {
     border-radius: 25px;
     background-color: #d4d4d4;
     cursor: pointer;
@@ -64,6 +64,6 @@
     text-align: right;
 }
   
-.accept:hover{
+.accept:hover, .accept:focus {
     background: #7cfd98;
 }

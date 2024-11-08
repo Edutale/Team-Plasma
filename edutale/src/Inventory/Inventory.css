@@ -40,7 +40,8 @@
     background-color: #f3f3f3;
 }
 
-.unowned:hover, .owned:hover {
+.unowned:hover, .owned:hover,
+.unowned:focus, .owned:focus {
     cursor: pointer;
 }
 

@@ -12,7 +12,8 @@
     appearance: button; /* For CSS3 */
 }
 
-.button-unchecked label:hover {
+.button-unchecked label:hover,
+.button-unchecked label:focus {
     background-color: #d4d4d4;
 }
 

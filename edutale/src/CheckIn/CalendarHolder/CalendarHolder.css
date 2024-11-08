@@ -134,10 +134,6 @@
     border-radius: 50%;
 }
 
-.react-calendar--selectRange .react-calendar__tile--hover {
-    background-color: #e6e6e6;
-}
-
 .checked-in {
     background-color: rgba(196, 0, 0, 0.7);
     border-radius: 50%;
