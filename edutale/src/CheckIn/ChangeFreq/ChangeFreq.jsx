@@ -1,10 +1,10 @@
 // creates modal for the "change frequency" button.
 import Popup from "reactjs-popup"
 import "./ChangeFreq.css"
-import ChangeHandler from "./ChangeFreqHandler"
+import ChangeFreqHandler from "./ChangeFreqHandler"
 import { createEvent } from "ics"
 import { saveAs } from "file-saver"
-import { useState, useRef } from "react"
+import { useState } from "react"
 
 export default function ChangeFreq({studentId, getFreqWord, freq, setFreq}) {
     // confirm handles whether the modal content should be the confirmation
@@ -14,7 +14,7 @@ export default function ChangeFreq({studentId, getFreqWord, freq, setFreq}) {
     // saves the frequency choice within the modal. Allows for choice to switch
     // multiple times without calling a re-render on components using freq (until
     // the student actually hits the save button).
-    let tempChoice = ""
+    const [tempChoice, setTempChoice] = useState("")
 
     return freq && (
       <>
@@ -30,34 +30,38 @@ export default function ChangeFreq({studentId, getFreqWord, freq, setFreq}) {
                   </button>
                 </div>
     
-                <div className="freq-modal">
-                  <div className="choice-button">
+                <div className="freq-buttons">
+                  <div className={tempChoice == "D" ? " button-checked" : "button-unchecked"}>
                     <label htmlFor="daily"> Daily </label>
-                    <input id="daily" type="radio" name="frequency" value="D" onChange={event => {tempChoice = event.target.value}}/>
+                    <input id="daily" type="radio" name="frequency" value="D"
+                      onChange={(event) => {setTempChoice(event.target.value)}}/>
                   </div>
     
-                  <div className="choice-button">
+                  <div className={tempChoice == "W" ? " button-checked" : "button-unchecked"}>
                     <label htmlFor="weekly"> Weekly </label>
-                    <input id="weekly" type="radio" name="frequency" value="W" onChange={event => {tempChoice = event.target.value}}/>
+                    <input id="weekly" type="radio" name="frequency" value="W"
+                      onChange={(event) => {setTempChoice(event.target.value)}}/>
                   </div>
     
-                  <div className="choice-button">
+                  <div className={tempChoice == "M" ? " button-checked" : "button-unchecked"}>
                     <label htmlFor="monthly"> Monthly </label>
-                    <input id="monthly" type="radio" name="frequency" value="M" onChange={event => {tempChoice = event.target.value}}/>
+                    <input id="monthly" type="radio" name="frequency" value="M"
+                      onChange={(event) => {setTempChoice(event.target.value)}}/>
                   </div>
                 </div>
 
+                {/* save new frequency to both front-end components and the backend. Also set confirmed as true */}
                 <div className="freq-footer">
-                  <button className="modal-footer-button save" onClick={() => {ChangeHandler(studentId, tempChoice, setConfirm); setFreq(tempChoice)}}>
+                  <button className="modal-footer-button save" onClick={() => {setFreq(tempChoice); ChangeFreqHandler(studentId, tempChoice, setConfirm)}}>
                     Save Changes
                   </button>
                 </div>
               </div>
             ) : (
-              // confirmation message of the new frequency and .ics download
+              // confirmation message of the new frequency and .ics download button
               <div className="freq-modal">
                 <div className="modal-header">
-                  <button className="modal-header-button close" onClick={() => {close(); setConfirm(false)}}>
+                  <button className="modal-header-button close" onClick={() => {close(); setConfirm(false); setTempChoice("")}}>
                     ⨯
                   </button>
                 </div>
@@ -66,7 +70,7 @@ export default function ChangeFreq({studentId, getFreqWord, freq, setFreq}) {
                   <button onClick={() => createCal(freq)}> Download .ics file </button>
                 </div>
                 <div className="freq-footer">
-                  <button className="modal-footer-button close" onClick={() => {close(); setConfirm(false)}}>
+                  <button className="modal-footer-button close" onClick={() => {close(); setConfirm(false); setTempChoice("")}}>
                     Close
                   </button>
                 </div>
@@ -78,6 +82,7 @@ export default function ChangeFreq({studentId, getFreqWord, freq, setFreq}) {
     )
 }
 
+// downloads a .ics file with the specified frequency for reminders.
 function createCal(frequency) {
     // today's date
     let startDate = new Date()
@@ -104,7 +109,7 @@ function createCal(frequency) {
     startDate.setHours(8,0,0,0)
 
     // create .ics data JSON
-    let calEvent = {
+    let calData = {
         start: startDate.getTime(),
         startInputType: "utc",
         duration: { hours: 1 },
@@ -116,8 +121,8 @@ function createCal(frequency) {
         recurrenceRule: recurrence,
         }
     
-    // feed event to 
-    createEvent(calEvent, (error, value) => {
+    // feed event here to create the calendar itself
+    createEvent(calData, (error, value) => {
         if (error) {
             console.log(error)
         }

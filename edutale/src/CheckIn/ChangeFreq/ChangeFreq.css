@@ -1,3 +1,40 @@
-.choice-button label {
-    background-color: red;
+.button-unchecked label {
+    padding: 1em;
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 15px;
+    background-color: #f3f3f3;
+
+    -webkit-appearance: button; /* WebKit */
+    -moz-appearance: button; /* Mozilla */
+    -o-appearance: button; /* Opera */
+    -ms-appearance: button; /* MS Edge */
+    appearance: button; /* For CSS3 */
+}
+
+.button-unchecked label:hover {
+    background-color: #d4d4d4;
+}
+
+.freq-buttons {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.freq-buttons input {
+    display: none;
+}
+
+.button-checked {
+    padding: 1em;
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 15px;
+    background-color: #7cfd98;
+
+    -webkit-appearance: button; /* WebKit */
+    -moz-appearance: button; /* Mozilla */
+    -o-appearance: button; /* Opera */
+    -ms-appearance: button; /* MS Edge */
+    appearance: button; /* For CSS3 */
 }

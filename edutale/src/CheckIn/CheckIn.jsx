@@ -36,7 +36,8 @@ export default function CheckIn() {
         }
     }
 
-    // helper function to get the designated frequency amount given the one-character frequency code
+    // helper function to get the designated frequency amount given the
+    // one-character frequency code
     function getFreqWord(frequency) {
         switch(frequency) {
         case "D":
