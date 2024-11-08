@@ -18,6 +18,7 @@ export default function Inventory() {
     const [moneyAmt, setMoneyAmt] = useState()
     const [equipItems, setEquipItems] = useState()
     const [progress, setProgress] = useState()
+    const [stuName, setStuName] = useState()
 
     // used to check if the user is authenticated (logged in) again as a failsafe
     // if the ProtectedRoute logic fails.
@@ -38,7 +39,7 @@ export default function Inventory() {
             await Axios.get(`http://localhost:3000/api/students/${studentId}/inventory`)
                 .then((response) => {
                     setOwnedItems(response.data.map((item) => item.item_id))
-
+                    setStuName(response.data[0].student_name)
                     setMoneyAmt(response.data[0].student_money)
 
                     setEquipItems({
@@ -74,12 +75,12 @@ export default function Inventory() {
 
     return (
       // the page will only render if the user is logged in
-      isAuthenticated && catalog && equipItems && (
+      isAuthenticated && catalog && equipItems && stuName && (
         <>
         <Header />
         <div className="pane-container">
           <div className="pane-item">
-            <Equipped catalog={catalog} equipItems={equipItems}/>
+            <Equipped catalog={catalog} equipItems={equipItems} stuName={stuName}/>
               <div className="lower-inv-container">
                 <div className="lower-inv-item">
                   <UserBar progress={progress} className={"user-bar"}/>

@@ -5,7 +5,7 @@ const armorPath = "../../../assets/armor/"
 const weaponPath = "../../../assets/weapon/"
 const familiarPath = "../../../assets/familiar/"
 
-export default function Equipped({catalog, equipItems}) {
+export default function Equipped({catalog, equipItems, stuName}) {
     //const { user } = useAuth0()
 
     // find inventory row that has the same ID has the equipped item
@@ -15,7 +15,7 @@ export default function Equipped({catalog, equipItems}) {
 
     return (
         <>
-          <h1 className="header"> <u> placeholder fix later </u> </h1>
+          <h1 className="header"> <u> {stuName} </u> </h1>
           <img className="inv-avatar" src={USER.avatar} alt="avatar" />
           <div className="equip-grid">
             {/* check if equipped armor is defined. If not, show dummy/empty picture */}
