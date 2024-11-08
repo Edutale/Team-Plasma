@@ -5,8 +5,7 @@ import { useState, useEffect } from "react"
 import Axios from "axios"
 import "./CheckIn.css"
 import CalendarHolder from "./CalendarHolder/CalendarHolder"
-import Schedule from "./Schedule/Schedule"
-import ChangeFreq from "./Schedule/ChangeFreq"
+import ChangeFreq from "./ChangeFreq/ChangeFreq"
 import CheckInFormHolder from "./CheckInForm/CheckInFormHolder"
 import Header from "../Header/Header"
 
@@ -60,8 +59,7 @@ export default function CheckIn() {
           
           <h1 className="page-header"> <u> Schedule </u> </h1>
           <div className="schedule-container">
-            <Schedule freq={freq} getFreqWord={getFreqWord}/>
-            <ChangeFreq studentId={studentId} getFreqWord={getFreqWord}/>
+            <ChangeFreq studentId={studentId} getFreqWord={getFreqWord} freq={freq} setFreq={setFreq}/>
           </div>
         </div>
 

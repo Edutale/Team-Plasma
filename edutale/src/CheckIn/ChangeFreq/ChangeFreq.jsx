@@ -1,20 +1,25 @@
 // creates modal for the "change frequency" button.
 import Popup from "reactjs-popup"
-import "./Schedule.css"
+import "./ChangeFreq.css"
 import ChangeHandler from "./ChangeFreqHandler"
 import { createEvent } from "ics"
 import { saveAs } from "file-saver"
-import { useState } from "react"
+import { useState, useRef } from "react"
 
-export default function ChangeFreq({studentId, getFreqWord}) {
-    const [freq, setFreq] = useState()
-
+export default function ChangeFreq({studentId, getFreqWord, freq, setFreq}) {
     // confirm handles whether the modal content should be the confirmation
     // or the radio buttons that ask the student what schedule to select.
     const [confirm, setConfirm] = useState(false)
 
-    return  (
-        <Popup trigger= {<button> Change Frequency </button>}
+    // saves the frequency choice within the modal. Allows for choice to switch
+    // multiple times without calling a re-render on components using freq (until
+    // the student actually hits the save button).
+    let tempChoice = ""
+
+    return freq && (
+      <>
+        <p className="timing-text"> Current check-in timing: {getFreqWord(freq)} </p>
+        <Popup className="change-freq" trigger= {<button> Change Frequency </button>}
           modal nested>{
             close => (!confirm ? (
               // form to choose a new notification frequency
@@ -26,23 +31,24 @@ export default function ChangeFreq({studentId, getFreqWord}) {
                 </div>
     
                 <div className="freq-modal">
-                  <div className="freq-button">
+                  <div className="choice-button">
                     <label htmlFor="daily"> Daily </label>
-                    <input id="daily" type="radio" name="frequency" value="D" onChange={event => setFreq(event.target.value)}/>
+                    <input id="daily" type="radio" name="frequency" value="D" onChange={event => {tempChoice = event.target.value}}/>
                   </div>
     
-                  <div className="freq-button">
+                  <div className="choice-button">
                     <label htmlFor="weekly"> Weekly </label>
-                    <input id="weekly" type="radio" name="frequency" value="W" onChange={event => setFreq(event.target.value)}/>
+                    <input id="weekly" type="radio" name="frequency" value="W" onChange={event => {tempChoice = event.target.value}}/>
                   </div>
     
-                  <div className="freq-button">
+                  <div className="choice-button">
                     <label htmlFor="monthly"> Monthly </label>
-                    <input id="monthly" type="radio" name="frequency" value="M" onChange={event => setFreq(event.target.value)}/>
+                    <input id="monthly" type="radio" name="frequency" value="M" onChange={event => {tempChoice = event.target.value}}/>
                   </div>
                 </div>
+
                 <div className="freq-footer">
-                  <button className="modal-footer-button save" onClick={() => ChangeHandler(studentId, freq, setConfirm)}>
+                  <button className="modal-footer-button save" onClick={() => {ChangeHandler(studentId, tempChoice, setConfirm); setFreq(tempChoice)}}>
                     Save Changes
                   </button>
                 </div>
@@ -68,6 +74,7 @@ export default function ChangeFreq({studentId, getFreqWord}) {
             ))
           }                           
         </Popup>
+      </>
     )
 }
 
