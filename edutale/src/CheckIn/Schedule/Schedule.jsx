@@ -1,9 +1,9 @@
 import * as USER from "../../USER.json"
 
-export default function Schedule() {
-    return (
+export default function Schedule({freq, getFreqWord}) {
+    return freq && (
         <>
-          <p> Current check-in timing: {USER.schedule} </p>
+          <p> Current check-in timing: {getFreqWord(freq)} </p>
         </>
     )
 }

@@ -6,11 +6,14 @@ import { createEvent } from "ics"
 import { saveAs } from "file-saver"
 import { useState } from "react"
 
-export default function ChangeFreq({studentId}) {
+export default function ChangeFreq({studentId, getFreqWord}) {
     const [freq, setFreq] = useState()
+
+    // confirm handles whether the modal content should be the confirmation
+    // or the radio buttons that ask the student what schedule to select.
     const [confirm, setConfirm] = useState(false)
 
-    return (
+    return  (
         <Popup trigger= {<button> Change Frequency </button>}
           modal nested>{
             close => (!confirm ? (
@@ -53,7 +56,8 @@ export default function ChangeFreq({studentId}) {
                   </button>
                 </div>
                 <div className="freq-modal">
-                  <p> This is the confirmation message! </p>
+                  <p> Your frequency is now {getFreqWord(freq)}. Download the .ics file below to add the reminder to your choice of calendar: </p>
+                  <button onClick={() => createCal(freq)}> Download .ics file </button>
                 </div>
                 <div className="freq-footer">
                   <button className="modal-footer-button close" onClick={() => {close(); setConfirm(false)}}>
@@ -88,14 +92,12 @@ function createCal(frequency) {
             recurrence = "FREQ=MONTHLY;INTERVAL=1;BYMONTHDAY=1"
             break
     }
-
-    // changes startDate's date to the next Saturday (or today if today's Saturday)
-    startDate.setDate(startDate.getDate() + (7 + 7 - startDate.getDay()) % 7)
     
     // sets hour to 8AM as per the business rules
     startDate.setHours(8,0,0,0)
 
-    let event = {
+    // create .ics data JSON
+    let calEvent = {
         start: startDate.getTime(),
         startInputType: "utc",
         duration: { hours: 1 },
@@ -107,7 +109,8 @@ function createCal(frequency) {
         recurrenceRule: recurrence,
         }
     
-    createEvent(event, (error, value) => {
+    // feed event to 
+    createEvent(calEvent, (error, value) => {
         if (error) {
             console.log(error)
         }
@@ -116,7 +119,4 @@ function createCal(frequency) {
         const blob = new Blob([value], { type: "text/calendar" });
         saveAs(blob, `edutale-calendar.ics`);
     })
-    
-
-
 }

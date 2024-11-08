@@ -18,6 +18,7 @@ export default function CheckIn() {
     const {isAuthenticated} = useAuth0()
 
     const [checkedDays, setCheckedDays] = useState()
+    const [freq, setFreq] = useState()
 
     useEffect(() => {
         fetchStudentCheckedDays()
@@ -28,10 +29,23 @@ export default function CheckIn() {
             await Axios.get(`http://localhost:3000/api/students/${studentId}/checkin`)
                 .then((response) => {
                     setCheckedDays(response.data.map(item => item.progress_date))
+                    setFreq(response.data[0].reminder_freq)
                 })
         }
         catch(err) {
             console.error("Error fetching checked in days: ", err)
+        }
+    }
+
+    // helper function to get the designated frequency amount given the one-character frequency code
+    function getFreqWord(frequency) {
+        switch(frequency) {
+        case "D":
+            return "Daily"
+        case "W":
+            return "Weekly"
+        case "M":
+            return "Monthly"
         }
     }
 
@@ -46,8 +60,8 @@ export default function CheckIn() {
           
           <h1 className="page-header"> <u> Schedule </u> </h1>
           <div className="schedule-container">
-            <Schedule />
-            <ChangeFreq studentId={studentId}/>
+            <Schedule freq={freq} getFreqWord={getFreqWord}/>
+            <ChangeFreq studentId={studentId} getFreqWord={getFreqWord}/>
           </div>
         </div>
 
