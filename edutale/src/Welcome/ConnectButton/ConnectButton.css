@@ -10,7 +10,7 @@
     cursor: pointer;
 }
 
-.connect-button:hover {
+.connect-button:hover, .connect-button:focus {
     background: transparent;
     color: white;
     outline: 1px solid #fff;

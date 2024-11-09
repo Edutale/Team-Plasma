@@ -1,12 +1,11 @@
 const express = require('express')
 const router = express.Router()
 const{
-    getStudentSkills, getStudentQuests, getStudentJoinDate,
-    getStudentCareer, getStudentCheckedDays, getStudentLevelAndEXP,
-    getStudentInventory, getStudentMoney
+    getStudentSkills, getStudentQuests, getMainpageStats,
+    getStudentCareer, getStudentCheckedDays, getStudentLevelAndEXP, getInventoryPage
 } = require('../javascript/students/studentsGet')
 const{
-    updateSkillXP,
+    updateSkillEXP, checkInSubmit, buyItem, equipItem, updateFreq
 } = require('../javascript/students/studentsPut')
 const{
     deleteStudentQuest,
@@ -30,16 +29,6 @@ router.get('/:id/quests', async(req, res)=>{
     try{
         const studentQuests = await getStudentQuests(req.params.id)    
         res.json(studentQuests)
-    } catch(err){
-        res.status(500).json({error: err.message})
-    }
-})
-
-// Get student join date
-router.get('/:id/joindate', async(req, res)=>{
-    try{
-        const joindate = await getStudentJoinDate(req.params.id)
-        res.json(joindate)
     } catch(err){
         res.status(500).json({error: err.message})
     }
@@ -75,32 +64,72 @@ router.get('/:id/progress', async(req, res)=>{
     }
 })
 
-//get student's owned inventory items
-router.get('/:id/inventory', async(req, res)=>{
-    try{
-        const inventory = await getStudentInventory(req.params.id)
+// get all student information needed for the Inventory page.
+router.get("/:id/inventory", async(req, res) => {
+    try {
+        const inventory = await getInventoryPage(req.params.id)
         res.json(inventory)
-    } catch(err){
+    } catch(err) {
         res.status(500).json({error: err.message})
     }
 })
 
-//get student's money
-router.get('/:id/money', async(req, res)=>{
-    try{
-        const inventory = await getStudentMoney(req.params.id)
-        res.json(inventory)
-    } catch(err){
+// get all student stats needed for the Mainpage.
+router.get("/:id/mainpage", async(req, res) => {
+    try {
+        const mainStats = await getMainpageStats(req.params.id)
+        res.json(mainStats)
+    } catch(err) {
         res.status(500).json({error: err.message})
     }
 })
-
 
 // update skill EXP
 router.put('/:id/skills/:skillId', async(req, res)=>{
     try{
-        await updateSkillXP(req.params.id, req.params.skillId, req.body.xp)
-        res.status(200).json({message: 'Skill XP updated successfully'})
+        await updateSkillEXP(req.params.id, req.params.skillId, req.body.exp)
+        res.status(200).json({message: 'Skill EXP updated successfully'})
+    } catch(err){
+        res.status(500).json({error: err.message})
+    }
+})
+
+// submitting a check in form
+router.put('/:id/check-in-complete', async(req, res)=>{
+    try{
+        await checkInSubmit(req.params.id, req.body.totalExp, req.body.netExp, req.body.stuLvl,
+            req.body.completedQuests, req.body.numCompleted, req.body.mins, req.body.netMoney)
+        res.status(200).json({message: 'Check-in successfully recorded'})
+    } catch(err){
+        res.status(500).json({error: err.message})
+    }
+})
+
+// updating student money and student inventory after purchasing item
+router.put('/:id/buy-item', async(req, res)=>{
+    try{
+        await buyItem(req.body.studentId, req.body.itemId, req.body.itemPrice, req.body.moneyAmt)
+        res.status(200).json({message: 'Item purchased successfully'})
+    } catch(err){
+        res.status(500).json({error: err.message})
+    }
+})
+
+// updating a student's equipped item
+router.put('/:id/equip-item', async(req, res)=>{
+    try{
+        await equipItem(req.body.studentId, req.body.itemId)
+        res.status(200).json({message: 'Item equipped successfully'})
+    } catch(err){
+        res.status(500).json({error: err.message})
+    }
+})
+
+// updating a student's frequency
+router.put('/:id/freq', async(req, res)=>{
+    try{
+        await updateFreq(req.body.studentId, req.body.freq)
+        res.status(200).json({message: 'Frequency changed successfully'})
     } catch(err){
         res.status(500).json({error: err.message})
     }
@@ -144,8 +173,8 @@ router.post('/:id/quests', async(req, res)=>{
 // add new student skill
 router.post('/:id/skills', async(req, res)=>{
     try{
-        const {skillId, skillXP} = req.body
-        await addNewStudentSkill(req.params.id, skillId, skillXP)
+        const {skillId, skillEXP} = req.body
+        await addNewStudentSkill(req.params.id, skillId, skillEXP)
         res.status(201).json({message: 'New skill added to student skillset successfully'})
     } catch(err){
         res.status(500).json({message: err.message})

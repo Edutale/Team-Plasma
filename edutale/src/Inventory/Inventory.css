@@ -16,13 +16,15 @@
 }
 
 .equip-img {
-    object-fit: contain;
-    text-align: center;
+    object-fit: contain;    
 }
 
 .grid-item {
     object-fit: contain;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .unowned {
@@ -38,7 +40,8 @@
     background-color: #f3f3f3;
 }
 
-.unowned:hover, .owned:hover {
+.unowned:hover, .owned:hover,
+.unowned:focus, .owned:focus {
     cursor: pointer;
 }
 

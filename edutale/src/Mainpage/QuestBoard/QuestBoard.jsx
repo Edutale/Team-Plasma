@@ -24,7 +24,6 @@ export default function QuestBoard() {
           await Axios.get(`http://localhost:3000/api/quests`)
             .then((response) => {
                 let questData = []
-
                 for (const {quest_name, quest_description} of response.data.slice(0, 5)) {
                     questData.push({
                         name: quest_name,
@@ -35,7 +34,7 @@ export default function QuestBoard() {
                 setQuests(
                   <>
                   {questData.map(item => (
-                    <Popup trigger= {
+                    <Popup key={item.name} trigger= {
                       <button className="row-button">
                         <QuestRow img={QUESTS[0].img} qName={item.name} desc={item.desc} />
                       </button>}

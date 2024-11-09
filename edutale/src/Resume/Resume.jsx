@@ -1,4 +1,3 @@
-
 import { useAuth0 } from "@auth0/auth0-react"
 import ResTemplates from "./ResTemplates/ResTemplates"
 import YourSkills from "./YourSkills/YourSkills"
@@ -13,7 +12,7 @@ const studentId = "TESTSTU01"
 
 export default function Resume() {
     const [projects, setProjects] = useState()
-    const [skills, setSkills] = useState()
+    const [stuSkills, setStuSkills] = useState()
 
     // used to check if the user is authenticated (logged in) again as a failsafe
     // if the ProtectedRoute logic fails.
@@ -29,11 +28,19 @@ export default function Resume() {
         fetchStudentSkills()
     }, [])
 
+    // pulls quests marked as projects AND completed
     async function fetchStudentProjects() {
         try {
             await Axios.get(`http://localhost:3000/api/students/${studentId}/quests`)
                 .then((response) => {
-                    setProjects(response.data)
+                    function sortProjects(projects) {
+                        return (
+                            projects.sort(function(a,b) {
+                                return a.quest_difficulty - b.quest_difficulty
+                            }).reverse()
+                        )
+                    }
+                    setProjects(sortProjects(response.data).filter(item => item.is_project && item.completed))
                 })
         }
         catch(err) {
@@ -45,7 +52,15 @@ export default function Resume() {
         try {
             await Axios.get(`http://localhost:3000/api/students/${studentId}/skills`)
                 .then((response) => {
-                    setSkills(response.data)
+                    function sortSkills(skills) {
+                        return (
+                            skills.sort(function(a,b) {
+                                return a.skill_exp - b.skill_exp
+                            }).reverse()
+                        )
+                    }
+
+                    setStuSkills(sortSkills(response.data))
                 })
         }
         catch(err) {
@@ -60,11 +75,11 @@ export default function Resume() {
         <Header />
         <div className="pane-container">
           <div className="pane-item">
-            <YourSkills skills={skills} />
+            <YourSkills skills={stuSkills} />
             <YourProjects projects={projects} />
           </div>
           <div className="pane-item">
-            <ResTemplates />
+            <ResTemplates stuSkills={stuSkills} projects={projects}/>
           </div>
         </div>
         </>

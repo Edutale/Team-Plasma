@@ -1,7 +1,7 @@
 -- drop tables with foreign keys first to avoid errors
 
 drop table Student_Skill;
-drop table Student_Checkin;
+drop table Student_Progress;
 drop table Career_Skill;
 drop table Student_Quest;
 drop table Skill_Quest;

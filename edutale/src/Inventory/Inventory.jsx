@@ -1,4 +1,3 @@
-
 import { useAuth0 } from "@auth0/auth0-react"
 import Equipped from "./Equipped/Equipped"
 import InventoryList from "./InventoryList/InventoryList"
@@ -17,25 +16,50 @@ export default function Inventory() {
     const [catalog, setCatalog] = useState()
     const [ownedItems, setOwnedItems] = useState()
     const [moneyAmt, setMoneyAmt] = useState()
+    const [equipItems, setEquipItems] = useState()
+    const [progress, setProgress] = useState()
+    const [stuName, setStuName] = useState()
 
     // used to check if the user is authenticated (logged in) again as a failsafe
     // if the ProtectedRoute logic fails.
     const {isAuthenticated} = useAuth0()
 
-    // effect for catalog
+    // fetch user related Inventory data
+    useEffect(() => {
+        fetchInventoryPage()
+    }, [])
+
+    // fetch entire Inventory catalog
     useEffect(() => {
         fetchCatalog()
     }, [])
 
-    // effect for pulling student-owned items
-    useEffect(() => {
-        fetchStudentItems()
-    }, [])
+    async function fetchInventoryPage() {
+        try {
+            await Axios.get(`http://localhost:3000/api/students/${studentId}/inventory`)
+                .then((response) => {
+                    setOwnedItems(response.data.map((item) => item.item_id))
+                    setStuName(response.data[0].student_name)
+                    setMoneyAmt(response.data[0].student_money)
 
-    // effect for pulling student money amount
-    useEffect(() => {
-        fetchStudentMoney()
-    }, [])
+                    setEquipItems({
+                        armor: response.data[0].equip_armor,
+                        weapon: response.data[0].equip_weapon,
+                        familiar: response.data[0].equip_familiar
+                    })
+
+                    setProgress({
+                        lvl: response.data[0].student_lvl,
+                        exp: response.data[0].total_exp,
+                        name: response.data[0].student_name
+                    })
+
+                })
+        }
+        catch(err) {
+            console.error("Error fetching Inventory page: ", err)
+        }
+    }
 
     async function fetchCatalog() {
         try {
@@ -49,41 +73,17 @@ export default function Inventory() {
         }
     }
 
-    async function fetchStudentItems() {
-        try {
-            await Axios.get(`http://localhost:3000/api/students/${studentId}/inventory`)
-                .then((response) => {
-                    setOwnedItems(response.data)
-                })
-        }
-        catch(err) {
-            console.error("Error fetching student inventory: ", err)
-        }
-    }
-
-    async function fetchStudentMoney() {
-        try {
-            await Axios.get(`http://localhost:3000/api/students/${studentId}/money`)
-                .then((response) => {
-                    setMoneyAmt(response.data[0].student_money)
-                })
-        }
-        catch(err) {
-            console.error("Error fetching catalog: ", err)
-        }
-    }
-
     return (
-        // the page will only render if the user is logged in
-        isAuthenticated && (
+      // the page will only render if the user is logged in
+      isAuthenticated && catalog && equipItems && stuName && (
         <>
         <Header />
         <div className="pane-container">
           <div className="pane-item">
-            <Equipped />
+            <Equipped catalog={catalog} equipItems={equipItems} stuName={stuName}/>
               <div className="lower-inv-container">
                 <div className="lower-inv-item">
-                  <UserBar className={"user-bar"}/>
+                  <UserBar progress={progress} className={"user-bar"}/>
                 </div>
                 <div className="lower-inv-item">
                   <Money moneyAmt={moneyAmt}/>
@@ -92,10 +92,10 @@ export default function Inventory() {
             </div>
           <div className="pane-item">
             <h1 className="header2"> <u> Inventory </u> </h1>
-            <InventoryList catalog={catalog} ownedItems={ownedItems}/>
+            <InventoryList catalog={catalog} ownedItems={ownedItems} studentId={studentId} moneyAmt={moneyAmt}/>
           </div>
         </div>
         </>
-        )
+      )
 )
 }

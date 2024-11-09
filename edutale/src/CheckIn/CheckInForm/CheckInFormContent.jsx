@@ -4,8 +4,9 @@
 import { useState } from "react"
 
 import "./CheckInForm.css"
+import SubmitHandler from "./SubmitHandler"
 
-export default function CheckInFormContent({quests}) {
+export default function CheckInFormContent({quests, progress}) {
     // used to generate a unique ID on this page for each check in entry. This allows for the
     // deletion of entries to work properly.
     const [idIncrement, setIdIncrement] = useState(0)
@@ -15,31 +16,30 @@ export default function CheckInFormContent({quests}) {
     }
     
     // the first increment() call will set idIncrement to 0, so start at -1
-    const [entries, setEntries] = useState([{id: -1, quest_id: "", hours: "", completed: "false"}])
+    const [entries, setEntries] = useState([{id: -1, quest_id_diff: "", mins: "", completed: "false"}])
 
     // updates entries list to include a new object with empty data
     const addEntry = () => {
         increment()
-        setEntries([...entries, {id: idIncrement, quest_id: "", hours: "", completed: "false"}])
-    };
+        setEntries([...entries, {id: idIncrement, quest_id_diff: "", mins: "", completed: "false"}])
+    }
 
-    // handles a change in the values within the form, updating the corresponding
-    // changed value
+    // handles and updates a change in the values within the form
     const handleChange = (event, ind) => {
         let { name, value } = event.target
         let onChangeValue = [...entries]
         onChangeValue[ind][name] = value
         setEntries(onChangeValue)
-    };
+    }
 
     // updates entries list by deleting the selected entry by its id. Since we increment
     // the id value, we ensure every entry is unique (which allows for the select box to
     // keep its value).
     const deleteEntry = id => () => {
         setEntries(entries => entries.filter((item) => item.id !== id))
-    };
+    }
 
-    return quests && (
+    return quests && progress && (
       <div className="check-in-form">
         {entries.map((item, ind) => (
           <div className="entry" key={item.id}>
@@ -56,34 +56,35 @@ export default function CheckInFormContent({quests}) {
               
               <div className="input-box">
                 <label className="input-label" htmlFor="questName"> Quest Name </label>
-                <select className="quest-select" defaultValue="" name="quest_id" onChange={(event) => handleChange(event, ind)}>
+                <select className="quest-select" defaultValue="" name="quest_id_diff" onChange={(event) => handleChange(event, ind)}>
                   <option value="" disabled> Choose a Quest </option>
-                    {quests.map(item =>
-                      <option value={item.quest_id} disabled={entries.some(entry => entry.quest_id == item.quest_id)}>
-                        {item.quest_name}
+                    {quests.map(quest =>
+                      <option key={quest.quest_id + item.id} value={quest.quest_id + "," + quest.quest_difficulty}
+                              disabled={entries.some(entry => entry.quest_id_diff == quest.quest_id + "," + quest.quest_difficulty)}>
+                        {quest.quest_name}
                       </option>
                     )}
                 </select>
               </div>
             
               <div className="input-box">
-                <label className="input-label" htmlFor="hours"> Hours spent on quest </label>
-                <input className="quest-select" placeholder="Number of Hours" name="hours" type="number" min="1" step="1" value={item.hours} onChange={(event) => handleChange(event, ind)}/>
+                <label className="input-label" htmlFor="mins"> Minutes spent on quest </label>
+                <input className="quest-select" placeholder="Number of minutes" name="mins" type="text"
+                       min="1" step="1" value={item.mins} onChange={(event) => handleChange(event, ind)}/>
               </div>
             
-              {/* there needs to be a way to make "false" default and also style buttons to show clicked status */}
               <div className="input-box">
                 <legend className="input-label"> Quest Complete? </legend>
                 <form>
-                <input className="quest-complete-button yes" type="radio" is="T" name="completed" value={"true"} onClick={(event) => handleChange(event, ind)} /> 
-                <label for="T"> True </label>
+                <input className="quest-complete-button yes" type="radio" is="T" name="completed"
+                       value={"true"} onClick={(event) => handleChange(event, ind)} /> 
+                <label htmlFor="T"> Yes </label>
                 <br />
-                <input className="quest-complete-button no" type="radio" is="F" name="completed" value={"false"} onClick={(event) => handleChange(event, ind)} />
-                <label for="F"> False </label>
+                <input className="quest-complete-button no" type="radio" is="F" name="completed" defaultChecked="checked"
+                       value={"false"} onClick={(event) => handleChange(event, ind)} />
+                <label htmlFor="F"> No </label>
                 </form>
               </div>
-            
-                
             
           </div>
         ))}
@@ -92,8 +93,7 @@ export default function CheckInFormContent({quests}) {
               <button className="form-footer-button close" onClick={() => addEntry()}>Add another quest</button>
           )}
 
-          {/* Add submit functionality in the future */}
-          <button className="form-footer-button submit"> Submit </button>
+          <button className="form-footer-button submit" onClick={() => SubmitHandler(entries, progress)}> Submit </button>
         </div>
 
         {/* Here just to show how the JS works */}
