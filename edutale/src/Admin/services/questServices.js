@@ -16,5 +16,8 @@ export const questService = {
     deleteQuest: (questId) => axios.delete(`${URL}/quests/${questId}`),
     deleteSkill: (questId, skillId) => axios.delete(`${URL}/quests/${questId}/skills/${skillId}`),
     deleteResource: (questId, resourceId) => axios.delete(`${URL}/quests/${questId}/resources/${resourceId}`),
-    updateQuest: (questId, data) => axios.put(`${URL}/quests/${questId}`, data)
+    updateQuest: (questId, data) => axios.put(`${URL}/quests/${questId}`, {
+        questName: data.questName, 
+        questDescription: data.questDescription
+    })
 }

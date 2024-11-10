@@ -9,7 +9,7 @@ async function loadSqlFile(fileName) {
 
 async function updateSkill(skillId, skillName, skillDescription){
     const sql = await loadSqlFile('update_skill.sql')
-    await db.query(sql, [skillId, skillname, skillDescription])
+    await db.query(sql, [skillId, skillName, skillDescription])
 }
 
 module.exports = {

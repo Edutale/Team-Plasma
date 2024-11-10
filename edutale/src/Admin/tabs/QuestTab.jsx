@@ -60,6 +60,7 @@ const QuestTab = ()=>{
         fetchQuests()
         setQuestSkills([])
         setQuestResources([])
+        e.target.reset()
         } catch(err){
         setMessage({type: 'error', text: err.message})
         }

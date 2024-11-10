@@ -15,6 +15,7 @@ const SkillTab = ()=>{
             await apiFunction(formData)
             setMessage({type: 'success', text: successMessage})
             fetchSkills()
+            e.target.reset()
         } catch(err){
             setMessage({type: 'error', text: err.message})
         }
