@@ -10,8 +10,6 @@ export const questService = {
         questDescription: data.questDescription,
         isProject: data.isProject === 'true', // cause apparently html forms don't like bool values, so gotta convert here zzzzz
         questDifficulty: Number(data.questDifficulty),
-        expReward: data.expReward ? Number(expReward) : null,
-        moneyReward: data.moneyReward ? Number(data.moneyReward) : null
     }),
     addResource: (questId, resourceId) => axios.post(`${URL}/quests/${questId}/resources`, {resourceId}),
     addSkill: (questId, skillId) => axios.post(`${URL}/quests/${questId}/skills`, {skillId}),

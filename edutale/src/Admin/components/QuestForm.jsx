@@ -36,16 +36,6 @@ export const QuestForm = ({ type, onSubmit, quests = [], onQuestChange = ()=>{} 
                             </select>
                         </div>
 
-                        <div className="form-group">
-                            <label htmlFor="expReward">Experience Reward (optional):</label>
-                            <input id="expReward" name="expReward" type="number" placeholder="Default: 100" min="0"/>
-                        </div>
-
-                        <div className="form-group">
-                            <label htmlFor="moneyReward">Money Reward (optional):</label>
-                            <input id="moneyReward" name="moneyReward" type="number" placeholder="Default: 50" min="0"/>
-                        </div>
-
                         <button type="submit">Add Quest</button>
                     </>
                 )
