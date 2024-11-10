@@ -6,7 +6,7 @@ const{
     getStudentInventory, getStudentMoney
 } = require('../javascript/students/studentsGet')
 const{
-    updateSkillEXP, checkInSubmit, buyItem, completeQuest, quitQuest
+    updateSkillEXP, checkInSubmit, buyItem, completeQuest, quitQuest, acceptQuest
 } = require('../javascript/students/studentsPut')
 const{
     deleteStudentQuest,
@@ -135,6 +135,16 @@ router.put('/:id/complete-quest', async(req, res) => {
     } catch(err){
         res.status(500).json({error: err.message})
     }
+})
+
+// updating student quests after accepting a quest
+router.put('/:id/accept-quest', async(req, res) => {
+  try{
+      await acceptQuest(req.body.studentId, req.body.questId)
+      res.status(200).json({message: 'Quest accepted successfully'})
+  } catch(err){
+      res.status(500).json({error: err.message})
+  }
 })
 
 // deleting student quests after quiting a quest
