@@ -7,6 +7,7 @@ import Axios from "axios"
 import OngoingQuestBlock from "./OngoingQuestBlock"
 import QuestModal from "../QuestModal"
 import CompleteHandler from "./CompleteHandler"
+import QuitHandler from "./QuitHandler"
 
 import "./OngoingQuests.css"
 
@@ -50,7 +51,7 @@ export default function OngoingQuests() {
                                 </div>
                                 <QuestModal qName={item.name} qDesc={item.desc}/>
                                 <div className="o-quest-footer">
-                                  <button className="modal-footer-button quit" onClick={() => close()}>
+                                  <button className="modal-footer-button quit" onClick={() => QuitHandler(studentId, item.id)}>
                                     Quit Quest
                                   </button>
                                   <button className="modal-footer-button complete" onClick={() => CompleteHandler(studentId, item.id)}>
