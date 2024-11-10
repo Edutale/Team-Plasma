@@ -14,8 +14,7 @@ import "./QuestBoard.css"
 const studentId = "TESTSTU01"
 
 let QUESTS = myJson["quests"]
-/* Left the first quest row using data variables and the rest with strings 
- * to reflect both functionalities.  Changing to pull from database in future.*/
+
 export default function QuestBoard() {
     const [quests, setQuests] = useState()
     const [studentQuests, setStudentQuests] = useState()
@@ -28,6 +27,7 @@ export default function QuestBoard() {
         fetchStudentQuests()
     }, [])
 
+    // fetches all quests including id, name, and desc
     async function fetchQuests() {
         try {
           await Axios.get(`http://localhost:3000/api/quests`)
@@ -48,6 +48,7 @@ export default function QuestBoard() {
         }
     }
 
+    // fetches ids of all student quests for logged in student
     async function fetchStudentQuests() {
         try {
             await Axios.get(`http://localhost:3000/api/students/${studentId}/quests`)
@@ -60,6 +61,7 @@ export default function QuestBoard() {
         }
   }
 
+    // after quests and studentQuests have been fetched, create quest board
     return quests && studentQuests && (
       <div className="questBoard">
         <h1><u> Quest Board </u></h1>
@@ -70,10 +72,12 @@ export default function QuestBoard() {
     )
 }
 
-
+// function to create 5 quest rows to diplay on the quest board
 function makeBoard(qsts, stuQsts) {
+    // sets boardQuests as only quests that student hasnt started or completed
     let boardQuests = qsts.filter((item) => { if (!stuQsts.includes(item.id)) return item})
 
+    // the first 5 quests in boardQuests will then be made into quest rows 
     return (
       <>
       {boardQuests.slice(0,5).map(item => (
