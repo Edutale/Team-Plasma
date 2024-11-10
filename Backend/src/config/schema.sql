@@ -75,8 +75,6 @@ create table if not exists Quest(
     quest_description   text,
     quest_difficulty    int check(quest_difficulty in (1, 2, 3)),
     is_project          boolean default false,
-    exp_reward          int default 100,
-    money_reward        int default 50,
     primary key         (QUEST_ID)
 );
 
