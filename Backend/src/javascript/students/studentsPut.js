@@ -27,6 +27,11 @@ async function completeQuest(studentId, questId) {
       [studentId, questId])
 }
 
+async function quitQuest(studentId, questId) {
+  await db.query(`call quit_quest($1, $2)`,
+      [studentId, questId])
+}
+
 module.exports = {
-    updateSkillEXP, checkInSubmit, buyItem, completeQuest
+    updateSkillEXP, checkInSubmit, buyItem, completeQuest, quitQuest
 }
