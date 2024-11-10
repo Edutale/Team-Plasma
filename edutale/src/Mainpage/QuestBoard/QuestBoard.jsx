@@ -7,8 +7,11 @@ import Axios from "axios"
 import * as myJson from "../../QUESTS.json"
 import QuestRow from './QuestRow'
 import QuestModal from "../QuestModal"
+import AcceptHandler from "./AcceptHandler"
 
 import "./QuestBoard.css"
+
+const studentId = "TESTSTU01"
 
 let QUESTS = myJson["quests"]
 /* Left the first quest row using data variables and the rest with strings 
@@ -24,8 +27,9 @@ export default function QuestBoard() {
           await Axios.get(`http://localhost:3000/api/quests`)
             .then((response) => {
                 let questData = []
-                for (const {quest_name, quest_description} of response.data.slice(0, 5)) {
+                for (const {quest_id, quest_name, quest_description} of response.data.slice(0, 5)) {
                     questData.push({
+                        id: quest_id,
                         name: quest_name,
                         desc: quest_description
                     })
@@ -48,7 +52,7 @@ export default function QuestBoard() {
                             </div>
                             <QuestModal qName={item.name} qDesc={item.desc} />
                             <div className="quest-footer">
-                              <button className="modal-footer-button accept" onClick={() => close()}>
+                              <button className="modal-footer-button accept" onClick={() => AcceptHandler(studentId, item.id)}>
                                 Accept Quest
                               </button>
                             </div>
