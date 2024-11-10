@@ -19,6 +19,7 @@ export default function OngoingQuests() {
         fetchStudentQuests()
     }, [])
 
+    // fetches all student quests for logged in student including quest id, name, desc, and completed bool
     async function fetchStudentQuests() {
         try {
             await Axios.get(`http://localhost:3000/api/students/${studentId}/quests`)
@@ -33,7 +34,8 @@ export default function OngoingQuests() {
                           completed: completed,
                         })
                     }
-
+                    
+                    //creates 4 quest blocks to diplay as ongoing quests that are not yet completed
                     setQuests(
                       <>
                       {questNames.map(item => !item.completed && (

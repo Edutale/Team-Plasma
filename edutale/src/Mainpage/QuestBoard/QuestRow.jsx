@@ -5,6 +5,7 @@ import "./QuestBoard.css"
 
 let QUESTS = myJson["quests"]
 
+// creates each individual row on quest board
 export default function QuestRow(props) {
     return (
         <div className="q-board-row">
