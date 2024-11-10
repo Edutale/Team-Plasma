@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
+// DONT FORGET TO UPDATE URL CONSTANT
 const URL = 'http://localhost:3000/api'
 
 export const useSkills = ()=>{
@@ -23,6 +24,6 @@ export const useSkills = ()=>{
     }, [])
 
     return{
-        skills, error
+        skills, error, fetchSkills
     }
 }

@@ -4,15 +4,15 @@
 */
 
 import React, { useState } from 'react'
-import { useNavigate } from "react-router-dom"
 import { useQuests } from '../hooks/useQuests'
 import { useSkills } from '../hooks/useSkills'
 import { useResources } from '../hooks/useResources'
-import { QuestForm } from '../components/QuestForm'
-import { AddQuestResourceForm, DeleteQuestResourceForm } from '../components/ResourceForm'
-import { AddQuestSkillForm, DeleteQuestSkillForm } from '../components/SkillForm'
+import { QuestForm } from '../components/quest/QuestForm'
+import { AddQuestResourceForm, DeleteQuestResourceForm } from '../components/quest/QuestResourceForm'
+import { AddQuestSkillForm, DeleteQuestSkillForm } from '../components/quest/QuestSkillForm'
 import { Message } from '../components/Message'
 import { questService } from '../services/questServices'
+// DONT FORGET TO CHANGE URL CONSTANT WHEN LAUNCH
 const URL = 'http://localhost:3000/api'
 
 const QuestTab = ()=>{
@@ -26,8 +26,6 @@ const QuestTab = ()=>{
     } = useQuests()
     const { skills } = useSkills()
     const { resources } = useResources()
-
-    const navigate = useNavigate()
 
     // Handles changes in quest selection dropdowns
     // Updates the skills/resources lists based on the selected quest

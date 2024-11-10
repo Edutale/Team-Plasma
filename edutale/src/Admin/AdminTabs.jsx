@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import QuestTab from './tabs/QuestTab'
 import './AdminTabs.css'
+import SkillTab from './tabs/SkillTab'
 
 const AdminTabs = ()=>{
     const [activeTab, setActiveTab] = useState('quests')
@@ -20,7 +21,7 @@ const AdminTabs = ()=>{
             {/* Tab Content */}
             <div className="tab-content">
                 {activeTab === 'quests' && <QuestTab/>}
-                {activeTab === 'skills' && <div>Skills Management Coming Soon</div>}
+                {activeTab === 'skills' && <SkillTab/>}
                 {activeTab === 'resources' && <div>Resources Management Coming Soon</div>}
                 {activeTab === 'equipment' && <div>Equipment Management Coming Soon</div>}
 

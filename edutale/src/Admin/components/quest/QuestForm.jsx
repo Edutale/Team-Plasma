@@ -14,7 +14,7 @@ export const QuestForm = ({ type, onSubmit, quests = [], onQuestChange = ()=>{} 
 
                         <div className="form-group">
                             <label htmlFor="questDescription">Description:</label>
-                            <textarea id="questDescription" name="questDescription" placeholder="Quest Description" required maxLength={1000}/>
+                            <textarea id="questDescription" name="questDescription" placeholder="Quest Description" required/>
                         </div>
 
                         <div className="form-group">

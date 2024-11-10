@@ -90,7 +90,6 @@ create table if not exists Student_Quest(
     student_id      char(9),
     quest_id        char(9),
     completed       boolean default false,
-    status          varchar(20) check(status in ('Not Started', 'In Progress', 'Stuck', 'Completed')) default 'Not Started',
     start_date      timestamp default current_timestamp,
     completion_date timestamp,
     primary key     (student_id, quest_id),
