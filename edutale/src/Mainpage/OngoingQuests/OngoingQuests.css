@@ -1,7 +1,17 @@
 /*--- OngoingQuests.css ---*/ 
 
 .oQuests {
-  height: 100%;
+  height: 90%;
+  width: 100%;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.o-quest-h2 {
+  height: 5%;
+  text-decoration: underline;
+  margin: 10px;
+  text-align: center;
 }
 
 .oQuests-container {
@@ -16,12 +26,6 @@
   
 .oQuest-item {
     margin: 2px;
-}
-
-.oQuests {
-    text-align: center;
-    width: 100%;
-    height: 50%;
 }
 
 .oQImg {

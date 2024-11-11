@@ -76,9 +76,11 @@ export default function OngoingQuests() {
   
     return (
       <div className="oQuests">
-        <h1> <u> Ongoing Quests </u></h1>
-        <div className="oQuests-container">
-          {quests}
+        <div className="o-quest-background">
+          <h2 className="o-quest-h2"> Ongoing Quests </h2>
+          <div className="oQuests-container">
+            {quests}
+          </div>
         </div>
       </div>
     )
