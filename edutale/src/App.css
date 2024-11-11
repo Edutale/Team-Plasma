@@ -20,6 +20,12 @@
     min-height: 550px;
 }
 
+.pane-header {
+  height: 5%;
+  text-decoration: underline;
+  margin-left: 20px;
+}
+
 .disabled-link {
     pointer-events: none;
 }

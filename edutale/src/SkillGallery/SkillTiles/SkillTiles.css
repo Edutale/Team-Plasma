@@ -16,6 +16,7 @@
   background: #f3f3f3;
   color: black;
   margin: 5px;
+  border: .15em solid black;
   border-radius: 25px;
   cursor: pointer;
   transition-duration: .15s;
@@ -24,8 +25,4 @@
 
 .skill-button:hover{
   background: #d4d4d4;
-}
-
-.active-skill {
-  background-color: red;
 }

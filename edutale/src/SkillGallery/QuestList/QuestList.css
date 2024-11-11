@@ -1,19 +1,32 @@
 .skill-header-2 {
-  height: 5%;
-  text-decoration: underline;
-  margin: 20px;
-  margin-top: 30px;
+    height: 5%;
+    text-decoration: underline;
+    margin: 10px;
+    text-align: center;
+}
+
+.no-skill-selected {
+    text-align: center;
+    margin-top: 2em;
+    font-size: 1.5em;
 }
 
 .quest-list-container {
     max-height: 88%;
     overflow-y: auto;
     margin: 10px;
+    background-color: rgb(255, 117, 147);
+    border: .15em solid black;
+    border-radius: 10px;
+    box-shadow: .5rem .5rem 1rem hsl(0 0% 0% / .25);
+    display: grid;
+    grid-template-rows: auto auto;
 }
 
 .sg-quest-list {
     list-style-type: none;
     background-color: #dfdfdf;
+    margin: 10px;
     padding: 2px;
     border-radius: 10px;
 }
@@ -23,6 +36,7 @@
     padding: 20px;
     padding-top: 5px;
     border-radius: 10px;
+    box-shadow: .5rem .5rem 1rem hsl(0 0% 0% / .25);
     background-color: #fdfdfd;
 }
 
