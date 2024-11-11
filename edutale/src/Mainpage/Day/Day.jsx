@@ -33,7 +33,7 @@ export default function Day() {
     }
 
     return (
-      <div className="day">
+      <div className="pane-header">
         <h1><u> Day {joinDate} </u></h1>
       </div>
     )

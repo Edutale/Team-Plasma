@@ -64,7 +64,7 @@ export default function QuestBoard() {
     // after quests and studentQuests have been fetched, create quest board
     return quests && studentQuests && (
       <div className="questBoard">
-        <h1><u> Quest Board </u></h1>
+        <h1 className="center-header"> Quest Board </h1>
         <div className="qBoard-container">
           {makeBoard(quests, studentQuests)}
         </div>

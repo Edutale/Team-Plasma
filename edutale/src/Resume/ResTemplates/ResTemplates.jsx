@@ -1,7 +1,7 @@
 export default function ResTemplates({stuSkills, projects}) {
     return stuSkills && projects && (
       <>
-        <h1 className="pane-header"> <u> Resume Skills Templates </u> </h1>
+        <h1 className="center-header"> <u> Resume Skills Templates </u> </h1>
         <div className="res-templates">
           <div className="template-1">
             <h2 className="template-heading"> Technical Skills </h2>

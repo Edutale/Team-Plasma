@@ -18,7 +18,7 @@ export default function CalendarHolder({checkedDays}) {
         // after checkedDays is defined (so, after api call resolves)
         checkedDays && (
           <>
-            <h1 className="header"> <u> Statistics </u> </h1>
+            <h1 className="pane-header"> <u> Statistics </u> </h1>
             <Calendar calendarType="gregory" tileClassName={checkedInDays} view="month" showNeighboringMonth={false}
               minDetail="month" maxDetail="month" prev2Label={null} next2Label={null}/>
           </>

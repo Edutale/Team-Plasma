@@ -81,6 +81,7 @@ export default function Inventory() {
         <div className="pane-container">
           <div className="pane-item">
             <div className="user-pane">
+            <h1 className="pane-header"> Avatar </h1>
               <Equipped />
               <div className="lower-inv-container">
                 <div className="lower-inv-item">
@@ -93,7 +94,7 @@ export default function Inventory() {
             </div>
           </div>
           <div className="pane-item">
-            <h1 className="header2"> <u> Inventory </u> </h1>
+            <h1 className="center-header"> <u> Inventory </u> </h1>
             <div className="inv-container">
               <InventoryList catalog={catalog} ownedItems={ownedItems} studentId={studentId} moneyAmt={moneyAmt}/>
             </div>
