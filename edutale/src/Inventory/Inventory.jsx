@@ -81,8 +81,7 @@ export default function Inventory() {
         <div className="pane-container">
           <div className="pane-item">
             <div className="user-pane">
-            <h1 className="pane-header"> Avatar </h1>
-            <Equipped catalog={catalog} equipItems={equipItems} stuName={stuName}/>
+              <Equipped catalog={catalog} equipItems={equipItems} stuName={stuName}/>
               <div className="lower-inv-container">
                 <div className="lower-inv-item">
                   <UserBar progress={progress} className={"user-bar"}/>

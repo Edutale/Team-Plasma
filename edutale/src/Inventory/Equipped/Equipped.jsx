@@ -15,7 +15,7 @@ export default function Equipped({catalog, equipItems, stuName}) {
 
     return (
         <>
-          <h1 className="header"> <u> {stuName} </u> </h1>
+          <h1 className="pane-header"> <u> {stuName} </u> </h1>
           <img className="inv-avatar" src={USER.avatar} alt="avatar" />
           <div className="equip-grid">
             {/* check if equipped armor is defined. If not, show dummy/empty picture */}

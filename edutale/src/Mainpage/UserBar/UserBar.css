@@ -1,6 +1,7 @@
 /*--- UserBar.css ---*/ 
 
 .userBar {
+    margin-top: -15px;;
     text-align: center;
     object-fit: contain;
 }

@@ -6,7 +6,7 @@
   display: grid;
   grid-template-rows: auto auto;
   grid-auto-flow: column;
-  gap: 5px;
+  gap: 2px;
   box-sizing: border-box;
   justify-content: space-evenly;
   justify-items: center;
@@ -14,7 +14,7 @@
 }
 
 .item {
-  height: 93%;
+  height: 90%;
   width: 93%;
 }
 
