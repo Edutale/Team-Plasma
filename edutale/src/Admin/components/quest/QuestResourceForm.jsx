@@ -1,6 +1,6 @@
 // Forms for resource related operations, we create all our forms for resources here to be used in the main Admin.jsx
 //      I had originally intended for all these form files to be switch cases but then realized its probably more scalable
-//      and more modular to just make it all separate functions like I had been doing
+//      and more modular to just make it all separate functions like I had been doing but I will probably still do switch cases for the simple add delete update stuff
 import React from 'react'
 
 export const AddQuestResourceForm = ({onSubmit, quests, allResources, onQuestChange})=>{

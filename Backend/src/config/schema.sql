@@ -75,8 +75,6 @@ create table if not exists Quest(
     quest_description   text,
     quest_difficulty    int check(quest_difficulty in (1, 2, 3)),
     is_project          boolean default false,
-    exp_reward          int default 100,
-    money_reward        int default 50,
     primary key         (QUEST_ID)
 );
 
@@ -92,7 +90,6 @@ create table if not exists Student_Quest(
     student_id      char(9),
     quest_id        char(9),
     completed       boolean default false,
-    status          varchar(20) check(status in ('Not Started', 'In Progress', 'Stuck', 'Completed')) default 'Not Started',
     start_date      timestamp default current_timestamp,
     completion_date timestamp,
     primary key     (student_id, quest_id),

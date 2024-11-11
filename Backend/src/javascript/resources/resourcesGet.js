@@ -13,6 +13,12 @@ async function getAllResources(){
     return result.rows
 }
 
+async function getResourceDetails(resourceId){
+    const sql = await loadSqlFile('get_resource_details.sql')
+    const result = await db.query(sql, [resourceId])
+    return result.rows[0]
+}
+
 module.exports = {
-    getAllResources,
+    getAllResources, getResourceDetails
 }

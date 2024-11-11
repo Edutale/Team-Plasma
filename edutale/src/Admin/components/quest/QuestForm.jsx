@@ -14,7 +14,7 @@ export const QuestForm = ({ type, onSubmit, quests = [], onQuestChange = ()=>{} 
 
                         <div className="form-group">
                             <label htmlFor="questDescription">Description:</label>
-                            <textarea id="questDescription" name="questDescription" placeholder="Quest Description" required maxLength={1000}/>
+                            <textarea id="questDescription" name="questDescription" placeholder="Quest Description" required/>
                         </div>
 
                         <div className="form-group">
@@ -34,16 +34,6 @@ export const QuestForm = ({ type, onSubmit, quests = [], onQuestChange = ()=>{} 
                                 <option value="true">Yes</option>
                                 <option value="false">No</option>
                             </select>
-                        </div>
-
-                        <div className="form-group">
-                            <label htmlFor="expReward">Experience Reward (optional):</label>
-                            <input id="expReward" name="expReward" type="number" placeholder="Default: 100" min="0"/>
-                        </div>
-
-                        <div className="form-group">
-                            <label htmlFor="moneyReward">Money Reward (optional):</label>
-                            <input id="moneyReward" name="moneyReward" type="number" placeholder="Default: 50" min="0"/>
                         </div>
 
                         <button type="submit">Add Quest</button>

@@ -26,10 +26,10 @@ async function generateQuestId(){
     }
 }
 
-async function addNewQuest(questName, questDescription, isProject, questDifficulty, expReward = null, moneyReward = null){
+async function addNewQuest(questName, questDescription, isProject, questDifficulty){
     const questId = await generateQuestId()
     const sql = await loadSqlFile('add_new_quest.sql')
-    await db.query(sql, [questId, questName, questDescription, isProject, questDifficulty, expReward, moneyReward])
+    await db.query(sql, [questId, questName, questDescription, isProject, questDifficulty])
     return questId
 }
 
