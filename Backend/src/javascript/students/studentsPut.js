@@ -22,6 +22,21 @@ async function buyItem(studentId, itemId, itemPrice, moneyAmt) {
         [studentId, itemId, itemPrice, moneyAmt])
 }
 
+async function completeQuest(studentId, questId) {
+  await db.query(`call complete_quest($1, $2)`,
+      [studentId, questId])
+}
+
+async function quitQuest(studentId, questId) {
+  await db.query(`call quit_quest($1, $2)`,
+      [studentId, questId])
+}
+
+async function acceptQuest(studentId, questId) {
+  await db.query(`call accept_quest($1, $2)`,
+      [studentId, questId])
+}
+
 async function equipItem(studentId, itemId) {
     await db.query(`call equip_item($1, $2)`,
         [studentId, itemId]
@@ -34,5 +49,5 @@ async function updateFreq(studentId, freq){
 }
 
 module.exports = {
-    updateSkillEXP, checkInSubmit, buyItem, equipItem, updateFreq
+    updateSkillEXP, checkInSubmit, buyItem, completeQuest, quitQuest, acceptQuest, equipItem, updateFreq
 }

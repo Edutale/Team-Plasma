@@ -40,14 +40,17 @@ export default function SkillGallery() {
         <Header />
         <div className="pane-container">
           <div className="pane-item">
-            <h1> Your Skills </h1>
+            <h1 className="pane-header"> Your Skills </h1>
             <SkillTiles career={career} onSetSkill={setCurrSkill}/>
           </div>
           <div className="pane-item">
+            <h1 className="center-header"> Quests </h1>
             {currSkill === "" && 
-                <p> Click a skill on the left to see available quests! </p>
+                <p className="no-skill-selected"> Click a skill on the left to see available quests! </p>
             }
-            <QuestList career={career} currSkill={currSkill}/>
+            {currSkill != "" && 
+                <QuestList career={career} currSkill={currSkill}/>
+            }
           </div>
         </div>
         </>

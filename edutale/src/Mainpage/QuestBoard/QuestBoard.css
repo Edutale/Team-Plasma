@@ -7,12 +7,10 @@
 
 .qBoard-container {
     display: grid;
-    grid-template-rows: 20% 20% 20% 20% 20%;
+    grid-template-rows: auto auto auto auto auto;
     margin: 5px;
     height: 83%;
     gap: 23px;
-    display: grid;
-    grid-template-rows: auto 1fr;
 }
 
 .row-button {
@@ -53,7 +51,7 @@
 }
   
 .tag {
-    background-color: #bbcff5;
+    background-color: rgb(145, 161, 255);
     border-radius: 15px;
     padding: 5px;
     margin: 2px;

@@ -48,16 +48,18 @@ export default function QuestListHelper({quests, currSkill}) {
         <>
         {/* ensures below code will run only when quests and currSkill are defined */}
         {quests && currSkill && (
-            <>
+            <ul className="sg-quest-list">
               {listQuestsAndResources(quests, currSkill).map(item => (
                   <Fragment key={item.quest_id + currSkill}>
-                    <p> {item.quest_name}: {item.quest_description} </p>
+                    <li className="sq-list-item">
+                    <p> <b>{item.quest_name}</b>: {item.quest_description} </p>
                     {item.resources.map(rsc =>
-                        <p key={currSkill + rsc.name}> <a href={rsc.link}> {rsc.name} </a> - {rsc.desc} </p>
+                        <p className="quest-item-rsc" key={currSkill + rsc.name}> <a href={rsc.link}> {rsc.name} </a> - {rsc.desc} </p>
                     )}
+                    </li>
                   </Fragment>
               ))}
-            </>
+            </ul>
         )}
         </>
     )

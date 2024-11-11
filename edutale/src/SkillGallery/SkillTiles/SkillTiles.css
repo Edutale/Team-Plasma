@@ -1,0 +1,28 @@
+.skill-header {
+  height: 5%;
+  text-decoration: underline;
+  margin-left: 20px;
+}
+
+.skill-button-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    height: 89%;
+    margin: 2px;
+    padding: 2px;
+}
+
+.skill-button {
+  background: #f3f3f3;
+  color: black;
+  margin: 5px;
+  border: .15em solid black;
+  border-radius: 25px;
+  cursor: pointer;
+  transition-duration: .15s;
+  font-size: 100%;
+}
+
+.skill-button:hover{
+  background: #d4d4d4;
+}

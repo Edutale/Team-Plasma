@@ -12,7 +12,7 @@ export default function Day({joinDate}) {
     }
 
     return (
-      <div className="day">
+      <div className="pane-header">
         <h1><u> Day {dayNum(joinDate)} </u></h1>
       </div>
     )

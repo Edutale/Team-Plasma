@@ -2,6 +2,8 @@ import Popup from "reactjs-popup"
 import BuyHandler from "./BuyHandler"
 import EquipHandler from "./EquipHandler"
 
+import "./InventoryList.css"
+
 export default function InventoryList({catalog, ownedItems, studentId, moneyAmt}) {
     const armorPath = "../../../assets/armor/"
     const weaponPath = "../../../assets/weapon/"
@@ -16,12 +18,13 @@ export default function InventoryList({catalog, ownedItems, studentId, moneyAmt}
     return catalog && ownedItems && studentId && toString(moneyAmt) && (
       <>
         {setOwned(catalog, ownedItems)}
-        <h2> Armor </h2>
+        <div className="item-type">
+        <h2 className="type-header"> Armor </h2>
         <div className="storage-div">
           {catalog.map(item => (item.item_type == "A") && (
             <Popup key={item.item_name + "modal"} trigger= {
-              <button className={item.owned ? "owned" : "unowned"}>
-                <img src={armorPath + item.item_png_name} title={item.item_name} alt={item.item_name}/>
+              <button className={item.owned ? "item owned" : "item unowned"}>
+                <img className="item-img" src={armorPath + item.item_png_name} title={item.item_name} alt={item.item_name}/>
               </button>}
               modal nested>{
                 close => (
@@ -63,13 +66,15 @@ export default function InventoryList({catalog, ownedItems, studentId, moneyAmt}
             </Popup>
           ))}
         </div>
+        </div>
 
-        <h2> Weapons </h2>
+        <div className="item-type">
+        <h2 className="type-header"> Weapons </h2>
         <div className="storage-div">
           {catalog.map(item => (item.item_type == "W") && (
             <Popup key={item.item_name + "modal"} trigger= {
-              <button className={item.owned ? "owned" : "unowned"}>
-                <img src={weaponPath + item.item_png_name} title={item.item_name} alt={item.item_name}/>
+              <button className={item.owned ? "item owned" : "item unowned"}>
+                <img className="item-img" src={weaponPath + item.item_png_name} title={item.item_name} alt={item.item_name}/>
               </button>}
               modal nested>{
                 close => (
@@ -109,13 +114,15 @@ export default function InventoryList({catalog, ownedItems, studentId, moneyAmt}
             </Popup>
           ))}
         </div>
-
-        <h2> Familiars </h2>
+        </div>
+        
+        <div className="item-type">
+        <h2 className="type-header"> Familiars </h2>
         <div className="storage-div">
           {catalog.map(item => (item.item_type == "F") && (
             <Popup key={item.item_name + "modal"} trigger= {
-              <button className={item.owned ? "owned" : "unowned"}>
-                <img src={familiarPath + item.item_png_name} title={item.item_name} alt={item.item_name}/>
+              <button className={item.owned ? "item owned" : "item unowned"}>
+                <img className="item-img" src={familiarPath + item.item_png_name} title={item.item_name} alt={item.item_name}/>
               </button>}
               modal nested>{
                 close => (
@@ -154,6 +161,7 @@ export default function InventoryList({catalog, ownedItems, studentId, moneyAmt}
               }
             </Popup>
           ))}
+        </div>
         </div>
       </>
     )

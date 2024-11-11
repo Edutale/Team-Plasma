@@ -5,7 +5,7 @@ const{
     getStudentCareer, getStudentCheckedDays, getStudentLevelAndEXP, getInventoryPage
 } = require('../javascript/students/studentsGet')
 const{
-    updateSkillEXP, checkInSubmit, buyItem, equipItem, updateFreq
+    updateSkillEXP, checkInSubmit, buyItem, completeQuest, quitQuest, acceptQuest, equipItem, updateFreq
 } = require('../javascript/students/studentsPut')
 const{
     deleteStudentQuest,
@@ -115,6 +115,16 @@ router.put('/:id/buy-item', async(req, res)=>{
     }
 })
 
+// updating student quests after completing a quest
+router.put('/:id/complete-quest', async(req, res) => {
+    try{
+        await completeQuest(req.body.studentId, req.body.questId)
+        res.status(200).json({message: 'Quest completed successfully'})
+      } catch(err){
+        res.status(500).json({error: err.message})
+    }
+})
+
 // updating a student's equipped item
 router.put('/:id/equip-item', async(req, res)=>{
     try{
@@ -123,6 +133,26 @@ router.put('/:id/equip-item', async(req, res)=>{
     } catch(err){
         res.status(500).json({error: err.message})
     }
+})
+
+// updating student quests after accepting a quest
+router.put('/:id/accept-quest', async(req, res) => {
+  try{
+      await acceptQuest(req.body.studentId, req.body.questId)
+      res.status(200).json({message: 'Quest accepted successfully'})
+  } catch(err){
+      res.status(500).json({error: err.message})
+  }
+})
+
+// deleting student quests after quiting a quest
+router.put('/:id/quit-quest', async(req, res) => {
+  try{
+      await quitQuest(req.body.studentId, req.body.questId)
+      res.status(200).json({message: 'Quest quit successfully'})
+  } catch(err){
+      res.status(500).json({error: err.message})
+  }
 })
 
 // updating a student's frequency

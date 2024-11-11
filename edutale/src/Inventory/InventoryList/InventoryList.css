@@ -1,0 +1,24 @@
+.type-header {
+    padding: 0px;
+    margin: 0px;
+}
+.storage-div {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-auto-flow: column;
+  gap: 5px;
+  box-sizing: border-box;
+  justify-content: space-evenly;
+  justify-items: center;
+  overflow-x: auto;
+}
+
+.item {
+  height: 93%;
+  width: 93%;
+}
+
+.item-img {
+  height: 100%;
+  width: 100%;
+}

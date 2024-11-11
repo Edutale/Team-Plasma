@@ -25,6 +25,18 @@
     min-height: 550px;
 }
 
+.pane-header {
+  height: 5%;
+  text-decoration: underline;
+  margin-left: 20px;
+}
+
+.center-header {
+  height: 5%;
+  text-decoration: underline;
+  text-align: center;
+}
+
 .disabled-link {
     pointer-events: none;
 }

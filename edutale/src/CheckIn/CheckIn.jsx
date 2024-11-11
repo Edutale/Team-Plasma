@@ -58,14 +58,14 @@ export default function CheckIn() {
         <div className="pane-item">
           <CalendarHolder checkedDays={checkedDays}/>
           
-          <h1 className="page-header"> <u> Schedule </u> </h1>
+          <h2 className="page-header"> <u> Schedule </u> </h2>
           <div className="schedule-container">
             <ChangeFreq studentId={studentId} getFreqWord={getFreqWord} freq={freq} setFreq={setFreq}/>
           </div>
         </div>
 
         <div className="pane-item">
-          <h1 className="page-header"> <u> Check-In </u> </h1>
+          <h1 className="center-header"> <u> Check-In </u> </h1>
           <CheckInFormHolder />
         </div>
       </div>

@@ -1,20 +1,31 @@
 /*--- OngoingQuests.css ---*/ 
 
+.oQuests {
+  height: 90%;
+  width: 100%;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.o-quest-h2 {
+  height: 5%;
+  text-decoration: underline;
+  margin: 10px;
+  text-align: center;
+}
+
 .oQuests-container {
+    height: 140%;
+    min-height: 300px;
     display: grid;
     grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
     padding: 1px;
     gap: 5px;
 }
   
 .oQuest-item {
     margin: 2px;
-}
-
-.oQuests {
-    text-align: center;
-    width: 100%;
-    height: 50%;
 }
 
 .oQImg {
@@ -26,6 +37,8 @@
     border: 2px solid black;
     border-radius: 25px;
     background-color: #f3f3f3;
+    min-height: 50%;
+    max-width: fit-content;
 }
 
 .block-button:hover, .block-button:focus {
