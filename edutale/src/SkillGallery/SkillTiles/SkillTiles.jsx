@@ -19,7 +19,7 @@ export default function SkillTiles({career, onSetSkill}) {
                     setSkills(
                         <>
                           {response.data.map(item => (
-                            <button key={item.skill_id} onClick={changeSkill} value={item.skill_name}>
+                            <button className="skill-button" key={item.skill_id} onClick={changeSkill} value={item.skill_name}>
                               {item.skill_name}
                             </button>
                           ))}
@@ -38,8 +38,8 @@ export default function SkillTiles({career, onSetSkill}) {
     }
 
     return career && (
-        <>
+        <div className="skill-button-container">
           {skills}
-        </>
+        </div>
     )
 }

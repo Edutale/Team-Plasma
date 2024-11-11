@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react"
 import Axios from "axios"
 import QuestListHelper from "./QuestListHelper"
 
+import "./QuestList.css"
+
 const studentId = "TESTSTU01"
 
 export default function QuestList({career, currSkill}) {
@@ -27,8 +29,10 @@ export default function QuestList({career, currSkill}) {
 
     return career && (
         <>
-          <h2> {currSkill} </h2>
-          <QuestListHelper quests={quests} currSkill={currSkill}/>
+          <h2 className="skill-header-2"> {currSkill} </h2>
+          <div className="quest-list-container">
+            <QuestListHelper quests={quests} currSkill={currSkill}/>
+          </div>
         </>
     )
 }
