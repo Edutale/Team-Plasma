@@ -14,8 +14,8 @@ export default function Header() {
         <div className="header-pane">
           <Profile/>
           <div className="settings-and-admin">
-            <Link to="/settings" className="settings-button"><button> Settings </button></Link>
-            <Link to="/admin" className="admin-button"><button> Admin </button></Link>
+            <Link to="/settings" className="settings-button"> Settings </Link>
+            <Link to="/admin" className="admin-button"> Admin </Link>
           </div>
         </div>
         <div className="header-pane">

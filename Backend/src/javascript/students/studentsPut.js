@@ -37,6 +37,17 @@ async function acceptQuest(studentId, questId) {
       [studentId, questId])
 }
 
+async function equipItem(studentId, itemId) {
+    await db.query(`call equip_item($1, $2)`,
+        [studentId, itemId]
+    )
+}
+
+async function updateFreq(studentId, freq){
+    const sql = await loadSqlFile('update_frequency.sql')
+    await db.query(sql, [studentId, freq])
+}
+
 module.exports = {
-    updateSkillEXP, checkInSubmit, buyItem, completeQuest, quitQuest, acceptQuest
+    updateSkillEXP, checkInSubmit, buyItem, completeQuest, quitQuest, acceptQuest, equipItem, updateFreq
 }

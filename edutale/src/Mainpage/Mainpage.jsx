@@ -4,6 +4,8 @@
  * information on the webpage for this specific tab.    */
 
 import { useAuth0 } from "@auth0/auth0-react"
+import Axios from "axios"
+import { useState, useEffect, useLayoutEffect } from "react"
 
 import Avatar from "./Avatar/Avatar"
 import Day from "./Day/Day"
@@ -14,26 +16,57 @@ import Userbar from "./UserBar/UserBar"
 import Header from "../Header/Header"
 
 import "./Mainpage.css"
+const studentId = "TESTSTU01"
 
 export default function Mainpage() {
+    const [joinDate, setJoinDate] = useState()
+    const [progress, setProgress] = useState()
+    const [skills, setSkills] = useState()
+    const [skillEXP, setEXP] = useState()
+
     // used to check if the user is authenticated (logged in) again as a failsafe
     // if the ProtectedRoute logic fails.
     const {isAuthenticated} = useAuth0()
 
+    useEffect(() => {
+        fetchMainpageStats()
+    }, [])
+
+    async function fetchMainpageStats() {
+        try {
+            await Axios.get(`http://localhost:3000/api/students/${studentId}/mainpage`)
+                .then((response) => {
+                    setJoinDate(response.data[0].student_join_date)
+
+                    setProgress({
+                        lvl: response.data[0].student_lvl,
+                        exp: response.data[0].total_exp,
+                        name: response.data[0].student_name
+                    })
+
+                    setSkills(response.data.map((item) => item.skill_name))
+                    setEXP(response.data.map((item) => item.skill_exp))
+                })
+        }
+        catch(err) {
+            console.error("Error fetching Mainpage stats: ", err)
+        }
+    }
+
     return (
-        // the page will only render if the user is logged in
-        isAuthenticated && (
+      // the page will only render if the user is logged in
+      isAuthenticated && (
         <>
         <Header />
         <div className="pane-container">
           <div className="pane-item">
-            <Day />
-            <SkillGraph />
+            <Day joinDate={joinDate} />
+            <SkillGraph skills={skills} skillEXP={skillEXP} />
             <div className="pane-2-container">
               <div className="pane-2-item">
                 <div className="user-container">
                   <Avatar />
-                  <Userbar />
+                  <Userbar progress={progress} />
                 </div>
               </div>
               <div className="pane-2-item">
@@ -46,6 +79,6 @@ export default function Mainpage() {
           </div>
         </div>
         </>
-        )
+      )
     )
 }

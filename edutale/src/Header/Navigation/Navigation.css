@@ -36,7 +36,7 @@
     background-color: rgb(65, 52, 182);
 }
 
-.main-mark:hover {
+.main-mark:hover, .main-mark:focus {
     background-color: rgb(44, 35, 122); 
 }
 
@@ -45,7 +45,7 @@
     background-color: rgb(67, 153, 124);
 }
 
-.check-in-mark:hover {
+.check-in-mark:hover, .check-in-mark:focus {
     background-color: rgb(57, 128, 103); 
 }
 
@@ -54,7 +54,7 @@
     background-color: rgb(224, 152, 42);
 }
 
-.inventory-mark:hover {
+.inventory-mark:hover, .inventory-mark:focus {
     background-color: rgb(175, 118, 31); 
 }
 
@@ -63,7 +63,7 @@
     background-color: rgb(206, 69, 99);
 }
 
-.skill-list-mark:hover {
+.skill-list-mark:hover, .skill-list-mark:focus {
     background-color: rgb(170, 59, 83); 
 }
 
@@ -72,6 +72,6 @@
     background-color: rgb(49, 204, 224);
 }
 
-.resume-mark:hover {
+.resume-mark:hover, .resume-mark:focus {
     background-color: rgb(40, 165, 182); 
 }

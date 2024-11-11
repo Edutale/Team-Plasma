@@ -7,7 +7,7 @@ async function loadSqlFile(fileName) {
     return fs.readFile(filePath, 'utf8')
 }
 
-async function updateQuest(questName, questDescription, questId){
+async function updateQuest(questId, questName, questDescription){
     const sql = await loadSqlFile('update_quest.sql')
     await db.query(sql, [questName, questDescription, questId])
 }

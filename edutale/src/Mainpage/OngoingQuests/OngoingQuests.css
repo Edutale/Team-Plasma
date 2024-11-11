@@ -41,7 +41,7 @@
     max-width: fit-content;
 }
 
-.block-button:hover {
+.block-button:hover, .block-button:focus {
     border-radius: 25px;
     background-color: #d4d4d4;
     cursor: pointer;
@@ -56,11 +56,11 @@
     text-align: right;
 }
 
-.quit:hover{
+.quit:hover, .quit:focus {
     background: rgb(253, 124, 124);
 }
 
-.complete:hover{
+.complete:hover, .complete:focus {
     background: rgb(124, 253, 152);
 }
 
