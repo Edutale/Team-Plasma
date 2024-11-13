@@ -49,9 +49,14 @@ export default function CheckIn() {
         }
     }
 
+    function todayChecked(dates) {
+        let today = new Date()
+        return dates.some(date => (Math.round((Date.parse(date) - Date.parse(today)) / 86400000) === 0))
+    }
+
     return (
       // the page will only render if the user is logged in
-      isAuthenticated && (
+      isAuthenticated && checkedDays && (
       <>
         <Header />
         <div className="pane-container">
@@ -66,7 +71,8 @@ export default function CheckIn() {
 
         <div className="pane-item">
           <h1 className="center-header"> <u> Check-In </u> </h1>
-          <CheckInFormHolder />
+          {console.log(todayChecked(checkedDays))}
+          {todayChecked(checkedDays) ? <p className="check-in-complete"> Thank you for filling out a check-in today! </p> : <CheckInFormHolder />}
         </div>
       </div>
     </>
