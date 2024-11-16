@@ -33,11 +33,12 @@ export default function QuestBoard() {
           await Axios.get(`http://localhost:3000/api/quests`)
           .then((response) => {
               let questData = []
-              for (const {quest_id, quest_name, quest_description} of response.data) {
+              for (const {quest_id, quest_name, quest_description, quest_difficulty} of response.data) {
                   questData.push({
                       id: quest_id,
                       name: quest_name,
-                      desc: quest_description
+                      desc: quest_description,
+                      diff: quest_difficulty
                   })
               }
               setQuests(questData)
@@ -93,7 +94,7 @@ function makeBoard(qsts, stuQsts) {
                     ⨯
                   </button>
                 </div>
-                <QuestModal qName={item.name} qDesc={item.desc} />
+                <QuestModal qName={item.name} qDesc={item.desc} diff={item.diff} />
                 <div className="quest-footer">
                   <button className="modal-footer-button accept" onClick={() => AcceptHandler(studentId, item.id)}>
                     Accept Quest
