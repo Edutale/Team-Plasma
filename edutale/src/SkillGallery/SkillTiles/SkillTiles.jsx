@@ -37,7 +37,7 @@ export default function SkillTiles({career, onSetSkill}) {
         onSetSkill(skillName.target.value)
     }
 
-    return career && (
+    return career && skills && (
         <div className="skill-button-container">
           {skills}
         </div>

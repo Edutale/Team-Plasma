@@ -35,7 +35,7 @@ export default function SkillGallery() {
 
     return (
         // the page will only render if the user is logged in
-        isAuthenticated && (
+        isAuthenticated && career && (
         <>
         <Header />
         <div className="pane-container">
@@ -45,12 +45,7 @@ export default function SkillGallery() {
           </div>
           <div className="pane-item">
             <h1 className="center-header"> Quests </h1>
-            {currSkill === "" && 
-                <p className="no-skill-selected"> Click a skill on the left to see available quests! </p>
-            }
-            {currSkill != "" && 
-                <QuestList career={career} currSkill={currSkill}/>
-            }
+            {currSkill ? <QuestList career={career} currSkill={currSkill}/> : <p className="no-skill-selected"> Click a skill on the left to see available quests! </p>}
           </div>
         </div>
         </>
