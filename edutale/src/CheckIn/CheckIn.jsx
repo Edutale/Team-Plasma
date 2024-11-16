@@ -49,9 +49,10 @@ export default function CheckIn() {
         }
     }
 
+    // returns true if today had a check-in, and false otherwise
     function todayChecked(dates) {
-        let today = new Date()
-        return dates.some(date => (Math.round((Date.parse(date) - Date.parse(today)) / 86400000) === 0))
+        let today = Date.now()
+        return dates.some(date => (Math.trunc((today - Date.parse(date)) / 86400000) === 0))
     }
 
     return (
@@ -68,10 +69,8 @@ export default function CheckIn() {
             <ChangeFreq studentId={studentId} getFreqWord={getFreqWord} freq={freq} setFreq={setFreq}/>
           </div>
         </div>
-
         <div className="pane-item">
           <h1 className="center-header"> <u> Check-In </u> </h1>
-          {console.log(todayChecked(checkedDays))}
           {todayChecked(checkedDays) ? <p className="check-in-complete"> Thank you for filling out a check-in today! </p> : <CheckInFormHolder />}
         </div>
       </div>
