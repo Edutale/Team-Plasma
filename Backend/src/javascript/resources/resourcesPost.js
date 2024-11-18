@@ -14,11 +14,11 @@ async function generateResourceId(){
         let nextNum = 1
         if(result.rows.length > 0){
             const lastId = result.rows[0].resource_id
-            const lastNum = parseInt(lastId.substring(1))
+            const lastNum = parseInt(lastId.substring(3))
             nextNum = lastNum + 1
         }
-        const paddedNum = nextNum.toString().padStart(8, '0')
-        return `R${paddedNum}`
+        const paddedNum = nextNum.toString().padStart(6, '0')
+        return `RES${paddedNum}`
     } catch(err){
         console.error('Error generating resource ID: ', err)
     }
