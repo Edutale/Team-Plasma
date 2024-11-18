@@ -7,7 +7,7 @@ export default function OngoingQuestBlock(props) {
     <>
     <div className="oQuest-item">
       <p> {props.qName} </p>
-      <img className='oQImg' src="/assets/html_icon.png" alt="Ongoing Quest" />    
+      <img className="oQImg" src="/assets/html_icon.png" alt="Ongoing Quest" />    
     </div>
     </>
     )

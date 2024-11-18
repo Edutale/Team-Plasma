@@ -73,7 +73,7 @@ function createRadarData(skills, skillEXP) {
       labels: skills,
       datasets: [
           {
-              label: "All-Time",
+              label: "EXP",
               data: skillEXP,
               fill: true,
               backgroundColor: "rgba(131, 128, 255, 0.8)",
