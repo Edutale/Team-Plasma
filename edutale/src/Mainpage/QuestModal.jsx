@@ -10,7 +10,6 @@ export default function QuestModal(props) {
 }
 
 function makeHeader(props) {
-    console.log(props.diff)
     switch(props.diff) {
         case 1:
             return <h3> {props.qName} - Beginner </h3>

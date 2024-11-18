@@ -18,6 +18,7 @@
 
 .entry {
   margin: 10px;
+  border: 1px solid black;
   padding: 20px;
   padding-top: 5px;
   border-radius: 10px;
@@ -27,6 +28,7 @@
 .input-box {
   border: 1px solid #e6e6e6;
   background-color: #f1f1f1;
+  border: 1px solid black;
   color: #555555;
   font-size: 16px;
   border-radius: 13px;
@@ -47,6 +49,16 @@
   background-color: transparent;
   color: #555555;
   border: none;
+  font-size: 16px;
+}
+
+.input-mins {
+  display: block;
+  line-height: 1.2;
+  background-color: transparent;
+  color: #555555;
+  border: none;
+  border-bottom: 1px solid black;
   font-size: 16px;
 }
 
