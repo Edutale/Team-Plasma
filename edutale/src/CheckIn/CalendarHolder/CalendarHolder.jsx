@@ -31,4 +31,4 @@ export default function CalendarHolder({checkedDays}) {
 // date and the dates within the checked-in days array.
 function isSameDay(date1, date2) {
     return Math.round((date1 - date2) / 86400000) === 0
-  }
+}

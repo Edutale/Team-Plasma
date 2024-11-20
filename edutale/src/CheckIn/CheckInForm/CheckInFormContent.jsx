@@ -95,9 +95,6 @@ export default function CheckInFormContent({quests, progress}) {
 
           <button className="form-footer-button submit" onClick={() => SubmitHandler(entries, progress)}> Submit </button>
         </div>
-
-        {/* Here just to show how the JS works */}
-        <div> {JSON.stringify(entries)} </div>
       </div>
     )
 }

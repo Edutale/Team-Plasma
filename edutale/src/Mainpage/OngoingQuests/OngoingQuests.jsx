@@ -26,12 +26,13 @@ export default function OngoingQuests() {
                 .then((response) => {
                     let questNames = []
 
-                    for (const {quest_id, quest_name, quest_description, completed} of response.data) {
+                    for (const {quest_id, quest_name, quest_description, completed, quest_difficulty} of response.data) {
                         questNames.push({
                           id: quest_id,
                           name: quest_name,
                           desc: quest_description,
                           completed: completed,
+                          diff: quest_difficulty
                         })
                     }
                     
@@ -51,7 +52,7 @@ export default function OngoingQuests() {
                                     ⨯
                                   </button>
                                 </div>
-                                <QuestModal qName={item.name} qDesc={item.desc}/>
+                                <QuestModal qName={item.name} qDesc={item.desc} diff={item.diff}/>
                                 <div className="o-quest-footer">
                                   <button className="modal-footer-button quit" onClick={() => QuitHandler(studentId, item.id)}>
                                     Quit Quest

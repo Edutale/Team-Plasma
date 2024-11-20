@@ -15,3 +15,9 @@
 .save:hover, .save:focus {
     background: rgb(124, 253, 152);
 }
+
+.check-in-complete {
+    text-align: center;
+    margin-top: 2em;
+    font-size: 1.5em;
+}
