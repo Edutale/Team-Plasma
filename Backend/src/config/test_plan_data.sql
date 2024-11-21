@@ -263,7 +263,7 @@ insert into Inventory values
 ('TESTITM02', 'A', 'Iron Armor', 'iron_armor.png', 200),
 ('TESTITM03', 'A', 'Gold Armor', 'gold_armor.png', 300),
 ('TESTITM04', 'A', 'Diamond Armor', 'diamond_armor.png', 400),
-('TESTITM05', 'A', 'Netherite Armor', 'netherite_armor.png', 500),
+('TESTITM05', 'A', 'Dark Armor', 'dark_armor.png', 500),
 ('TESTITM06', 'W', 'Wooden Sword', 'wooden_sword.png', 100),
 ('TESTITM07', 'W', 'Iron Sword', 'iron_sword.png', 200),
 ('TESTITM08', 'W', 'Gold Sword', 'gold_sword.png', 300),
