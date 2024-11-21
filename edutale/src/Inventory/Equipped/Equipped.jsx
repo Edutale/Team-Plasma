@@ -1,9 +1,9 @@
-import * as USER from "../../USER.json"
-import { useAuth0 } from "@auth0/auth0-react"
-
 const armorPath = "../../../assets/armor/"
 const weaponPath = "../../../assets/weapon/"
 const familiarPath = "../../../assets/familiar/"
+
+// placeholder image for avatar image
+const avatarUrl = "../../../assets/avatar.gif"
 
 export default function Equipped({catalog, equipItems, stuName}) {
     //const { user } = useAuth0()
@@ -16,7 +16,7 @@ export default function Equipped({catalog, equipItems, stuName}) {
     return (
         <>
           <h1 className="pane-header"> <u> {stuName} </u> </h1>
-          <img className="inv-avatar" src={USER.avatar} alt="avatar" />
+          <img className="inv-avatar" src={avatarUrl} alt="avatar" />
           <div className="equip-grid">
             {/* check if equipped armor is defined. If not, show dummy/empty picture */}
             {eqArmor ? (

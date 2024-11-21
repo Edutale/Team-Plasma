@@ -1,9 +1,6 @@
 /*--- QuestRow.jsx ---*/ 
 
-import * as myJson from "../../QUESTS.json"
 import "./QuestBoard.css"
-
-let QUESTS = myJson["quests"]
 
 // creates each individual row on quest board
 export default function QuestRow(props) {
@@ -15,7 +12,7 @@ export default function QuestRow(props) {
             <div className="qBoard-item q-desc">
                 <h3>
                     <u> {props.qName} </u> &emsp; &emsp; &emsp; 
-                    <span className="tag"> {QUESTS[0].tags[0]} </span>
+                    <span className="tag"> Languages </span>
                 </h3>
                 <p> {props.desc} </p>
             </div>
