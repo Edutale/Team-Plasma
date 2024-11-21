@@ -2,7 +2,7 @@ create table if not exists Inventory(
     ITEM_ID         char(9),
     item_type       char(1) check (item_type in ('A', 'W', 'F')) not null,
     item_name       varchar(30) not null,
-    item_png_name   varchar(20) not null,
+    item_png_name   varchar(30) not null,
     item_price      int not null,
     primary key     (ITEM_ID)
 );
@@ -113,7 +113,7 @@ create table if not exists Resources(
     resource_name           text,
     resource_link           text,
     resource_description    text,
-    resource_type           varchar(20) check(resource_type in ('Video', 'Article', 'Tutorial', 'Exercise', 'Documentation')),
+    resource_type           varchar(20) check(resource_type in ('Video', 'Article', 'Tutorial', 'Exercise', 'Documentation', 'Tool')),
     primary key             (RESOURCE_ID)
 );
 

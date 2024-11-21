@@ -130,7 +130,7 @@
 }
 
 .react-calendar__tile--now {
-    background: #ffe775;
+    background: rgb(131, 196, 174);
     border-radius: 50%;
 }
 

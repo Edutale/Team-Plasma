@@ -28,11 +28,11 @@ export default function QuestList({career, currSkill}) {
     }
 
     return career && (
-        <>
-          <div className="quest-list-container">
+        <div className="quest-list-container">
+          <div className="quest-list">
             <h2 className="skill-header-2"> {currSkill} </h2>
             <QuestListHelper quests={quests} currSkill={currSkill}/>
           </div>
-        </>
+        </div>
     )
 }

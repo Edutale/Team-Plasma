@@ -12,6 +12,17 @@
     appearance: button; /* For CSS3 */
 }
 
+.change-freq {
+    border: 2px solid black;
+    border-radius: 25px;
+    background-color: #f3f3f3;
+}
+
+.change-freq:hover,
+.change-freq:focus {
+    background-color: #d4d4d4;
+}
+
 .button-unchecked label:hover,
 .button-unchecked label:focus {
     background-color: #d4d4d4;
@@ -31,7 +42,7 @@
     cursor: pointer;
     border: 2px solid black;
     border-radius: 15px;
-    background-color: #7cfd98;
+    background-color: rgb(131, 196, 174);
 
     -webkit-appearance: button; /* WebKit */
     -moz-appearance: button; /* Mozilla */

@@ -19,7 +19,7 @@ export default function ChangeFreq({studentId, getFreqWord, freq, setFreq}) {
     return freq && (
       <>
         <p className="timing-text"> Current check-in timing: {getFreqWord(freq)} </p>
-        <Popup className="change-freq" trigger= {<button> Change Frequency </button>}
+        <Popup trigger= {<button className="change-freq"> Change Frequency </button>}
           modal nested>{
             close => (!confirm ? (
               // form to choose a new notification frequency

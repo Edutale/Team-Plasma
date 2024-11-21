@@ -21,13 +21,14 @@
 }
 
 .know-item-container {
-    background-color: #fdfdfd;
+    background-color: #dfdfdf;
     border-radius: 0px 0px 10px 10px;
     display: grid;
 }
 
 .res-know-item {
     background-color: #fdfdfd;
+    border: 1px solid black;
     border-width: thin;
     margin: 5px;
     padding: 8px;
@@ -49,7 +50,7 @@
 
 .template-1 {
     border: .15em solid black;
-    background-color: #f3f3f3;
+    background-color: #fdfdfd;
     border-radius: 15px;
     padding: 20px;
 }
@@ -57,7 +58,7 @@
 .template-2 {
     margin-top: 1em;
     border: .15em solid black;
-    background-color: #f3f3f3;
+    background-color: #fdfdfd;
     border-radius: 15px;
     padding: 20px;
 }

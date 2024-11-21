@@ -69,7 +69,7 @@ export default function CheckInFormContent({quests, progress}) {
             
               <div className="input-box">
                 <label className="input-label" htmlFor="mins"> Minutes spent on quest </label>
-                <input className="quest-select" placeholder="Number of minutes" name="mins" type="text"
+                <input className="input-mins" placeholder="Number of minutes" name="mins" type="text"
                        min="1" step="1" value={item.mins} onChange={(event) => handleChange(event, ind)}/>
               </div>
             

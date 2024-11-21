@@ -45,11 +45,12 @@ export default function QuestListHelper({quests, currSkill}) {
     }
 
     return (
-        <>
-        {/* ensures below code will run only when quests and currSkill are defined */}
-        {quests && currSkill && (
+        quests && currSkill && (
+          <>
+            {/* beginner quests */}
             <ul className="sg-quest-list">
-              {listQuestsAndResources(quests, currSkill).map(item => (
+              <p> <b> Beginner Quests </b> </p>
+                {listQuestsAndResources(quests, currSkill).map(item => (item.quest_difficulty == 1) && (
                   <Fragment key={item.quest_id + currSkill}>
                     <li className="sq-list-item">
                     <p> <b>{item.quest_name}</b>: {item.quest_description} </p>
@@ -58,9 +59,39 @@ export default function QuestListHelper({quests, currSkill}) {
                     )}
                     </li>
                   </Fragment>
-              ))}
+                ))}
             </ul>
-        )}
-        </>
+
+            {/* intermediate quests */}
+            <ul className="sg-quest-list">
+              <p> <b> Intermediate Quests </b> </p>
+                {listQuestsAndResources(quests, currSkill).map(item => (item.quest_difficulty == 2) && (
+                  <Fragment key={item.quest_id + currSkill}>
+                    <li className="sq-list-item">
+                    <p> <b>{item.quest_name}</b>: {item.quest_description} </p>
+                    {item.resources.map(rsc =>
+                        <p className="quest-item-rsc" key={currSkill + rsc.name}> <a href={rsc.link}> {rsc.name} </a> - {rsc.desc} </p>
+                    )}
+                    </li>
+                  </Fragment>
+                ))}
+            </ul>
+
+            {/* expert quests */}
+            <ul className="sg-quest-list">
+              <p> <b> Expert Quests </b> </p>
+                {listQuestsAndResources(quests, currSkill).map(item => (item.quest_difficulty == 3) && (
+                  <Fragment key={item.quest_id + currSkill}>
+                    <li className="sq-list-item">
+                    <p> <b>{item.quest_name}</b>: {item.quest_description} </p>
+                    {item.resources.map(rsc =>
+                        <p className="quest-item-rsc" key={currSkill + rsc.name}> <a href={rsc.link}> {rsc.name} </a> - {rsc.desc} </p>
+                    )}
+                    </li>
+                  </Fragment>
+                ))}
+            </ul>
+          </>
+        )
     )
 }

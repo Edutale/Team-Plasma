@@ -170,7 +170,7 @@ export default function InventoryList({catalog, ownedItems, studentId, moneyAmt}
 function BuyItemText({name, price}) {
     return (
       <div className="item-modal">
-        <p> <u> {name} </u> </p>
+        <h3> <b> {name} </b> </h3>
         <p> This item costs {price}. Do you want to purchase this item? </p>
       </div>
     )
@@ -179,7 +179,7 @@ function BuyItemText({name, price}) {
 function EquipItemText({name}) {
     return (
       <div className="item-modal">
-        <p> <u> {name} </u> </p>
+        <h3> <b> {name} </b> </h3>
         <p> You own this item. Do you want to equip {name}? </p>
       </div>
     )

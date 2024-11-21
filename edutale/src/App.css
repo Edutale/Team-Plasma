@@ -113,3 +113,21 @@
     text-align: center;
     font-size: larger;
 }
+
+.pane-container * ::-webkit-scrollbar {
+    width: .75em;
+    background-color: #f3f3f3;
+    border: solid 1px #d4d4d4;
+}
+   
+.pane-container * ::-webkit-scrollbar-thumb {
+    background-color: #fdfdfd;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.pane-container * ::-webkit-scrollbar-thumb:hover {
+    background-color: #d4d4d4;
+    border: 1px solid black;
+    border-radius: 5px;
+}

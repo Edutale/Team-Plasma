@@ -4,7 +4,6 @@ import React, { useState, useEffect } from "react"
 import Popup from "reactjs-popup"
 import Axios from "axios"
 
-import * as myJson from "../../QUESTS.json"
 import QuestRow from './QuestRow'
 import QuestModal from "../QuestModal"
 import AcceptHandler from "./AcceptHandler"
@@ -13,7 +12,8 @@ import "./QuestBoard.css"
 
 const studentId = "TESTSTU01"
 
-let QUESTS = myJson["quests"]
+// placeholder image for quests
+const questImgUrl = "../../../assets/cpp.png"
 
 export default function QuestBoard() {
     const [quests, setQuests] = useState()
@@ -84,7 +84,7 @@ function makeBoard(qsts, stuQsts) {
       {boardQuests.slice(0,5).map(item => (
         <Popup key={item.name} trigger= {
           <button className="row-button">
-            <QuestRow img={QUESTS[0].img} qName={item.name} desc={item.desc} />
+            <QuestRow img={questImgUrl} qName={item.name} desc={item.desc} />
           </button>}
           modal nested>{
             close => (
