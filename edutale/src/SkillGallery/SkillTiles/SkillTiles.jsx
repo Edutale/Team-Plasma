@@ -2,14 +2,14 @@ import React, { useState, useEffect } from "react"
 import Axios from "axios"
 import "./SkillTiles.css"
 
-export default function SkillTiles({career, onSetSkill}) {
+export default function SkillTiles({career, onSetSkill, currSkill}) {
     const [skills, setSkills] = useState()
 
     // need career as a dependency in order to ensure
     // fetchCareerSkills happens after obtaining career val
     useEffect(() => {
         fetchCareerSkills()
-    }, [career, onSetSkill])
+    }, [career, onSetSkill, currSkill])
 
     // get the skills associated with the fetched career
     async function fetchCareerSkills() {
@@ -19,8 +19,9 @@ export default function SkillTiles({career, onSetSkill}) {
                     setSkills(
                         <>
                           {response.data.map(item => (
-                            <button className="skill-button" key={item.skill_id} onClick={changeSkill} value={item.skill_name}>
-                              {item.skill_name}
+                            <button className={currSkill == item.skill_name ? "curr-skill" : "skill-button"}
+                              key={item.skill_id} onClick={changeSkill} value={item.skill_name}>
+                                {item.skill_name}
                             </button>
                           ))}
                         </>

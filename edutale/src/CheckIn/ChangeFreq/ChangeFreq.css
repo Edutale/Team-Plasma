@@ -42,7 +42,7 @@
     cursor: pointer;
     border: 2px solid black;
     border-radius: 15px;
-    background-color: #7cfd98;
+    background-color: rgb(131, 196, 174);
 
     -webkit-appearance: button; /* WebKit */
     -moz-appearance: button; /* Mozilla */

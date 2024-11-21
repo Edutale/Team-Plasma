@@ -41,7 +41,7 @@ export default function SkillGallery() {
         <div className="pane-container">
           <div className="pane-item">
             <h1 className="pane-header"> Your Skills </h1>
-            <SkillTiles career={career} onSetSkill={setCurrSkill}/>
+            <SkillTiles career={career} onSetSkill={setCurrSkill} currSkill={currSkill}/>
           </div>
           <div className="pane-item">
             <h1 className="center-header"> Quests </h1>

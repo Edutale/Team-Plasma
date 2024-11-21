@@ -20,9 +20,20 @@
   border-radius: 25px;
   cursor: pointer;
   transition-duration: .15s;
-  font-size: 100%;
+  font-size: 1.5em;
 }
 
-.skill-button:hover{
+.skill-button:hover, .skill-button:focus {
   background: #d4d4d4;
+}
+
+.curr-skill {
+  background: #ff7593;
+  color: black;
+  margin: 5px;
+  border: .15em solid black;
+  border-radius: 25px;
+  cursor: pointer;
+  transition-duration: .15s;
+  font-size: 1.5em;
 }
