@@ -18,6 +18,7 @@ export default function CheckIn() {
 
     const [checkedDays, setCheckedDays] = useState()
     const [freq, setFreq] = useState()
+    const [latestDay, setLatestDay] = useState()
 
     useEffect(() => {
         fetchStudentCheckedDays()
@@ -29,6 +30,7 @@ export default function CheckIn() {
                 .then((response) => {
                     setCheckedDays(response.data.map(item => item.progress_date))
                     setFreq(response.data[0].reminder_freq)
+                    setLatestDay(response.data[0])
                 })
         }
         catch(err) {
@@ -55,6 +57,21 @@ export default function CheckIn() {
         return dates.some(date => (Math.trunc((today - Date.parse(date)) / 86400000) === 0))
     }
 
+    // creates the post check-in summary in the case that the user
+    // has already done a check-in today.
+    function postCheckIn(exp, numQuests, mins) {
+
+
+        return (
+            <>
+              <p className="check-in-complete"> Thank you for filling out a check-in today! </p>
+              <p className="check-in-stats"> You earned <strong> {exp} EXP! </strong> </p>
+              { numQuests && (<p className="check-in-stats"> You completed <strong> {numQuests} quest{numQuests == 1 ? "" : "s"}! </strong> </p>)}
+              { mins && (<p className="check-in-stats"> Overall, you studied for <strong> {mins} minute{mins == 1 ? "" : "s"}! </strong> </p>)}
+            </>
+        )
+    }
+
     return (
       // the page will only render if the user is logged in
       isAuthenticated && checkedDays && (
@@ -71,7 +88,7 @@ export default function CheckIn() {
         </div>
         <div className="pane-item">
           <h1 className="center-header"> <u> Check-In </u> </h1>
-          {todayChecked(checkedDays) ? <p className="check-in-complete"> Thank you for filling out a check-in today! </p> : <CheckInFormHolder />}
+          {todayChecked(checkedDays) ? postCheckIn(latestDay.gained_exp, latestDay.quests_completed, latestDay.study_time) : <CheckInFormHolder />}
         </div>
       </div>
     </>
