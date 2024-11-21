@@ -18,6 +18,10 @@
   width: 93%;
 }
 
+.item:hover, .item:focus {
+  border: 0.5em solid rgb(224, 152, 42);
+}
+
 .item-img {
   height: 100%;
   width: 100%;

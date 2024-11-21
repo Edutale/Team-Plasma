@@ -29,8 +29,11 @@
 
 .unowned {
     display: block;
-    border: 0.5em solid #862525;
+    border: 0.5em solid #3a3a3a;
     background-color: #f3f3f3;
+}
+
+.unowned img {
     filter: grayscale(100%);
 }
 
