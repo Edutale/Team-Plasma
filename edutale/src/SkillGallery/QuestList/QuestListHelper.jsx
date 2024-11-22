@@ -3,9 +3,10 @@ import Popup from "reactjs-popup"
 import QuestModal from "../../Mainpage/QuestModal"
 import AcceptHandler from "../../Mainpage/QuestBoard/AcceptHandler"
 import QuitHandler from "../../Mainpage/OngoingQuests/QuitHandler"
+import CompleteHandler from "../../Mainpage/OngoingQuests/CompleteHandler"
 
 export default function QuestListHelper({quests, currSkill, studentId, stuQuests}) {
-
+  
     function listQuestsAndResources(quests, currSkill) {
         let resources = []
         let retVal = []
@@ -95,6 +96,9 @@ export default function QuestListHelper({quests, currSkill, studentId, stuQuests
                             <div className="quest-footer">
                               <button className="modal-footer-button quit" onClick={() => QuitHandler(studentId, item.quest_id)}>
                                 Quit Quest
+                              </button>
+                              <button className="modal-footer-button complete" onClick={() => CompleteHandler(studentId, item.quest_id)}>
+                                Complete Quest
                               </button>
                             </div>
                           </div>
