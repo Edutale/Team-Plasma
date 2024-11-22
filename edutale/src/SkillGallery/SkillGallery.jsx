@@ -45,7 +45,7 @@ export default function SkillGallery() {
           </div>
           <div className="pane-item">
             <h1 className="center-header"> Quests </h1>
-            {currSkill ? <QuestList career={career} currSkill={currSkill}/> : <p className="no-skill-selected"> Click a skill on the left to see available quests! </p>}
+            {currSkill ? <QuestList career={career} currSkill={currSkill} studentId={studentId}/> : <p className="no-skill-selected"> Click a skill on the left to see available quests! </p>}
           </div>
         </div>
         </>

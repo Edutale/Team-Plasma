@@ -60,7 +60,7 @@ export default function QuestBoard() {
         catch(err) {
             console.error("Error fetching quests: ", err)
         }
-  }
+    }
 
     // after quests and studentQuests have been fetched, create quest board
     return quests && studentQuests && (
