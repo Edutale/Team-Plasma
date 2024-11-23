@@ -73,18 +73,18 @@ export default function Resume() {
         isAuthenticated && (
         <>
         <Header />
-        <div className="pane-container">
-          <div className="pane-item">
-            <h1 className="pane-header"> Knowledge </h1>
-            <div className="skills-and-projs">
-              <YourSkills skills={stuSkills} />
-              <YourProjects projects={projects} />
+          <div className="pane-container">
+            <div className="pane-item">
+              <h1 className="pane-header"> Knowledge </h1>
+              <div className="skills-and-projs">
+                <YourSkills skills={stuSkills} />
+                <YourProjects projects={projects} />
+              </div>
+            </div>
+            <div className="pane-item">
+              <ResTemplates stuSkills={stuSkills} projects={projects}/>
             </div>
           </div>
-          <div className="pane-item">
-            <ResTemplates stuSkills={stuSkills} projects={projects}/>
-          </div>
-        </div>
         </>
         )
     )

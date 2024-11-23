@@ -57,27 +57,27 @@ export default function Mainpage() {
       // the page will only render if the user is logged in
       isAuthenticated && (
         <>
-        <Header />
-        <div className="pane-container">
-          <div className="pane-item">
-            <Day joinDate={joinDate} />
-            <SkillGraph skills={skills} skillEXP={skillEXP} />
-            <div className="pane-2-container">
-              <div className="pane-2-item">
-                <div className="user-container">
-                  <Avatar />
-                  <Userbar progress={progress} />
+          <Header />
+          <div className="pane-container">
+            <div className="pane-item">
+              <Day joinDate={joinDate} />
+              <SkillGraph skills={skills} skillEXP={skillEXP} />
+              <div className="pane-2-container">
+                <div className="pane-2-item">
+                  <div className="user-container">
+                    <Avatar />
+                    <Userbar progress={progress} />
+                  </div>
+                </div>
+                <div className="pane-2-item">
+                  <OngoingQuests />
                 </div>
               </div>
-              <div className="pane-2-item">
-                <OngoingQuests />
-              </div>
+            </div>
+            <div className="pane-item">
+              <QuestBoard />
             </div>
           </div>
-          <div className="pane-item">
-            <QuestBoard />
-          </div>
-        </div>
         </>
       )
     )

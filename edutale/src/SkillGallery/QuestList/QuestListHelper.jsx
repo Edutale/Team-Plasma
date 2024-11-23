@@ -148,7 +148,7 @@ export default function QuestListHelper({quests, currSkill, studentId, stuQuests
             <ul className="sg-quest-list">
               <p> <b> Beginner Quests </b> </p>
                 {listQuestsAndResources(quests, currSkill).map(item => (item.quest_difficulty == 1) && (
-                  createModal(item)
+                    createModal(item)
                 ))}
             </ul>
 
@@ -156,7 +156,7 @@ export default function QuestListHelper({quests, currSkill, studentId, stuQuests
             <ul className="sg-quest-list">
               <p> <b> Intermediate Quests </b> </p>
                 {listQuestsAndResources(quests, currSkill).map(item => (item.quest_difficulty == 2) && (
-                  createModal(item)
+                    createModal(item)
                 ))}
             </ul>
 
@@ -164,7 +164,7 @@ export default function QuestListHelper({quests, currSkill, studentId, stuQuests
             <ul className="sg-quest-list">
               <p> <b> Expert Quests </b> </p>
                 {listQuestsAndResources(quests, currSkill).map(item => (item.quest_difficulty == 3) && (
-                  createModal(item)
+                    createModal(item)
                 ))}
             </ul>
           </>

@@ -3,10 +3,10 @@ import "./UserBar.css"
 
 export default function UserBar({progress}) {
     return progress && (
-        <div className="userBar">
-          <h2> {progress.name} <progress className="lBar"
-            value={topVal(progress.exp, workVal(progress.lvl)) / botVal(progress.lvl)} />
-        </h2>
+        <div className="user-bar">
+          <h2> 
+            {progress.name} <progress value={topVal(progress.exp, workVal(progress.lvl)) / botVal(progress.lvl)} />
+          </h2>
           <p className="bar-text">
             Level {progress.lvl} - {topVal(progress.exp, workVal(progress.lvl))} / {botVal(progress.lvl)}
           </p>

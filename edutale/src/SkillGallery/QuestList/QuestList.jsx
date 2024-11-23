@@ -35,7 +35,7 @@ export default function QuestList({career, currSkill, studentId}) {
         try {
             await Axios.get(`http://localhost:3000/api/students/${studentId}/quests`)
             .then((response) => {
-              setStuQuests(response.data)
+                setStuQuests(response.data)
             })
         }
         catch(err) {

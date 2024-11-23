@@ -1,11 +1,11 @@
 /*--- QuestBoard.css ---*/ 
 
-.questBoard {
+.quest-board {
     text-align: center;
     height: 97%;
 }
 
-.qBoard-container {
+.q-board-container {
     display: grid;
     grid-template-rows: auto auto auto auto auto;
     margin: 5px;
@@ -35,7 +35,7 @@
     grid-template-columns: 15% 85%;
 }
   
-.qBoard-item {
+.q-board-item {
     padding-left: 1px;
     text-align: left;
     white-space: pre;
@@ -45,7 +45,7 @@
     margin: 10px;
 }
 
-.qImg {
+.q-img {
     max-width: 115px;
     max-height: auto;
 }

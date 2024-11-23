@@ -19,7 +19,6 @@ create table if not exists Student(
     equip_weapon        char(9) default null,
     equip_armor         char(9) default null,
     equip_familiar      char(9) default null,
-
     primary key         (STUDENT_ID),
     foreign key         (equip_weapon) references Inventory(ITEM_ID) on delete cascade,
     foreign key         (equip_armor) references Inventory(ITEM_ID) on delete cascade,
@@ -36,7 +35,7 @@ create table if not exists Skill(
 create table if not exists Student_Skill(
     student_id          char(9),
     skill_id            char(9),
-    skill_exp            int default 0,
+    skill_exp           int default 0,
     primary key         (student_id, skill_id),
     foreign key         (student_id) references Student(STUDENT_ID) on delete cascade,
     foreign key         (skill_id) references Skill(SKILL_ID) on delete cascade

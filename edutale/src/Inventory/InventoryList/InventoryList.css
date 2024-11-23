@@ -1,28 +1,29 @@
 .type-header {
-    padding: 0px;
-    margin: 0px;
+      padding: 0px;
+      margin: 0px;
 }
 .storage-div {
-  display: grid;
-  grid-template-rows: auto auto;
-  grid-auto-flow: column;
-  gap: 2px;
-  box-sizing: border-box;
-  justify-content: space-evenly;
-  justify-items: center;
-  overflow-x: auto;
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-auto-flow: column;
+    gap: 2px;
+    box-sizing: border-box;
+    justify-content: space-evenly;
+    justify-items: center;
+    overflow-x: auto;
 }
 
 .item {
-  height: 85%;
-  width: 93%;
+    height: 85%;
+    width: 93%;
+    transition: .15s;
 }
 
 .item:hover, .item:focus {
-  border: 0.5em solid rgb(224, 152, 42);
+    border: 0.5em solid rgb(224, 152, 42);
 }
 
 .item-img {
-  height: 100%;
-  width: 100%;
+    height: 100%;
+    width: 100%;
 }

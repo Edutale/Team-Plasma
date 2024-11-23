@@ -6,8 +6,6 @@ const familiarPath = "../../../assets/familiar/"
 const avatarUrl = "../../../assets/avatar.gif"
 
 export default function Equipped({catalog, equipItems, stuName}) {
-    //const { user } = useAuth0()
-
     // find inventory row that has the same ID has the equipped item
     let eqArmor = catalog.find(item => item.item_id == equipItems.armor)
     let eqWeapon = catalog.find(item => item.item_id == equipItems.weapon)
