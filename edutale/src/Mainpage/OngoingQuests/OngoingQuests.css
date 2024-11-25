@@ -39,6 +39,7 @@
     background-color: #f3f3f3;
     min-height: 50%;
     max-width: fit-content;
+    transition-duration: .15s;
 }
 
 .block-button:hover, .block-button:focus {

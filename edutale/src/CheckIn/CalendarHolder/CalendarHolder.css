@@ -72,6 +72,7 @@
     border-radius: 5px;
     border: none;
     background-color: #f3f3f3;
+    transition-duration: .15s;
 }
 
 .react-calendar__navigation button:enabled:hover,

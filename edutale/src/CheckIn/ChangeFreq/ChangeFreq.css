@@ -28,11 +28,26 @@
     appearance: button; /* For CSS3 */
 }
 
+.button-checked label:hover, .button-checked label:focus {
+    padding: 1em;
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 15px;
+    background-color: rgb(108, 167, 147);
+
+    -webkit-appearance: button; /* WebKit */
+    -moz-appearance: button; /* Mozilla */
+    -o-appearance: button; /* Opera */
+    -ms-appearance: button; /* MS Edge */
+    appearance: button; /* For CSS3 */
+}
+
 
 .change-freq {
     border: 2px solid black;
     border-radius: 25px;
     background-color: #f3f3f3;
+    transition-duration: .15s;
 }
 
 .change-freq:hover,
