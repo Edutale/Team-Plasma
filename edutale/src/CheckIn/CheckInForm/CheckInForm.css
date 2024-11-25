@@ -11,7 +11,7 @@
     margin-top: 0px;
     padding: 2px;
     border-radius: 10px;
-    background-color: rgb(131, 196, 174);
+    background-color: #58c8a2;
     border: .15em solid black;
     box-shadow: .5rem .5rem 1rem hsl(0 0% 0% / .25);
 }
@@ -76,11 +76,11 @@
 }
 
 .yes:hover, .yes:focus {
-    background: rgb(124, 253, 152)
+    background: #7cfd98;
 }
 
 .no:hover, .no:focus {
-    background: rgb(253, 124, 124);
+    background: #fd9b9b;
 }
 
 .form-footer {

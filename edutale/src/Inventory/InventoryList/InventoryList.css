@@ -20,7 +20,7 @@
 }
 
 .item:hover, .item:focus {
-    border: 0.5em solid rgb(224, 152, 42);
+    border: 0.5em solid #ffb74a;
 }
 
 .item-img {

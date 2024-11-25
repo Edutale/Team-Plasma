@@ -14,8 +14,15 @@ const OPTIONS = {
         lineWidth: 2,
         color: "rgb(160, 160, 160)"
       },
-      ticks: {display: false},
-      pointLabels: {font: {size:14}}
+      ticks: {
+        display: false
+      },
+      pointLabels: {
+        font: {
+          size: 14
+        },
+        color: "black"
+      }
     }
   },
   font: {
@@ -30,6 +37,11 @@ const OPTIONS = {
       bodyFont: {
         size: 12,
         family: "'Faculty Glyphic', serif"
+      }
+    },
+    legend: {
+      labels: {
+        color: "black"
       }
     }
   }
@@ -52,7 +64,7 @@ function createRadarData(skills, skillEXP) {
               data: skillEXP,
               fill: true,
               backgroundColor: "rgba(131, 128, 255, 0.8)",
-              borderColor: "rgb(95, 92, 255)",
+              borderColor: "#4648bd",
               pointBorderColor: "rgb(210, 210, 210)",
               pointBackgroundColor: "rgb(95, 92, 255)",
           },
