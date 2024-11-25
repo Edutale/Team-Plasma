@@ -120,7 +120,7 @@ router.delete("/:id/skills/:skillId", async(req, res)=>{
 // Remove the attachment of a resource from a quest
 router.delete("/:id/resources/:resourceId", async(req, res)=>{
     try{
-        await deleteQuestResource(reqs.params.id, req.params.resourceId)
+        await deleteQuestResource(req.params.id, req.params.resourceId)
         res.status(200).json({message: "Resource removed from quest successfully"})
     } catch(err){
         res.status(500).json({error: err.message})
