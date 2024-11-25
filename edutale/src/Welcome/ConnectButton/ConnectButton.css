@@ -14,4 +14,7 @@
     background: transparent;
     color: white;
     outline: 1px solid #fff;
+    text-shadow: 0 0 10px black;
+    -moz-text-shadow: 0 0 10px black;
+    -webkit-text-shadow: 0 0 10px black;
 }
