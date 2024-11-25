@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react'
-import axios from 'axios'
+import { useState, useEffect } from "react"
+import axios from "axios"
 
 // DONT FORGET TO UPDATE URL CONSTANT
-const URL = 'http://localhost:3000/api'
+const URL = "http://localhost:3000/api"
 
 export const useSkills = ()=>{
     const [skills, setSkills] = useState([])

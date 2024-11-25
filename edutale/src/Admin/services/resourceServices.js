@@ -1,5 +1,5 @@
-import axios from 'axios'
-const URL = 'http://localhost:3000/api'
+import axios from "axios"
+const URL = "http://localhost:3000/api"
 
 export const resourceService = {
     addResource: (data) => axios.post(`${URL}/resources`, {

@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from 'react'
-import { useResources } from '../../hooks/useResources'
+import React, { useState, useEffect } from "react"
+import { useResources } from "../../hooks/useResources"
 
 export const ResourceForm = ({ type, onSubmit, resources = [], onResourceChange = ()=>{} })=>{
     const {resourceDetails, fetchResourceDetails} = useResources()
 
     // Update form fields when resource details change
     useEffect(()=>{
-        if(resourceDetails && type === 'update'){
-            const form = document.querySelector('.resource-form')
+        if(resourceDetails && type === "update"){
+            const form = document.querySelector(".resource-form")
             if(form){
-                form.querySelector('[name="resourceName"]').placeholder=resourceDetails.resource_name
-                form.querySelector('[name="resourceLink"]').placeholder=resourceDetails.resource_link
-                form.querySelector('[name="resourceDescription"]').placeholder=resourceDetails.resource_description
-                form.querySelector('[name="resourceType"]').value=resourceDetails.resource_type
+                form.querySelector("[name='resourceName']").placeholder=resourceDetails.resource_name
+                form.querySelector("[name='resourceLink']").placeholder=resourceDetails.resource_link
+                form.querySelector("[name='resourceDescription']").placeholder=resourceDetails.resource_description
+                form.querySelector("[name='resourceType']").value=resourceDetails.resource_type
             }
         }
     }, [resourceDetails])
@@ -20,7 +20,7 @@ export const ResourceForm = ({ type, onSubmit, resources = [], onResourceChange 
     // Handle resource selection
     const handleResourceSelect = (e)=>{
         const resourceId = e.target.value
-        if(resourceId && type === 'update'){
+        if(resourceId && type === "update"){
             fetchResourceDetails(resourceId)
         }
         onResourceChange(e)
@@ -28,7 +28,7 @@ export const ResourceForm = ({ type, onSubmit, resources = [], onResourceChange 
 
     const renderFields = ()=>{
         switch(type){
-            case 'add':
+            case "add":
                 return(
                     <>
                         <h2>Create Resource</h2>
@@ -62,7 +62,7 @@ export const ResourceForm = ({ type, onSubmit, resources = [], onResourceChange 
                         <button type="submit">Add Resource</button>
                     </>
                 )
-            case 'delete':
+            case "delete":
                 return(
                     <>
                         <h2>Delete Resource</h2>
@@ -75,7 +75,7 @@ export const ResourceForm = ({ type, onSubmit, resources = [], onResourceChange 
                         <button type="submit">Delete Resource</button>
                     </>
                 )
-            case 'update':
+            case "update":
                 return(
                     <>
                         <h2>Update Resource</h2>
@@ -107,17 +107,17 @@ export const ResourceForm = ({ type, onSubmit, resources = [], onResourceChange 
         <form onSubmit={(e)=>{
             e.preventDefault();
             // For update form, only include non-empty fields
-            if(type === 'update'){
+            if(type === "update"){
                 const formData = new FormData(e.target)
                 const updateData = {}
                 for(let [key, value] of formData.entries()){
-                    if(value.trim() !== ''){
+                    if(value.trim() !== ""){
                         updateData[key] = value
                     }
                 }
                 // Check if any fields were filled
                 if(Object.keys(updateData).length <= 1) { // 1 because resourceId is always present
-                    alert('Please fill at least one field to update');
+                    alert("Please fill at least one field to update");
                     return
                 }
                 onSubmit(e)

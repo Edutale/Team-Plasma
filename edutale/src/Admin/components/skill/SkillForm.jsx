@@ -1,9 +1,9 @@
 // Currently a simple implementation since we don't have too much info on skills in our schema atm
-import React from 'react'
+import React from "react"
 export const SkillForm = ({ type, onSubmit, skills = [], onSkillChange = ()=>{} })=>{
     const renderFields = ()=>{
         switch(type){
-            case 'add':
+            case "add":
                 return(
                     <>
                         <h2>Create Skill</h2>
@@ -19,7 +19,7 @@ export const SkillForm = ({ type, onSubmit, skills = [], onSkillChange = ()=>{} 
                     </>
                 )
 
-            case 'delete':
+            case "delete":
                 return(
                     <>
                         <h2>Delete Skill</h2>
@@ -33,7 +33,7 @@ export const SkillForm = ({ type, onSubmit, skills = [], onSkillChange = ()=>{} 
                     </>
                 )
             
-            case 'update':
+            case "update":
                 return(
                     <>
                         <h2>Update Skill</h2>

@@ -1,14 +1,14 @@
 // Service module for handling quest-related API Calls
-import axios from 'axios'
+import axios from "axios"
 
-const URL = 'http://localhost:3000/api'
+const URL = "http://localhost:3000/api"
 
 // create our api calls to be used in other parts of admin here
 export const questService = {
     addQuest: (data) => axios.post(`${URL}/quests`, {
         questName: data.questName,
         questDescription: data.questDescription,
-        isProject: data.isProject === 'true', // cause apparently html forms don't like bool values, so gotta convert here zzzzz
+        isProject: data.isProject === "true", // cause apparently html forms don't like bool values, so gotta convert here zzzzz
         questDifficulty: Number(data.questDifficulty),
     }),
     addResource: (questId, resourceId) => axios.post(`${URL}/quests/${questId}/resources`, {resourceId}),

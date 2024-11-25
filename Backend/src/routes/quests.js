@@ -1,4 +1,4 @@
-const express = require('express')
+const express = require("express")
 const router = express.Router()
 const {
     getQuestResources, getAllQuests, getQuestSkills, getQuestDetails
@@ -59,15 +59,15 @@ router.post("/", async(req, res)=>{
         const {questName, questDescription, isProject, questDifficulty} = req.body
         // validate required fields
         if(!questName || !questDescription || questDifficulty === undefined || isProject === undefined){
-            return res.status(400).json({error: 'Missing required fields'})
+            return res.status(400).json({error: "Missing required fields"})
         }
         // validate if difficulty is 1, 2, or 3
         if(![1, 2, 3].includes(Number(questDifficulty))){
-            return res.status(400).json({error: 'Quest difficulty must be 1, 2, or 3'})
+            return res.status(400).json({error: "Quest difficulty must be 1, 2, or 3"})
         }
         const questId = await addNewQuest(questName, questDescription, isProject, questDifficulty)
         res.status(201).json({
-            message: 'Quest added successfully',
+            message: "Quest added successfully",
             questId: questId
         })
     } catch(err){
@@ -80,7 +80,7 @@ router.post("/:id/resources", async(req, res)=>{
     try{
         const {resourceId} = req.body
         await addQuestResource(req.params.id, resourceId)
-        res.status(201).json({message: 'Resource added to quest successfully'})
+        res.status(201).json({message: "Resource added to quest successfully"})
     } catch(err){
         res.status(500).json({error: err.message})
     }
@@ -91,7 +91,7 @@ router.post("/:id/skills", async(req, res)=>{
     try{
         const {skillId} = req.body
         await addQuestSkill(req.params.id, skillId)
-        res.status(201).json({message: 'Skill added to quest successfully'})
+        res.status(201).json({message: "Skill added to quest successfully"})
     } catch(err){
         res.status(500).json({error: err.message})
     }
@@ -101,7 +101,7 @@ router.post("/:id/skills", async(req, res)=>{
 router.delete("/:id", async(req, res)=>{
     try{
         await deleteQuest(req.params.id)
-        res.status(200).json({message: 'Quest deleted successfully'})
+        res.status(200).json({message: "Quest deleted successfully"})
     } catch(err){
         res.status(500).json({error: err.message})
     }
@@ -111,7 +111,7 @@ router.delete("/:id", async(req, res)=>{
 router.delete("/:id/skills/:skillId", async(req, res)=>{
     try{
         await deleteQuestSkill(req.params.id, req.params.skillId)
-        res.status(200).json({message: 'Skill removed from quest successfully'})
+        res.status(200).json({message: "Skill removed from quest successfully"})
     } catch(err){
         res.status(500).json({error: err.message})
     }
@@ -121,7 +121,7 @@ router.delete("/:id/skills/:skillId", async(req, res)=>{
 router.delete("/:id/resources/:resourceId", async(req, res)=>{
     try{
         await deleteQuestResource(reqs.params.id, req.params.resourceId)
-        res.status(200).json({message: 'Resource removed from quest successfully'})
+        res.status(200).json({message: "Resource removed from quest successfully"})
     } catch(err){
         res.status(500).json({error: err.message})
     }
@@ -132,7 +132,7 @@ router.put("/:id", async(req, res)=>{
     try{
         const {questName, questDescription} = req.body
         await updateQuest(req.params.id, questName, questDescription)
-        res.status(200).json({message: 'Quest updated successfully'})
+        res.status(200).json({message: "Quest updated successfully"})
     } catch(err){
         res.status(500).json({error: err.message})
     }

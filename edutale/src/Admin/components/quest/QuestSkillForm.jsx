@@ -1,10 +1,10 @@
-import React from 'react'
+import React from "react"
 
 export const AddQuestSkillForm = ({onSubmit, quests, allSkills, onQuestChange})=>{
     return(
         <form onSubmit={onSubmit} className="quest-form">
             <h2>Add Quest Skill</h2>
-            <select name="questId" required onChange={(e)=>onQuestChange(e, 'skill')}>
+            <select name="questId" required onChange={(e)=>onQuestChange(e, "skill")}>
                 <option value="">Select Quest</option>
                 {quests.map(quest=>(
                     <option key={`quest-skill-add${quest.quest_id}`} value={quest.quest_id}>{quest.quest_name}</option>
@@ -25,7 +25,7 @@ export const DeleteQuestSkillForm = ({onSubmit, quests, questSkills, onQuestChan
     return(
         <form onSubmit={onSubmit} className="quest-form">
             <h2>Delete Quest Skill</h2>
-            <select name="questId" required onChange={(e)=>onQuestChange(e, 'skill')}>
+            <select name="questId" required onChange={(e)=>onQuestChange(e, "skill")}>
                 <option value="">Select Quest</option>
                 {quests.map(quest=>(
                     <option key={`quest-skill-delete${quest.quest_id}`} value={quest.quest_id}>{quest.quest_name}</option>

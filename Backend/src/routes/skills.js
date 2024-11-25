@@ -1,4 +1,4 @@
-const express = require('express')
+const express = require("express")
 const router = express.Router()
 const {
     getAllSkills
@@ -28,11 +28,11 @@ router.post("/", async(req, res)=>{
     try{
         const{ skillName, skillDescription } = req.body
         if(!skillName || !skillDescription){
-            return res.status(400).json({error: 'Missing required fields'})
+            return res.status(400).json({error: "Missing required fields"})
         }
         const skillId = await addNewSkill(skillName, skillDescription)
         res.status(201).json({
-            message: 'Skill added successfully',
+            message: "Skill added successfully",
             skillId: skillId
         })
     } catch(err){
@@ -45,7 +45,7 @@ router.put("/:id", async(req, res)=>{
     try{
         const { skillName, skillDescription} = req.body
         await updateSkill(req.params.id, skillName, skillDescription)
-        res.status(200).json({message: 'Skill updated successfully'})
+        res.status(200).json({message: "Skill updated successfully"})
     } catch(err){
         res.status(500).json({error: err.message})
     }
@@ -55,7 +55,7 @@ router.put("/:id", async(req, res)=>{
 router.delete("/:id", async(req, res)=>{
     try{
         await deleteSkill(req.params.id)
-        res.status(200).json({message: 'Skill deleted successfully'})
+        res.status(200).json({message: "Skill deleted successfully"})
     } catch(err){
         res.status(500).json({error: err.message})
     }

@@ -1,10 +1,10 @@
 // Forms for quest operations, we create all our forms for quests here to be used in the main Admin.jsx
-import React from 'react'
+import React from "react"
 
 export const QuestForm = ({ type, onSubmit, quests = [], onQuestChange = ()=>{} })=>{
     const renderFields = ()=>{
         switch(type){
-            case 'add':
+            case "add":
                 return(
                     <>
                         <div className="form-group">
@@ -40,11 +40,11 @@ export const QuestForm = ({ type, onSubmit, quests = [], onQuestChange = ()=>{} 
                     </>
                 )
 
-            case 'delete':
+            case "delete":
                 return(
                     <>
                         <h2>Delete Quest</h2>
-                        <select name="questId" required onChange={(e)=>onQuestChange(e, 'both')}>
+                        <select name="questId" required onChange={(e)=>onQuestChange(e, "both")}>
                             <option value="">Select Quest</option>
                             {quests.map(quest=>(
                                 <option key={`quest-delete-${quest.quest_id}`} value={quest.quest_id}>{quest.quest_name}</option>
@@ -54,11 +54,11 @@ export const QuestForm = ({ type, onSubmit, quests = [], onQuestChange = ()=>{} 
                     </>
                 )
 
-            case 'update':
+            case "update":
                 return(
                     <>
                          <h2>Update Quest</h2>
-                         <select name="questId" required onChange={(e)=>onQuestChange(e, 'both')}>
+                         <select name="questId" required onChange={(e)=>onQuestChange(e, "both")}>
                             <option value="">Select Quest</option>
                             {quests.map(quest=>(
                                 <option key={`quest-update-${quest.quest_id}`} value={quest.quest_id}>{quest.quest_name}</option>

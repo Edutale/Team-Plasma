@@ -1,9 +1,9 @@
 // Hooks for managing quest-related data and operations
 // Handles fetching quests, their skills, and resources atm
-import { useState, useEffect } from 'react'
-import axios from 'axios'
+import { useState, useEffect } from "react"
+import axios from "axios"
 
-const URL = 'http://localhost:3000/api'
+const URL = "http://localhost:3000/api"
 
 export const useQuests = ()=>{
     // States for storing quest data

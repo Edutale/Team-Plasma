@@ -47,9 +47,10 @@
 
 .res-templates {
     display: grid;
-    height: 85%;
+    height: 82.5%;
     grid-template-rows: 1fr 1fr;
     padding: 20px;
+    overflow-y: auto;
 }
 
 .template-heading {

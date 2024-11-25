@@ -1,64 +1,64 @@
-const fs = require('fs').promises
-const path = require('path')
-const db = require('../../config/db')
+const fs = require("fs").promises
+const path = require("path")
+const db = require("../../config/db")
 
 async function loadSqlFile(fileName) {
-    const filePath = path.join(__dirname, '..', '..', 'config', 'scripts', 'student', fileName)
-    return fs.readFile(filePath, 'utf8')
+    const filePath = path.join(__dirname, "..", "..", "config", "scripts", "student", fileName)
+    return fs.readFile(filePath, "utf8")
 }
 
 async function getStudentSkills(studentId){
-    const sql = await loadSqlFile('get_student_skills.sql')
+    const sql = await loadSqlFile("get_student_skills.sql")
     const result = await db.query(sql, [studentId])
     return result.rows
 }
 
 async function getStudentQuests(studentId){
-    console.log('getStudentQuests called with studentId:', studentId)
-    const sql = await loadSqlFile('get_student_quests.sql')
-    console.log('SQL query:', sql)
+    console.log("getStudentQuests called with studentId:", studentId)
+    const sql = await loadSqlFile("get_student_quests.sql")
+    console.log("SQL query:", sql)
     try {
         const result = await db.query(sql, [studentId])
-        console.log('Query result:', result.rows)
+        console.log("Query result:", result.rows)
         return result.rows
     } catch (error) {
-        console.error('Error executing query:', error)
+        console.error("Error executing query:", error)
         throw error
     }
 }
 
 async function getStudentCareer(studentId){
-    const sql = await loadSqlFile('get_student_career.sql')
+    const sql = await loadSqlFile("get_student_career.sql")
     const result = await db.query(sql, [studentId])
     return result.rows
 }
 
 async function getStudentCheckedDays(studentId){
-    const sql = await loadSqlFile('get_student_checked_days.sql')
+    const sql = await loadSqlFile("get_student_checked_days.sql")
     const result = await db.query(sql, [studentId])
     return result.rows
 }
 
 async function getStudentLevelAndEXP(studentId){
-    const sql = await loadSqlFile('get_student_lvl_exp.sql')
+    const sql = await loadSqlFile("get_student_lvl_exp.sql")
     const result = await db.query(sql, [studentId])
     return result.rows
 }
 
 async function getStudentInventory(studentId){
-    const sql = await loadSqlFile('get_student_inventory.sql')
+    const sql = await loadSqlFile("get_student_inventory.sql")
     const result = await db.query(sql, [studentId])
     return result.rows
 }
 
 async function getStudentLevelAndEXP(studentId){
-    const sql = await loadSqlFile('get_student_lvl_exp.sql')
+    const sql = await loadSqlFile("get_student_lvl_exp.sql")
     const result = await db.query(sql, [studentId])
     return result.rows
 }
 
 async function getInventoryPage(studentId){
-    const sql = await loadSqlFile('get_inventory_page.sql')
+    const sql = await loadSqlFile("get_inventory_page.sql")
     const result = await db.query(sql, [studentId])
     return result.rows
 }
