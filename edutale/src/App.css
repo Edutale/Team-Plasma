@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Faculty+Glyphic&family=Modern+Antiqua&display=swap");
 
 * {
-    font-family: "Faculty Glyphic", serif;
+    font-family: "Faculty Glyphic", sans-serif;
 }
 
 .pane-container {

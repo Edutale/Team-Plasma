@@ -92,9 +92,7 @@ export default function Inventory() {
             </div>
             <div className="pane-item">
               <h1 className="center-header"> <u> Inventory </u> </h1>
-              <div className="inv-container">
-                <InventoryList catalog={catalog} ownedItems={ownedItems} studentId={studentId} moneyAmt={moneyAmt}/>
-              </div>
+              <InventoryList catalog={catalog} ownedItems={ownedItems} studentId={studentId} moneyAmt={moneyAmt}/>
             </div>
           </div>
         </>

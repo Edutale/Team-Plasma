@@ -15,10 +15,6 @@
     margin-right: auto;
 }
 
-.equip-img {
-    object-fit: contain;    
-}
-
 .grid-item {
     object-fit: contain;
     text-align: center;
@@ -27,29 +23,9 @@
     align-items: center;
 }
 
-.unowned {
-    display: block;
-    border: 0.5em solid #3a3a3a;
-    background-color: #f3f3f3;
-}
-
-.unowned img {
-    filter: grayscale(100%);
-}
-
-.owned {
-    display: block;
-    border: 0.5em solid #862525;
-    background-color: #f3f3f3;
-}
-
-.unowned:hover, .owned:hover,
-.unowned:focus, .owned:focus {
-    cursor: pointer;
-}
-
 .equip-img {
     display: block;
+    object-fit: contain;   
     border: 0.5em solid #862525;
     background-color: #f3f3f3;
 }
@@ -88,14 +64,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.inv-container {
-    height: 90%;
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    padding: 2px;
-    margin: 2px;
 }
 
 .user-pane {

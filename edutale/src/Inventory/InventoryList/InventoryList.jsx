@@ -16,7 +16,7 @@ export default function InventoryList({catalog, ownedItems, studentId, moneyAmt}
     }
 
     return catalog && ownedItems && studentId && toString(moneyAmt) && (
-      <>
+      <div className="inv-container">
         {setOwned(catalog, ownedItems)}
         <div className="item-type">
           <h2 className="type-header"> Armor </h2>
@@ -163,7 +163,7 @@ export default function InventoryList({catalog, ownedItems, studentId, moneyAmt}
             ))}
           </div>
         </div>
-      </>
+      </div>
     )
 }
 

@@ -1,12 +1,18 @@
 .skills-and-projs {
-    justify-items: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    height: 90%;
 }
+
 .res-know-container {
     background-color: #31cce0;
     width: 500px;
     height: 40%;
     min-height: 330px;
-    margin: 30px;
+    margin: 10px;
     border: .15em solid black;
     border-radius: 10px;
     box-shadow: .5rem .5rem 1rem hsl(0 0% 0% / .25);
@@ -14,6 +20,7 @@
     overflow-y: auto;
     display: grid;
     grid-template-rows: 1fr 5fr;
+    overflow-y: auto;
 }
 
 .header-centered {
@@ -24,6 +31,7 @@
     background-color: #dfdfdf;
     border-radius: 0px 0px 10px 10px;
     display: grid;
+    overflow-y: auto;
 }
 
 .res-know-item {
