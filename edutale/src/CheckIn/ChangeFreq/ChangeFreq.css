@@ -46,6 +46,7 @@
 .change-freq {
     border: 2px solid black;
     border-radius: 25px;
+    cursor: pointer;
     background-color: #f3f3f3;
     transition-duration: .15s;
 }
