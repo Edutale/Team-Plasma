@@ -1,6 +1,6 @@
-import axios from 'axios'
+import axios from "axios"
 // DONT FORGET TO CHANGE URL CONSTANT ONCE LAUNCH
-const URL = 'http://localhost:3000/api'
+const URL = "http://localhost:3000/api"
 
 export const skillService = {
     addSkill: (data) => axios.post(`${URL}/skills`, {

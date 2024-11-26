@@ -1,28 +1,62 @@
 .type-header {
     padding: 0px;
     margin: 0px;
+    display: inline;
 }
+
+.inv-container {
+    margin-top: -1em;
+    padding: 5px;
+    height: 89%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.item-type {
+    height: 30%;
+}
+
 .storage-div {
-  display: grid;
-  grid-template-rows: auto auto;
-  grid-auto-flow: column;
-  gap: 2px;
-  box-sizing: border-box;
-  justify-content: space-evenly;
-  justify-items: center;
-  overflow-x: auto;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-auto-flow: column;
+    gap: 5px 20px;
+    justify-items: center;
+    overflow-x: auto;
 }
 
 .item {
-  height: 85%;
-  width: 93%;
+    height: 90px;
+    aspect-ratio: 1 / 1;
+    transition: .15s;
+    padding: 0px;
+    display: inline;
+    background-color: #f3f3f3;
 }
 
 .item:hover, .item:focus {
-  border: 0.5em solid rgb(224, 152, 42);
+    border: 0.5em solid #ffb74a;
 }
 
 .item-img {
-  height: 100%;
-  width: 100%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+}
+
+.unowned {
+    border: 0.5em solid #3a3a3a;   
+}
+
+.unowned img {
+    filter: grayscale(100%);
+}
+
+.owned {
+    border: 0.5em solid #862525;
+}
+
+.unowned:hover, .owned:hover,
+.unowned:focus, .owned:focus {
+    cursor: pointer;
 }

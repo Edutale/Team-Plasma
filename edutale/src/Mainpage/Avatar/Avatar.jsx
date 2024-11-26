@@ -7,7 +7,7 @@ import "./Avatar.css"
 export default function Avatar() {
     return (
       <div className="avatar"> 
-        <img className="aImg" src={avatarUrl} alt="Avatar" />
+        <img className="a-img" src={avatarUrl} alt="Avatar" />
       </div>
     )
 };

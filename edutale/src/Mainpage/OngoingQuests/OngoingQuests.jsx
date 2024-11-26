@@ -39,33 +39,33 @@ export default function OngoingQuests() {
                     //creates 4 quest blocks to diplay as ongoing quests that are not yet completed
                     setQuests(
                       <>
-                      {questNames.map(item => !item.completed && (
-                        <Popup key={item.name} trigger= {
-                          <button className="block-button">
-                            <OngoingQuestBlock qName={item.name} />
-                          </button>}
-                          modal nested>{
-                            close => (
-                              <div className="o-quest-modal">
-                                <div className="modal-header">
-                                  <button className="modal-header-button close" onClick={() => close()}>
-                                    ⨯
-                                  </button>
+                        {questNames.map(item => !item.completed && (
+                          <Popup key={item.name} trigger= {
+                            <button className="block-button">
+                              <OngoingQuestBlock qName={item.name} />
+                            </button>}
+                            modal nested>{
+                              close => (
+                                <div className="o-quest-modal">
+                                  <div className="modal-header">
+                                    <button className="modal-header-button close" onClick={() => close()}>
+                                      ⨯
+                                    </button>
+                                  </div>
+                                  <QuestModal qName={item.name} qDesc={item.desc} diff={item.diff}/>
+                                  <div className="o-quest-footer">
+                                    <button className="modal-footer-button quit" onClick={() => QuitHandler(studentId, item.id)}>
+                                      Quit Quest
+                                    </button>
+                                    <button className="modal-footer-button complete" onClick={() => CompleteHandler(studentId, item.id)}>
+                                      Complete Quest
+                                    </button>
+                                  </div>
                                 </div>
-                                <QuestModal qName={item.name} qDesc={item.desc} diff={item.diff}/>
-                                <div className="o-quest-footer">
-                                  <button className="modal-footer-button quit" onClick={() => QuitHandler(studentId, item.id)}>
-                                    Quit Quest
-                                  </button>
-                                  <button className="modal-footer-button complete" onClick={() => CompleteHandler(studentId, item.id)}>
-                                    Complete Quest
-                                  </button>
-                                </div>
-                              </div>
-                            )
-                          }                           
-                        </Popup>
-                      ))}
+                              )
+                            }                           
+                          </Popup>
+                        ))}
                       </>
                     )
                 })
@@ -76,10 +76,10 @@ export default function OngoingQuests() {
     }
   
     return (
-      <div className="oQuests">
+      <div className="o-quests">
         <div className="o-quest-background">
           <h2 className="o-quest-h2"> Ongoing Quests </h2>
-          <div className="oQuests-container">
+          <div className="o-quests-container">
             {quests}
           </div>
         </div>

@@ -75,23 +75,23 @@ export default function CheckIn() {
     return (
       // the page will only render if the user is logged in
       isAuthenticated && checkedDays && (
-      <>
-        <Header />
-        <div className="pane-container">
-        <div className="pane-item">
-          <CalendarHolder checkedDays={checkedDays}/>
-          
-          <h2 className="page-header"> <u> Schedule </u> </h2>
-          <div className="schedule-container">
-            <ChangeFreq studentId={studentId} getFreqWord={getFreqWord} freq={freq} setFreq={setFreq}/>
+        <>
+          <Header />
+          <div className="pane-container">
+            <div className="pane-item">
+              <CalendarHolder checkedDays={checkedDays}/>
+              
+              <h2 className="page-header"> <u> Schedule </u> </h2>
+              <div className="schedule-container">
+                <ChangeFreq studentId={studentId} getFreqWord={getFreqWord} freq={freq} setFreq={setFreq}/>
+              </div>
+            </div>
+            <div className="pane-item">
+              <h1 className="center-header"> <u> Check-In </u> </h1>
+              {todayChecked(checkedDays) ? postCheckIn(latestDay.gained_exp, latestDay.quests_completed, latestDay.study_time) : <CheckInFormHolder />}
+            </div>
           </div>
-        </div>
-        <div className="pane-item">
-          <h1 className="center-header"> <u> Check-In </u> </h1>
-          {todayChecked(checkedDays) ? postCheckIn(latestDay.gained_exp, latestDay.quests_completed, latestDay.study_time) : <CheckInFormHolder />}
-        </div>
-      </div>
-    </>
+        </>
     )
     )
 }

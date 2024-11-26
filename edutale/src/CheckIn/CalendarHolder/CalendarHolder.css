@@ -1,5 +1,4 @@
-/* Modified from default react-calendar css file 
-   A lot of this stuff can probably be deleted */
+/* Modified from default react-calendar css file. */
 
 .react-calendar {
     width: 550px;
@@ -73,6 +72,7 @@
     border-radius: 5px;
     border: none;
     background-color: #f3f3f3;
+    transition-duration: .15s;
 }
 
 .react-calendar__navigation button:enabled:hover,
@@ -130,12 +130,12 @@
 }
 
 .react-calendar__tile--now {
-    background: rgb(131, 196, 174);
+    background: #ffde4d;
     border-radius: 50%;
 }
 
 .checked-in {
-    background-color: rgba(196, 0, 0, 0.7);
+    background-color: #58c8a2;
     border-radius: 50%;
 }
 

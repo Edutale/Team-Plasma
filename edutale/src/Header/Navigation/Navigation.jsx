@@ -21,7 +21,6 @@ export default function Navigation() {
         <NavLink to="/skill-gallery" className="bookmark skill-list-mark"><p className="mark-icon"> Skill Gallery </p></NavLink>
         <NavLink to="/resume" className="bookmark resume-mark"><p className="mark-icon"> Resume </p></NavLink>
       </div>
-
     )
 }
 

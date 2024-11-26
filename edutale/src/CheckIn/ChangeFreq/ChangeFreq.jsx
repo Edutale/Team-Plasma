@@ -67,7 +67,7 @@ export default function ChangeFreq({studentId, getFreqWord, freq, setFreq}) {
                 </div>
                 <div className="freq-modal">
                   <p> Your frequency is now {getFreqWord(freq)}. Download the .ics file below to add the reminder to your choice of calendar: </p>
-                  <button onClick={() => createCal(freq)}> Download .ics file </button>
+                  <button className="ics-button" onClick={() => createCal(freq)}> Download .ics file </button>
                 </div>
                 <div className="freq-footer">
                   <button className="modal-footer-button close" onClick={() => {close(); setConfirm(false); setTempChoice("")}}>
@@ -128,7 +128,7 @@ function createCal(frequency) {
         }
 
         // the Blob will be the downloaded .ics file the user can add to their calendar app
-        const blob = new Blob([value], { type: "text/calendar" });
-        saveAs(blob, `edutale-calendar.ics`);
+        const blob = new Blob([value], { type: "text/calendar" })
+        saveAs(blob, `edutale-calendar.ics`)
     })
 }

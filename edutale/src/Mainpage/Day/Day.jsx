@@ -2,8 +2,6 @@
 
 import "./Day.css"
 
-const studentId = "TESTSTU01"
-
 export default function Day({joinDate}) {
     function dayNum(jd) {
         let now = Date.now()

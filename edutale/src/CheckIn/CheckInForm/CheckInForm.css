@@ -1,127 +1,127 @@
 /* CheckInForm.css */
 
 .check-form-holder {
-  min-width: 570px;
-  height: 700px;
-  overflow-y: auto;
+    min-width: 570px;
+    height: 700px;
+    overflow-y: auto;
 }
 
 .check-in-form {
-  margin: 10px;
-  margin-top: 0px;
-  padding: 2px;
-  border-radius: 10px;
-  background-color: rgb(131, 196, 174);
-  border: .15em solid black;
-  box-shadow: .5rem .5rem 1rem hsl(0 0% 0% / .25);
+    margin: 10px;
+    margin-top: 0px;
+    padding: 2px;
+    border-radius: 10px;
+    background-color: #58c8a2;
+    border: .15em solid black;
+    box-shadow: .5rem .5rem 1rem hsl(0 0% 0% / .25);
 }
 
 .entry {
-  margin: 10px;
-  border: 1px solid black;
-  padding: 20px;
-  padding-top: 5px;
-  border-radius: 10px;
-  background-color: #dfdfdf;
+    margin: 10px;
+    border: 1px solid black;
+    padding: 20px;
+    padding-top: 5px;
+    border-radius: 10px;
+    background-color: #dfdfdf;
 }
 
 .input-box {
-  border: 1px solid #e6e6e6;
-  background-color: #fdfdfd;
-  border: 1px solid black;
-  color: #555555;
-  font-size: 16px;
-  border-radius: 13px;
-  padding: 10px 30px 9px 22px;
-  margin-bottom: 10px;
+    border: 1px solid #e6e6e6;
+    background-color: #fdfdfd;
+    border: 1px solid black;
+    color: #555555;
+    font-size: 16px;
+    border-radius: 13px;
+    padding: 10px 30px 9px 22px;
+    margin-bottom: 10px;
 }
 
 .input-label {
-  color: #393939;
-  font-size: 12px;
-  line-height: 1.5;
-  text-transform: uppercase;
+    color: #393939;
+    font-size: 12px;
+    line-height: 1.5;
+    text-transform: uppercase;
 }
 
 .quest-select {
-  display: block;
-  line-height: 1.2;
-  background-color: transparent;
-  color: #555555;
-  border: none;
-  font-size: 16px;
+    display: block;
+    line-height: 1.2;
+    background-color: transparent;
+    color: #555555;
+    border: none;
+    font-size: 16px;
 }
 
 .input-mins {
-  display: block;
-  line-height: 1.2;
-  background-color: transparent;
-  color: #555555;
-  border: none;
-  border-bottom: 1px solid black;
-  font-size: 16px;
+    display: block;
+    line-height: 1.2;
+    background-color: transparent;
+    color: #555555;
+    border: none;
+    border-bottom: 1px solid black;
+    font-size: 16px;
 }
 
 .quest-complete-button {
-  background: #f3f3f3;
-  color: black;
-  margin: 2px;
-  border: none;
-  border-radius: 5px;
-  outline: 1px solid #000000;
-  font-weight: 600;
-  line-height: 28px;
-  cursor: pointer;
-  transition-duration: .15s;
+    background: #f3f3f3;
+    color: black;
+    margin: 2px;
+    border: none;
+    border-radius: 5px;
+    outline: 1px solid #000000;
+    font-weight: 600;
+    line-height: 28px;
+    cursor: pointer;
+    transition-duration: .15s;
 }
 
 .yes:hover, .yes:focus {
-  background: rgb(124, 253, 152)
+    background: #7cfd98;
 }
 
 .no:hover, .no:focus {
-  background: rgb(253, 124, 124);
+    background: #fd9b9b;
 }
 
 .form-footer {
-  text-align: right;
+    text-align: right;
 }
 
 .delete-button {
-  height: 25px;
-  width: 25px;
-  margin: -20px;
-  margin-bottom: 2px;
-  padding: 1px;
-  cursor: pointer;
-  border: none;
-  background-color: transparent;
-  border-radius: 5px;
-  color: black;
-  font-weight: 300;
-  font-size: larger;
-  line-height: 20px;
-  transition-duration: .15s;
+    height: 25px;
+    width: 25px;
+    margin: -20px;
+    margin-bottom: 2px;
+    padding: 1px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    border-radius: 5px;
+    color: black;
+    font-weight: 300;
+    font-size: larger;
+    line-height: 20px;
+    transition-duration: .15s;
 }
 
 .form-footer-button {
-  background: #f3f3f3;
-  color: black;
-  margin: 2px;
-  border: none;
-  border-radius: 5px;
-  outline: 1px solid #000000;
-  font-weight: 600;
-  line-height: 28px;
-  cursor: pointer;
-  transition-duration: .15s;
+    background: #f3f3f3;
+    color: black;
+    margin: 2px;
+    border: none;
+    border-radius: 5px;
+    outline: 1px solid #000000;
+    font-weight: 600;
+    line-height: 28px;
+    cursor: pointer;
+    transition-duration: .15s;
 }
 
 .submit {
-  margin-left: 5px;
-  margin-right: 10px;
+    margin-left: 5px;
+    margin-right: 10px;
 }
 
 .submit:hover, .submit:focus {
-  background: rgb(124, 253, 152)
+    background: rgb(124, 253, 152)
 }

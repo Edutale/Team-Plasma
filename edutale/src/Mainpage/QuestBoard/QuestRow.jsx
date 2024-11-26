@@ -6,16 +6,16 @@ import "./QuestBoard.css"
 export default function QuestRow(props) {
     return (
         <div className="q-board-row">
-            <div className="qBoard-item">
-                <img className='qImg' src={props.img} alt="Quest" />
-            </div>
-            <div className="qBoard-item q-desc">
-                <h3>
-                    <u> {props.qName} </u> &emsp; &emsp; &emsp; 
-                    <span className="tag"> Languages </span>
-                </h3>
-                <p> {props.desc} </p>
-            </div>
+          <div className="q-board-item">
+            <img className="q-img" src={props.img} alt="Quest" />
+          </div>
+          <div className="q-board-item q-desc">
+            <h3>
+              <u> {props.qName} </u> &emsp; &emsp; &emsp; 
+              <span className="tag"> Languages </span>
+            </h3>
+             <p> {props.desc} </p>
+          </div>
         </div>
     )
 }

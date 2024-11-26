@@ -1,13 +1,13 @@
 /*--- main.jsx ---*/ 
 
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
-import { Auth0Provider } from '@auth0/auth0-react'
+import { StrictMode } from "react"
+import { createRoot } from "react-dom/client"
+import { BrowserRouter } from "react-router-dom"
+import { Auth0Provider } from "@auth0/auth0-react"
 
-import App from './App.jsx'
+import App from "./App.jsx"
 
-const root = createRoot(document.getElementById('root'))
+const root = createRoot(document.getElementById("root"))
 
 root.render(
   <StrictMode>
@@ -22,5 +22,5 @@ root.render(
         <App />
       </BrowserRouter>
     </Auth0Provider>
-  </StrictMode>,
+  </StrictMode>
 )

@@ -1,8 +1,8 @@
 /*--- App.css ---*/ 
-@import url('https://fonts.googleapis.com/css2?family=Faculty+Glyphic&family=Modern+Antiqua&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Faculty+Glyphic&family=Modern+Antiqua&display=swap");
 
 * {
-    font-family: "Faculty Glyphic", serif;
+    font-family: "Faculty Glyphic", sans-serif;
 }
 
 .pane-container {
@@ -54,7 +54,7 @@
     color: rgb(255, 255, 255);
 }
 
-[role='tooltip'].popup-content {
+[role="tooltip"].popup-content {
     width: 200px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 3px;
 }
@@ -63,7 +63,7 @@
     background: rgba(0, 0, 0, 0.5);
 }
 
-[data-popup='tooltip'].popup-overlay {
+[data-popup="tooltip"].popup-overlay {
     background: transparent;
 }
 
