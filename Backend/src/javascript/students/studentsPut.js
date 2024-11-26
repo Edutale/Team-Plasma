@@ -7,12 +7,12 @@ async function loadSqlFile(fileName) {
     return fs.readFile(filePath, "utf8")
 }
 
-async function updateSkillEXP(studentId, skillId, skillEXP){
+async function updateSkillEXP(studentId, skillId, skillEXP) {
     const sql = await loadSqlFile("update_skill_exp.sql")
     await db.query(sql, [studentId, skillId, skillEXP])
 }
 
-async function checkInSubmit(studentId, totalEXP, netEXP, stuLvl, completedQuests, numCompleted, mins, netMoney){
+async function checkInSubmit(studentId, totalEXP, netEXP, stuLvl, completedQuests, numCompleted, mins, netMoney) {
     await db.query(`call checkin_submit($1, $2, $3, $4, string_to_array($5, ","), $6, $7, $8)`,
         [studentId, totalEXP, netEXP, stuLvl, completedQuests, numCompleted, mins, netMoney])
 }
@@ -43,7 +43,7 @@ async function equipItem(studentId, itemId) {
     )
 }
 
-async function updateFreq(studentId, freq){
+async function updateFreq(studentId, freq) {
     const sql = await loadSqlFile("update_frequency.sql")
     await db.query(sql, [studentId, freq])
 }

@@ -14,7 +14,7 @@ async function getInventory() {
     return result.rows
 }
 
-async function getItemDetails(itemId){
+async function getItemDetails(itemId) {
     const sql = await loadSqlFile("get_item_details.sql")
     const result = await db.query(sql, [itemId])
     return result.rows[0]

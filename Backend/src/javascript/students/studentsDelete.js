@@ -7,11 +7,11 @@ async function loadSqlFile(fileName) {
     return fs.readFile(filePath, "utf8")
 }
 
-async function deleteStudentQuest(studentId, questId){
+async function deleteStudentQuest(studentId, questId) {
     const sql = await loadSqlFile("delete_student_quest.sql")
     await db.query(sql, [studentId, questId])
 }
 
 module.exports = {
-    deleteStudentQuest,
+    deleteStudentQuest
 }

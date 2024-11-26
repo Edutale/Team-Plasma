@@ -7,7 +7,7 @@ async function loadSqlFile(fileName) {
     return fs.readFile(filePath, "utf8")
 }
 
-async function deleteResource(resourceId){
+async function deleteResource(resourceId) {
     const sql = await loadSqlFile("delete_resource.sql")
     await db.query(sql, [resourceId])
 }

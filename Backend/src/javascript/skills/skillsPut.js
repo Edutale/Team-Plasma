@@ -7,7 +7,7 @@ async function loadSqlFile(fileName) {
     return fs.readFile(filePath, "utf8")
 }
 
-async function updateSkill(skillId, skillName, skillDescription){
+async function updateSkill(skillId, skillName, skillDescription) {
     const sql = await loadSqlFile("update_skill.sql")
     await db.query(sql, [skillId, skillName, skillDescription])
 }
