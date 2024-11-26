@@ -128,7 +128,7 @@ function createCal(frequency) {
         }
 
         // the Blob will be the downloaded .ics file the user can add to their calendar app
-        const blob = new Blob([value], { type: "text/calendar" });
-        saveAs(blob, `edutale-calendar.ics`);
+        const blob = new Blob([value], { type: "text/calendar" })
+        saveAs(blob, `edutale-calendar.ics`)
     })
 }
