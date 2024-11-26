@@ -85,15 +85,17 @@ create table if not exists Skill_Quest(
     foreign key     (quest_id) references Quest(QUEST_ID) on delete cascade
 );
 
+-- completion_date unused as of 11/25/24, will add functionality
+-- to it in the future when completing quests
 create table if not exists Student_Quest(
-    student_id      char(9),
-    quest_id        char(9),
-    completed       boolean default false,
-    start_date      timestamp default current_timestamp,
-    completion_date timestamp,
-    primary key     (student_id, quest_id),
-    foreign key     (student_id) references Student(STUDENT_ID) on delete cascade,
-    foreign key     (quest_id) references Quest(QUEST_ID) on delete cascade
+    student_id          char(9),
+    quest_id            char(9),
+    completed           boolean default false,
+    start_date          timestamp default current_timestamp,
+    completion_date     timestamp,
+    primary key         (student_id, quest_id),
+    foreign key         (student_id) references Student(STUDENT_ID) on delete cascade,
+    foreign key         (quest_id) references Quest(QUEST_ID) on delete cascade
 );
 
 -- study_time is measured in minutes

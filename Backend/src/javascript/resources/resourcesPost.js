@@ -9,7 +9,7 @@ async function loadSqlFile(fileName) {
 
 async function generateResourceId() {
     try {
-        const sql = await loadSqlFile("grab_resourceId.sql")
+        const sql = await loadSqlFile("grab_resource_id.sql")
         const result = await db.query(sql)
         let nextNum = 1
         if (result.rows.length > 0) {
