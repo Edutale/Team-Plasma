@@ -68,3 +68,17 @@
 .freq-buttons input {
     display: none;
 }
+
+.ics-button {
+    padding: .5em;
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #f3f3f3;
+    transition-duration: .15s;
+}
+
+.ics-button:hover,
+.ics-button:focus {
+    background-color: #d4d4d4;
+}
