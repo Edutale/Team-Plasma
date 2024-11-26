@@ -47,7 +47,7 @@ router.post("/", async(req, res)=>{
         }
 
         // Validating resource type
-        const validTypes = ["Video", "Article", "Tutorial", "Exercise", "Documentation"]
+        const validTypes = ["Video", "Article", "Tutorial", "Exercise", "Documentation", "Tool"]
         if(!validTypes.includes(resourceType)){
             return res.status(400).json({error: "Invalid resource type"})
         }
@@ -73,7 +73,7 @@ router.put("/:id", async(req, res)=>{
 
         // Validate type if type is filled
         if(resourceType){
-            const validTypes = ["Video", "Article", "Tutorial", "Exercise", "Documentation"];
+            const validTypes = ["Video", "Article", "Tutorial", "Exercise", "Documentation", "Tool"];
             if(!validTypes.includes(resourceType)) {
                 return res.status(400).json({error: "Invalid resource type"});
             }

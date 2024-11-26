@@ -9,13 +9,13 @@ export const itemService = {
         itemPrice: parseInt(data.itemPrice)
     }),
     updateItem: (itemId, data) => {
-        const updateData = {};
-        if(data.itemType) updateData.itemType = data.itemType;
-        if(data.itemName){
+        const updateData = {}
+        if (data.itemType) updateData.itemType = data.itemType
+        if (data.itemName) {
             updateData.itemName = data.itemName
             updateData.itemPngName = data.itemName.toLowerCase().replace(/ /g, "_") + ".png"
         }
-        if(data.itemPrice) updateData.itemPrice = parseInt(data.itemPrice)
+        if (data.itemPrice) updateData.itemPrice = parseInt(data.itemPrice)
         return axios.put(`${URL}/inventory/inventory/${itemId}`, updateData)
     },
     deleteItem: (itemId) => axios.delete(`${URL}/inventory/inventory/${itemId}`)

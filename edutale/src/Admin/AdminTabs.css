@@ -17,7 +17,7 @@
     cursor: pointer;
 }
 
-.back-button:hover {
+.back-button:hover, .back-button:focus {
     background-color: #e0e0e0;
 }
 
@@ -43,7 +43,7 @@
     color: #666;
 }
 
-.tab-button:hover {
+.tab-button:hover, .tab-button:focus {
     color: #333;
 }
 

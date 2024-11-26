@@ -3,34 +3,36 @@ import axios from "axios"
 
 const URL = "http://localhost:3000/api"
 
-export const useResources = ()=>{
+export const useResources = () => {
     const [resources, setResources] = useState([])
     const [resourceDetails, setResourceDetails] = useState(null)
     const [error, setError] = useState(null)
 
-    const fetchResources = async()=>{
-        try{
+    const fetchResources = async() => {
+        try {
             const response = await axios.get(`${URL}/resources`)
             setResources(response.data)
             setError(null)
-        } catch(err){
+        }
+        catch(err) {
             console.error("Error fetching resources: ", err)
             setError("Failed to fetch resources")
         }
     }
 
-    const fetchResourceDetails = async(resourceId)=>{
-        try{
+    const fetchResourceDetails = async(resourceId) => {
+        try {
             const response = await axios.get(`${URL}/resources/${resourceId}`)
             setResourceDetails(response.data)
             setError(null)
-        } catch(err){
+        }
+        catch(err) {
             console.error("Error fetching resource details: ", err)
             setError("Failed to fetch resource details")
         }
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         fetchResources()
     }, [])
 
