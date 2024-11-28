@@ -40,7 +40,7 @@ export default function CheckInFormContent({quests, progress}) {
     }
 
     return quests && progress && (
-      <div className="check-in-form">
+      <form className="check-in-form" onSubmit={() => SubmitHandler(entries, progress)}>
         {entries.map((item, ind) => (
           <div className="entry" key={item.id}>
             
@@ -56,7 +56,7 @@ export default function CheckInFormContent({quests, progress}) {
               
             <div className="input-box">
               <label className="input-label" htmlFor="questName"> Quest Name </label>
-              <select className="quest-select" defaultValue="" name="quest_id_diff" onChange={(event) => handleChange(event, ind)}>
+              <select className="quest-select" defaultValue="" name="quest_id_diff" required="required" onChange={(event) => handleChange(event, ind)}>
                 <option value="" disabled> Choose a Quest </option>
                   {quests.map(quest =>
                     <option key={quest.quest_id + item.id} value={quest.quest_id + "," + quest.quest_difficulty}
@@ -69,8 +69,8 @@ export default function CheckInFormContent({quests, progress}) {
           
             <div className="input-box">
               <label className="input-label" htmlFor="mins"> Minutes spent on quest </label>
-              <input className="input-mins" placeholder="Number of minutes" name="mins" type="text"
-                     min="1" step="1" value={item.mins} onChange={(event) => handleChange(event, ind)}/>
+              <input className="input-mins" placeholder="Number of minutes" name="mins" type="number" min="1" step="1"
+                     required="required" value={item.mins} onChange={(event) => handleChange(event, ind)}/>
             </div>
           
             <div className="input-box">
@@ -92,8 +92,8 @@ export default function CheckInFormContent({quests, progress}) {
               <button className="form-footer-button close" onClick={() => addEntry()}>Add another quest</button>
           )}
 
-          <button className="form-footer-button submit" onClick={() => SubmitHandler(entries, progress)}> Submit </button>
+          <button type="submit" className="form-footer-button submit"> Submit </button>
         </div>
-      </div>
+      </form>
     )
 }

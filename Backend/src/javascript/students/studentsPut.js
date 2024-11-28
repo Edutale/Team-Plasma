@@ -13,7 +13,7 @@ async function updateSkillEXP(studentId, skillId, skillEXP) {
 }
 
 async function checkInSubmit(studentId, totalEXP, netEXP, stuLvl, completedQuests, numCompleted, mins, netMoney) {
-    await db.query(`call checkin_submit($1, $2, $3, $4, string_to_array($5, ","), $6, $7, $8)`,
+    await db.query(`call checkin_submit($1, $2, $3, $4, string_to_array($5, ','), $6, $7, $8)`,
         [studentId, totalEXP, netEXP, stuLvl, completedQuests, numCompleted, mins, netMoney])
 }
 
