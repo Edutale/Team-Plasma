@@ -66,8 +66,8 @@ export default function CheckIn() {
             <>
               <p className="check-in-complete"> Thank you for filling out a check-in today! </p>
               <p className="check-in-stats"> You earned <strong> {exp} EXP! </strong> </p>
-              { numQuests && (<p className="check-in-stats"> You completed <strong> {numQuests} quest{numQuests == 1 ? "" : "s"}! </strong> </p>)}
-              { mins && (<p className="check-in-stats"> Overall, you studied for <strong> {mins} minute{mins == 1 ? "" : "s"}! </strong> </p>)}
+              {(numQuests > 0) && (<p className="check-in-stats"> You completed <strong> {numQuests} quest{numQuests == 1 ? "" : "s"}! </strong> </p>)}
+              {(mins > 0) && (<p className="check-in-stats"> Overall, you studied for <strong> {mins} minute{mins == 1 ? "" : "s"}! </strong> </p>)}
             </>
         )
     }
