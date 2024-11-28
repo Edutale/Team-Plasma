@@ -34,10 +34,10 @@ function tempOneSkills(stuSkills) {
         // arbitrary values for the cut-offs of beginner, intermediate, and expert. They're low numbers in
         // order for easier testing. Deployment should make sure these numbers are larger (multiply by 100?)
 
-        if (stuSkills[i].skill_exp >= 400) {
+        if (stuSkills[i].skill_exp >= 5000) {
             retStr += (retStr ? ", " + stuSkills[i].skill_name + " (Expert)" : stuSkills[i].skill_name + " (Expert)")
         }
-        else if (stuSkills[i].skill_exp >= 200) {
+        else if (stuSkills[i].skill_exp >= 2500) {
             retStr += (retStr ? ", " + stuSkills[i].skill_name + " (Intermediate)" : stuSkills[i].skill_name + " (Intermediate)")
         }
         else if (stuSkills[i].skill_exp > 0) {
