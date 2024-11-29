@@ -10,4 +10,4 @@ export default function Avatar() {
         <img className="a-img" src={avatarUrl} alt="Avatar" />
       </div>
     )
-};
+}
