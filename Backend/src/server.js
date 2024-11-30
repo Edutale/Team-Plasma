@@ -22,14 +22,14 @@ app.use("/api/inventory", inventoryRoutes)
 app.use("/api/skills", skillRoutes)
 app.use("/api/resources", resourceRoutes)
 
-app.get("/", (req, res)=>{
+app.get("/", (req, res) => {
     res.send("Edutale Backend is running")
 })
 
-app.put("/", (req, res)=>{
+app.put("/", (req, res) => {
     res.send("Edutale Backend is running")
 })
 
-app.listen(port, ()=>{
+app.listen(port, () => {
     console.log(`Server is running on port ${port}`)
 })

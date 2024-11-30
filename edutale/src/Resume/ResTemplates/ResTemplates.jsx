@@ -1,22 +1,23 @@
 export default function ResTemplates({stuSkills, projects}) {
     return stuSkills && projects && (
       <>
-        <h1 className="header-centered"> <u> Resume Skills Templates </u> </h1>
-        
-        <div className="template-1">
-          <h2> Technical Skills </h2>
-          <p> {tempOneSkills(stuSkills)} </p>
+        <h1 className="center-header"> <u> Resume Skills Templates </u> </h1>
+        <div className="res-templates">
+          <div className="template-1">
+            <h2 className="template-heading"> Technical Skills </h2>
+            <p> {tempOneSkills(stuSkills)} </p>
 
-          <h2> Projects </h2>
-          <p> {tempOneProjects(projects)} </p>
-        </div>
+            <h2> Projects </h2>
+            <p> {tempOneProjects(projects)} </p>
+          </div>
 
-        <div className="template-2">
-          <h2> Technical Skills </h2>
-          <p> {tempTwoSkills(stuSkills)} </p>
+          <div className="template-2">
+            <h2 className="template-heading"> Technical Skills </h2>
+            <p> {tempTwoSkills(stuSkills)} </p>
 
-          <h2> Projects </h2>
-          <div> {tempTwoProjects(projects)} </div>
+            <h2> Projects </h2>
+            <div> {tempTwoProjects(projects)} </div>
+          </div>
         </div>
       </>
     )
@@ -33,10 +34,10 @@ function tempOneSkills(stuSkills) {
         // arbitrary values for the cut-offs of beginner, intermediate, and expert. They're low numbers in
         // order for easier testing. Deployment should make sure these numbers are larger (multiply by 100?)
 
-        if (stuSkills[i].skill_exp >= 400) {
+        if (stuSkills[i].skill_exp >= 5000) {
             retStr += (retStr ? ", " + stuSkills[i].skill_name + " (Expert)" : stuSkills[i].skill_name + " (Expert)")
         }
-        else if (stuSkills[i].skill_exp >= 200) {
+        else if (stuSkills[i].skill_exp >= 2500) {
             retStr += (retStr ? ", " + stuSkills[i].skill_name + " (Intermediate)" : stuSkills[i].skill_name + " (Intermediate)")
         }
         else if (stuSkills[i].skill_exp > 0) {

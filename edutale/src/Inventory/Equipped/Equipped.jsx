@@ -1,13 +1,11 @@
-import * as USER from "../../USER.json"
-import { useAuth0 } from "@auth0/auth0-react"
-
 const armorPath = "../../../assets/armor/"
 const weaponPath = "../../../assets/weapon/"
 const familiarPath = "../../../assets/familiar/"
 
-export default function Equipped({catalog, equipItems, stuName}) {
-    //const { user } = useAuth0()
+// placeholder image for avatar image
+const avatarUrl = "../../../assets/avatar.gif"
 
+export default function Equipped({catalog, equipItems, stuName}) {
     // find inventory row that has the same ID has the equipped item
     let eqArmor = catalog.find(item => item.item_id == equipItems.armor)
     let eqWeapon = catalog.find(item => item.item_id == equipItems.weapon)
@@ -15,8 +13,8 @@ export default function Equipped({catalog, equipItems, stuName}) {
 
     return (
         <>
-          <h1 className="header"> <u> {stuName} </u> </h1>
-          <img className="inv-avatar" src={USER.avatar} alt="avatar" />
+          <h1 className="pane-header"> <u> {stuName} </u> </h1>
+          <img className="inv-avatar" src={avatarUrl} alt="avatar" />
           <div className="equip-grid">
             {/* check if equipped armor is defined. If not, show dummy/empty picture */}
             {eqArmor ? (

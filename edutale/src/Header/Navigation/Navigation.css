@@ -17,7 +17,7 @@
     width: 100px;
     border-radius: 1px;
     text-align: center;
-    color: white;
+    color: black;
     transition: 0.3s;
     clip-path: polygon(50% 30%, 100% 0, 100% 100%, 0 100%, 0 0);
 }
@@ -26,52 +26,57 @@
     padding-top: 20px;
 }
 
-.active {
-    clip-path: polygon(50% 80%, 100% 50%, 100% 100%, 0 100%, 0 50%);
-    color: rgba(0, 0, 0, 0);
-}
-
 /* Mainpage Bookmark CSS */
 .main-mark {
-    background-color: rgb(65, 52, 182);
+    background-color: #9092ff;
 }
 
 .main-mark:hover, .main-mark:focus {
-    background-color: rgb(44, 35, 122); 
+    color: white;
+    background-color: #4648bd; 
 }
 
 /* Check-In Bookmark CSS */
 .check-in-mark {
-    background-color: rgb(67, 153, 124);
+    background-color: #58c8a2;
 }
 
 .check-in-mark:hover, .check-in-mark:focus {
-    background-color: rgb(57, 128, 103); 
+    color: white;
+    background-color: #006646; 
 }
 
 /* Inventory Bookmark CSS */
 .inventory-mark {
-    background-color: rgb(224, 152, 42);
+    background-color: #ffb74a;
 }
 
 .inventory-mark:hover, .inventory-mark:focus {
-    background-color: rgb(175, 118, 31); 
+    color: white;
+    background-color: #e06c00; 
 }
 
 /* Skill List Bookmark CSS */
 .skill-list-mark {
-    background-color: rgb(206, 69, 99);
+    background-color: #f3697b;
 }
 
 .skill-list-mark:hover, .skill-list-mark:focus {
-    background-color: rgb(170, 59, 83); 
+    color: white;
+    background-color: #a02e47; 
 }
 
 /* Store Bookmark CSS */
 .resume-mark {
-    background-color: rgb(49, 204, 224);
+    background-color: #31cce0;
 }
 
 .resume-mark:hover, .resume-mark:focus {
-    background-color: rgb(40, 165, 182); 
+    color: white;
+    background-color: #055863; 
+}
+
+.active, .active:hover, .active:focus {
+    clip-path: polygon(50% 80%, 100% 50%, 100% 100%, 0 100%, 0 50%);
+    color: rgba(0, 0, 0, 0);
 }

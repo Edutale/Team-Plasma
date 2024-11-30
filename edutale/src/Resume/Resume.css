@@ -1,16 +1,73 @@
-.header-centered {
+.skills-and-projs {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    height: 90%;
+}
+
+.res-know-container {
+    background-color: #31cce0;
+    width: 500px;
+    height: 40%;
+    min-height: 330px;
+    margin: 10px;
+    border: .15em solid black;
+    border-radius: 10px;
+    box-shadow: .5rem .5rem 1rem hsl(0 0% 0% / .25);
     text-align: center;
+    overflow-y: auto;
+    display: grid;
+    grid-template-rows: 1fr 5fr;
+    overflow-y: auto;
+}
+
+.header-centered {
+    margin-bottom: 5px;
+}
+
+.know-item-container {
+    background-color: #dfdfdf;
+    border-radius: 0px 0px 10px 10px;
+    display: grid;
+    overflow-y: auto;
+}
+
+.res-know-item {
+    background-color: #fdfdfd;
+    border: 1px solid black;
+    border-width: thin;
+    margin: 5px;
+    padding: 8px;
+    border-radius: 10px;
+    box-shadow: .5rem .5rem 1rem hsl(0 0% 0% / .15);
+    list-style-type: none;
+}
+
+.res-templates {
+    display: grid;
+    height: 82.5%;
+    grid-template-rows: 1fr 1fr;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.template-heading {
+    margin-top: 5px;
 }
 
 .template-1 {
-    border: .3em solid black;
-    background-color: #f3f3f3;
+    border: .15em solid black;
+    background-color: #fdfdfd;
     border-radius: 15px;
+    padding: 20px;
 }
 
 .template-2 {
     margin-top: 1em;
-    border: .3em solid black;
-    background-color: #f3f3f3;
+    border: .15em solid black;
+    background-color: #fdfdfd;
     border-radius: 15px;
+    padding: 20px;
 }

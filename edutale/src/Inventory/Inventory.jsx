@@ -73,29 +73,28 @@ export default function Inventory() {
         }
     }
 
-    return (
-      // the page will only render if the user is logged in
-      isAuthenticated && catalog && equipItems && stuName && (
+    return isAuthenticated && catalog && equipItems && stuName && (
         <>
-        <Header />
-        <div className="pane-container">
-          <div className="pane-item">
-            <Equipped catalog={catalog} equipItems={equipItems} stuName={stuName}/>
-              <div className="lower-inv-container">
-                <div className="lower-inv-item">
-                  <UserBar progress={progress} className={"user-bar"}/>
-                </div>
-                <div className="lower-inv-item">
-                  <Money moneyAmt={moneyAmt}/>
+          <Header />
+          <div className="pane-container">
+            <div className="pane-item">
+              <div className="user-pane">
+                <Equipped catalog={catalog} equipItems={equipItems} stuName={stuName}/>
+                <div className="lower-inv-container">
+                  <div className="lower-inv-item">
+                    <UserBar progress={progress} className="user-bar"/>
+                  </div>
+                  <div className="lower-inv-item">
+                    <Money moneyAmt={moneyAmt}/>
+                  </div>
                 </div>
               </div>
             </div>
-          <div className="pane-item">
-            <h1 className="header2"> <u> Inventory </u> </h1>
-            <InventoryList catalog={catalog} ownedItems={ownedItems} studentId={studentId} moneyAmt={moneyAmt}/>
+            <div className="pane-item">
+              <h1 className="center-header"> <u> Inventory </u> </h1>
+              <InventoryList catalog={catalog} ownedItems={ownedItems} studentId={studentId} moneyAmt={moneyAmt}/>
+            </div>
           </div>
-        </div>
         </>
-      )
-)
+    )
 }

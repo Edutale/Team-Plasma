@@ -1,14 +1,15 @@
 /*--- UserBar.css ---*/ 
 
-.userBar {
+.user-bar {
+    margin-top: -15px;;
     text-align: center;
     object-fit: contain;
 }
   
 progress {
-    accent-color: rgb(173, 130, 255);
+    accent-color: #4648bd;
 }
 
 .bar-text {
-    margin: -20px;
+    margin: -25px;
 }

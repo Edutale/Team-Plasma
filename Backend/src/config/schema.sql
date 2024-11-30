@@ -2,7 +2,7 @@ create table if not exists Inventory(
     ITEM_ID         char(9),
     item_type       char(1) check (item_type in ('A', 'W', 'F')) not null,
     item_name       varchar(30) not null,
-    item_png_name   varchar(20) not null,
+    item_png_name   varchar(30) not null,
     item_price      int not null,
     primary key     (ITEM_ID)
 );
@@ -19,7 +19,6 @@ create table if not exists Student(
     equip_weapon        char(9) default null,
     equip_armor         char(9) default null,
     equip_familiar      char(9) default null,
-
     primary key         (STUDENT_ID),
     foreign key         (equip_weapon) references Inventory(ITEM_ID) on delete cascade,
     foreign key         (equip_armor) references Inventory(ITEM_ID) on delete cascade,
@@ -36,7 +35,7 @@ create table if not exists Skill(
 create table if not exists Student_Skill(
     student_id          char(9),
     skill_id            char(9),
-    skill_exp            int default 0,
+    skill_exp           int default 0,
     primary key         (student_id, skill_id),
     foreign key         (student_id) references Student(STUDENT_ID) on delete cascade,
     foreign key         (skill_id) references Skill(SKILL_ID) on delete cascade
@@ -86,15 +85,17 @@ create table if not exists Skill_Quest(
     foreign key     (quest_id) references Quest(QUEST_ID) on delete cascade
 );
 
+-- completion_date unused as of 11/25/24, will add functionality
+-- to it in the future when completing quests
 create table if not exists Student_Quest(
-    student_id      char(9),
-    quest_id        char(9),
-    completed       boolean default false,
-    start_date      timestamp default current_timestamp,
-    completion_date timestamp,
-    primary key     (student_id, quest_id),
-    foreign key     (student_id) references Student(STUDENT_ID) on delete cascade,
-    foreign key     (quest_id) references Quest(QUEST_ID) on delete cascade
+    student_id          char(9),
+    quest_id            char(9),
+    completed           boolean default false,
+    start_date          timestamp default current_timestamp,
+    completion_date     timestamp,
+    primary key         (student_id, quest_id),
+    foreign key         (student_id) references Student(STUDENT_ID) on delete cascade,
+    foreign key         (quest_id) references Quest(QUEST_ID) on delete cascade
 );
 
 -- study_time is measured in minutes
@@ -113,7 +114,7 @@ create table if not exists Resources(
     resource_name           text,
     resource_link           text,
     resource_description    text,
-    resource_type           varchar(20) check(resource_type in ('Video', 'Article', 'Tutorial', 'Exercise', 'Documentation')),
+    resource_type           varchar(20) check(resource_type in ('Video', 'Article', 'Tutorial', 'Exercise', 'Documentation', 'Tool')),
     primary key             (RESOURCE_ID)
 );
 

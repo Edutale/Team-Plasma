@@ -36,7 +36,9 @@ export default async function SubmitHandler(entries, progress) {
             netMoney: calcMoney(parseInt(progress.student_lvl, 10), newLvl)
         },
         null
-    ).then((response) => console.log(response.data))
+    ).then((response) => {
+        console.log(response.data)
+        window.location.reload()})
 }
 
 // calculates EXP to add to student's account

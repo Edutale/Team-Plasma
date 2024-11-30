@@ -1,4 +1,4 @@
-const express = require('express')
+const express = require("express")
 const router = express.Router()
 const {
     getCareerQuestList, getCareerSkills
@@ -9,7 +9,8 @@ router.get("/:id/quests", async(req, res) => {
     try {
         const quests = await getCareerQuestList(req.params.id)
         res.json(quests)
-    } catch(err) {
+    }
+    catch(err) {
         res.status(500).json({error: err.message})
     }
 })
@@ -19,7 +20,8 @@ router.get("/:id/skills", async(req, res) => {
     try {
         const quests = await getCareerSkills(req.params.id)
         res.json(quests)
-    } catch(err) {
+    }
+    catch(err) {
         res.status(500).json({error: err.message})
     }
 })

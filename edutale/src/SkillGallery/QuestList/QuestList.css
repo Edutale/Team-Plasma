@@ -1,0 +1,86 @@
+.skill-header-2 {
+    height: 5%;
+    text-decoration: underline;
+    margin: 10px;
+    text-align: center;
+}
+
+.no-skill-selected {
+    text-align: center;
+    margin-top: 2em;
+    font-size: 1.5em;
+}
+
+.quest-list {
+    margin: 0px 10px 10px 10px;
+    background-color: #f3697b;
+    border: .15em solid black;
+    border-radius: 10px;
+    box-shadow: .5rem .5rem 1rem hsl(0 0% 0% / .25);
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+.quest-list-container {
+    max-height: 88%;
+    overflow-y: auto;
+}
+
+.sg-quest-list {
+    list-style-type: none;
+    background-color: #f3f3f3;
+    margin: 10px;
+    padding: 2px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.sq-list-item {
+    margin: 10px;
+    padding: 20px;
+    padding-top: 5px;
+    border-radius: 10px;
+    box-shadow: .5rem .5rem 1rem hsl(0 0% 0% / .25);
+    border: 1px solid black;
+    transition-duration: .15s;
+}
+
+.quest-item-rsc {
+    margin-left: 5%;
+}
+
+.list-button {
+    cursor: pointer;
+}
+
+.no-prog {
+    background-color: #fdfdfd;
+}
+
+.no-prog:hover, .no-prog:focus {
+    background: #d4d4d4;
+    cursor: pointer;
+}
+
+.completed {
+    background-color: #afd9b5;
+}
+
+.ongoing {
+    background-color: #f8d18c;
+}
+
+.ongoing:hover, .ongoing:focus {
+    background-color: #f1ab41;
+    cursor: pointer;
+}
+
+.prog-indicator {
+    background-color: rgba(255, 255, 255, 0.3);
+    display: inline-block;
+    border-radius: 15px;
+    border: 1px solid black;
+    padding: 5px;
+    margin: 2px;
+    white-space: nowrap;
+}

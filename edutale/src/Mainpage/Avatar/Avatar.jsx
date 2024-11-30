@@ -1,12 +1,13 @@
 /*--- Avatar.jsx ---*/ 
 
-import * as USER from "../../USER.json"
+// placeholder image for avatar image
+const avatarUrl = "../../../assets/avatar.gif"
 import "./Avatar.css"
 
 export default function Avatar() {
     return (
       <div className="avatar"> 
-        <img className="aImg" src={USER.avatar} alt="Avatar" />
+        <img className="a-img" src={avatarUrl} alt="Avatar" />
       </div>
     )
 };

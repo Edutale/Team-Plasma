@@ -4,12 +4,56 @@
     border: 2px solid black;
     border-radius: 15px;
     background-color: #f3f3f3;
+    transition-duration: .15s;
 
     -webkit-appearance: button; /* WebKit */
     -moz-appearance: button; /* Mozilla */
     -o-appearance: button; /* Opera */
     -ms-appearance: button; /* MS Edge */
     appearance: button; /* For CSS3 */
+}
+
+.button-checked label {
+    padding: 1em;
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 15px;
+    background-color: rgb(131, 196, 174);
+    transition-duration: .15s;
+
+    -webkit-appearance: button; /* WebKit */
+    -moz-appearance: button; /* Mozilla */
+    -o-appearance: button; /* Opera */
+    -ms-appearance: button; /* MS Edge */
+    appearance: button; /* For CSS3 */
+}
+
+.button-checked label:hover, .button-checked label:focus {
+    padding: 1em;
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 15px;
+    background-color: rgb(108, 167, 147);
+
+    -webkit-appearance: button; /* WebKit */
+    -moz-appearance: button; /* Mozilla */
+    -o-appearance: button; /* Opera */
+    -ms-appearance: button; /* MS Edge */
+    appearance: button; /* For CSS3 */
+}
+
+
+.change-freq {
+    border: 2px solid black;
+    border-radius: 25px;
+    cursor: pointer;
+    background-color: #f3f3f3;
+    transition-duration: .15s;
+}
+
+.change-freq:hover,
+.change-freq:focus {
+    background-color: #d4d4d4;
 }
 
 .button-unchecked label:hover,
@@ -26,16 +70,16 @@
     display: none;
 }
 
-.button-checked {
-    padding: 1em;
+.ics-button {
+    padding: .5em;
     cursor: pointer;
-    border: 2px solid black;
-    border-radius: 15px;
-    background-color: #7cfd98;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #f3f3f3;
+    transition-duration: .15s;
+}
 
-    -webkit-appearance: button; /* WebKit */
-    -moz-appearance: button; /* Mozilla */
-    -o-appearance: button; /* Opera */
-    -ms-appearance: button; /* MS Edge */
-    appearance: button; /* For CSS3 */
+.ics-button:hover,
+.ics-button:focus {
+    background-color: #d4d4d4;
 }

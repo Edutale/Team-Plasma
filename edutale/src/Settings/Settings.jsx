@@ -6,7 +6,7 @@ export default function Settings() {
 
     return (
       <>
-        <p> This is settings yay </p>
+        <p> This is placeholder text for the Settings page. This page will be populated in future versions of Edutale. </p>
         <button onClick={() => navigate("/")}> Back </button>
       </>
     )

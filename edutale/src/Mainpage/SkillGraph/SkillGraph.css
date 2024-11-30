@@ -1,6 +1,6 @@
 /*--- SkillGraph.css ---*/ 
 
-.chartContainer { 
+.chart-container { 
     height: 380px;
     max-height: 380px;
     display: flex;

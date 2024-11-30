@@ -13,9 +13,17 @@
 }
   
 .pane-2-item {
+    height: 82%;
     padding: 20px;
     margin: 10px;
     border-radius: 15px;
     display: flex;
     justify-content: center;
+}
+
+.user-container {
+  height: 80%;
+  min-height: 300px;
+  display: grid;
+  grid-template-rows: auto auto;
 }

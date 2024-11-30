@@ -1,8 +1,8 @@
 /*--- App.css ---*/ 
-@import url('https://fonts.googleapis.com/css2?family=Faculty+Glyphic&family=Modern+Antiqua&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Faculty+Glyphic&family=Modern+Antiqua&display=swap");
 
 * {
-    font-family: "Faculty Glyphic", serif;
+    font-family: "Faculty Glyphic", sans-serif;
 }
 
 .pane-container {
@@ -12,7 +12,7 @@
     padding: 1px;
     border-radius: 10px;
     min-width: 1180px;
-    height: 848px;
+    height: 858px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
@@ -22,7 +22,19 @@
     margin: 10px;
     border-radius: 15px;
     min-width: 550px;
-    min-height: 550px;
+    min-height: 560px;
+}
+
+.pane-header {
+  height: 5%;
+  text-decoration: underline;
+  margin-left: 20px;
+}
+
+.center-header {
+  height: 5%;
+  text-decoration: underline;
+  text-align: center;
 }
 
 .disabled-link {
@@ -42,7 +54,7 @@
     color: rgb(255, 255, 255);
 }
 
-[role='tooltip'].popup-content {
+[role="tooltip"].popup-content {
     width: 200px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 3px;
 }
@@ -51,7 +63,7 @@
     background: rgba(0, 0, 0, 0.5);
 }
 
-[data-popup='tooltip'].popup-overlay {
+[data-popup="tooltip"].popup-overlay {
     background: transparent;
 }
 
@@ -100,4 +112,22 @@
     line-height: 100vh;
     text-align: center;
     font-size: larger;
+}
+
+.pane-container * ::-webkit-scrollbar {
+    width: .75em;
+    background-color: #f3f3f3;
+    border: solid 1px #d4d4d4;
+}
+   
+.pane-container * ::-webkit-scrollbar-thumb {
+    background-color: #fdfdfd;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.pane-container * ::-webkit-scrollbar-thumb:hover {
+    background-color: #d4d4d4;
+    border: 1px solid black;
+    border-radius: 5px;
 }
