@@ -1,4 +1,5 @@
 import React, { useEffect } from "react"
+import "../forms.css"
 import { useResources } from "../../hooks/useResources"
 
 export const ResourceForm = ({ type, onSubmit, resources = [], onResourceChange = () => {} }) => {

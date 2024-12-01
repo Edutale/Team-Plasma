@@ -1,5 +1,6 @@
 // Forms for quest operations, we create all our forms for quests here to be used in the main Admin.jsx
 import React from "react"
+import "../forms.css"
 
 export const QuestForm = ({ type, onSubmit, quests = [], onQuestChange = ()=>{} }) => {
     const renderFields = () => {

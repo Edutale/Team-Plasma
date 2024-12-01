@@ -1,5 +1,6 @@
 // Currently a simple implementation since we don't have too much info on skills in our schema atm
 import React from "react"
+import "../forms.css"
 export const SkillForm = ({ type, onSubmit, skills = [], onSkillChange = () => {} }) => {
     const renderFields = () => {
         switch (type) {

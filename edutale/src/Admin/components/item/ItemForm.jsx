@@ -1,4 +1,5 @@
 import React, { useEffect } from "react"
+import "../forms.css"
 import { useItems } from "../../hooks/useItems"
 
 export const ItemForm = ({ type, onSubmit, items = [], onItemChange = () => {} }) => {
