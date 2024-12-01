@@ -8,6 +8,7 @@ export const QuestForm = ({ type, onSubmit, quests = [], onQuestChange = ()=>{} 
             case "add":
                 return (
                     <>
+                      <h2> Create Quest </h2>
                       <div className="form-group">
                         <label htmlFor="questName"> Quest Name: </label>
                         <input id="questName" name="questName" placeholder="Quest Name" required maxLength={255}/>
