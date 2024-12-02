@@ -15,9 +15,31 @@ const studentId = "TESTSTU01"
 
 export default function OngoingQuests() {
     const [quests, setQuests] = useState()
+    const [progress, setProgress] = useState()
+
+    // effect for student level and EXP
+    useEffect(() => {
+        fetchStudentLvlAndEXP()
+    }, [])
+
+    // effect for student quests
     useEffect(() => {
         fetchStudentQuests()
     }, [])
+
+    // fetches student lvl and exp for student id
+    async function fetchStudentLvlAndEXP() {
+      try {
+          await Axios.get(`http://localhost:3000/api/students/${studentId}/progress`)
+              .then((response) => {
+                  setProgress({total_exp: response.data[0].total_exp, student_lvl: response.data[0].student_lvl})
+                  console.log(progress)
+                })
+      }
+      catch(err) {
+          console.error("Error fetching level and EXP: ", err)
+      }
+    }
 
     // fetches all student quests for logged in student including quest id, name, desc, and completed bool
     async function fetchStudentQuests() {
@@ -42,7 +64,7 @@ export default function OngoingQuests() {
                         {questNames.map(item => !item.completed && (
                           <Popup key={item.name} trigger= {
                             <button className="block-button">
-                              <OngoingQuestBlock qName={item.name} />
+                              <OngoingQuestBlock qName={item.name}/>
                             </button>}
                             modal nested>{
                               close => (
@@ -57,7 +79,7 @@ export default function OngoingQuests() {
                                     <button className="modal-footer-button quit" onClick={() => QuitHandler(studentId, item.id)}>
                                       Quit Quest
                                     </button>
-                                    <button className="modal-footer-button complete" onClick={() => CompleteHandler(studentId, item.id)}>
+                                    <button className="modal-footer-button complete" onClick={() => CompleteHandler(studentId, item.id, item.diff, progress)}>
                                       Complete Quest
                                     </button>
                                   </div>
@@ -75,7 +97,7 @@ export default function OngoingQuests() {
         }  
     }
   
-    return (
+    return quests && progress && (
       <div className="o-quests">
         <div className="o-quest-background">
           <h2 className="o-quest-h2"> Ongoing Quests </h2>
