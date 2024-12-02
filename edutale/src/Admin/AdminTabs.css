@@ -1,5 +1,5 @@
 /* Top-level container styles */
-.admin-container{
+.admin-container {
     background-color: #ecdec9;
     border-radius: 15px;
     padding: 20px;
@@ -10,7 +10,7 @@
     margin: 20px;
 }
 
-.admin-header{
+.admin-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -19,13 +19,13 @@
     padding-bottom: 10px;
 }
 
-.admin-header h1{
+.admin-header h1 {
     font-family: "Faculty Glyphic", sans-serif;
     color: #862525;
     margin: 0;
 }
 
-.back-button{
+.back-button {
     padding: 8px 16px;
     background-color: #f3f3f3;
     border: 2px solid #862525;
@@ -35,26 +35,26 @@
     transition: background-color 0.15s;
 }
 
-.back-button:hover{
+.back-button:hover {
     background-color: #d4d4d4;
 }
 
 /* Tab navigation styles */
-.tabs-container{
+.tabs-container {
     width: 100%;
 }
 
-.tabs-navigation{
+.tabs-navigation {
     border-bottom: 2px solid #862525;
     margin-bottom: 20px;
 }
 
-.tabs-nav{
+.tabs-nav {
     display: flex;
     gap: 16px;
 }
 
-.tab-button{
+.tab-button {
     padding: 8px 16px;
     font-family: "Faculty Glyphic", sans-serif;
     font-weight: 600;
@@ -65,17 +65,17 @@
     transition: color 0.15s;
 }
 
-.tab-button:hover{
+.tab-button:hover {
     color: #862525;
 }
 
-.tab-button.active{
+.tab-button.active {
     border-bottom: 3px solid #862525;
     color: #862525;
 }
 
 /* Tab content styles */
-.tab-content{
+.tab-content {
     padding: 20px;
     background-color: #f3f3f3;
     border-radius: 10px;
@@ -84,18 +84,67 @@
 }
 
 /* Scrollbar styles */
-.tab-content::-webkit-scrollbar{
+.tab-content::-webkit-scrollbar {
     width: .75em;
     background-color: #f3f3f3;
     border: solid 1px #d4d4d4;
 }
 
-.tab-content::-webkit-scrollbar-thumb{
+.tab-content::-webkit-scrollbar-thumb {
     background-color: #fdfdfd;
     border: 1px solid black;
     border-radius: 5px;
 }
 
-.tab-content::-webkit-scrollbar-thumb:hover{
+.tab-content::-webkit-scrollbar-thumb:hover {
     background-color: #d4d4d4;
+}
+
+/* Function selector styles */
+.admin-functions {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem
+}
+
+.admin-function-button {
+    background-color: #f3f3f3;
+    border: 2px solid #862525;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    font-family: "Faculty Glyphic", sans-serif;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.15s
+}
+
+.admin-function-button:hover {
+    background-color: #d4d4d4
+}
+
+/* Modal styles */
+.admin-modal {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 100%
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem
+}
+
+.modal-header h2 {
+    margin: 0;
+    color: #862525;
+    font-family: "Faculty Glyphic", sans-serif
+}
+
+.modal-content {
+    max-height: 70vh;
+    overflow-y: auto
 }
