@@ -8,11 +8,6 @@ export default async function CompleteHandler(studentId, quest_id, quest_difficu
     let newLvl = calculateLvl(earnedGlobalExp)
     let studentLvl = progress.lvl
     
-    console.log(progress)
-    console.log(quest_difficulty)
-    console.log(earnedGlobalExp)
-    console.log(newLvl)
-    console.log(studentLvl)
     await Axios.put(
         `http://localhost:3000/api/students/${studentId}/complete-quest`,
         {
