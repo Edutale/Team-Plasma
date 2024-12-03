@@ -132,7 +132,7 @@
     box-sizing: border-box;
 }
 
-.modal-header {
+.admin-modal-header {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -144,14 +144,14 @@
     position: relative;
 }
 
-.modal-header h2 {
+.admin-modal-header h2 {
     margin: 0;
     font-family: "Faculty Glyphic", sans-serif;
     color: #862525;
     text-align: center;
 }
 
-.modal-header button {
+.admin-modal-header button {
     position: absolute;
     right: -10px;
     top: -10px;

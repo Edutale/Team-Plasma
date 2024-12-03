@@ -16,9 +16,9 @@ export const AdminModal = ({ isOpen, onClose, title, children }) => {
     return (
         <Popup open={isOpen} onClose={onClose} modal nested>
             <div className="admin-modal">
-                <div className="modal-header">
+                <div className="admin-modal-header">
                     <h2>{title}</h2>
-                    <button className="modal-header-button close" onClick={onClose}>⨯</button>
+                    <button className="admin-modal-header-button close" onClick={onClose}>⨯</button>
                 </div>
                 <div className="modal-content">
                     {children}
