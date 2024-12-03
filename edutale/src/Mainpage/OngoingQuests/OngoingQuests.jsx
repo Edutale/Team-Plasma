@@ -25,7 +25,7 @@ export default function OngoingQuests() {
     // effect for student quests
     useEffect(() => {
         fetchStudentQuests()
-    }, [])
+    }, [progress])
 
     // fetches student lvl and exp for student id
     async function fetchStudentLvlAndEXP() {
@@ -97,7 +97,7 @@ export default function OngoingQuests() {
         }  
     }
   
-    return quests && progress && (
+    return progress && quests && (
       <div className="o-quests">
         <div className="o-quest-background">
           <h2 className="o-quest-h2"> Ongoing Quests </h2>
