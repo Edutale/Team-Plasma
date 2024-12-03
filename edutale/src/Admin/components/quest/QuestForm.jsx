@@ -1,5 +1,6 @@
 // Forms for quest operations, we create all our forms for quests here to be used in the main Admin.jsx
 import React from "react"
+import "../forms.css"
 
 export const QuestForm = ({ type, onSubmit, quests = [], onQuestChange = ()=>{} }) => {
     const renderFields = () => {
@@ -43,7 +44,6 @@ export const QuestForm = ({ type, onSubmit, quests = [], onQuestChange = ()=>{} 
             case "delete":
                 return (
                     <>
-                      <h2> Delete Quest </h2>
                       <select name="questId" required onChange={(e) => onQuestChange(e, "both")}>
                         <option value=""> Select Quest </option>
                         {quests.map(quest => (
@@ -57,7 +57,6 @@ export const QuestForm = ({ type, onSubmit, quests = [], onQuestChange = ()=>{} 
             case "update":
                 return (
                     <>
-                      <h2> Update Quest </h2>
                       <select name="questId" required onChange={(e) => onQuestChange(e, "both")}>
                         <option value=""> Select Quest </option>
                         {quests.map(quest => (

@@ -1,4 +1,5 @@
 import React, { useEffect } from "react"
+import "../forms.css"
 import { useItems } from "../../hooks/useItems"
 
 export const ItemForm = ({ type, onSubmit, items = [], onItemChange = () => {} }) => {
@@ -28,7 +29,6 @@ export const ItemForm = ({ type, onSubmit, items = [], onItemChange = () => {} }
             case "add":
                 return (
                     <>
-                      <h2> Create Item </h2>
                       <div className="form-group">
                         <label htmlFor="itemName"> Item Name: </label>
                         <input id="itemName" name="itemName" placeholder="Item Name" required/>
@@ -53,7 +53,6 @@ export const ItemForm = ({ type, onSubmit, items = [], onItemChange = () => {} }
             case "delete":
                 return (
                     <>
-                      <h2> Delete Item </h2>
                       <select name="itemId" required onChange={handleItemSelect}>
                         <option value=""> Select Item </option>
                         {items.map(item => (
@@ -69,7 +68,6 @@ export const ItemForm = ({ type, onSubmit, items = [], onItemChange = () => {} }
             case "update":
                 return (
                     <>
-                      <h2> Update Item </h2>
                       <select name="itemId" required onChange={handleItemSelect}>
                         <option value=""> Select Item </option>
                         {items.map(item => (

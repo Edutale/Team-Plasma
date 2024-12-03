@@ -1,5 +1,13 @@
+/* Top-level container styles */
 .admin-container {
+    background-color: #ecdec9;
+    border-radius: 15px;
     padding: 20px;
+    min-width: 1180px;
+    min-height: 858px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border: 2px solid #862525;
+    margin: 20px;
 }
 
 .admin-header {
@@ -7,26 +15,38 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    border-bottom: 2px solid #862525;
+    padding-bottom: 10px;
+}
+
+.admin-header h1 {
+    font-family: "Faculty Glyphic", sans-serif;
+    color: #862525;
+    margin: 0;
 }
 
 .back-button {
     padding: 8px 16px;
     background-color: #f3f3f3;
-    border: none;
+    border: 2px solid #862525;
     border-radius: 5px;
     cursor: pointer;
+    font-family: "Faculty Glyphic", sans-serif;
+    transition: background-color 0.15s;
 }
 
-.back-button:hover, .back-button:focus {
-    background-color: #e0e0e0;
+.back-button:hover {
+    background-color: #d4d4d4;
 }
 
+/* Tab navigation styles */
 .tabs-container {
     width: 100%;
 }
 
 .tabs-navigation {
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 2px solid #862525;
+    margin-bottom: 20px;
 }
 
 .tabs-nav {
@@ -36,34 +56,159 @@
 
 .tab-button {
     padding: 8px 16px;
+    font-family: "Faculty Glyphic", sans-serif;
     font-weight: 600;
     border: none;
     background: none;
     cursor: pointer;
     color: #666;
+    transition: color 0.15s;
 }
 
-.tab-button:hover, .tab-button:focus {
-    color: #333;
-}
-
-.tab-button.active {
-    border-bottom: 2px solid #862525;
+.tab-button:hover {
     color: #862525;
 }
 
+.tab-button.active {
+    border-bottom: 3px solid #862525;
+    color: #862525;
+}
+
+/* Tab content styles */
 .tab-content {
-    padding: 16px;
+    padding: 20px;
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    border: 1px solid #862525;
+    min-height: 600px;
 }
 
-.quest-tab {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+/* Scrollbar styles */
+.tab-content::-webkit-scrollbar {
+    width: .75em;
+    background-color: #f3f3f3;
+    border: solid 1px #d4d4d4;
 }
 
-.quest-forms {
+.tab-content::-webkit-scrollbar-thumb {
+    background-color: #fdfdfd;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.tab-content::-webkit-scrollbar-thumb:hover {
+    background-color: #d4d4d4;
+}
+
+/* Function selector styles */
+.admin-functions {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.admin-function-button {
+    background-color: #f3f3f3;
+    border: 2px solid #862525;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    font-family: "Faculty Glyphic", sans-serif;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.15s;
+}
+
+.admin-function-button:hover {
+    background-color: #d4d4d4
+}
+
+/* Modal styles */
+.admin-modal {
+    background: #f3f3f3;
+    padding: 1.5rem;
+    border-radius: 10px;
+    width: 100%;
+    border: 2px solid #862525;
+    box-sizing: border-box;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #862525;
+    padding-bottom: 0.5rem;
+    width: 100%;
+    position: relative;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-family: "Faculty Glyphic", sans-serif;
+    color: #862525;
+    text-align: center;
+}
+
+.modal-header button {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f3f3f3;
+    border: 1px solid #862525;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 0;
+    font-size: 1.2rem;
+}
+
+.modal-header button:hover {
+    background-color: #d4d4d4;
+}
+
+  .modal-content {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 0.5rem;
+    padding: 0;
+    width: 100%;
+}
+
+.modal-content select,
+.modal-content input,
+.modal-content textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #862525;
+    border-radius: 5px;
+    font-family: "Faculty Glyphic", sans-serif;
+    margin-bottom: 0.5rem;
+    background: white;
+    box-sizing: border-box;
+}
+
+.modal-content textarea {
+    height: 150px;
+    resize: none;
+}
+
+.popup-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    width: auto;
 }

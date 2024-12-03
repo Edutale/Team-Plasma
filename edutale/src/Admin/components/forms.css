@@ -1,0 +1,124 @@
+/* Common form styles */
+.form-group {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-family: "Faculty Glyphic", sans-serif;
+    color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #862525;
+    border-radius: 5px;
+    font-family: "Faculty Glyphic", sans-serif;
+}
+
+/* Form containers */
+.quest-forms,
+.skill-forms,
+.resource-forms,
+.item-forms {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Individual form styles */
+.quest-form,
+.skill-form,
+.resource-form,
+.item-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Form header styles */
+.quest-form h2,
+.skill-form h2,
+.resource-form h2,
+.item-form h2 {
+    color: #862525;
+    font-family: "Faculty Glyphic", sans-serif;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #862525;
+    text-align: center;
+    width: 100%;
+}
+
+/* Form inputs */
+.quest-form select,
+.quest-form input,
+.quest-form textarea,
+.skill-form select,
+.skill-form input,
+.skill-form textarea,
+.resource-form select,
+.resource-form input,
+.resource-form textarea,
+.item-form select,
+.item-form input,
+.item-form textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #862525;
+    border-radius: 5px;
+    font-family: "Faculty Glyphic", sans-serif;
+}
+
+/* Form submit buttons */
+.quest-form button,
+.skill-form button,
+.resource-form button,
+.item-form button {
+    width: 100%;
+    background-color: #f3f3f3;
+    border: 2px solid #862525;
+    border-radius: 5px;
+    padding: 8px 16px;
+    font-family: "Faculty Glyphic", sans-serif;
+    cursor: pointer;
+    transition: background-color 0.15s;
+    margin-top: 10px;
+}
+
+.quest-form button:hover,
+.skill-form button:hover,
+.resource-form button:hover,
+.item-form button:hover {
+    background-color: #d4d4d4;
+}
+
+/* Success/error message styles */
+.message {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-family: "Faculty Glyphic", sans-serif;
+    width: 100%;
+    text-align: center;
+}
+
+.message.success {
+    background-color: #afd9b5;
+    border: 1px solid #58c8a2;
+    color: #006646;
+}
+
+.message.error {
+    background-color: #f8d18c;
+    border: 1px solid #f1ab41;
+    color: #862525;
+}
