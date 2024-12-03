@@ -22,9 +22,9 @@ async function buyItem(studentId, itemId, itemPrice, moneyAmt) {
         [studentId, itemId, itemPrice, moneyAmt])
 }
 
-async function completeQuest(studentId, questId, totalEXP, stuLvl, netMoney) {
+async function completeQuest(studentId, questId, totalEXP, netMoney, stuLvl) {
   await db.query(`call complete_quest($1, $2, $3, $4, $5)`,
-      [studentId, questId, totalEXP, stuLvl, netMoney])
+      [studentId, questId, totalEXP, netMoney, stuLvl])
 }
 
 async function quitQuest(studentId, questId) {
