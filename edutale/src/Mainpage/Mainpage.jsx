@@ -23,15 +23,16 @@ export default function Mainpage() {
     const [progress, setProgress] = useState()
     const [skills, setSkills] = useState()
     const [skillEXP, setEXP] = useState()
+    const [stuId, setStuID] = useState()
 
     // used to check if the user is authenticated (logged in) again as a failsafe
     // if the ProtectedRoute logic fails.
-    const {isAuthenticated} = useAuth0()
+    const {user, isAuthenticated} = useAuth0()
 
     useEffect(() => {
         fetchMainpageStats()
     }, [])
-
+    
     async function fetchMainpageStats() {
         try {
             await Axios.get(`http://localhost:3000/api/students/${studentId}/mainpage`)
@@ -55,7 +56,7 @@ export default function Mainpage() {
 
     return (
       // the page will only render if the user is logged in
-      isAuthenticated && (
+      isAuthenticated && progress && (
         <>
           <Header />
           <div className="pane-container">
@@ -70,7 +71,7 @@ export default function Mainpage() {
                   </div>
                 </div>
                 <div className="pane-2-item">
-                  <OngoingQuests />
+                  <OngoingQuests progress={progress}/>
                 </div>
               </div>
             </div>

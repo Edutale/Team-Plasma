@@ -128,7 +128,7 @@ router.put("/:id/buy-item", async(req, res) => {
 // updating student quests after completing a quest
 router.put("/:id/complete-quest", async(req, res) => {
     try {
-        await completeQuest(req.body.studentId, req.body.questId)
+        await completeQuest(req.body.studentId, req.body.questId, req.body.totalExp, req.body.netMoney, req.body.stuLvl)
         res.status(200).json({message: "Quest completed successfully"})
     }
       catch(err) {

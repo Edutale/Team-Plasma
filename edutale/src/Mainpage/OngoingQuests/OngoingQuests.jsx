@@ -13,11 +13,13 @@ import "./OngoingQuests.css"
 
 const studentId = "TESTSTU01"
 
-export default function OngoingQuests() {
+export default function OngoingQuests({progress}) {
     const [quests, setQuests] = useState()
+
+    // effect for student quests
     useEffect(() => {
         fetchStudentQuests()
-    }, [])
+    }, [progress])
 
     // fetches all student quests for logged in student including quest id, name, desc, and completed bool
     async function fetchStudentQuests() {
@@ -42,7 +44,7 @@ export default function OngoingQuests() {
                         {questNames.map(item => !item.completed && (
                           <Popup key={item.name} trigger= {
                             <button className="block-button">
-                              <OngoingQuestBlock qName={item.name} />
+                              <OngoingQuestBlock qName={item.name}/>
                             </button>}
                             modal nested>{
                               close => (
@@ -57,7 +59,7 @@ export default function OngoingQuests() {
                                     <button className="modal-footer-button quit" onClick={() => QuitHandler(studentId, item.id)}>
                                       Quit Quest
                                     </button>
-                                    <button className="modal-footer-button complete" onClick={() => CompleteHandler(studentId, item.id)}>
+                                    <button className="modal-footer-button complete" onClick={() => CompleteHandler(studentId, item.id, item.diff, progress)}>
                                       Complete Quest
                                     </button>
                                   </div>
@@ -75,7 +77,7 @@ export default function OngoingQuests() {
         }  
     }
   
-    return (
+    return progress && quests && (
       <div className="o-quests">
         <div className="o-quest-background">
           <h2 className="o-quest-h2"> Ongoing Quests </h2>
