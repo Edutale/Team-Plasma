@@ -4,9 +4,9 @@ import Axios from "axios"
 
 // updates quest row in student quests to completed when student completes quest
 export default async function CompleteHandler(studentId, quest_id, quest_difficulty, progress) {
-    let earnedGlobalExp = calculateExp(quest_difficulty) + progress.total_exp
+    let earnedGlobalExp = calculateExp(quest_difficulty) + progress.exp
     let newLvl = calculateLvl(earnedGlobalExp)
-    let studentLvl = progress.student_lvl
+    let studentLvl = progress.lvl
     
     console.log(progress)
     console.log(quest_difficulty)

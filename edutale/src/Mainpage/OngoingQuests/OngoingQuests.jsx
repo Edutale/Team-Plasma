@@ -13,33 +13,13 @@ import "./OngoingQuests.css"
 
 const studentId = "TESTSTU01"
 
-export default function OngoingQuests() {
+export default function OngoingQuests({progress}) {
     const [quests, setQuests] = useState()
-    const [progress, setProgress] = useState()
-
-    // effect for student level and EXP
-    useEffect(() => {
-        fetchStudentLvlAndEXP()
-    }, [])
 
     // effect for student quests
     useEffect(() => {
         fetchStudentQuests()
     }, [progress])
-
-    // fetches student lvl and exp for student id
-    async function fetchStudentLvlAndEXP() {
-      try {
-          await Axios.get(`http://localhost:3000/api/students/${studentId}/mainpage`)
-              .then((response) => {
-                  setProgress({total_exp: response.data[0].total_exp, student_lvl: response.data[0].student_lvl})
-                  console.log(progress)
-                })
-      }
-      catch(err) {
-          console.error("Error fetching level and EXP: ", err)
-      }
-    }
 
     // fetches all student quests for logged in student including quest id, name, desc, and completed bool
     async function fetchStudentQuests() {

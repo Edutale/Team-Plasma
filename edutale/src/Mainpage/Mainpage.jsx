@@ -71,7 +71,7 @@ export default function Mainpage() {
                   </div>
                 </div>
                 <div className="pane-2-item">
-                  <OngoingQuests />
+                  <OngoingQuests progress={progress}/>
                 </div>
               </div>
             </div>
