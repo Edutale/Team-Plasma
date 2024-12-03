@@ -5,7 +5,7 @@ import AcceptHandler from "../../Mainpage/QuestBoard/AcceptHandler"
 import QuitHandler from "../../Mainpage/OngoingQuests/QuitHandler"
 import CompleteHandler from "../../Mainpage/OngoingQuests/CompleteHandler"
 
-export default function QuestListHelper({quests, currSkill, studentId, stuQuests}) {
+export default function QuestListHelper({quests, currSkill, studentId, stuQuests, progress}) {
   
     function listQuestsAndResources(quests, currSkill) {
         let resources = []
@@ -97,7 +97,7 @@ export default function QuestListHelper({quests, currSkill, studentId, stuQuests
                               <button className="modal-footer-button quit" onClick={() => QuitHandler(studentId, item.quest_id)}>
                                 Quit Quest
                               </button>
-                              <button className="modal-footer-button complete" onClick={() => CompleteHandler(studentId, item.quest_id)}>
+                              <button className="modal-footer-button complete" onClick={() => CompleteHandler(studentId, item.quest_id, item.quest_difficulty, progress)}>
                                 Complete Quest
                               </button>
                             </div>
