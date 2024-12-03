@@ -2,8 +2,8 @@
 import React from "react"
 
 export const Message = ({ Message }) => {
-    if(!Message) return null
-    return(
+    if (!Message) return null
+    return (
         <div className={`message ${Message.type}`}> {Message.text} </div>
     )
 }

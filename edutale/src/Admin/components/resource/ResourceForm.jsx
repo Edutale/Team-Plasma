@@ -32,7 +32,6 @@ export const ResourceForm = ({ type, onSubmit, resources = [], onResourceChange 
             case "add":
                 return (
                     <>
-                      <h2>Create Resource</h2>
                       <div className="form-group">
                         <label htmlFor="resourceName"> Resource Name: </label>
                         <input id="resourceName" name="resourceName" placeholder="Resource Name" required/>
@@ -67,7 +66,6 @@ export const ResourceForm = ({ type, onSubmit, resources = [], onResourceChange 
             case "delete":
                 return (
                     <>
-                      <h2> Delete Resource </h2>
                       <select name="resourceId" required onChange={onResourceChange}>
                         <option value=""> Select Resource </option>
                         {resources.map(resource => (
@@ -80,7 +78,6 @@ export const ResourceForm = ({ type, onSubmit, resources = [], onResourceChange 
             case "update":
                 return (
                     <>
-                      <h2> Update Resource </h2>
                       <select name="resourceId" required onChange={onResourceChange}>
                         <option value=""> Select Resource </option>
                         {resources.map(resource => (

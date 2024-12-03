@@ -8,7 +8,6 @@ export const QuestForm = ({ type, onSubmit, quests = [], onQuestChange = ()=>{} 
             case "add":
                 return (
                     <>
-                      <h2> Create Quest </h2>
                       <div className="form-group">
                         <label htmlFor="questName"> Quest Name: </label>
                         <input id="questName" name="questName" placeholder="Quest Name" required maxLength={255}/>
@@ -45,7 +44,6 @@ export const QuestForm = ({ type, onSubmit, quests = [], onQuestChange = ()=>{} 
             case "delete":
                 return (
                     <>
-                      <h2> Delete Quest </h2>
                       <select name="questId" required onChange={(e) => onQuestChange(e, "both")}>
                         <option value=""> Select Quest </option>
                         {quests.map(quest => (
@@ -59,7 +57,6 @@ export const QuestForm = ({ type, onSubmit, quests = [], onQuestChange = ()=>{} 
             case "update":
                 return (
                     <>
-                      <h2> Update Quest </h2>
                       <select name="questId" required onChange={(e) => onQuestChange(e, "both")}>
                         <option value=""> Select Quest </option>
                         {quests.map(quest => (

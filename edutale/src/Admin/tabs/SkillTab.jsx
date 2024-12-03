@@ -46,19 +46,19 @@ const SkillTab = () => {
             <Message message={message}/>
             <AdminFunctionSelector functions={skillFunctions}/>
 
-            <AdminModal isOpen={activeModal === "add"} onClose={()=>setActiveModal(null)} title="Add New Skill">
-                <SkillForm type="add" onSubmit={(e)=>handleSubmit(e, skillService.addSkill, "Skill added Successfully")}/>
+            <AdminModal isOpen={activeModal === "add"} onClose={() => setActiveModal(null)} title="Add New Skill">
+                <SkillForm type="add" onSubmit={(e) => handleSubmit(e, skillService.addSkill, "Skill added Successfully")}/>
             </AdminModal>
 
-            <AdminModal isOpen={activeModal === "update"} onClose={()=>setActiveModal(null)} title="Update Skill">
-                <SkillForm type="update" skills={skills} onSubmit={(e)=>handleSubmit(e, (data)=>skillService.updateSkill(data.skillId, {
+            <AdminModal isOpen={activeModal === "update"} onClose={() => setActiveModal(null)} title="Update Skill">
+                <SkillForm type="update" skills={skills} onSubmit={(e) => handleSubmit(e, (data)=>skillService.updateSkill(data.skillId, {
                     skillName: data.skillName,
                     skillDescription: data.skillDescription
                 }), "Skill Updated Successfully")}/>
             </AdminModal>
 
-            <AdminModal isOpen={activeModal === "delete"} onClose={()=>setActiveModal(null)} title="Delete Skill">
-                <SkillForm type="delete" skills={skills} onSubmit={(e)=>handleSubmit(e, (data)=>skillService.deleteSkill(data.skillId), "Skill Deleted Successfully")}/>
+            <AdminModal isOpen={activeModal === "delete"} onClose={() => setActiveModal(null)} title="Delete Skill">
+                <SkillForm type="delete" skills={skills} onSubmit={(e) => handleSubmit(e, (data)=>skillService.deleteSkill(data.skillId), "Skill Deleted Successfully")}/>
             </AdminModal>
         </div>
     )

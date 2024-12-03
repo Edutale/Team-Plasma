@@ -50,13 +50,13 @@ const ResourceTab = () => {
             <Message message={message}/>
             <AdminFunctionSelector functions={resourceFunctions}/>
 
-            <AdminModal isOpen={activeModal === "add"} onClose={()=>setActiveModal(null)} title="Add New Resource">
-                <ResourceForm type="add" onSubmit={(e)=>handleSubmit(e, resourceService.addResource, "Resource added successfully")}/>
+            <AdminModal isOpen={activeModal === "add"} onClose={() => setActiveModal(null)} title="Add New Resource">
+                <ResourceForm type="add" onSubmit={(e) => handleSubmit(e, resourceService.addResource, "Resource added successfully")}/>
             </AdminModal>
 
             <AdminModal isOpen={activeModal === "update"} onClose={() => setActiveModal(null)} title="Update Resource">
             <ResourceForm type="update" resources={resources}
-                onSubmit={(e) => handleSubmit(e, (data)=>resourceService.updateResource(
+                onSubmit={(e) => handleSubmit(e, (data) => resourceService.updateResource(
                     data.resourceId, {
                         resourceName: data.resourceName,
                         resourceLink: data.resourceLink,
@@ -67,7 +67,7 @@ const ResourceTab = () => {
             </AdminModal>
 
             <AdminModal isOpen={activeModal === "delete"} onClose={() => setActiveModal(null)} title="Delete Resource">
-                <ResourceForm type="delete" resources={resources} onSubmit={(e)=>handleSubmit(e, (data)=>resourceService.deleteResource(data.resourceId), "Resource deleted successfully")}/>
+                <ResourceForm type="delete" resources={resources} onSubmit={(e) => handleSubmit(e, (data)=>resourceService.deleteResource(data.resourceId), "Resource deleted successfully")}/>
             </AdminModal>
         </div>
     )

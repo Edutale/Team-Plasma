@@ -7,7 +7,6 @@ export const SkillForm = ({ type, onSubmit, skills = [], onSkillChange = () => {
             case "add":
                 return (
                     <>
-                      <h2> Create Skill </h2>
                       <div className="form-group">
                         <label htmlFor="skillName"> Skill Name: </label>
                         <input id="skillName" name="skillName" placeholder="Skill Name" required maxLength={32}/>
@@ -23,7 +22,6 @@ export const SkillForm = ({ type, onSubmit, skills = [], onSkillChange = () => {
             case "delete":
                 return (
                     <>
-                      <h2> Delete Skill </h2>
                       <select name="skillId" required onChange={onSkillChange}>
                         <option value="">Select Skill</option>
                         {skills.map(skill => (
@@ -37,7 +35,6 @@ export const SkillForm = ({ type, onSubmit, skills = [], onSkillChange = () => {
             case "update":
                 return (
                     <>
-                      <h2> Update Skill </h2>
                       <select name="skillId" required onChange={onSkillChange}>
                         <option value=""> Select Skill </option>
                         {skills.map(skill => (

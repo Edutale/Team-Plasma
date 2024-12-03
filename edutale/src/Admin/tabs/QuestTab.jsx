@@ -103,41 +103,41 @@ const QuestTab = ()=>{
             <Message message={message}/>
             <AdminFunctionSelector functions={questFunctions}/>
 
-            <AdminModal isOpen={activeModal === "add"} onClose={()=>setActiveModal(null)} title="Add New Quest">
-                <QuestForm type="add" onSubmit={(e)=>handleSubmit(e, questService.addQuest, "Quest added successfully")}/>
+            <AdminModal isOpen={activeModal === "add"} onClose={() => setActiveModal(null)} title="Add New Quest">
+                <QuestForm type="add" onSubmit={(e) => handleSubmit(e, questService.addQuest, "Quest added successfully")}/>
             </AdminModal>
 
-            <AdminModal isOpen={activeModal === "update"} onClose={()=>setActiveModal(null)} title="Update Quest">
+            <AdminModal isOpen={activeModal === "update"} onClose={() => setActiveModal(null)} title="Update Quest">
                 <QuestForm type="update" quests={quests} onQuestChange={handleQuestChange}
-                    onSubmit={(e)=>handleSubmit(e, (data)=>questService.updateQuest(data.questId, {
+                    onSubmit={(e) => handleSubmit(e, (data) => questService.updateQuest(data.questId, {
                         questName: data.questName,
                         questDescription: data.questDescription
                 }), "Quest updated successfully")}/>
             </AdminModal>
 
-            <AdminModal isOpen={activeModal === "delete"} onClose={()=>setActiveModal(null)} title="Delete Quest">
+            <AdminModal isOpen={activeModal === "delete"} onClose={() => setActiveModal(null)} title="Delete Quest">
                 <QuestForm type="delete" quests={quests} onQuestChange={handleQuestChange}
-                    onSubmit={(e)=>handleSubmit(e, (data)=>questService.deleteQuest(data.questId),"Quest deleted successfully")}/>
+                    onSubmit={(e) => handleSubmit(e, (data) => questService.deleteQuest(data.questId),"Quest deleted successfully")}/>
             </AdminModal>
 
-            <AdminModal isOpen={activeModal === "addSkill"} onClose={()=>setActiveModal(null)} title="Add Quest Skill">
+            <AdminModal isOpen={activeModal === "addSkill"} onClose={() => setActiveModal(null)} title="Add Quest Skill">
                 <AddQuestSkillForm quests={quests} allSkills={skills} onQuestChange={handleQuestChange} 
-                    onSubmit={(e)=>handleSubmit(e, (data)=>questService.addSkill(data.questId, data.skillId), "Skill added to Quest Successfully")}/>
+                    onSubmit={(e) => handleSubmit(e, (data) => questService.addSkill(data.questId, data.skillId), "Skill added to Quest Successfully")}/>
             </AdminModal>
             
-            <AdminModal isOpen={activeModal === "deleteSkill"} onClose={()=>setActiveModal(null)} title="Delete Quest Skill">
+            <AdminModal isOpen={activeModal === "deleteSkill"} onClose={() => setActiveModal(null)} title="Delete Quest Skill">
                 <DeleteQuestSkillForm quests={quests} questSkills={questSkills} onQuestChange={handleQuestChange}
-                    onSubmit={(e)=>handleSubmit(e, (data)=>questService.deleteSkill(data.questId, data.skillId), "Skill removed from Quest Successfully")}/>
+                    onSubmit={(e) => handleSubmit(e, (data) => questService.deleteSkill(data.questId, data.skillId), "Skill removed from Quest Successfully")}/>
             </AdminModal>
 
-            <AdminModal isOpen={activeModal === "addResource"} onClose={()=>setActiveModal(null)} title="Add Quest Resource">
+            <AdminModal isOpen={activeModal === "addResource"} onClose={() => setActiveModal(null)} title="Add Quest Resource">
                 <AddQuestResourceForm quests={quests} allResources={resources} onQuestChange={handleQuestChange}
-                    onSubmit={(e)=>handleSubmit(e, (data)=>questService.addResource(data.questId, data.resourceId), "Resource added to Quest Successfully")}/>
+                    onSubmit={(e) => handleSubmit(e, (data) => questService.addResource(data.questId, data.resourceId), "Resource added to Quest Successfully")}/>
             </AdminModal>
 
-            <AdminModal isOpen={activeModal === "deleteResource"} onClose={()=>setActiveModal(null)} title="Delete Quest Resource">
+            <AdminModal isOpen={activeModal === "deleteResource"} onClose={() => setActiveModal(null)} title="Delete Quest Resource">
                 <DeleteQuestResourceForm quests={quests} questResources={questResources} onQuestChange={handleQuestChange}
-                    onSubmit={(e)=>handleSubmit(e, (data)=>questService.deleteResource(data.questId, data.resourceId), "Resource removed from Quest Successfully")}/>
+                    onSubmit={(e) => handleSubmit(e, (data) => questService.deleteResource(data.questId, data.resourceId), "Resource removed from Quest Successfully")}/>
             </AdminModal>
         </div>
     )

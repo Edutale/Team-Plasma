@@ -6,7 +6,6 @@ import React from "react"
 export const AddQuestResourceForm = ({onSubmit, quests, allResources, onQuestChange}) => {
     return (
         <form onSubmit={onSubmit} className="quest-form">
-          <h2> Add Quest Resource </h2>
           <select name="questId" required onChange={(e) => onQuestChange(e, "resource")}>
             <option value=""> Select Quest </option>
             {quests.map(quest => (
@@ -27,7 +26,6 @@ export const AddQuestResourceForm = ({onSubmit, quests, allResources, onQuestCha
 export const DeleteQuestResourceForm = ({onSubmit, quests, questResources, onQuestChange}) => {
     return (
         <form onSubmit={onSubmit} className="quest-form">
-          <h2> Delete Quest Resource </h2>
           <select name="questId" required onChange={(e) => onQuestChange(e, "resource")}>
             <option value=""> Select Quest </option>
             {quests.map(quest => (

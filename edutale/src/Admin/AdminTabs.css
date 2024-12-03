@@ -104,7 +104,7 @@
 .admin-functions {
     display: flex;
     gap: 1rem;
-    margin-bottom: 2rem
+    margin-bottom: 2rem;
 }
 
 .admin-function-button {
@@ -115,7 +115,7 @@
     font-family: "Faculty Glyphic", sans-serif;
     font-size: 1.1rem;
     cursor: pointer;
-    transition: background-color 0.15s
+    transition: background-color 0.15s;
 }
 
 .admin-function-button:hover {
@@ -124,27 +124,91 @@
 
 /* Modal styles */
 .admin-modal {
-    background: white;
-    padding: 2rem;
+    background: #f3f3f3;
+    padding: 1.5rem;
     border-radius: 10px;
-    max-width: 600px;
-    width: 100%
+    width: 100%;
+    border: 2px solid #862525;
+    box-sizing: border-box;
 }
 
 .modal-header {
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    margin-bottom: 1.5rem
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #862525;
+    padding-bottom: 0.5rem;
+    width: 100%;
+    position: relative;
 }
 
 .modal-header h2 {
     margin: 0;
+    font-family: "Faculty Glyphic", sans-serif;
     color: #862525;
-    font-family: "Faculty Glyphic", sans-serif
+    text-align: center;
 }
 
-.modal-content {
-    max-height: 70vh;
-    overflow-y: auto
+.modal-header button {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f3f3f3;
+    border: 1px solid #862525;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 0;
+    font-size: 1.2rem;
+}
+
+.modal-header button:hover {
+    background-color: #d4d4d4;
+}
+
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0;
+    width: 100%;
+}
+
+.modal-content select,
+.modal-content input,
+.modal-content textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #862525;
+    border-radius: 5px;
+    font-family: "Faculty Glyphic", sans-serif;
+    margin-bottom: 0.5rem;
+    background: white;
+    box-sizing: border-box;
+}
+
+.modal-content textarea {
+    height: 150px;
+    resize: none;
+}
+
+.popup-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    width: auto;
 }

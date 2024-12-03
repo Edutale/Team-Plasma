@@ -42,7 +42,7 @@ const ItemTab = () => {
 
     return (
         <div className="item-tab">
-            <h1>Item Management</h1>
+            <h1> Item Management </h1>
             <Message message={message}/>
           
             <AdminFunctionSelector functions={itemFunctions}/>
