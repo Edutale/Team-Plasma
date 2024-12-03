@@ -63,7 +63,7 @@ function createRadarData(skills, skillEXP) {
               label: "EXP",
               data: skillEXP,
               fill: true,
-              backgroundColor: "rgba(131, 128, 255, 0.8)",
+              backgroundColor: "rgba(144, 146, 255, 0.8)",
               borderColor: "#4648bd",
               pointBorderColor: "rgb(210, 210, 210)",
               pointBackgroundColor: "rgb(95, 92, 255)",
