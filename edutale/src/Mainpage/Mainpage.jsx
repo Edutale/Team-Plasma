@@ -23,11 +23,10 @@ export default function Mainpage() {
     const [progress, setProgress] = useState()
     const [skills, setSkills] = useState()
     const [skillEXP, setEXP] = useState()
-    const [stuId, setStuID] = useState()
 
     // used to check if the user is authenticated (logged in) again as a failsafe
     // if the ProtectedRoute logic fails.
-    const {user, isAuthenticated} = useAuth0()
+    const {isAuthenticated} = useAuth0()
 
     useEffect(() => {
         fetchMainpageStats()

@@ -1,7 +1,7 @@
 import { useAuth0 } from "@auth0/auth0-react"
 import Equipped from "./Equipped/Equipped"
 import InventoryList from "./InventoryList/InventoryList"
-import UserBar from "../Mainpage/UserBar/UserBar"
+import InvUserBar from "./InvUserBar/InvUserBar"
 import Money from "./Money/Money"
 import Header from "../Header/Header"
 
@@ -17,7 +17,7 @@ export default function Inventory() {
     const [ownedItems, setOwnedItems] = useState()
     const [moneyAmt, setMoneyAmt] = useState()
     const [equipItems, setEquipItems] = useState()
-    const [progress, setProgress] = useState()
+    const [invProgress, setInvProgress] = useState()
     const [stuName, setStuName] = useState()
 
     // used to check if the user is authenticated (logged in) again as a failsafe
@@ -48,7 +48,7 @@ export default function Inventory() {
                         familiar: response.data[0].equip_familiar
                     })
 
-                    setProgress({
+                    setInvProgress({
                         lvl: response.data[0].student_lvl,
                         exp: response.data[0].total_exp,
                         name: response.data[0].student_name
@@ -82,7 +82,7 @@ export default function Inventory() {
                 <Equipped catalog={catalog} equipItems={equipItems} stuName={stuName}/>
                 <div className="lower-inv-container">
                   <div className="lower-inv-item">
-                    <UserBar progress={progress} className="user-bar"/>
+                    <InvUserBar invProgress={invProgress} className="user-bar"/>
                   </div>
                   <div className="lower-inv-item">
                     <Money moneyAmt={moneyAmt}/>

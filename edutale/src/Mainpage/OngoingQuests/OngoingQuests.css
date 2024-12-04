@@ -29,8 +29,8 @@
 }
 
 .oq-img {
-    max-width: 55%;
-    max-height: auto;
+    max-width: 45%;
+    min-width: 25%;
 }
 
 .block-button {

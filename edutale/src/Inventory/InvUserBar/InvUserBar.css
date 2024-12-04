@@ -1,15 +1,15 @@
-/*--- UserBar.css ---*/ 
+/*--- InvUserBar.css ---*/ 
 
-.user-bar {
+.inv-user-bar {
     margin-top: -15px;;
     text-align: center;
     object-fit: contain;
 }
   
-progress {
-    accent-color: #9092ff;
+.inv-progress {
+    accent-color: #ffb74a
 }
 
-.bar-text {
+.inv-bar-text {
     margin: -25px;
 }

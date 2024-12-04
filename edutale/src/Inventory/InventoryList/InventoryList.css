@@ -36,7 +36,7 @@
 }
 
 .item:hover, .item:focus {
-    border: 0.5em solid #ffb74a;
+    border: 0.5em solid #f18016;
 }
 
 .item-img {
@@ -53,7 +53,7 @@
 }
 
 .owned {
-    border: 0.5em solid #862525;
+    border: 0.5em solid #ffb74a;
 }
 
 .unowned:hover, .owned:hover,
